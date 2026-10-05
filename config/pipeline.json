@@ -1,0 +1,6 @@
+{
+  "pipeline": "animated-explainer",
+  "human_approval_default": true,
+  "approved_by": "KJ Cornish",
+  "approval_note": "Plan approved by the user in chat on 2026-10-05 (template, sources, tools, $0 budget). Stages proposal/script/scene_plan/assets run under that standing plan approval. While human_approval_default is true the publish gate waits for a human; after the first sample is approved it is set false and publish runs under standing approval."
+}
