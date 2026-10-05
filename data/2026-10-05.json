@@ -1,0 +1,160 @@
+{
+  "date": "2026-10-05",
+  "window_start": "2026-10-04T19:50:58.402003+00:00",
+  "window_end": "2026-10-05T19:50:58.402003+00:00",
+  "source": "X search (twikit, session cookies)",
+  "queries": {
+    "Bitcoin": "(Bitcoin OR BTC) (Lightning OR Ark OR \"layer 2\" OR L2) -filter:replies -filter:retweets -filter:nativeretweets lang:en since_time:1791143458 until_time:1791229858",
+    "Dogecoin": "(Dogecoin OR DOGE) (\"layer 2\" OR L2 OR Dogechain OR community) -filter:replies -filter:retweets -filter:nativeretweets lang:en since_time:1791143458 until_time:1791229858",
+    "Monero": "(Monero OR XMR) (FCMP OR CARROT OR hardfork OR upgrade) -filter:replies -filter:retweets -filter:nativeretweets lang:en since_time:1791143458 until_time:1791229858",
+    "Litecoin": "(Litecoin OR LTC) (Lightning OR MWEB OR \"layer 2\") -filter:replies -filter:retweets -filter:nativeretweets lang:en since_time:1791143458 until_time:1791229858"
+  },
+  "items": [
+    {
+      "coin": "Bitcoin",
+      "topic": "Lightning",
+      "claim": "Alyssa has spent nearly a decade building Lightning from the inside.",
+      "handle": "@utexocom",
+      "display_name": "Utexo",
+      "why_this_account": "Bio: “Instant, private USDT payments on Bitcoin. Move stablecoins the way you move money.” · 10,935 followers",
+      "post_url": "https://x.com/utexocom/status/2107100289983807814",
+      "date": "2026-10-05T13:27:11Z",
+      "date_et": "Oct 5, 9:27 AM ET",
+      "engagement": 549,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Bitcoin",
+      "topic": "Lightning",
+      "claim": "845 Lightning sends on Friday!",
+      "handle": "@bitcoinhodlco",
+      "display_name": "B HODL ⚡",
+      "why_this_account": "Bio: “BUY. HOLD. DEPLOY. COMPOUND. | MISSION: COMPOUND #BITCOIN | AQSE: $HODL | OTCQB: $BHODF | FRA: $F5S” · 8,387 followers",
+      "post_url": "https://x.com/bitcoinhodlco/status/2107019776627245114",
+      "date": "2026-10-05T08:07:15Z",
+      "date_et": "Oct 5, 4:07 AM ET",
+      "engagement": 109,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Bitcoin",
+      "topic": "Lightning",
+      "claim": "Utexo is backing the builders building on Bitcoin!!",
+      "handle": "@Durjoy___das",
+      "display_name": "—͟͞͞Durjoy!! ᥫ᭡",
+      "why_this_account": "Bio: “Creator • Researcher” · 6,904 followers",
+      "post_url": "https://x.com/Durjoy___das/status/2107083190431281283",
+      "date": "2026-10-05T12:19:14Z",
+      "date_et": "Oct 5, 8:19 AM ET",
+      "engagement": 55,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Dogecoin",
+      "topic": null,
+      "claim": "Quiet today.",
+      "handle": null,
+      "display_name": null,
+      "why_this_account": null,
+      "post_url": null,
+      "date": null,
+      "date_et": null,
+      "engagement": 0,
+      "other_chain_if_any": null,
+      "quiet": true
+    },
+    {
+      "coin": "Monero",
+      "topic": "FCMP++",
+      "claim": "The third version of beta stressnet for Full-Chain Membership Proofs (FCMP++) and CARROT is live!",
+      "handle": "@monero",
+      "display_name": "Monero (XMR)",
+      "why_this_account": "Bio: “Monero (XMR) - The secure, private, untraceable cryptocurrency that keeps your money confidential.…” · 532,048 followers",
+      "post_url": "https://x.com/monero/status/2107181059859448004",
+      "date": "2026-10-05T18:48:08Z",
+      "date_et": "Oct 5, 2:48 PM ET",
+      "engagement": 169,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Monero",
+      "topic": "FCMP++",
+      "claim": "For everyone who keeps asking why I am adding @Zcash but not @monero to my Tools directory - here is my response.",
+      "handle": "@iAnonymous3000",
+      "display_name": "Sooraj",
+      "why_this_account": "Bio: “DOGE for privacy. @Brave | priv/acc 🚀 views ≠ employer's.” · 15,298 followers",
+      "post_url": "https://x.com/iAnonymous3000/status/2107136094118769014",
+      "date": "2026-10-05T15:49:28Z",
+      "date_et": "Oct 5, 11:49 AM ET",
+      "engagement": 138,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Litecoin",
+      "topic": "MWEB",
+      "claim": "$LTC MWEB Daily Flow At close: Sun, 4 Oct 2026 Pool: 459,146.34 LTC (0.6% of supply) ↑ Peg-ins: +25,883.23 LTC ↓ Peg-outs…",
+      "handle": "@LitecoinTracker",
+      "display_name": "Litecoin Tracker",
+      "why_this_account": "Bio: “Tracking key Litecoin statistics and metrics such as ETF flows and MWEB adoption.” · 604 followers",
+      "post_url": "https://x.com/LitecoinTracker/status/2107079619740327966",
+      "date": "2026-10-05T12:05:03Z",
+      "date_et": "Oct 5, 8:05 AM ET",
+      "engagement": 14,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Litecoin",
+      "topic": "MWEB",
+      "claim": "Meet digital silver for the modern age litecoin faster Bitcoin, tiny fees, optional privacy (MWEB), 15 years never hacked.",
+      "handle": "@rothcompounder",
+      "display_name": "Roth Compounder",
+      "why_this_account": "Bio: “CPA | Tax Strategy | Roth & Backdoor Roth | Wealth Building | SuperFlex Creator ⚡ | Helping you keep more,…” · 567 followers",
+      "post_url": "https://x.com/rothcompounder/status/2107140306156085516",
+      "date": "2026-10-05T16:06:12Z",
+      "date_et": "Oct 5, 12:06 PM ET",
+      "engagement": 9,
+      "other_chain_if_any": null,
+      "quiet": false
+    }
+  ],
+  "stats": {
+    "dropped": {
+      "Bitcoin": {
+        "low_follower_account": 9,
+        "price_call": 3,
+        "promo_account": 1,
+        "too_short": 1
+      },
+      "Dogecoin": {
+        "other_token_shill": 3,
+        "cashtag_spam": 5,
+        "low_follower_account": 13,
+        "promo_account": 2
+      },
+      "Monero": {
+        "low_follower_account": 7,
+        "cashtag_spam": 1,
+        "other_token_shill": 1,
+        "price_call": 2
+      },
+      "Litecoin": {
+        "low_follower_account": 5,
+        "too_short": 1,
+        "promo_account": 1
+      }
+    },
+    "kept": {
+      "Bitcoin": 11,
+      "Dogecoin": 2,
+      "Monero": 7,
+      "Litecoin": 2
+    },
+    "other_chains": {}
+  }
+}

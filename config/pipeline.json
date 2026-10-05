@@ -1,6 +1,10 @@
 {
   "pipeline": "animated-explainer",
-  "human_approval_default": true,
+  "human_approval_default": false,
   "approved_by": "KJ Cornish",
-  "approval_note": "Plan approved by the user in chat on 2026-10-05 (template, sources, tools, $0 budget). Stages proposal/script/scene_plan/assets run under that standing plan approval. While human_approval_default is true the publish gate waits for a human; after the first sample is approved it is set false and publish runs under standing approval."
+  "approval_note": "Plan approved by the user in chat on 2026-10-05 (template, sources, tools, $0 budget). Stages proposal/script/scene_plan/assets run under that standing plan approval. While human_approval_default is true the publish gate waits for a human; after the first sample is approved it is set false and publish runs under standing approval. First sample (crypto-l2-2026-10-05) approved 2026-10-05; daily runs now pass all gates under standing approval.",
+  "sample_approved": {
+    "date": "2026-10-05",
+    "approved_at": "2026-10-05T19:56:42.101591+00:00"
+  }
 }
