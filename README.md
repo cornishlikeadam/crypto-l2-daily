@@ -18,7 +18,7 @@ Site: https://cornishlikeadam.github.io/crypto-l2-daily/
    - Narrates with Piper TTS.
    - Renders the card deck in `remotion/` through `video_compose` (Remotion, atelier mode).
 3. **`scripts/build_site.py`**: copies `final.mp4` into `site/days/YYYY-MM-DD/`, then rebuilds `site/index.html` and `site/feed.json`.
-4. **Publish**: commits `site/` and `data/`, pushes, and waits until GitHub Pages serves the new page. A run that can't push says so and prints the push command.
+4. **Publish**: commits `site/` and `data/` to `main`, pushes `site/` to the `gh-pages` branch (which GitHub Pages serves), and waits until the new page answers. A run that can't push says so and prints the push command.
 
 ## Approval
 

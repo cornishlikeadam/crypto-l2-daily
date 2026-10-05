@@ -22,7 +22,7 @@ print(nxt.strftime("%a %Y-%m-%d 18:00 %Z"))
 EOF
 }
 
-# Commit site/ + data/, push, then wait for the page to answer 200.
+# Commit site/ + data/, push main, push site/ to gh-pages (what Pages serves), then wait for 200.
 # Never reports "live" unless the push succeeded and the URL responds.
 publish() {
   local day="$1"
@@ -38,9 +38,11 @@ publish() {
     log "  cd $ROOT && git remote add origin https://github.com/cornishlikeadam/crypto-l2-daily.git && git push -u origin main"
     return 1
   fi
-  if ! git push -q origin main 2>&1; then
+  local pages_ref
+  pages_ref=$(git subtree split -q --prefix site main) || { log "publish: subtree split failed"; return 1; }
+  if ! git push -q origin main 2>&1 || ! git push -q -f origin "$pages_ref:refs/heads/gh-pages" 2>&1; then
     log "publish: NOT LIVE. git push failed (auth?). Files are committed locally. Push with:"
-    log "  cd $ROOT && git push origin main"
+    log "  cd $ROOT && git push origin main && git push -f origin \$(git subtree split --prefix site main):refs/heads/gh-pages"
     return 1
   fi
   log "publish: pushed $(git rev-parse --short HEAD); waiting for GitHub Pages"
@@ -53,6 +55,6 @@ publish() {
     fi
     sleep 15
   done
-  log "publish: pushed, but $url still returns $code after 10 min. Check the Pages workflow: gh run list -R cornishlikeadam/crypto-l2-daily"
+  log "publish: pushed, but $url still returns $code after 10 min. Check: gh api repos/cornishlikeadam/crypto-l2-daily/pages/builds/latest"
   return 1
 }
