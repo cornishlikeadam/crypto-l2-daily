@@ -64,6 +64,17 @@ h2{font:600 26px/1.2 Newsreader,Georgia,serif;margin:48px 0 16px}
 margin-right:6px}
 .card .stats{margin:6px 0 0;font-size:13px;color:var(--muted)}
 .card.note{margin-top:20px;border-color:rgba(227,184,102,.35)}
+.guide{display:flex;gap:16px;align-items:flex-start;margin:28px 0 0}
+.guide img{flex:none;width:88px;height:88px}
+.guide .bubble{position:relative;background:var(--lift);border:1px solid rgba(227,184,102,.45);border-radius:14px;
+padding:14px 18px;font-size:15px;min-width:0;overflow-wrap:anywhere}
+.guide .bubble:before{content:"";position:absolute;left:-8px;top:28px;width:14px;height:14px;background:var(--lift);
+border-left:1px solid rgba(227,184,102,.45);border-bottom:1px solid rgba(227,184,102,.45);transform:rotate(45deg)}
+.guide b{color:var(--amber);font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+.guide ol{margin:8px 0 0;padding-left:20px}.guide li{margin:2px 0}
+.guide .hear{margin-top:10px;background:none;border:1px solid var(--amber);color:var(--amber);border-radius:999px;
+padding:6px 14px;font:inherit;font-size:14px;cursor:pointer}
+@media (max-width:600px){.guide img{width:60px;height:60px}}
 nav a{margin-left:16px;font-size:14px;color:var(--muted);text-decoration:none}nav a:hover{color:var(--amber)}
 .card .who{margin-top:14px;padding-top:12px;border-top:1px solid var(--rule);font-size:14px;color:var(--muted);
 display:flex;flex-wrap:wrap;gap:4px 14px}
@@ -171,13 +182,26 @@ def page(title: str, body: str, prefix: str) -> str:
             f'<a href="{prefix}feed.json">feed.json</a></footer></main></body></html>\n')
 
 
-def day_section(rec: dict, video_src: str) -> str:
+def guide_html(prefix: str) -> str:
+    """The page guide: a friendly character with four plain steps (and a voice hello, once recorded)."""
+    hello = SITE / "assets" / "guide-hello.mp3"
+    audio = (f'<button class="hear" onclick="this.nextElementSibling.play()">▶ Hear me</button>'
+             f'<audio preload="none" src="{prefix}assets/guide-hello.mp3"></audio>') if hello.exists() else ""
+    return (f'<aside class="guide"><img src="{prefix}assets/guide.svg" alt="The guide, a smiling character '
+            f'with multi-color locs" width="88" height="88"><div class="bubble"><b>How to use this page</b>'
+            f'<ol><li>Press play for today\'s 70-second video.</li><li>Read the cards under it.</li>'
+            f'<li>Tap a card to open the real post on X.</li><li>Older days are in the Archive.</li></ol>'
+            f'{audio}</div></aside>')
+
+
+def day_section(rec: dict, video_src: str, prefix: str = "") -> str:
     poster = video_src.rsplit("/", 1)[0] + "/poster.jpg" if "/" in video_src else "poster.jpg"
     return (f'<div class="kicker">{esc(long_date(rec["date"]))}</div>'
             f'<video controls preload="metadata" playsinline poster="{esc(poster)}" src="{esc(video_src)}"></video>'
             f'<p class="meta">{rec["item_count"]} sourced posts from {len(rec["handles"])} accounts'
             + (f' · quiet: {esc(", ".join(rec["quiet"]))}' if rec["quiet"] else "")
-            + '</p>' + note_html(rec["date"]) + '<h2>The cards</h2>' + cards_html(rec["cards"]))
+            + '</p>' + note_html(rec["date"]) + guide_html(prefix) + '<h2>The cards</h2>'
+            + cards_html(rec["cards"]))
 
 
 def note_html(day: str) -> str:
@@ -207,7 +231,7 @@ def rebuild() -> None:
             '</span><a href="{p}archive/">Archive</a></nav></header>')
     if records:
         latest = records[0]
-        index_body = head.format(p="./") + day_section(latest, f"days/{latest['date']}/final.mp4") \
+        index_body = head.format(p="./") + day_section(latest, f"days/{latest['date']}/final.mp4", "") \
             + days_list(recent, "")
     else:
         index_body = head.format(p="./") + '<p class="meta">First edition coming soon.</p>'
@@ -216,7 +240,7 @@ def rebuild() -> None:
     recent_dates = {r["date"] for r in recent}
     for rec in records:
         video = "final.mp4" if rec["date"] in recent_dates else f"{ARCHIVE_URL}days/{rec['date']}/final.mp4"
-        body = head.format(p="../../") + day_section(rec, video) + days_list(recent, "../../")
+        body = head.format(p="../../") + day_section(rec, video, "../../") + days_list(recent, "../../")
         (DAYS / rec["date"] / "index.html").write_text(
             page(f"Crypto L2 Daily — {long_date(rec['date'])}", body, "../../"))
     archive_rows = "".join(

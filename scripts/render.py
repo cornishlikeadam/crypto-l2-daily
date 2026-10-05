@@ -34,6 +34,7 @@ os.environ["PATH"] = f"{OM / '.venv' / 'bin'}:{os.environ.get('PATH', '')}"
 from lib.checkpoint import PROJECTS_DIR, init_project, write_checkpoint  # noqa: E402
 from lib.slideshow_risk import score_slideshow_risk  # noqa: E402
 from lib.delivery_promise import DeliveryPromise  # noqa: E402
+from tools.audio.elevenlabs_tts import ElevenLabsTTS  # noqa: E402
 from tools.audio.piper_tts import PiperTTS  # noqa: E402
 from tools.video.video_compose import VideoCompose  # noqa: E402
 
@@ -217,19 +218,53 @@ def spoken_claim(claim: str, max_words: int) -> str:
     return " ".join(words[:max_words]).rstrip(",;:") + "."
 
 
+VOICE_CFG = ROOT / "config" / "voice.json"
+# What actually voiced this run (filled by make_narration, recorded in the artifacts).
+VOICE_USED = {"provider": "piper", "tool": "piper_tts", "model": "en_US-lessac-medium", "voice": "lessac"}
+
+
+def voice_choice() -> dict:
+    """ElevenLabs (Jamaican voice) when config/voice.json + ELEVENLABS_API_KEY exist; else Piper."""
+    cfg = json.loads(VOICE_CFG.read_text()) if VOICE_CFG.exists() else {}
+    if cfg.get("provider") == "elevenlabs" and cfg.get("voice_id") and os.environ.get("ELEVENLABS_API_KEY"):
+        return cfg
+    return {"provider": "piper"}
+
+
+def tts_line(cfg: dict, text: str, out_base: Path, length_scale: float) -> Path:
+    if cfg["provider"] == "elevenlabs":
+        out = out_base.with_suffix(".mp3")
+        r = ElevenLabsTTS().execute({"text": text, "voice_id": cfg["voice_id"],
+                                     "model_id": cfg.get("model_id", "eleven_multilingual_v2"),
+                                     "stability": cfg.get("stability", 0.45),
+                                     "similarity_boost": cfg.get("similarity_boost", 0.8),
+                                     "speed": round(min(1.2, max(0.8, 1 / length_scale)), 2),
+                                     "output_path": str(out)})
+    else:
+        out = out_base.with_suffix(".wav")
+        r = PiperTTS().execute({"text": text, "model": VOICE_MODEL, "length_scale": length_scale,
+                                "sentence_silence": 0.2, "output_path": str(out)})
+    if not r.success:
+        raise RuntimeError(r.error or "tts failed")
+    return out
+
+
 def make_narration(cards: list[dict], audio_dir: Path) -> tuple[Path, list[dict]]:
-    tts = PiperTTS()
+    cfg = voice_choice()
     for length_scale, max_words in FIT_PLAN:
         durations = []
         for c in cards:
             if c.get("narr_claim"):
                 c["narration"] = f"{c['narr_lead']} {spoken_claim(c['narr_claim'], max_words)}"
-            out = audio_dir / f"{c['id']}.wav"
-            r = tts.execute({"text": speakable(c["narration"]), "model": VOICE_MODEL,
-                             "length_scale": length_scale, "sentence_silence": 0.2,
-                             "output_path": str(out)})
-            if not r.success:
-                raise SystemExit(f"[render] piper failed on {c['id']}: {r.error}")
+            try:
+                out = tts_line(cfg, speakable(c["narration"]), audio_dir / c["id"], length_scale)
+            except RuntimeError as exc:
+                if cfg["provider"] == "piper":
+                    raise SystemExit(f"[render] piper failed on {c['id']}: {exc}")
+                # Better a video in the backup voice than no video; say so loudly in the log.
+                log(f"VOICE FALLBACK: ElevenLabs failed ({str(exc)[:200]}); using Piper for this run")
+                cfg = {"provider": "piper"}
+                out = tts_line(cfg, speakable(c["narration"]), audio_dir / c["id"], length_scale)
             c["audio_path"] = str(out)
             durations.append(probe_duration(out))
         needed = sum(durations) + len(cards) * (LEAD_IN + MIN_TAIL)
@@ -239,6 +274,11 @@ def make_narration(cards: list[dict], audio_dir: Path) -> tuple[Path, list[dict]
         log(f"narration {needed:.1f}s > {TARGET_SECONDS}s at speed {length_scale}, {max_words} words; tightening")
     else:
         raise SystemExit("[render] narration cannot fit 70s; too many cards")
+    if cfg["provider"] == "elevenlabs":
+        VOICE_USED.update({"provider": "elevenlabs", "tool": "elevenlabs_tts",
+                           "model": cfg.get("model_id", "eleven_multilingual_v2"),
+                           "voice": cfg.get("voice_name", cfg["voice_id"])})
+    log(f"voice: {VOICE_USED['provider']} ({VOICE_USED['voice']})")
 
     slack = TARGET_SECONDS - needed
     t = 0.0
@@ -383,7 +423,8 @@ def proposal_packet(day: str, approved_by: str) -> dict:
             "composition_mode": "atelier",
             "art_direction": ART_DIRECTION,
             "music_source": {"source_type": "none", "estimated_cost_usd": 0},
-            "voice_selection": {"provider": "piper", "voice_id": "en_US-lessac-medium",
+            "voice_selection": {"provider": voice_choice()["provider"],
+                                "voice_id": voice_choice().get("voice_id", "en_US-lessac-medium"),
                                 "rationale": "local, free", "estimated_cost_usd": 0,
                                 "sample_approval_required": False},
             "decision_log_ref": "artifacts/decision_log.json",
@@ -453,7 +494,7 @@ def script_artifact(day: str, cards: list[dict]) -> dict:
             "energy_curve": "flat, even",
             "pause_policy": f"{LEAD_IN}s lead-in per card, remaining slack held on card",
             "sample_section_id": cards[0]["id"],
-            "provider_notes": {"provider": "piper", "model": "en_US-lessac-medium",
+            "provider_notes": {"provider": VOICE_USED["provider"], "model": VOICE_USED["model"],
                                "length_scale": str(cards[0].get("length_scale", 1.0))},
         },
         "sections": [{
@@ -505,14 +546,14 @@ def scene_plan_artifact(cards: list[dict]) -> dict:
 
 def asset_manifest_artifact(cards: list[dict], narration: Path) -> dict:
     assets = [{"id": "narration-full", "type": "narration", "path": str(narration),
-               "source_tool": "piper_tts", "scene_id": "all", "model": "en_US-lessac-medium",
-               "provider": "piper", "cost_usd": 0.0, "duration_seconds": TARGET_SECONDS, "format": "wav",
+               "source_tool": VOICE_USED["tool"], "scene_id": "all", "model": VOICE_USED["model"],
+               "provider": VOICE_USED["provider"], "cost_usd": 0.0, "duration_seconds": TARGET_SECONDS, "format": "wav",
                "generation_summary": "Per-card Piper lines placed at card starts, concatenated to 70s"}]
     for c in cards:
         assets.append({"id": f"narr-{c['id']}", "type": "narration", "path": c["audio_path"],
-                       "source_tool": "piper_tts", "scene_id": f"s-{c['id']}", "model": "en_US-lessac-medium",
-                       "provider": "piper", "cost_usd": 0.0, "duration_seconds": c["narration_seconds"],
-                       "format": "wav",
+                       "source_tool": VOICE_USED["tool"], "scene_id": f"s-{c['id']}", "model": VOICE_USED["model"],
+                       "provider": VOICE_USED["provider"], "cost_usd": 0.0, "duration_seconds": c["narration_seconds"],
+                       "format": Path(c["audio_path"]).suffix.lstrip("."),
                        "voice_performance": {"source_section_id": c["id"], "delivery_cues_applied": True,
                                              "provider_text_used": True,
                                              "provider_settings": {"length_scale": c["length_scale"]}}})
