@@ -3,7 +3,8 @@
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 OM="${OPENMONTAGE_DIR:-$(cd "$ROOT/.." && pwd)/OpenMontage}"
 PY="$OM/.venv/bin/python"
-SITE_URL="${SITE_URL:-https://cornishlikeadam.github.io/crypto-l2-daily/}"
+COLLECT_PY="$ROOT/.venv/bin/python"
+SITE_URL="${SITE_URL:-https://crypto-l2-daily.vercel.app/}"
 export TZ=America/New_York
 export PATH="$OM/.venv/bin:$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export OPENMONTAGE_DIR="$OM" SITE_URL
@@ -22,7 +23,8 @@ print(nxt.strftime("%a %Y-%m-%d 18:00 %Z"))
 EOF
 }
 
-# Commit site/ + data/, push main, push site/ to gh-pages (what Pages serves), then wait for 200.
+# Commit site/ + data/ and push main (backup), push site/ to gh-pages (full archive incl. old
+# videos), deploy the last 14 days to Vercel (the public site), then wait for the page to answer 200.
 # Never reports "live" unless the push succeeded and the URL responds.
 publish() {
   local day="$1"
@@ -45,7 +47,18 @@ publish() {
     log "  cd $ROOT && git push origin main && git push -f origin \$(git subtree split --prefix site main):refs/heads/gh-pages"
     return 1
   fi
-  log "publish: pushed $(git rev-parse --short HEAD); waiting for GitHub Pages"
+  log "publish: pushed $(git rev-parse --short HEAD) to GitHub (main + gh-pages archive)"
+  local keep
+  keep=$(ls -1 site/days 2>/dev/null | sort -r | head -14 | sed 's#^#--include=/days/#;s#$#/final.mp4#')
+  mkdir -p .deploy
+  # shellcheck disable=SC2086
+  rsync -a --delete --exclude .vercel --exclude .gitignore $keep --exclude '/days/*/final.mp4' site/ .deploy/
+  if ! (cd .deploy && vercel deploy --prod --yes >/dev/null 2>"$ROOT/logs/vercel.err"); then
+    log "publish: NOT LIVE on Vercel. Deploy failed: $(tail -3 "$ROOT/logs/vercel.err" | tr '\n' ' ')"
+    log "  retry with: cd $ROOT/.deploy && vercel deploy --prod --yes"
+    return 1
+  fi
+  log "publish: Vercel deploy done; checking the page"
   local url="${SITE_URL}days/$day/" code=""
   for _ in $(seq 1 40); do
     code=$(curl -s -o /dev/null -w '%{http_code}' "$url")
@@ -55,6 +68,6 @@ publish() {
     fi
     sleep 15
   done
-  log "publish: pushed, but $url still returns $code after 10 min. Check: gh api repos/cornishlikeadam/crypto-l2-daily/pages/builds/latest"
+  log "publish: deployed, but $url still returns $code after 10 min. Check: cd $ROOT/.deploy && vercel ls"
   return 1
 }

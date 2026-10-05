@@ -22,7 +22,10 @@ ROOT = Path(__file__).resolve().parent.parent
 OM = Path(os.environ.get("OPENMONTAGE_DIR", ROOT.parent / "OpenMontage")).resolve()
 SITE = ROOT / "site"
 DAYS = SITE / "days"
-SITE_URL = os.environ.get("SITE_URL", "https://cornishlikeadam.github.io/crypto-l2-daily/")
+SITE_URL = os.environ.get("SITE_URL", "https://crypto-l2-daily.vercel.app/")
+# Vercel gets only the last LIST_DAYS videos (upload size cap); older videos are served from the
+# GitHub Pages copy of site/, which keeps everything.
+ARCHIVE_URL = os.environ.get("ARCHIVE_URL", "https://cornishlikeadam.github.io/crypto-l2-daily/")
 LIST_DAYS = 14
 
 CSS = """
@@ -182,8 +185,10 @@ def rebuild() -> None:
         index_body = head.format(p="./") + '<p class="meta">First edition coming soon.</p>'
     SITE.mkdir(exist_ok=True)
     (SITE / "index.html").write_text(page("Crypto L2 Daily", index_body, ""))
+    recent_dates = {r["date"] for r in recent}
     for rec in records:
-        body = head.format(p="../../") + day_section(rec, "final.mp4") + days_list(recent, "../../")
+        video = "final.mp4" if rec["date"] in recent_dates else f"{ARCHIVE_URL}days/{rec['date']}/final.mp4"
+        body = head.format(p="../../") + day_section(rec, video) + days_list(recent, "../../")
         (DAYS / rec["date"] / "index.html").write_text(
             page(f"Crypto L2 Daily — {long_date(rec['date'])}", body, "../../"))
     feed = {
@@ -200,7 +205,7 @@ def rebuild() -> None:
                 f"{c['title']}: {c['sentence']}" + (f" ({c['handle']}, {c['post_url']})" if c["kind"] == "item" else "")
                 for c in rec["cards"] if c["kind"] in ("item", "quiet")),
             "date_published": rec.get("window_end") or f"{rec['date']}T22:00:00Z",
-            "attachments": [{"url": f"{SITE_URL}days/{rec['date']}/final.mp4", "mime_type": "video/mp4"}],
+            "attachments": [{"url": f"{ARCHIVE_URL}days/{rec['date']}/final.mp4", "mime_type": "video/mp4"}],
             "_cards": [{k: c.get(k) for k in ("kind", "coin", "title", "sentence", "handle", "why_this_account",
                                                "post_url", "date", "other_chain_if_any")}
                        for c in rec["cards"] if c["kind"] in ("item", "quiet")],

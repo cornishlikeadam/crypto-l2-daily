@@ -17,7 +17,7 @@ trap 'rmdir "$LOCK" 2>/dev/null; log "Next run: $(next_run)"' EXIT
 
 log "=== daily run $DAY ==="
 
-if ! "$PY" scripts/collect_x.py --date "$DAY"; then
+if ! "$COLLECT_PY" scripts/collect_x.py --date "$DAY"; then
   log "collect failed; nothing rendered or published"
   exit 1
 fi

@@ -11,8 +11,11 @@ Usage:
   python3 scripts/collect_x.py --date 2026-10-05
   python3 scripts/collect_x.py --from-raw data/raw/2026-10-05.json   # re-filter a saved pull
 
-Needs X_BEARER_TOKEN in the environment or in .env at the repo root.
-Stdlib only.
+Two ways in, set in .env at the repo root:
+  X_AUTH_TOKEN + X_CT0   free: browser session cookies of an X account, searched with
+                         the open-source twikit library (run with this repo's .venv python)
+  X_BEARER_TOKEN         paid: official X API v2 recent search (~$0.005 per post read)
+If both are set, the free cookie route is used.
 """
 from __future__ import annotations
 
@@ -196,6 +199,63 @@ def x_search(query: str, start_time: datetime, end_time: datetime, token: str, p
         if not next_token:
             break
     return {"query": query + QUERY_SUFFIX, "tweets": tweets, "users": users}
+
+
+def cookie_search(query: str, start_time: datetime, end_time: datetime, auth_token: str, ct0: str,
+                  max_results: int) -> dict:
+    """Same output shape as x_search, via twikit + an X session's cookies (no API key, $0)."""
+    import asyncio
+    try:
+        from twikit import Client
+        from twikit.errors import Forbidden, TooManyRequests, Unauthorized
+    except ImportError:
+        raise SystemExit("[collect] twikit missing. Run with the repo venv: .venv/bin/python scripts/collect_x.py")
+
+    full_query = (f"{query} -filter:replies -filter:retweets -filter:nativeretweets lang:en "
+                  f"since_time:{int(start_time.timestamp())} until_time:{int(end_time.timestamp())}")
+
+    async def run() -> dict:
+        client = Client("en-US")
+        client.set_cookies({"auth_token": auth_token, "ct0": ct0})
+        tweets: list[dict] = []
+        users: dict[str, dict] = {}
+        page = await client.search_tweet(full_query, "Top", count=20)
+        while page and len(tweets) < max_results:
+            for t in page:
+                if t.retweeted_tweet is not None or t.in_reply_to:
+                    continue
+                u = t.user
+                users[u.id] = {"id": u.id, "username": u.screen_name, "name": u.name,
+                               "description": u.description or "",
+                               "public_metrics": {"followers_count": u.followers_count}}
+                tweets.append({
+                    "id": t.id, "author_id": u.id, "lang": t.lang,
+                    "created_at": t.created_at_datetime.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.000Z"),
+                    "text": t.full_text or t.text,
+                    "public_metrics": {"like_count": t.favorite_count or 0, "retweet_count": t.retweet_count or 0,
+                                       "quote_count": t.quote_count or 0, "reply_count": t.reply_count or 0},
+                })
+                if len(tweets) >= max_results:
+                    break
+            if len(tweets) >= max_results or len(page) == 0:
+                break
+            await asyncio.sleep(2)
+            page = await page.next()
+        return {"query": full_query, "tweets": tweets, "users": users}
+
+    for attempt in range(2):
+        try:
+            return asyncio.run(run())
+        except (Unauthorized, Forbidden) as exc:
+            raise SystemExit("[collect] X rejected the session cookies (logged out or expired). Copy fresh "
+                             f"auth_token and ct0 from your browser into .env. Detail: {exc}")
+        except TooManyRequests:
+            if attempt == 0:
+                print("[collect] X rate limit hit; waiting 15 min", file=sys.stderr)
+                time.sleep(900)
+                continue
+            raise SystemExit("[collect] X rate limit hit twice; giving up for today")
+    raise SystemExit("[collect] cookie search failed")
 
 
 # ---------------------------------------------------------------------------
@@ -419,25 +479,32 @@ def main() -> int:
         raw = json.loads(Path(args.from_raw).read_text())
     else:
         load_env()
+        auth_token = os.environ.get("X_AUTH_TOKEN", "").strip()
+        ct0 = os.environ.get("X_CT0", "").strip()
         token = os.environ.get("X_BEARER_TOKEN", "").strip()
-        if not token:
-            print("[collect] X_BEARER_TOKEN is not set. Put it in "
-                  f"{ROOT / '.env'} as X_BEARER_TOKEN=... and re-run.", file=sys.stderr)
+        if not (auth_token and ct0) and not token:
+            print("[collect] No X access configured. Put X_AUTH_TOKEN and X_CT0 (free, browser cookies) "
+                  f"or X_BEARER_TOKEN (paid API) in {ROOT / '.env'} and re-run.", file=sys.stderr)
             return 2
+        source = "cookies" if auth_token and ct0 else "api"
         # recent search needs end_time >= 10s in the past
         end = datetime.now(timezone.utc) - timedelta(seconds=30)
         start = end - timedelta(hours=24)
         max_results = max(10, min(100, args.max_results or int(os.environ.get("X_MAX_RESULTS", "25"))))
         raw = {"collected_at": end.isoformat(), "window_start": start.isoformat(),
-               "window_end": end.isoformat(), "pulls": {}}
+               "window_end": end.isoformat(), "source": source, "pulls": {}}
         for coin_cfg in COINS:
-            raw["pulls"][coin_cfg["coin"]] = x_search(coin_cfg["query"], start, end, token, args.pages,
-                                                      max_results)
-            print(f"[collect] {coin_cfg['coin']}: {len(raw['pulls'][coin_cfg['coin']]['tweets'])} posts",
-                  file=sys.stderr)
+            if source == "cookies":
+                pull = cookie_search(coin_cfg["query"], start, end, auth_token, ct0, max_results)
+                time.sleep(5)
+            else:
+                pull = x_search(coin_cfg["query"], start, end, token, args.pages, max_results)
+            raw["pulls"][coin_cfg["coin"]] = pull
+            print(f"[collect] {coin_cfg['coin']}: {len(pull['tweets'])} posts ({source})", file=sys.stderr)
         reads = sum(len(p["tweets"]) for p in raw["pulls"].values())
         raw["post_reads"] = reads
-        print(f"[collect] {reads} post reads billed (~${reads * 0.005:.2f} at $0.005/read)", file=sys.stderr)
+        if source == "api":
+            print(f"[collect] {reads} post reads billed (~${reads * 0.005:.2f} at $0.005/read)", file=sys.stderr)
         raw_dir = ROOT / "data" / "raw"
         raw_dir.mkdir(parents=True, exist_ok=True)
         (raw_dir / f"{day}.json").write_text(json.dumps(raw, indent=1))
@@ -447,7 +514,8 @@ def main() -> int:
         "date": day,
         "window_start": raw.get("window_start"),
         "window_end": raw.get("window_end"),
-        "source": "X API v2 recent search",
+        "source": {"cookies": "X search (twikit, session cookies)",
+                   "api": "X API v2 recent search"}.get(raw.get("source", "api"), "X search"),
         "queries": {c["coin"]: raw["pulls"][c["coin"]]["query"] for c in COINS},
         "items": items,
         "stats": stats,

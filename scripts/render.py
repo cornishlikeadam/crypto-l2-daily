@@ -40,7 +40,7 @@ from tools.video.video_compose import VideoCompose  # noqa: E402
 PIPELINE = "animated-explainer"
 TARGET_SECONDS = 70.0
 VOICE_MODEL = str(Path.home() / ".piper" / "models" / "en_US-lessac-medium.onnx")
-SITE_URL = os.environ.get("SITE_URL", "https://cornishlikeadam.github.io/crypto-l2-daily/")
+SITE_URL = os.environ.get("SITE_URL", "https://crypto-l2-daily.vercel.app/")
 LEAD_IN = 0.45   # silence before each card's narration
 MIN_TAIL = 0.6   # minimum hold after narration ends
 
