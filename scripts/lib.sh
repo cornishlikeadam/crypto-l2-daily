@@ -29,7 +29,7 @@ EOF
 publish() {
   local day="$1"
   cd "$ROOT" || return 1
-  git add site "data/$day.json" 2>/dev/null
+  git add site vault "data/$day.json" 2>/dev/null
   if git diff --cached --quiet; then
     log "publish: nothing new to commit"
   else

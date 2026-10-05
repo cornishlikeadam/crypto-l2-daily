@@ -1,0 +1,21 @@
+{
+	"nodes": [
+		{"id": "start", "type": "file", "file": "00-start-here.md", "x": -180, "y": -700, "width": 580, "height": 560, "color": "5"},
+		{"id": "trigger", "type": "file", "file": "01-collect-posts.md", "x": -1100, "y": 0, "width": 380, "height": 480},
+		{"id": "context", "type": "file", "file": "02-check-posts.md", "x": -680, "y": 0, "width": 380, "height": 480},
+		{"id": "task", "type": "file", "file": "03-make-video.md", "x": -260, "y": 0, "width": 380, "height": 480},
+		{"id": "check", "type": "file", "file": "04-human-check.md", "x": 160, "y": 0, "width": 380, "height": 480, "color": "4"},
+		{"id": "output", "type": "file", "file": "05-publish.md", "x": 580, "y": 0, "width": 380, "height": 480},
+		{"id": "label-model", "type": "text", "text": "The robot does these steps", "x": -1100, "y": 520, "width": 1220, "height": 60, "color": "6"},
+		{"id": "label-human", "type": "text", "text": "I do this step", "x": 160, "y": 520, "width": 380, "height": 60, "color": "4"},
+		{"id": "label-robot2", "type": "text", "text": "The robot does this step", "x": 580, "y": 520, "width": 380, "height": 60, "color": "6"}
+	],
+	"edges": [
+		{"id": "e0", "fromNode": "start", "fromSide": "bottom", "toNode": "trigger", "toSide": "top", "label": "read first"},
+		{"id": "e1", "fromNode": "trigger", "fromSide": "right", "toNode": "context", "toSide": "left"},
+		{"id": "e2", "fromNode": "context", "fromSide": "right", "toNode": "task", "toSide": "left"},
+		{"id": "e3", "fromNode": "task", "fromSide": "right", "toNode": "check", "toSide": "left"},
+		{"id": "e4", "fromNode": "check", "fromSide": "right", "toNode": "output", "toSide": "left", "label": "yes"},
+		{"id": "e5", "fromNode": "check", "fromSide": "bottom", "toNode": "context", "toSide": "bottom", "label": "no: fix and redo"}
+	]
+}

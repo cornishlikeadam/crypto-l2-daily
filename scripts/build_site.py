@@ -249,7 +249,70 @@ def rebuild() -> None:
     }
     (SITE / "feed.json").write_text(json.dumps(feed, indent=2, ensure_ascii=False) + "\n")
     (SITE / ".nojekyll").write_text("")
+    write_vault(records)
     print(f"[site] rebuilt index.html, {len(records)} day pages, feed.json")
+
+
+VAULT = ROOT / "vault" / "project-02"
+DROP_WORDS = {
+    "price_call": "price guesses", "giveaway": "giveaways", "rumor": "rumors", "promo_account": "ad accounts",
+    "promo_post": "ads", "other_token_shill": "posts pushing other coins", "cashtag_spam": "coin-ticker spam",
+    "low_follower_account": "very small accounts", "under_5_likes": "posts almost nobody liked",
+    "too_short": "posts too short to use", "outside_24h_window": "posts from the wrong day",
+    "not_dogecoin": "posts about the government DOGE, not Dogecoin", "no_handle": "posts with no account name",
+    "no_date": "posts with no date",
+}
+
+
+def write_vault(records: list[dict]) -> None:
+    """One simple note per day in the Obsidian vault, plus an archive list. Written for young readers."""
+    out = VAULT / "archive"
+    out.mkdir(parents=True, exist_ok=True)
+    for rec in records:
+        day = rec["date"]
+        data_path = ROOT / "data" / f"{day}.json"
+        dropped = {}
+        if data_path.exists():
+            for per_coin in json.loads(data_path.read_text()).get("stats", {}).get("dropped", {}).values():
+                for k, v in per_coin.items():
+                    dropped[k] = dropped.get(k, 0) + v
+        lines = [f"# {long_date(day)}", "",
+                 "This is one day of **Crypto L2 Daily**. It shows the real posts that made it into that day's video.",
+                 "", f"- **Watch the video:** {SITE_URL}days/{day}/",
+                 f"- **Real posts used:** {rec['item_count']}"]
+        if rec["quiet"]:
+            lines.append(f"- **Quiet coins (nothing good was posted):** {', '.join(rec['quiet'])}")
+        note = archive_note(day)
+        if note:
+            lines += ["", "## Why this day is in the archive", "", note["why"], "",
+                      f"Source: [{note['source_name']}]({note['source']})"]
+        lines += ["", "## The cards", ""]
+        n = 0
+        for c in rec["cards"]:
+            if c["kind"] == "quiet":
+                lines += [f"### {c['title']}: quiet today", "", "Nothing good was posted, so we did not make anything up.", ""]
+            elif c["kind"] == "item":
+                n += 1
+                lines += [f"### {n}. {c['title']}", "",
+                          f"- **What they said:** “{c['sentence']}”",
+                          f"- **Who said it:** {c.get('handle', '')}. {c.get('why_this_account', '')}",
+                          f"- **When:** {c.get('date_et', '')}"]
+                if c.get("explain"):
+                    lines.append(f"- **What is this?** {c['explain']}")
+                if c.get("stats"):
+                    lines.append(f"- **How many people liked it:** {c['stats']}")
+                lines += [f"- **See the real post:** {c.get('post_url', '')}", ""]
+        if dropped:
+            lines += ["## What we threw away", "",
+                      "We read more posts than we used. We left these out on purpose:", ""]
+            lines += [f"- {v} {DROP_WORDS.get(k, k)}" for k, v in sorted(dropped.items(), key=lambda kv: -kv[1])]
+            lines.append("")
+        lines += ["---", "Back to [[archive/README|the archive list]] · [[00-start-here]]", ""]
+        (out / f"{day}.md").write_text("\n".join(lines))
+    rows = [f"- [[archive/{r['date']}|{long_date(r['date'])}]]: {r['item_count']} posts"
+            + (f", quiet: {', '.join(r['quiet'])}" if r["quiet"] else "") for r in records]
+    (out / "README.md").write_text("# The archive\n\nEvery day the robot made a video. Newest first.\n\n"
+                                   + "\n".join(rows) + "\n\n---\nBack to [[00-start-here]]\n")
 
 
 def main() -> int:
