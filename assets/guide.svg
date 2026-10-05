@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="The Crypto L2 Daily guide: a smiling character with multi-color locs">
+  <defs>
+    <radialGradient id="skin" cx="45%" cy="38%" r="70%">
+      <stop offset="0" stop-color="#A86B45"/>
+      <stop offset="1" stop-color="#7A4A2E"/>
+    </radialGradient>
+    <linearGradient id="loc1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF1493"/><stop offset="1" stop-color="#FF8C00"/></linearGradient>
+    <linearGradient id="loc2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFBC00"/><stop offset="1" stop-color="#32CD32"/></linearGradient>
+    <linearGradient id="loc3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#89CFF0"/><stop offset="1" stop-color="#C9A9FF"/></linearGradient>
+    <linearGradient id="loc4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#32CD32"/><stop offset="1" stop-color="#89CFF0"/></linearGradient>
+    <linearGradient id="loc5" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C9A9FF"/><stop offset="1" stop-color="#FF1493"/></linearGradient>
+  </defs>
+
+  <!-- back locs -->
+  <g stroke-linecap="round" fill="none" stroke-width="15">
+    <path d="M58 92 C40 130 44 170 50 206" stroke="url(#loc1)"/>
+    <path d="M74 80 C58 130 62 175 66 214" stroke="url(#loc2)"/>
+    <path d="M182 92 C200 130 196 170 190 206" stroke="url(#loc3)"/>
+    <path d="M166 80 C182 130 178 175 174 214" stroke="url(#loc4)"/>
+    <path d="M90 74 C80 130 84 180 86 220" stroke="url(#loc5)"/>
+    <path d="M150 74 C160 130 156 180 154 220" stroke="url(#loc1)"/>
+  </g>
+  <!-- loc bands -->
+  <g fill="#E8B547">
+    <rect x="42" y="168" width="16" height="6" rx="3"/>
+    <rect x="182" y="168" width="16" height="6" rx="3"/>
+    <rect x="77" y="190" width="16" height="6" rx="3"/>
+    <rect x="147" y="190" width="16" height="6" rx="3"/>
+  </g>
+
+  <!-- face -->
+  <ellipse cx="120" cy="122" rx="62" ry="68" fill="url(#skin)"/>
+  <!-- ears -->
+  <ellipse cx="58" cy="128" rx="9" ry="14" fill="#7A4A2E"/>
+  <ellipse cx="182" cy="128" rx="9" ry="14" fill="#7A4A2E"/>
+  <circle cx="58" cy="140" r="3.5" fill="#E8B547"/>
+
+  <!-- top locs / crown -->
+  <g stroke-linecap="round" fill="none" stroke-width="16">
+    <path d="M64 96 C70 56 104 40 120 42" stroke="url(#loc2)"/>
+    <path d="M176 96 C170 56 136 40 120 42" stroke="url(#loc3)"/>
+    <path d="M84 70 C98 50 112 48 122 50" stroke="url(#loc1)"/>
+    <path d="M158 70 C146 52 132 48 120 50" stroke="url(#loc5)"/>
+    <path d="M100 58 C108 44 128 44 140 58" stroke="url(#loc4)"/>
+  </g>
+
+  <!-- eyebrows -->
+  <path d="M90 104 Q100 98 110 103" stroke="#2A1A10" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M130 103 Q140 98 150 104" stroke="#2A1A10" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <!-- eyes -->
+  <ellipse cx="100" cy="120" rx="8" ry="9" fill="#1A0D2E"/>
+  <ellipse cx="140" cy="120" rx="8" ry="9" fill="#1A0D2E"/>
+  <circle cx="103" cy="117" r="2.6" fill="#fff"/>
+  <circle cx="143" cy="117" r="2.6" fill="#fff"/>
+  <!-- cheeks -->
+  <ellipse cx="86" cy="142" rx="9" ry="5" fill="#FF8C00" opacity=".22"/>
+  <ellipse cx="154" cy="142" rx="9" ry="5" fill="#FF8C00" opacity=".22"/>
+  <!-- nose -->
+  <path d="M114 128 Q120 140 126 128" stroke="#5E3620" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  <!-- smile -->
+  <path d="M96 150 Q120 174 144 150 Q120 162 96 150 Z" fill="#fff" stroke="#3A1F12" stroke-width="3.5" stroke-linejoin="round"/>
+  <!-- beard shadow -->
+  <path d="M84 160 Q120 200 156 160 Q150 186 120 190 Q90 186 84 160 Z" fill="#2A1A10" opacity=".35"/>
+</svg>
