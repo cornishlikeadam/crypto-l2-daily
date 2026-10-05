@@ -1,0 +1,186 @@
+{
+  "date": "2026-07-22",
+  "window_start": "2026-07-21T22:00:00+00:00",
+  "window_end": "2026-07-22T22:00:00+00:00",
+  "source": "X search (twikit, session cookies)",
+  "queries": {
+    "Bitcoin": "(Bitcoin OR BTC) (Lightning OR Ark OR \"layer 2\" OR L2) -filter:replies -filter:retweets -filter:nativeretweets lang:en since:2026-07-21 until:2026-07-23 since_time:1784671200 until_time:1784757600",
+    "Dogecoin": "(Dogecoin OR DOGE) (\"layer 2\" OR L2 OR Dogechain OR community) -filter:replies -filter:retweets -filter:nativeretweets lang:en since:2026-07-21 until:2026-07-23 since_time:1784671200 until_time:1784757600",
+    "Monero": "(Monero OR XMR) (FCMP OR CARROT OR hardfork OR upgrade) -filter:replies -filter:retweets -filter:nativeretweets lang:en since:2026-07-21 until:2026-07-23 since_time:1784671200 until_time:1784757600",
+    "Litecoin": "(Litecoin OR LTC) (Lightning OR MWEB OR \"layer 2\") -filter:replies -filter:retweets -filter:nativeretweets lang:en since:2026-07-21 until:2026-07-23 since_time:1784671200 until_time:1784757600"
+  },
+  "items": [
+    {
+      "coin": "Bitcoin",
+      "topic": "Ethereum",
+      "claim": "Bitcoin, Ethereum, and Solana devs can now build on the same liquidity LunarBase just picked IBVM a Bitcoin L2 with EVM support…",
+      "handle": "@NoobSlayerKris",
+      "display_name": "slayer 🂡",
+      "why_this_account": "Bio: “shipped more than clips ✂️ | @mancity fan” · 1,666 followers",
+      "post_url": "https://x.com/NoobSlayerKris/status/2079994699515879783",
+      "date": "2026-07-22T18:19:15Z",
+      "date_et": "Jul 22, 2:19 PM ET",
+      "engagement": 129,
+      "likes": 63,
+      "reposts": 8,
+      "replies": 48,
+      "other_chain_if_any": "Ethereum",
+      "quiet": false
+    },
+    {
+      "coin": "Bitcoin",
+      "topic": "Lightning",
+      "claim": "The Dark Truth Behind Wall Streets Embrace of Bitcoin Lea Thompson from @CakeWallet joins me in the Vienna studio to dissect why…",
+      "handle": "@NikoJilch",
+      "display_name": "Niko Jilch ⚡️",
+      "why_this_account": "Bio: “Was Bitcoin bringt. 🧡” · 44,760 followers",
+      "post_url": "https://x.com/NikoJilch/status/2079954645649170625",
+      "date": "2026-07-22T15:40:05Z",
+      "date_et": "Jul 22, 11:40 AM ET",
+      "engagement": 95,
+      "likes": 64,
+      "reposts": 12,
+      "replies": 7,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Bitcoin",
+      "topic": "Lightning",
+      "claim": "Lightning Labs Launches Wavelength: “Bitcoin on Easy Mode” for Developers and Autonomous Agents via @bitcoinmagazine @lightning.",
+      "handle": "@JuanSGalt",
+      "display_name": "JuanGalt.com",
+      "why_this_account": "Bio: “Street Philosopher, Vibe Coder, Bitcoin Nerd. Business Reporter at @BitcoinMagazine. Founder @StudioGulch…” · 12,116 followers",
+      "post_url": "https://x.com/JuanSGalt/status/2080024101184225432",
+      "date": "2026-07-22T20:16:05Z",
+      "date_et": "Jul 22, 4:16 PM ET",
+      "engagement": 94,
+      "likes": 51,
+      "reposts": 18,
+      "replies": 5,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Dogecoin",
+      "topic": "Community",
+      "claim": "\"The App Layer for Dogecoin\" - where community, culture, and liquidity meet.",
+      "handle": "@MyDogeVN",
+      "display_name": "AndyOS",
+      "why_this_account": "Bio: “#1 Dogecoin wallet - @MyDoge, @MyDogeCEO, @MyDogeCTO, @cb_doge, @DogeOS” · 7,289 followers",
+      "post_url": "https://x.com/MyDogeVN/status/2079949714360021091",
+      "date": "2026-07-22T15:20:30Z",
+      "date_et": "Jul 22, 11:20 AM ET",
+      "engagement": 42,
+      "likes": 25,
+      "reposts": 5,
+      "replies": 7,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Dogecoin",
+      "topic": "Community",
+      "claim": "If your at @MiningDisrupt come get some stickers, I have too many, #Bitcoin #BTC #litecoin #Dogecoin and members of the #CryptoMining community.",
+      "handle": "@SerpentXTech",
+      "display_name": "SerpentX Tech",
+      "why_this_account": "Bio: “SerpentX Tech's Official Twitter. Computer Information Systems Administrator, Business and Cryptocurrency…” · 4,462 followers",
+      "post_url": "https://x.com/SerpentXTech/status/2079954130009829692",
+      "date": "2026-07-22T15:38:02Z",
+      "date_et": "Jul 22, 11:38 AM ET",
+      "engagement": 18,
+      "likes": 17,
+      "reposts": 0,
+      "replies": 1,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Dogecoin",
+      "topic": "Community",
+      "claim": "Dogeus Maximus is bouncing back from the lows Shoutout to the core legion still holding strong.",
+      "handle": "@oyester56",
+      "display_name": "Decypher💀",
+      "why_this_account": "Bio: “still figuring out ... Member of @xSurveyCorps” · 797 followers",
+      "post_url": "https://x.com/oyester56/status/2079950261863211453",
+      "date": "2026-07-22T15:22:40Z",
+      "date_et": "Jul 22, 11:22 AM ET",
+      "engagement": 18,
+      "likes": 6,
+      "reposts": 4,
+      "replies": 4,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Monero",
+      "topic": null,
+      "claim": "Quiet today.",
+      "handle": null,
+      "display_name": null,
+      "why_this_account": null,
+      "post_url": null,
+      "date": null,
+      "date_et": null,
+      "engagement": 0,
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "other_chain_if_any": null,
+      "quiet": true
+    },
+    {
+      "coin": "Litecoin",
+      "topic": "MWEB",
+      "claim": "The amount of $LTC pegged into Litecoin's MWEB privacy extension breaks all time high.",
+      "handle": "@LTCFoundation",
+      "display_name": "Litecoin Foundation ⚡️",
+      "why_this_account": "Bio: “We’re a registered nonprofit dedicated to the growth, development & adoption of @Litecoin | $LTC | Est. 2017” · 234,383 followers",
+      "post_url": "https://x.com/LTCFoundation/status/2080001273987014847",
+      "date": "2026-07-22T18:45:22Z",
+      "date_et": "Jul 22, 2:45 PM ET",
+      "engagement": 216,
+      "likes": 156,
+      "reposts": 29,
+      "replies": 2,
+      "other_chain_if_any": null,
+      "quiet": false
+    }
+  ],
+  "stats": {
+    "dropped": {
+      "Bitcoin": {
+        "under_5_likes": 4,
+        "price_call": 3,
+        "low_follower_account": 3,
+        "other_token_shill": 1
+      },
+      "Dogecoin": {
+        "low_follower_account": 2,
+        "under_5_likes": 3,
+        "cashtag_spam": 5,
+        "price_call": 1,
+        "other_token_shill": 5
+      },
+      "Monero": {
+        "outside_24h_window": 7
+      },
+      "Litecoin": {
+        "other_token_shill": 1,
+        "low_follower_account": 2
+      }
+    },
+    "kept": {
+      "Bitcoin": 14,
+      "Dogecoin": 4,
+      "Monero": 0,
+      "Litecoin": 1
+    },
+    "other_chains": {
+      "Bitcoin": {
+        "chain": "Ethereum",
+        "authors": 4
+      }
+    }
+  }
+}

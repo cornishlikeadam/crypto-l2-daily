@@ -1,0 +1,17 @@
+{
+  "2026-07-22": {
+    "why": "Lightning Labs released Wavelength, a kit that makes Bitcoin and Lightning payments easy to add to apps.",
+    "source": "https://bitcoinmagazine.com/technical/lightning-labs-launches-wavelength-bitcoin-on-easy-mode-for-developers-and-autonomous-agents",
+    "source_name": "Bitcoin Magazine, July 22, 2026"
+  },
+  "2026-08-02": {
+    "why": "Litecoin Core v0.21.5.6 came out: an important safety update for MWEB, Litecoin's privacy feature.",
+    "source": "https://github.com/litecoin-project/litecoin/releases/tag/v0.21.5.6",
+    "source_name": "Litecoin Core release on GitHub, August 2, 2026"
+  },
+  "2026-09-30": {
+    "why": "DogeOS opened its public testnet: a layer 2 that lets people build apps on top of Dogecoin.",
+    "source": "https://theblock.co/news/ecosystems/2026-09-30-dogeos-launches-public-testnet-dogecoin-zk-rollup-evm-417307",
+    "source_name": "The Block, September 30, 2026"
+  }
+}

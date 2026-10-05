@@ -1,0 +1,184 @@
+{
+  "date": "2026-09-30",
+  "window_start": "2026-09-29T22:00:00+00:00",
+  "window_end": "2026-09-30T22:00:00+00:00",
+  "source": "X search (twikit, session cookies)",
+  "queries": {
+    "Bitcoin": "(Bitcoin OR BTC) (Lightning OR Ark OR \"layer 2\" OR L2) -filter:replies -filter:retweets -filter:nativeretweets lang:en since:2026-09-29 until:2026-10-01 since_time:1790719200 until_time:1790805600",
+    "Dogecoin": "(Dogecoin OR DOGE) (\"layer 2\" OR L2 OR Dogechain OR community) -filter:replies -filter:retweets -filter:nativeretweets lang:en since:2026-09-29 until:2026-10-01 since_time:1790719200 until_time:1790805600",
+    "Monero": "(Monero OR XMR) (FCMP OR CARROT OR hardfork OR upgrade) -filter:replies -filter:retweets -filter:nativeretweets lang:en since:2026-09-29 until:2026-10-01 since_time:1790719200 until_time:1790805600",
+    "Litecoin": "(Litecoin OR LTC) (Lightning OR MWEB OR \"layer 2\") -filter:replies -filter:retweets -filter:nativeretweets lang:en since:2026-09-29 until:2026-10-01 since_time:1790719200 until_time:1790805600"
+  },
+  "items": [
+    {
+      "coin": "Bitcoin",
+      "topic": "Lightning",
+      "claim": "A wrapped car is driving from Lagos to Dakar, stopping at markets to set people up on Bitcoin.",
+      "handle": "@btcafricastory",
+      "display_name": "Bitcoin Africa Story",
+      "why_this_account": "Bio: “Documenting and building Bitcoin adoption across Africa through stories, education, community, and…” · 1,298 followers",
+      "post_url": "https://x.com/btcafricastory/status/2105198699609489823",
+      "date": "2026-09-30T07:30:57Z",
+      "date_et": "Sep 30, 3:30 AM ET",
+      "engagement": 38,
+      "likes": 19,
+      "reposts": 7,
+      "replies": 3,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Bitcoin",
+      "topic": "Lightning",
+      "claim": "Pay any Mexican bank account with Bitcoin from anywhere in the world, whether you’re an individual or a business.",
+      "handle": "@gustavojfe",
+      "display_name": "Gustavo | Aureo",
+      "why_this_account": "Bio: “CEO & Founder @aureobitcoin. contributor @bitcoinoptech. co-organizer @lacasadesatoshi. bitcoin montreal…” · 3,723 followers",
+      "post_url": "https://x.com/gustavojfe/status/2105355266833190985",
+      "date": "2026-09-30T17:53:05Z",
+      "date_et": "Sep 30, 1:53 PM ET",
+      "engagement": 29,
+      "likes": 20,
+      "reposts": 2,
+      "replies": 1,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Bitcoin",
+      "topic": "Sidechains",
+      "claim": "The signal starts on Bitcoin.",
+      "handle": "@audionals",
+      "display_name": "@audionals",
+      "why_this_account": "Bio: “Build for a Generation, Not for a Cycle! Audionals - Open Source Gateway to a Disruptive, On-Chain Music…” · 916 followers",
+      "post_url": "https://x.com/audionals/status/2105392030478487815",
+      "date": "2026-09-30T20:19:11Z",
+      "date_et": "Sep 30, 4:19 PM ET",
+      "engagement": 18,
+      "likes": 6,
+      "reposts": 5,
+      "replies": 2,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Dogecoin",
+      "topic": null,
+      "claim": "Quiet today.",
+      "handle": null,
+      "display_name": null,
+      "why_this_account": null,
+      "post_url": null,
+      "date": null,
+      "date_et": null,
+      "engagement": 0,
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "other_chain_if_any": null,
+      "quiet": true
+    },
+    {
+      "coin": "Monero",
+      "topic": null,
+      "claim": "Quiet today.",
+      "handle": null,
+      "display_name": null,
+      "why_this_account": null,
+      "post_url": null,
+      "date": null,
+      "date_et": null,
+      "engagement": 0,
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "other_chain_if_any": null,
+      "quiet": true
+    },
+    {
+      "coin": "Litecoin",
+      "topic": "MWEB",
+      "claim": "Litecoin has the coolest designed privacy logo out of any privacy coin.",
+      "handle": "@bitstoys",
+      "display_name": "bits.ltc",
+      "why_this_account": "Bio: “Founder of Litecoin Trading Cards • Collector • Musician • Libertarian” · 1,335 followers",
+      "post_url": "https://x.com/bitstoys/status/2105320284009951730",
+      "date": "2026-09-30T15:34:05Z",
+      "date_et": "Sep 30, 11:34 AM ET",
+      "engagement": 112,
+      "likes": 75,
+      "reposts": 8,
+      "replies": 13,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Litecoin",
+      "topic": "MWEB",
+      "claim": "DOES MWEB MAKE LITECOIN “INVISIBLE”?",
+      "handle": "@LearnLitecoin",
+      "display_name": "LearnLitecoin Ⓜ️🕸️",
+      "why_this_account": "Bio: “Educating the world on Litecoin. Wallets, payments, privacy & adoption. Building the future of digital cash.” · 722 followers",
+      "post_url": "https://x.com/LearnLitecoin/status/2105271983965708703",
+      "date": "2026-09-30T12:22:09Z",
+      "date_et": "Sep 30, 8:22 AM ET",
+      "engagement": 26,
+      "likes": 17,
+      "reposts": 3,
+      "replies": 3,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Litecoin",
+      "topic": "MWEB",
+      "claim": "MWEB LOGO IS BEAUTIFUL AND PERFECT!",
+      "handle": "@flippifi",
+      "display_name": "Flippin finance Ⓜ️🕸",
+      "why_this_account": "Bio: “The Gen Z financial entertainment hub || $LTC × $BTC || Weekly Financial Satire Sketches ||⚡️Follow the…” · 1,860 followers",
+      "post_url": "https://x.com/flippifi/status/2105344741999001959",
+      "date": "2026-09-30T17:11:16Z",
+      "date_et": "Sep 30, 1:11 PM ET",
+      "engagement": 25,
+      "likes": 23,
+      "reposts": 1,
+      "replies": 0,
+      "other_chain_if_any": null,
+      "quiet": false
+    }
+  ],
+  "stats": {
+    "dropped": {
+      "Bitcoin": {
+        "under_5_likes": 16,
+        "low_follower_account": 2
+      },
+      "Dogecoin": {
+        "other_token_shill": 2,
+        "giveaway": 1,
+        "price_call": 2,
+        "cashtag_spam": 5,
+        "under_5_likes": 13,
+        "promo_account": 2
+      },
+      "Monero": {
+        "outside_24h_window": 21,
+        "promo_post": 1,
+        "under_5_likes": 1
+      },
+      "Litecoin": {
+        "under_5_likes": 3,
+        "promo_account": 1,
+        "low_follower_account": 3,
+        "price_call": 3
+      }
+    },
+    "kept": {
+      "Bitcoin": 7,
+      "Dogecoin": 0,
+      "Monero": 1,
+      "Litecoin": 8
+    },
+    "other_chains": {}
+  }
+}

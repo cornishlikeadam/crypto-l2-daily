@@ -27,6 +27,13 @@ SITE_URL = os.environ.get("SITE_URL", "https://crypto-l2-daily.vercel.app/")
 # GitHub Pages copy of site/, which keeps everything.
 ARCHIVE_URL = os.environ.get("ARCHIVE_URL", "https://cornishlikeadam.github.io/crypto-l2-daily/")
 LIST_DAYS = 14
+NOTES_PATH = ROOT / "config" / "archive_notes.json"
+
+
+def archive_note(day: str) -> dict | None:
+    if NOTES_PATH.exists():
+        return json.loads(NOTES_PATH.read_text()).get(day)
+    return None
 
 CSS = """
 :root{--bg:#0E0D0B;--lift:#171512;--cream:#F2E8CF;--soft:rgba(242,232,207,.78);--muted:#9C927C;
@@ -52,6 +59,12 @@ h2{font:600 26px/1.2 Newsreader,Georgia,serif;margin:48px 0 16px}
 .card .sentence{color:var(--soft);margin:0}
 .card.item .sentence{font-family:Newsreader,Georgia,serif;font-style:italic;font-size:19px}
 .card.quiet .sentence{color:var(--muted)}
+.card .explain{margin:12px 0 0;font-size:15px;color:var(--cream)}
+.card .explain span{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);
+margin-right:6px}
+.card .stats{margin:6px 0 0;font-size:13px;color:var(--muted)}
+.card.note{margin-top:20px;border-color:rgba(227,184,102,.35)}
+nav a{margin-left:16px;font-size:14px;color:var(--muted);text-decoration:none}nav a:hover{color:var(--amber)}
 .card .who{margin-top:14px;padding-top:12px;border-top:1px solid var(--rule);font-size:14px;color:var(--muted);
 display:flex;flex-wrap:wrap;gap:4px 14px}
 .card .who b{color:var(--cream);font-weight:600}
@@ -127,13 +140,17 @@ def cards_html(cards: list[dict]) -> str:
             continue
         if c["kind"] == "quiet":
             rows.append(f'<li class="card quiet"><div class="kicker">{esc(c["title"])}</div>'
-                        f'<p class="title">{esc(c["title"])}</p><p class="sentence">Quiet today.</p></li>')
+                        f'<p class="title">{esc(c["title"])}</p><p class="sentence">Quiet today.</p>'
+                        + (f'<p class="explain"><span>What is this?</span> {esc(c["explain"])}</p>'
+                           if c.get("explain") else "") + '</li>')
             continue
         rows.append(
             f'<li class="card item"><a class="body" href="{esc(c["post_url"])}" rel="noopener">'
             f'<div class="kicker">{esc(c.get("coin"))}</div>'
             f'<p class="title">{esc(c["title"])}</p>'
             f'<p class="sentence">“{esc(c["sentence"])}”</p></a>'
+            + (f'<p class="explain"><span>What is this?</span> {esc(c["explain"])}</p>' if c.get("explain") else "")
+            + (f'<p class="stats">{esc(c["stats"])}</p>' if c.get("stats") else "") +
             f'<div class="who"><b><a href="https://x.com/{esc(c["handle"].lstrip("@"))}" rel="noopener">'
             f'{esc(c["handle"])}</a></b><span>{esc(c.get("date_et"))}</span>'
             f'<a href="{esc(c["post_url"])}" rel="noopener">post ↗</a>'
@@ -160,7 +177,17 @@ def day_section(rec: dict, video_src: str) -> str:
             f'<video controls preload="metadata" playsinline poster="{esc(poster)}" src="{esc(video_src)}"></video>'
             f'<p class="meta">{rec["item_count"]} sourced posts from {len(rec["handles"])} accounts'
             + (f' · quiet: {esc(", ".join(rec["quiet"]))}' if rec["quiet"] else "")
-            + '</p><h2>The cards</h2>' + cards_html(rec["cards"]))
+            + '</p>' + note_html(rec["date"]) + '<h2>The cards</h2>' + cards_html(rec["cards"]))
+
+
+def note_html(day: str) -> str:
+    note = archive_note(day)
+    if not note:
+        return ""
+    return (f'<div class="card note"><div class="kicker">Why this day is in the archive</div>'
+            f'<p class="sentence">{esc(note["why"])}</p>'
+            f'<p class="stats">Source: <a href="{esc(note["source"])}" rel="noopener">{esc(note["source_name"])}</a>'
+            f'</p></div>')
 
 
 def days_list(records: list[dict], prefix: str) -> str:
@@ -176,7 +203,8 @@ def rebuild() -> None:
         if DAYS.exists() else []
     records = [day_record(d) for d in days]
     recent = records[:LIST_DAYS]
-    head = '<header><h1><a href="{p}">Crypto L2 Daily</a></h1><span class="kicker">BTC L2 · DOGE · XMR · LTC</span></header>'
+    head = ('<header><h1><a href="{p}">Crypto L2 Daily</a></h1><nav><span class="kicker">BTC L2 · DOGE · XMR · LTC'
+            '</span><a href="{p}archive/">Archive</a></nav></header>')
     if records:
         latest = records[0]
         index_body = head.format(p="./") + day_section(latest, f"days/{latest['date']}/final.mp4") \
@@ -191,6 +219,14 @@ def rebuild() -> None:
         body = head.format(p="../../") + day_section(rec, video) + days_list(recent, "../../")
         (DAYS / rec["date"] / "index.html").write_text(
             page(f"Crypto L2 Daily — {long_date(rec['date'])}", body, "../../"))
+    archive_rows = "".join(
+        f'<li><a href="../days/{r["date"]}/">{esc(long_date(r["date"]))}<span>{r["item_count"]} posts'
+        + (f' · quiet: {esc(", ".join(r["quiet"]))}' if r["quiet"] else "") + "</span></a></li>" for r in records)
+    (SITE / "archive").mkdir(exist_ok=True)
+    (SITE / "archive" / "index.html").write_text(page(
+        "Crypto L2 Daily — Archive",
+        head.format(p="../") + f'<h2>Every edition ({len(records)})</h2><ul class="days">{archive_rows}</ul>',
+        "../"))
     feed = {
         "version": "https://jsonfeed.org/version/1.1",
         "title": "Crypto L2 Daily",
@@ -206,8 +242,8 @@ def rebuild() -> None:
                 for c in rec["cards"] if c["kind"] in ("item", "quiet")),
             "date_published": rec.get("window_end") or f"{rec['date']}T22:00:00Z",
             "attachments": [{"url": f"{ARCHIVE_URL}days/{rec['date']}/final.mp4", "mime_type": "video/mp4"}],
-            "_cards": [{k: c.get(k) for k in ("kind", "coin", "title", "sentence", "handle", "why_this_account",
-                                               "post_url", "date", "other_chain_if_any")}
+            "_cards": [{k: c.get(k) for k in ("kind", "coin", "title", "sentence", "explain", "stats", "handle",
+                                               "why_this_account", "post_url", "date", "other_chain_if_any")}
                        for c in rec["cards"] if c["kind"] in ("item", "quiet")],
         } for rec in records[:30]],
     }

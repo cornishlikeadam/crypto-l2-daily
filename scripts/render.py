@@ -64,6 +64,37 @@ THEME = {
     "captionBackgroundColor": "rgba(14,13,11,0.85)",
 }
 
+# Plain-language "what is this?" lines, written once and checked. They explain the topic word,
+# never the news itself, so they can't invent anything about the day.
+EXPLAIN = {
+    ("Bitcoin", "Lightning"): "Lightning is a fast lane on top of Bitcoin for quick, cheap payments.",
+    ("Bitcoin", "Ark"): "Ark is a newer Bitcoin add-on that bundles many small payments together to save fees.",
+    ("Bitcoin", "Sidechains"): "A sidechain is a separate network linked to Bitcoin that can try new features.",
+    ("Bitcoin", "Layer 2"): "A layer 2 is an extra layer built on top of Bitcoin to make it faster or cheaper.",
+    ("Dogecoin", "Dogechain"): "Dogechain is a separate network that was built for Dogecoin apps.",
+    ("Dogecoin", "Layer 2"): "A layer 2 is an extra layer built on top of Dogecoin so it can run apps.",
+    ("Dogecoin", "Community"): "These are posts from people who use and talk about Dogecoin.",
+    ("Monero", "FCMP++"): "FCMP++ is Monero's next privacy upgrade: it hides your coin among every coin on the chain.",
+    ("Monero", "CARROT"): "CARROT is Monero's new address system that comes with the FCMP++ upgrade.",
+    ("Monero", "Hard fork"): "A hard fork is a planned upgrade that everyone running the network must install.",
+    ("Monero", "Upgrade"): "An upgrade is new software that adds features or fixes problems.",
+    ("Litecoin", "MWEB"): "MWEB is Litecoin's optional privacy feature that can hide how much you send.",
+    ("Litecoin", "Lightning"): "Lightning also works on Litecoin, for fast and cheap small payments.",
+    ("Litecoin", "Layer 2"): "A layer 2 is an extra layer built on top of Litecoin to make it faster or cheaper.",
+}
+QUIET_EXPLAIN = "We only show real posts. When nothing good was posted, we say so."
+
+
+def explain_for(item: dict) -> str:
+    if item.get("other_chain_if_any"):
+        return f"{item['other_chain_if_any']} is a different blockchain that {item['coin']} fans were talking about."
+    return EXPLAIN.get((item["coin"], item.get("topic")), "This post was one of the most-shared on this topic today.")
+
+
+def short_link(url: str) -> str:
+    return url.replace("https://", "")
+
+
 NUMBER_WORDS = {1: "first", 2: "second", 3: "third", 4: "fourth", 5: "fifth", 6: "sixth",
                 7: "seventh", 8: "eighth", 9: "ninth", 10: "tenth", 11: "eleventh",
                 12: "twelfth", 13: "thirteenth", 14: "fourteenth", 15: "fifteenth",
@@ -119,6 +150,7 @@ def build_cards(day: str, data: dict) -> list[dict]:
 
     cards = [{
         "id": "title", "kind": "title",
+        "explain": "Each card is one real post from X. The link on each card takes you to that post.",
         "title": "Crypto L2 Daily",
         "sentence": f"{long_date} · what Bitcoin L2, Dogecoin, Monero and Litecoin posted on X in the last 24 hours",
         "corner": "X search", "corner_sub": "last 24 hours",
@@ -129,7 +161,8 @@ def build_cards(day: str, data: dict) -> list[dict]:
         if item["quiet"]:
             cards.append({
                 "id": f"quiet-{item['coin'].lower()}", "kind": "quiet",
-                "title": item["coin"], "sentence": "Quiet today.",
+                "title": item["coin"], "sentence": "Quiet today.", "explain": QUIET_EXPLAIN,
+                "link": None, "stats": None,
                 "corner": "no qualifying posts", "corner_sub": long_date,
                 "narration": f"{item['coin']}: quiet.",
                 "post_url": None, "coin": item["coin"],
@@ -146,6 +179,8 @@ def build_cards(day: str, data: dict) -> list[dict]:
             "id": f"item-{n:02d}", "kind": "item",
             "title": title, "sentence": item["claim"],
             "corner": item["handle"], "corner_sub": item["date_et"],
+            "explain": explain_for(item), "link": short_link(item["post_url"]),
+            "stats": f"{item.get('likes', 0):,} likes · {item.get('reposts', 0):,} reposts",
             "narration": f"{lead} From {spoken_handle(item['handle'])}: {item['claim']}",
             "narr_lead": f"{lead} {spoken_handle(item['handle'])}:", "narr_claim": item["claim"],
             "post_url": item["post_url"], "coin": item["coin"],
@@ -163,6 +198,7 @@ def build_cards(day: str, data: dict) -> list[dict]:
         close_narr = "That's the day. A quiet one, and nothing was invented to fill it."
     cards.append({
         "id": "close", "kind": "close",
+        "explain": "Price guesses, giveaways and rumors were left out on purpose.",
         "title": "Sources", "sentence": close_sentence,
         "corner": SITE_URL.replace("https://", "").rstrip("/"), "corner_sub": long_date,
         "narration": close_narr, "post_url": None,
@@ -517,7 +553,8 @@ def edit_decisions_artifact(cards: list[dict], project: Path) -> dict:
     }
 
 
-CARD_KEYS = ("id", "kind", "title", "sentence", "corner", "corner_sub", "coin", "start", "end")
+CARD_KEYS = ("id", "kind", "title", "sentence", "corner", "corner_sub", "coin", "start", "end",
+             "explain", "link", "stats")
 
 
 def stage_composition(cards: list[dict], narration: Path, project: Path) -> dict:

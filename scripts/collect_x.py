@@ -25,6 +25,7 @@ import os
 import re
 import sys
 import time
+import unicodedata
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -116,13 +117,13 @@ DROP_RULES = {
         r"\bbuy (now|the dip)\b|\bentry\b|\btake profit\b|\bstop loss\b|\bleverage\b|\b\d+x\b|"
         r"\$\s?\d|\b\d+(\.\d+)?\s?(k|K)\s+(soon|next|incoming)\b|\bATH\b|\bprice\b|"
         r"market ?cap|\bmcap\b|\bmc\b|\b(to|hit|reach|go to) (a |the )?\$?\d*\s?(billion|bill|million|mil|trillion)\b|"
-        r"\b\d+x\b|\bgem\b|\bape in\b|\bnot financial advice\b|\bNFA\b|\bDYOR\b",
+        r"\b\d+x\b|\bgem\b|\bape in\b|\bnot financial advice\b|\bNFA\b|\bDYOR\b|\bpricing\b|\bnext move\b",
         re.I,
     ),
     "giveaway": re.compile(
         r"giveaway|give away|airdrop|\bto win\b|\bwin \d|\bRT\s*(&|and|\+)|retweet (and|&|to)|"
         r"follow (and|&|\+) (rt|retweet|like)|claim (your|now)|whitelist|\bfree \$?\d|presale|"
-        r"\bdrop your (wallet|address)\b|tag \d+ friends",
+        r"\bdrop your (wallet|address)\b|tag \d+ friends|\bwin (the |some )?tokens?\b|\bprize\b",
         re.I,
     ),
     "rumor": re.compile(
@@ -133,6 +134,7 @@ DROP_RULES = {
 }
 MIN_TEXT_CHARS = 40
 MIN_FOLLOWERS = 500
+MIN_LIKES = 5  # a card should be something at least a few people engaged with
 # Bios that announce promotion. These accounts are shilling, not reporting.
 SHILL_BIO = re.compile(r"shill|\bNFA\b|\bDYOR\b|not financial advice|\b100x\b|\bgems?\b|\bcalls?\b|alpha group|"
                        r"\bpromo(tion)?s?\b|\bDM for\b", re.I)
@@ -223,7 +225,9 @@ def cookie_search_all(coins: list[dict], start_time: datetime, end_time: datetim
     except ImportError:
         raise SystemExit("[collect] twikit missing. Run with the repo venv: .venv/bin/python scripts/collect_x.py")
 
+    day_after = (end_time + timedelta(days=1)).strftime("%Y-%m-%d")
     window = (f" -filter:replies -filter:retweets -filter:nativeretweets lang:en "
+              f"since:{start_time.strftime('%Y-%m-%d')} until:{day_after} "
               f"since_time:{int(start_time.timestamp())} until_time:{int(end_time.timestamp())}")
 
     def new_client() -> "Client":
@@ -309,6 +313,7 @@ def full_text(tweet: dict) -> str:
 
 
 def clean_text(text: str) -> str:
+    text = unicodedata.normalize("NFKC", text)  # 𝑻𝒉𝒆 -> The
     text = URL_RE.sub("", text)
     text = LEADING_MENTIONS_RE.sub("", text.strip())
     text = EMOJI_RE.sub("", text)
@@ -318,10 +323,17 @@ def clean_text(text: str) -> str:
     return text
 
 
-def first_sentence(text: str, max_words: int = 22) -> str:
-    """The post's own opening sentence, clipped. No rewording."""
-    parts = re.split(r"(?<=[.!?])\s+", text, maxsplit=1)
-    sentence = parts[0].strip()
+def first_sentence(text: str, max_words: int = 22, prefer: str | None = None) -> str:
+    """One of the post's own sentences, clipped. No rewording.
+
+    Uses the first sentence that mentions the coin or topic (`prefer` regex), else the opening one.
+    """
+    parts = [p.strip() for p in re.split(r"(?<=[.!?])\s+", text) if p.strip()]
+    if not parts:
+        return ""
+    sentence = parts[0]
+    if prefer:
+        sentence = next((p for p in parts if re.search(prefer, p, re.I) and len(p.split()) >= 5), parts[0])
     words = sentence.split()
     if len(words) > max_words:
         sentence = " ".join(words[:max_words]).rstrip(",;:") + "…"
@@ -330,13 +342,23 @@ def first_sentence(text: str, max_words: int = 22) -> str:
     return sentence
 
 
-def drop_reason(text: str, tweet: dict, user: dict | None) -> str | None:
+def drop_reason(text: str, tweet: dict, user: dict | None, window: tuple | None = None) -> str | None:
     if not user or not user.get("username"):
         return "no_handle"
     if not tweet.get("created_at"):
         return "no_date"
+    if window:
+        created = datetime.fromisoformat(tweet["created_at"].replace("Z", "+00:00"))
+        if not (window[0] <= created <= window[1]):
+            return "outside_24h_window"
+    if re.search(r"government efficiency|\bD\.O\.G\.E\b", text, re.I):
+        return "not_dogecoin"
+    if re.search(r"\balpha drop\b|\bdaily alpha\b", text, re.I):
+        return "promo_post"
     if len(clean_text(text)) < MIN_TEXT_CHARS:
         return "too_short"
+    if tweet.get("public_metrics", {}).get("like_count", 0) < MIN_LIKES:
+        return "under_5_likes"
     if user.get("public_metrics", {}).get("followers_count", 0) < MIN_FOLLOWERS:
         return "low_follower_account"
     tags = [t.upper() for t in re.findall(r"\$([A-Za-z]{2,10})\b", text)]
@@ -344,7 +366,8 @@ def drop_reason(text: str, tweet: dict, user: dict | None) -> str | None:
         return "cashtag_spam"
     if any(t not in OK_TICKERS for t in tags):
         return "other_token_shill"
-    if SHILL_BIO.search(user.get("description") or ""):
+    bio = user.get("description") or ""
+    if SHILL_BIO.search(bio) or any(t.upper() not in OK_TICKERS for t in re.findall(r"\$([A-Za-z]{2,10})\b", bio)):
         return "promo_account"
     for reason, pattern in DROP_RULES.items():
         if pattern.search(text):
@@ -385,6 +408,11 @@ def chains_mentioned(text: str, home: list[str]) -> list[str]:
     return found
 
 
+def coin_pattern(coin_cfg: dict) -> str:
+    names = [coin_cfg["coin"], coin_cfg["short"]] + [pat for _, pat in coin_cfg["topics"]]
+    return "|".join(f"(?:{n})" for n in names)
+
+
 def to_item(coin_cfg: dict, tweet: dict, user: dict, other_chain: str | None = None) -> dict:
     text = full_text(tweet)
     created = datetime.fromisoformat(tweet["created_at"].replace("Z", "+00:00"))
@@ -392,7 +420,7 @@ def to_item(coin_cfg: dict, tweet: dict, user: dict, other_chain: str | None = N
     return {
         "coin": coin_cfg["coin"],
         "topic": other_chain or topic_label(coin_cfg, text),
-        "claim": first_sentence(clean_text(text)),
+        "claim": first_sentence(clean_text(text), prefer=coin_pattern(coin_cfg)),
         "handle": "@" + handle,
         "display_name": user.get("name", ""),
         "why_this_account": why_this_account(user, coin_cfg["coin"]),
@@ -400,6 +428,9 @@ def to_item(coin_cfg: dict, tweet: dict, user: dict, other_chain: str | None = N
         "date": created.isoformat().replace("+00:00", "Z"),
         "date_et": created.astimezone(ET).strftime("%b %-d, %-I:%M %p ET"),
         "engagement": engagement(tweet),
+        "likes": tweet.get("public_metrics", {}).get("like_count", 0),
+        "reposts": tweet.get("public_metrics", {}).get("retweet_count", 0),
+        "replies": tweet.get("public_metrics", {}).get("reply_count", 0),
         "other_chain_if_any": other_chain,
         "quiet": False,
     }
@@ -409,6 +440,10 @@ def select(raw: dict) -> tuple[list[dict], dict]:
     """Return (items, stats). Items are in card order."""
     per_coin: dict[str, list[dict]] = {}
     stats: dict = {"dropped": {}, "kept": {}, "other_chains": {}}
+    window = None
+    if raw.get("window_start") and raw.get("window_end"):
+        window = (datetime.fromisoformat(raw["window_start"].replace("Z", "+00:00")),
+                  datetime.fromisoformat(raw["window_end"].replace("Z", "+00:00")))
     for coin_cfg in COINS:
         pull = raw["pulls"][coin_cfg["coin"]]
         users = pull["users"]
@@ -416,7 +451,7 @@ def select(raw: dict) -> tuple[list[dict], dict]:
         drops: Counter = Counter()
         for tweet in pull["tweets"]:
             user = users.get(tweet.get("author_id", ""))
-            reason = drop_reason(full_text(tweet), tweet, user)
+            reason = drop_reason(full_text(tweet), tweet, user, window)
             if reason:
                 drops[reason] += 1
                 continue
@@ -440,14 +475,19 @@ def select(raw: dict) -> tuple[list[dict], dict]:
 
         items: list[dict] = []
         seen_authors: set = set()
+        seen_claims: set = set()
         for tweet, user in kept:
             if user["id"] in seen_authors:
                 continue
             text = full_text(tweet)
             mentions_guest = guest is not None and guest in chains_mentioned(text, coin_cfg["home"])
             item = to_item(coin_cfg, tweet, user, guest if mentions_guest else None)
-            if len(item["claim"].split()) < 5:
-                continue
+            if len(item["claim"].split()) < 5 or not re.match(r"[A-Z0-9@$#“\"'(]", item["claim"]):
+                continue  # too short, or starts mid-thought
+            key = re.sub(r"[^a-z0-9]", "", item["claim"].lower())[:80]
+            if key in seen_claims:
+                continue  # same words already on a card (copy-paste announcements)
+            seen_claims.add(key)
             seen_authors.add(user["id"])
             items.append(item)
             if len(items) >= MAX_ITEMS_PER_COIN:
@@ -493,7 +533,7 @@ def select(raw: dict) -> tuple[list[dict], dict]:
                 "post_url": None,
                 "date": None,
                 "date_et": None,
-                "engagement": 0,
+                "engagement": 0, "likes": 0, "reposts": 0, "replies": 0,
                 "other_chain_if_any": None,
                 "quiet": True,
             })
@@ -509,6 +549,8 @@ def main() -> int:
     ap.add_argument("--date", help="YYYY-MM-DD (America/New_York); default today")
     ap.add_argument("--from-raw", help="re-filter a saved raw pull instead of calling X")
     ap.add_argument("--pages", type=int, default=1, help="pages per query (default 1)")
+    ap.add_argument("--backfill", action="store_true",
+                    help="archive a past day: window is the 24h ending at 18:00 ET on --date")
     ap.add_argument("--max-results", type=int, default=None,
                     help="posts per query page, 10-100 (default X_MAX_RESULTS or 25). "
                          "X bills each post read, so this sets the daily cost.")
@@ -529,12 +571,19 @@ def main() -> int:
                   f"or X_BEARER_TOKEN (paid API) in {ROOT / '.env'} and re-run.", file=sys.stderr)
             return 2
         source = "cookies" if auth_token and ct0 else "api"
-        # recent search needs end_time >= 10s in the past
-        end = datetime.now(timezone.utc) - timedelta(seconds=30)
+        if args.backfill:
+            if not args.date:
+                raise SystemExit("[collect] --backfill needs --date")
+            if not (auth_token and ct0):
+                raise SystemExit("[collect] --backfill needs the cookie route; the paid API only covers 7 days")
+            end = datetime.strptime(args.date, "%Y-%m-%d").replace(hour=18, tzinfo=ET).astimezone(timezone.utc)
+        else:
+            # recent search needs end_time >= 10s in the past
+            end = datetime.now(timezone.utc) - timedelta(seconds=30)
         start = end - timedelta(hours=24)
         max_results = max(10, min(100, args.max_results or int(os.environ.get("X_MAX_RESULTS", "25"))))
         raw = {"collected_at": end.isoformat(), "window_start": start.isoformat(),
-               "window_end": end.isoformat(), "source": source, "pulls": {}}
+               "window_end": end.isoformat(), "source": source, "backfill": bool(args.backfill), "pulls": {}}
         if source == "cookies":
             raw["pulls"] = cookie_search_all(COINS, start, end, auth_token, ct0, max_results)
         else:

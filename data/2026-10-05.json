@@ -21,20 +21,9 @@
       "date": "2026-10-05T13:27:11Z",
       "date_et": "Oct 5, 9:27 AM ET",
       "engagement": 549,
-      "other_chain_if_any": null,
-      "quiet": false
-    },
-    {
-      "coin": "Bitcoin",
-      "topic": "Lightning",
-      "claim": "845 Lightning sends on Friday!",
-      "handle": "@bitcoinhodlco",
-      "display_name": "B HODL ⚡",
-      "why_this_account": "Bio: “BUY. HOLD. DEPLOY. COMPOUND. | MISSION: COMPOUND #BITCOIN | AQSE: $HODL | OTCQB: $BHODF | FRA: $F5S” · 8,387 followers",
-      "post_url": "https://x.com/bitcoinhodlco/status/2107019776627245114",
-      "date": "2026-10-05T08:07:15Z",
-      "date_et": "Oct 5, 4:07 AM ET",
-      "engagement": 109,
+      "likes": 198,
+      "reposts": 99,
+      "replies": 109,
       "other_chain_if_any": null,
       "quiet": false
     },
@@ -49,6 +38,26 @@
       "date": "2026-10-05T12:19:14Z",
       "date_et": "Oct 5, 8:19 AM ET",
       "engagement": 55,
+      "likes": 30,
+      "reposts": 0,
+      "replies": 25,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Bitcoin",
+      "topic": "Lightning",
+      "claim": "Day 2 of fishing and recreation was electric Lightning Lake.",
+      "handle": "@BitcoinatBlock",
+      "display_name": "Bitcoin at Block",
+      "why_this_account": "Bio: “Making bitcoin everyday money across @blocks @cashapp @square @bitkey @protomining @spiral_xyz” · 29,150 followers",
+      "post_url": "https://x.com/BitcoinatBlock/status/2107156465110909109",
+      "date": "2026-10-05T17:10:25Z",
+      "date_et": "Oct 5, 1:10 PM ET",
+      "engagement": 31,
+      "likes": 18,
+      "reposts": 4,
+      "replies": 3,
       "other_chain_if_any": null,
       "quiet": false
     },
@@ -63,6 +72,9 @@
       "date": null,
       "date_et": null,
       "engagement": 0,
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
       "other_chain_if_any": null,
       "quiet": true
     },
@@ -77,6 +89,9 @@
       "date": "2026-10-05T18:48:08Z",
       "date_et": "Oct 5, 2:48 PM ET",
       "engagement": 169,
+      "likes": 119,
+      "reposts": 19,
+      "replies": 10,
       "other_chain_if_any": null,
       "quiet": false
     },
@@ -91,6 +106,26 @@
       "date": "2026-10-05T15:49:28Z",
       "date_et": "Oct 5, 11:49 AM ET",
       "engagement": 138,
+      "likes": 80,
+      "reposts": 15,
+      "replies": 20,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Monero",
+      "topic": "FCMP++",
+      "claim": "Moneros FCMP++ stressnet goes live TOMORROW!",
+      "handle": "@exitnode_",
+      "display_name": "Exitnode_",
+      "why_this_account": "Bio: “...Follow the white rabbit...Time is running out...” · 2,370 followers",
+      "post_url": "https://x.com/exitnode_/status/2106878866505773228",
+      "date": "2026-10-04T22:47:20Z",
+      "date_et": "Oct 4, 6:47 PM ET",
+      "engagement": 123,
+      "likes": 84,
+      "reposts": 13,
+      "replies": 9,
       "other_chain_if_any": null,
       "quiet": false
     },
@@ -105,20 +140,9 @@
       "date": "2026-10-05T12:05:03Z",
       "date_et": "Oct 5, 8:05 AM ET",
       "engagement": 14,
-      "other_chain_if_any": null,
-      "quiet": false
-    },
-    {
-      "coin": "Litecoin",
-      "topic": "MWEB",
-      "claim": "Meet digital silver for the modern age litecoin faster Bitcoin, tiny fees, optional privacy (MWEB), 15 years never hacked.",
-      "handle": "@rothcompounder",
-      "display_name": "Roth Compounder",
-      "why_this_account": "Bio: “CPA | Tax Strategy | Roth & Backdoor Roth | Wealth Building | SuperFlex Creator ⚡ | Helping you keep more,…” · 567 followers",
-      "post_url": "https://x.com/rothcompounder/status/2107140306156085516",
-      "date": "2026-10-05T16:06:12Z",
-      "date_et": "Oct 5, 12:06 PM ET",
-      "engagement": 9,
+      "likes": 13,
+      "reposts": 0,
+      "replies": 1,
       "other_chain_if_any": null,
       "quiet": false
     }
@@ -126,33 +150,35 @@
   "stats": {
     "dropped": {
       "Bitcoin": {
-        "low_follower_account": 9,
-        "price_call": 3,
-        "promo_account": 1,
-        "too_short": 1
+        "under_5_likes": 14,
+        "promo_account": 2,
+        "low_follower_account": 1,
+        "too_short": 1,
+        "price_call": 1
       },
       "Dogecoin": {
-        "other_token_shill": 3,
-        "cashtag_spam": 5,
-        "low_follower_account": 13,
+        "under_5_likes": 20,
+        "other_token_shill": 1,
+        "low_follower_account": 2,
         "promo_account": 2
       },
       "Monero": {
-        "low_follower_account": 7,
+        "low_follower_account": 5,
+        "under_5_likes": 7,
         "cashtag_spam": 1,
         "other_token_shill": 1,
-        "price_call": 2
+        "price_call": 1
       },
       "Litecoin": {
-        "low_follower_account": 5,
-        "too_short": 1,
-        "promo_account": 1
+        "under_5_likes": 5,
+        "low_follower_account": 1,
+        "too_short": 1
       }
     },
     "kept": {
-      "Bitcoin": 11,
-      "Dogecoin": 2,
-      "Monero": 7,
+      "Bitcoin": 6,
+      "Dogecoin": 0,
+      "Monero": 3,
       "Litecoin": 2
     },
     "other_chains": {}

@@ -35,6 +35,9 @@ export type Card = {
   coin: string | null;
   start: number;
   end: number;
+  explain?: string | null;
+  link?: string | null;
+  stats?: string | null;
 };
 
 export type DeckProps = {
@@ -88,6 +91,25 @@ const CardView: React.FC<{ card: Card; index: number; total: number; frames: num
                     color: isQuiet ? C.muted : C.creamSoft, maxWidth: 1440 }}>
         {card.kind === "item" ? `“${card.sentence}”` : card.sentence}
       </div>
+      {card.explain ? (
+        <div style={{ ...rise(frame, 30, 22), display: "flex", gap: 18, alignItems: "baseline", marginTop: 40,
+                      maxWidth: 1440, fontFamily: sans }}>
+          <span style={{ flex: "none", fontSize: 20, fontWeight: 600, letterSpacing: "0.14em",
+                         textTransform: "uppercase", color: C.amber }}>What is this?</span>
+          <span style={{ fontSize: 32, lineHeight: 1.35, color: C.cream }}>{card.explain}</span>
+        </div>
+      ) : null}
+
+      {card.link ? (
+        <div style={{ ...rise(frame, 36), position: "absolute", left: 150, bottom: 96, fontFamily: sans,
+                      maxWidth: 1000 }}>
+          <div style={{ fontSize: 20, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase",
+                        color: C.muted }}>Source</div>
+          <div style={{ fontSize: 24, color: C.creamSoft, marginTop: 6, whiteSpace: "nowrap", overflow: "hidden",
+                        textOverflow: "ellipsis" }}>{card.link}</div>
+          {card.stats ? <div style={{ fontSize: 22, color: C.muted, marginTop: 4 }}>{card.stats}</div> : null}
+        </div>
+      ) : null}
 
       {card.corner ? (
         <div style={{ ...rise(frame, 24), position: "absolute", right: 150, bottom: 96, textAlign: "right",
