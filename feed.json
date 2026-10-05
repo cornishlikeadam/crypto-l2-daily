@@ -4,5 +4,109 @@
   "home_page_url": "https://crypto-l2-daily.vercel.app/",
   "feed_url": "https://crypto-l2-daily.vercel.app/feed.json",
   "description": "Bitcoin L2, Dogecoin, Monero and Litecoin on X, last 24 hours, with sources.",
-  "items": []
+  "items": [
+    {
+      "id": "2026-10-05",
+      "url": "https://crypto-l2-daily.vercel.app/days/2026-10-05/",
+      "title": "Crypto L2 Daily — Monday, October 5, 2026",
+      "content_text": "Bitcoin · Lightning: Alyssa has spent nearly a decade building Lightning from the inside. (@utexocom, https://x.com/utexocom/status/2107100289983807814)\nBitcoin · Lightning: 845 Lightning sends on Friday! (@bitcoinhodlco, https://x.com/bitcoinhodlco/status/2107019776627245114)\nBitcoin · Lightning: Utexo is backing the builders building on Bitcoin!! (@Durjoy___das, https://x.com/Durjoy___das/status/2107083190431281283)\nDogecoin: Quiet today.\nMonero · FCMP++: The third version of beta stressnet for Full-Chain Membership Proofs (FCMP++) and CARROT is live! (@monero, https://x.com/monero/status/2107181059859448004)\nMonero · FCMP++: For everyone who keeps asking why I am adding @Zcash but not @monero to my Tools directory - here is my response. (@iAnonymous3000, https://x.com/iAnonymous3000/status/2107136094118769014)\nLitecoin · MWEB: $LTC MWEB Daily Flow At close: Sun, 4 Oct 2026 Pool: 459,146.34 LTC (0.6% of supply) ↑ Peg-ins: +25,883.23 LTC ↓ Peg-outs… (@LitecoinTracker, https://x.com/LitecoinTracker/status/2107079619740327966)\nLitecoin · MWEB: Meet digital silver for the modern age litecoin faster Bitcoin, tiny fees, optional privacy (MWEB), 15 years never hacked. (@rothcompounder, https://x.com/rothcompounder/status/2107140306156085516)",
+      "date_published": "2026-10-05T19:50:58.402003+00:00",
+      "attachments": [
+        {
+          "url": "https://cornishlikeadam.github.io/crypto-l2-daily/days/2026-10-05/final.mp4",
+          "mime_type": "video/mp4"
+        }
+      ],
+      "_cards": [
+        {
+          "kind": "item",
+          "coin": "Bitcoin",
+          "title": "Bitcoin · Lightning",
+          "sentence": "Alyssa has spent nearly a decade building Lightning from the inside.",
+          "handle": "@utexocom",
+          "why_this_account": "Bio: “Instant, private USDT payments on Bitcoin. Move stablecoins the way you move money.” · 10,935 followers",
+          "post_url": "https://x.com/utexocom/status/2107100289983807814",
+          "date": "2026-10-05T13:27:11Z",
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Bitcoin",
+          "title": "Bitcoin · Lightning",
+          "sentence": "845 Lightning sends on Friday!",
+          "handle": "@bitcoinhodlco",
+          "why_this_account": "Bio: “BUY. HOLD. DEPLOY. COMPOUND. | MISSION: COMPOUND #BITCOIN | AQSE: $HODL | OTCQB: $BHODF | FRA: $F5S” · 8,387 followers",
+          "post_url": "https://x.com/bitcoinhodlco/status/2107019776627245114",
+          "date": "2026-10-05T08:07:15Z",
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Bitcoin",
+          "title": "Bitcoin · Lightning",
+          "sentence": "Utexo is backing the builders building on Bitcoin!!",
+          "handle": "@Durjoy___das",
+          "why_this_account": "Bio: “Creator • Researcher” · 6,904 followers",
+          "post_url": "https://x.com/Durjoy___das/status/2107083190431281283",
+          "date": "2026-10-05T12:19:14Z",
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "quiet",
+          "coin": "Dogecoin",
+          "title": "Dogecoin",
+          "sentence": "Quiet today.",
+          "handle": null,
+          "why_this_account": null,
+          "post_url": null,
+          "date": null,
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Monero",
+          "title": "Monero · FCMP++",
+          "sentence": "The third version of beta stressnet for Full-Chain Membership Proofs (FCMP++) and CARROT is live!",
+          "handle": "@monero",
+          "why_this_account": "Bio: “Monero (XMR) - The secure, private, untraceable cryptocurrency that keeps your money confidential.…” · 532,048 followers",
+          "post_url": "https://x.com/monero/status/2107181059859448004",
+          "date": "2026-10-05T18:48:08Z",
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Monero",
+          "title": "Monero · FCMP++",
+          "sentence": "For everyone who keeps asking why I am adding @Zcash but not @monero to my Tools directory - here is my response.",
+          "handle": "@iAnonymous3000",
+          "why_this_account": "Bio: “DOGE for privacy. @Brave | priv/acc 🚀 views ≠ employer's.” · 15,298 followers",
+          "post_url": "https://x.com/iAnonymous3000/status/2107136094118769014",
+          "date": "2026-10-05T15:49:28Z",
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Litecoin",
+          "title": "Litecoin · MWEB",
+          "sentence": "$LTC MWEB Daily Flow At close: Sun, 4 Oct 2026 Pool: 459,146.34 LTC (0.6% of supply) ↑ Peg-ins: +25,883.23 LTC ↓ Peg-outs…",
+          "handle": "@LitecoinTracker",
+          "why_this_account": "Bio: “Tracking key Litecoin statistics and metrics such as ETF flows and MWEB adoption.” · 604 followers",
+          "post_url": "https://x.com/LitecoinTracker/status/2107079619740327966",
+          "date": "2026-10-05T12:05:03Z",
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Litecoin",
+          "title": "Litecoin · MWEB",
+          "sentence": "Meet digital silver for the modern age litecoin faster Bitcoin, tiny fees, optional privacy (MWEB), 15 years never hacked.",
+          "handle": "@rothcompounder",
+          "why_this_account": "Bio: “CPA | Tax Strategy | Roth & Backdoor Roth | Wealth Building | SuperFlex Creator ⚡ | Helping you keep more,…” · 567 followers",
+          "post_url": "https://x.com/rothcompounder/status/2107140306156085516",
+          "date": "2026-10-05T16:06:12Z",
+          "other_chain_if_any": null
+        }
+      ]
+    }
+  ]
 }
