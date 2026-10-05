@@ -41,8 +41,11 @@ PIPELINE = "animated-explainer"
 TARGET_SECONDS = 70.0
 VOICE_MODEL = str(Path.home() / ".piper" / "models" / "en_US-lessac-medium.onnx")
 SITE_URL = os.environ.get("SITE_URL", "https://crypto-l2-daily.vercel.app/")
-LEAD_IN = 0.45   # silence before each card's narration
-MIN_TAIL = 0.6   # minimum hold after narration ends
+LEAD_IN = 0.3    # silence before each card's narration
+MIN_TAIL = 0.45  # minimum hold after narration ends
+# Fit plan: (voice length_scale, max words of the post read aloud). The card always shows the
+# full sentence; only the spoken version is shortened. Never faster than ~1.15x.
+FIT_PLAN = [(1.0, 99), (0.95, 14), (0.9, 11), (0.87, 9), (0.87, 7), (0.87, 5)]
 
 THEME = {
     "primaryColor": "#F2E8CF",
@@ -119,8 +122,7 @@ def build_cards(day: str, data: dict) -> list[dict]:
         "title": "Crypto L2 Daily",
         "sentence": f"{long_date} · what Bitcoin L2, Dogecoin, Monero and Litecoin posted on X in the last 24 hours",
         "corner": "X search", "corner_sub": "last 24 hours",
-        "narration": (f"Crypto layer two daily, {spoken_date}. Here is what the Bitcoin layer two, "
-                      f"Dogecoin, Monero and Litecoin communities posted on X in the last day."),
+        "narration": f"Crypto layer two daily, {spoken_date}. The last day on X.",
         "post_url": None,
     }]
     for n, item in enumerate(items, 1):
@@ -129,22 +131,23 @@ def build_cards(day: str, data: dict) -> list[dict]:
                 "id": f"quiet-{item['coin'].lower()}", "kind": "quiet",
                 "title": item["coin"], "sentence": "Quiet today.",
                 "corner": "no qualifying posts", "corner_sub": long_date,
-                "narration": f"{item['coin']}: quiet today.",
+                "narration": f"{item['coin']}: quiet.",
                 "post_url": None, "coin": item["coin"],
             })
             continue
         topic = item["topic"]
         if item.get("other_chain_if_any"):
             title = f"{item['other_chain_if_any']} · via {item['coin']} posts"
-            lead = f"In {item['coin']} posts, the talk was {item['other_chain_if_any']}."
+            lead = f"{item['other_chain_if_any']}, from {item['coin']} posts."
         else:
             title = f"{item['coin']} · {topic}"
-            lead = f"{item['coin']}, {topic}."
+            lead = f"{item['coin']} {topic}."
         cards.append({
             "id": f"item-{n:02d}", "kind": "item",
             "title": title, "sentence": item["claim"],
             "corner": item["handle"], "corner_sub": item["date_et"],
             "narration": f"{lead} From {spoken_handle(item['handle'])}: {item['claim']}",
+            "narr_lead": f"{lead} {spoken_handle(item['handle'])}:", "narr_claim": item["claim"],
             "post_url": item["post_url"], "coin": item["coin"],
         })
     handles = []
@@ -154,8 +157,7 @@ def build_cards(day: str, data: dict) -> list[dict]:
     if handles:
         shown = ", ".join(handles[:6]) + (f" +{len(handles) - 6} more" if len(handles) > 6 else "")
         close_sentence = f"{shown}. Every card links to its post."
-        close_narr = (f"That's the day. {len(real)} posts from {len(handles)} accounts. "
-                      f"Every card links to its source post on the site.")
+        close_narr = f"That's the day. Every card links to its post on the site."
     else:
         close_sentence = "No qualifying posts today. Nothing was invented to fill the gap."
         close_narr = "That's the day. A quiet one, and nothing was invented to fill it."
@@ -172,15 +174,23 @@ def build_cards(day: str, data: dict) -> list[dict]:
 # Narration + timing
 # ---------------------------------------------------------------------------
 
+def spoken_claim(claim: str, max_words: int) -> str:
+    words = claim.rstrip("….").split()
+    if len(words) <= max_words:
+        return claim
+    return " ".join(words[:max_words]).rstrip(",;:") + "."
+
+
 def make_narration(cards: list[dict], audio_dir: Path) -> tuple[Path, list[dict]]:
     tts = PiperTTS()
-    length_scale = 1.0
-    for attempt in range(3):
+    for length_scale, max_words in FIT_PLAN:
         durations = []
         for c in cards:
+            if c.get("narr_claim"):
+                c["narration"] = f"{c['narr_lead']} {spoken_claim(c['narr_claim'], max_words)}"
             out = audio_dir / f"{c['id']}.wav"
             r = tts.execute({"text": speakable(c["narration"]), "model": VOICE_MODEL,
-                             "length_scale": length_scale, "sentence_silence": 0.25,
+                             "length_scale": length_scale, "sentence_silence": 0.2,
                              "output_path": str(out)})
             if not r.success:
                 raise SystemExit(f"[render] piper failed on {c['id']}: {r.error}")
@@ -188,11 +198,11 @@ def make_narration(cards: list[dict], audio_dir: Path) -> tuple[Path, list[dict]
             durations.append(probe_duration(out))
         needed = sum(durations) + len(cards) * (LEAD_IN + MIN_TAIL)
         if needed <= TARGET_SECONDS:
+            log(f"narration {needed:.1f}s fits (speed {length_scale}, up to {max_words} words read per post)")
             break
-        length_scale = round(length_scale * TARGET_SECONDS / needed * 0.98, 3)
-        log(f"narration {needed:.1f}s > {TARGET_SECONDS}s, retrying at length_scale={length_scale}")
+        log(f"narration {needed:.1f}s > {TARGET_SECONDS}s at speed {length_scale}, {max_words} words; tightening")
     else:
-        raise SystemExit("[render] narration cannot fit 70s even sped up; cards are too long")
+        raise SystemExit("[render] narration cannot fit 70s; too many cards")
 
     slack = TARGET_SECONDS - needed
     t = 0.0

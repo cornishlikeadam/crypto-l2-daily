@@ -114,7 +114,9 @@ DROP_RULES = {
         r"price target|\bPT\b|\bto the moon\b|\bmoon(ing)?\b|\bpump(ing|ed)?\b|\bdump(ing|ed)?\b|"
         r"\bbreakout\b|\bresistance\b|\bsupport (level|zone)\b|\bchart\b|\bTA\b|\bbullish\b|\bbearish\b|"
         r"\bbuy (now|the dip)\b|\bentry\b|\btake profit\b|\bstop loss\b|\bleverage\b|\b\d+x\b|"
-        r"\$\s?\d|\b\d+(\.\d+)?\s?(k|K)\s+(soon|next|incoming)\b|\bATH\b|\bprice\b",
+        r"\$\s?\d|\b\d+(\.\d+)?\s?(k|K)\s+(soon|next|incoming)\b|\bATH\b|\bprice\b|"
+        r"market ?cap|\bmcap\b|\bmc\b|\b(to|hit|reach|go to) (a |the )?\$?\d*\s?(billion|bill|million|mil|trillion)\b|"
+        r"\b\d+x\b|\bgem\b|\bape in\b|\bnot financial advice\b|\bNFA\b|\bDYOR\b",
         re.I,
     ),
     "giveaway": re.compile(
@@ -130,7 +132,13 @@ DROP_RULES = {
     ),
 }
 MIN_TEXT_CHARS = 40
-MIN_FOLLOWERS = 100
+MIN_FOLLOWERS = 500
+# Bios that announce promotion. These accounts are shilling, not reporting.
+SHILL_BIO = re.compile(r"shill|\bNFA\b|\bDYOR\b|not financial advice|\b100x\b|\bgems?\b|\bcalls?\b|alpha group|"
+                       r"\bpromo(tion)?s?\b|\bDM for\b", re.I)
+# Cashtags that are fine to mention; any other $TICKER means the post is pushing some other token.
+OK_TICKERS = {"BTC", "DOGE", "XMR", "LTC", "ETH", "SOL", "ZEC", "BCH", "KAS", "STX", "RBTC", "LBTC", "ARB",
+              "STRK", "TRX", "XRP", "ADA", "SUI", "TON", "USDT", "USDC", "MWEB"}
 MAX_CASHTAGS = 2
 MAX_ITEMS_PER_COIN = 3
 MIDDLE_CARDS_MAX = 8  # cards between title and close (8-10 total)
@@ -201,22 +209,30 @@ def x_search(query: str, start_time: datetime, end_time: datetime, token: str, p
     return {"query": query + QUERY_SUFFIX, "tweets": tweets, "users": users}
 
 
-def cookie_search(query: str, start_time: datetime, end_time: datetime, auth_token: str, ct0: str,
-                  max_results: int) -> dict:
-    """Same output shape as x_search, via twikit + an X session's cookies (no API key, $0)."""
+def cookie_search_all(coins: list[dict], start_time: datetime, end_time: datetime, auth_token: str,
+                      ct0: str, max_results: int) -> dict:
+    """All coin queries through ONE twikit session (X's session cookies, no API key, $0).
+
+    Returns {coin: pull} in the same shape as x_search. One shared client matters:
+    a fresh client per query made X answer 404 on the second search.
+    """
     import asyncio
     try:
         from twikit import Client
-        from twikit.errors import Forbidden, TooManyRequests, Unauthorized
+        from twikit.errors import Forbidden, NotFound, TooManyRequests, Unauthorized
     except ImportError:
         raise SystemExit("[collect] twikit missing. Run with the repo venv: .venv/bin/python scripts/collect_x.py")
 
-    full_query = (f"{query} -filter:replies -filter:retweets -filter:nativeretweets lang:en "
-                  f"since_time:{int(start_time.timestamp())} until_time:{int(end_time.timestamp())}")
+    window = (f" -filter:replies -filter:retweets -filter:nativeretweets lang:en "
+              f"since_time:{int(start_time.timestamp())} until_time:{int(end_time.timestamp())}")
 
-    async def run() -> dict:
+    def new_client() -> "Client":
         client = Client("en-US")
         client.set_cookies({"auth_token": auth_token, "ct0": ct0})
+        return client
+
+    async def one(client, query: str) -> dict:
+        full_query = query + window
         tweets: list[dict] = []
         users: dict[str, dict] = {}
         page = await client.search_tweet(full_query, "Top", count=20)
@@ -240,22 +256,42 @@ def cookie_search(query: str, start_time: datetime, end_time: datetime, auth_tok
             if len(tweets) >= max_results or len(page) == 0:
                 break
             await asyncio.sleep(2)
-            page = await page.next()
+            try:
+                page = await page.next()
+            except (KeyError, IndexError, TypeError):
+                break  # X sent no "next page" cursor: that's the end of the results
         return {"query": full_query, "tweets": tweets, "users": users}
 
-    for attempt in range(2):
-        try:
-            return asyncio.run(run())
-        except (Unauthorized, Forbidden) as exc:
-            raise SystemExit("[collect] X rejected the session cookies (logged out or expired). Copy fresh "
-                             f"auth_token and ct0 from your browser into .env. Detail: {exc}")
-        except TooManyRequests:
-            if attempt == 0:
-                print("[collect] X rate limit hit; waiting 15 min", file=sys.stderr)
-                time.sleep(900)
-                continue
-            raise SystemExit("[collect] X rate limit hit twice; giving up for today")
-    raise SystemExit("[collect] cookie search failed")
+    async def run() -> dict:
+        client = new_client()
+        pulls: dict[str, dict] = {}
+        for coin_cfg in coins:
+            for attempt in range(3):
+                try:
+                    pulls[coin_cfg["coin"]] = await one(client, coin_cfg["query"])
+                    break
+                except (Unauthorized, Forbidden) as exc:
+                    raise SystemExit("[collect] X rejected the session cookies (logged out or expired). "
+                                     "Run scripts/set_x_cookies.sh with fresh auth_token and ct0. "
+                                     f"Detail: {exc}")
+                except NotFound:
+                    # X refused the request signature; rebuild the session and retry.
+                    if attempt == 2:
+                        raise SystemExit(f"[collect] X kept refusing the {coin_cfg['coin']} search (404). "
+                                         "The scraper may need an update for X's latest site change.")
+                    await asyncio.sleep(10)
+                    client = new_client()
+                except TooManyRequests:
+                    if attempt == 2:
+                        raise SystemExit("[collect] X rate limit hit repeatedly; giving up for today")
+                    print("[collect] X rate limit hit; waiting 15 min", file=sys.stderr)
+                    await asyncio.sleep(900)
+            print(f"[collect] {coin_cfg['coin']}: {len(pulls[coin_cfg['coin']]['tweets'])} posts (cookies)",
+                  file=sys.stderr)
+            await asyncio.sleep(4)
+        return pulls
+
+    return asyncio.run(run())
 
 
 # ---------------------------------------------------------------------------
@@ -276,6 +312,7 @@ def clean_text(text: str) -> str:
     text = URL_RE.sub("", text)
     text = LEADING_MENTIONS_RE.sub("", text.strip())
     text = EMOJI_RE.sub("", text)
+    text = re.sub(r":[a-z0-9_]+:", "", text)  # leftover emoji shortcodes like :native:
     text = TRAILING_TAGS_RE.sub("", text)
     text = re.sub(r"\s+", " ", text).strip(" -–—:|")
     return text
@@ -302,8 +339,13 @@ def drop_reason(text: str, tweet: dict, user: dict | None) -> str | None:
         return "too_short"
     if user.get("public_metrics", {}).get("followers_count", 0) < MIN_FOLLOWERS:
         return "low_follower_account"
-    if len(re.findall(r"\$[A-Za-z]{2,6}\b", text)) > MAX_CASHTAGS:
+    tags = [t.upper() for t in re.findall(r"\$([A-Za-z]{2,10})\b", text)]
+    if len(tags) > MAX_CASHTAGS:
         return "cashtag_spam"
+    if any(t not in OK_TICKERS for t in tags):
+        return "other_token_shill"
+    if SHILL_BIO.search(user.get("description") or ""):
+        return "promo_account"
     for reason, pattern in DROP_RULES.items():
         if pattern.search(text):
             return reason
@@ -493,14 +535,13 @@ def main() -> int:
         max_results = max(10, min(100, args.max_results or int(os.environ.get("X_MAX_RESULTS", "25"))))
         raw = {"collected_at": end.isoformat(), "window_start": start.isoformat(),
                "window_end": end.isoformat(), "source": source, "pulls": {}}
-        for coin_cfg in COINS:
-            if source == "cookies":
-                pull = cookie_search(coin_cfg["query"], start, end, auth_token, ct0, max_results)
-                time.sleep(5)
-            else:
+        if source == "cookies":
+            raw["pulls"] = cookie_search_all(COINS, start, end, auth_token, ct0, max_results)
+        else:
+            for coin_cfg in COINS:
                 pull = x_search(coin_cfg["query"], start, end, token, args.pages, max_results)
-            raw["pulls"][coin_cfg["coin"]] = pull
-            print(f"[collect] {coin_cfg['coin']}: {len(pull['tweets'])} posts ({source})", file=sys.stderr)
+                raw["pulls"][coin_cfg["coin"]] = pull
+                print(f"[collect] {coin_cfg['coin']}: {len(pull['tweets'])} posts (api)", file=sys.stderr)
         reads = sum(len(p["tweets"]) for p in raw["pulls"].values())
         raw["post_reads"] = reads
         if source == "api":
