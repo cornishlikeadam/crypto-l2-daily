@@ -149,12 +149,13 @@ def load_env() -> None:
         os.environ.setdefault(key.strip(), value.strip().strip('"').strip("'"))
 
 
-def x_search(query: str, start_time: datetime, end_time: datetime, token: str, pages: int) -> dict:
+def x_search(query: str, start_time: datetime, end_time: datetime, token: str, pages: int,
+             max_results: int) -> dict:
     params = {
         "query": query + QUERY_SUFFIX,
         "start_time": start_time.strftime("%Y-%m-%dT%H:%M:%SZ"),
         "end_time": end_time.strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "max_results": "100",
+        "max_results": str(max_results),
         "sort_order": "relevancy",
         "tweet.fields": "created_at,public_metrics,lang,author_id,note_tweet,entities",
         "expansions": "author_id",
@@ -405,7 +406,10 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--date", help="YYYY-MM-DD (America/New_York); default today")
     ap.add_argument("--from-raw", help="re-filter a saved raw pull instead of calling X")
-    ap.add_argument("--pages", type=int, default=1, help="pages of 100 per query (default 1)")
+    ap.add_argument("--pages", type=int, default=1, help="pages per query (default 1)")
+    ap.add_argument("--max-results", type=int, default=None,
+                    help="posts per query page, 10-100 (default X_MAX_RESULTS or 25). "
+                         "X bills each post read, so this sets the daily cost.")
     args = ap.parse_args()
 
     now_et = datetime.now(ET)
@@ -423,12 +427,17 @@ def main() -> int:
         # recent search needs end_time >= 10s in the past
         end = datetime.now(timezone.utc) - timedelta(seconds=30)
         start = end - timedelta(hours=24)
+        max_results = max(10, min(100, args.max_results or int(os.environ.get("X_MAX_RESULTS", "25"))))
         raw = {"collected_at": end.isoformat(), "window_start": start.isoformat(),
                "window_end": end.isoformat(), "pulls": {}}
         for coin_cfg in COINS:
-            raw["pulls"][coin_cfg["coin"]] = x_search(coin_cfg["query"], start, end, token, args.pages)
+            raw["pulls"][coin_cfg["coin"]] = x_search(coin_cfg["query"], start, end, token, args.pages,
+                                                      max_results)
             print(f"[collect] {coin_cfg['coin']}: {len(raw['pulls'][coin_cfg['coin']]['tweets'])} posts",
                   file=sys.stderr)
+        reads = sum(len(p["tweets"]) for p in raw["pulls"].values())
+        raw["post_reads"] = reads
+        print(f"[collect] {reads} post reads billed (~${reads * 0.005:.2f} at $0.005/read)", file=sys.stderr)
         raw_dir = ROOT / "data" / "raw"
         raw_dir.mkdir(parents=True, exist_ok=True)
         (raw_dir / f"{day}.json").write_text(json.dumps(raw, indent=1))
