@@ -27,6 +27,17 @@ h2{font:600 26px/1.2 Newsreader,Georgia,serif;margin:48px 0 16px}
 margin-right:6px}
 .card .stats{margin:6px 0 0;font-size:13px;color:var(--muted)}
 .card.note{margin-top:20px;border-color:rgba(227,184,102,.35)}
+.guide{display:flex;gap:16px;align-items:flex-start;margin:28px 0 0}
+.guide img{flex:none;width:88px;height:88px}
+.guide .bubble{position:relative;background:var(--lift);border:1px solid rgba(227,184,102,.45);border-radius:14px;
+padding:14px 18px;font-size:15px;min-width:0;overflow-wrap:anywhere}
+.guide .bubble:before{content:"";position:absolute;left:-8px;top:28px;width:14px;height:14px;background:var(--lift);
+border-left:1px solid rgba(227,184,102,.45);border-bottom:1px solid rgba(227,184,102,.45);transform:rotate(45deg)}
+.guide b{color:var(--amber);font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+.guide ol{margin:8px 0 0;padding-left:20px}.guide li{margin:2px 0}
+.guide .hear{margin-top:10px;background:none;border:1px solid var(--amber);color:var(--amber);border-radius:999px;
+padding:6px 14px;font:inherit;font-size:14px;cursor:pointer}
+@media (max-width:600px){.guide img{width:60px;height:60px}}
 nav a{margin-left:16px;font-size:14px;color:var(--muted);text-decoration:none}nav a:hover{color:var(--amber)}
 .card .who{margin-top:14px;padding-top:12px;border-top:1px solid var(--rule);font-size:14px;color:var(--muted);
 display:flex;flex-wrap:wrap;gap:4px 14px}
