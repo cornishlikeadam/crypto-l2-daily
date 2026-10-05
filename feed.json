@@ -1,8 +1,8 @@
 {
   "version": "https://jsonfeed.org/version/1.1",
   "title": "Crypto L2 Daily",
-  "home_page_url": "https://cornishlikeadam.github.io/crypto-l2-daily/",
-  "feed_url": "https://cornishlikeadam.github.io/crypto-l2-daily/feed.json",
+  "home_page_url": "https://crypto-l2-daily.vercel.app/",
+  "feed_url": "https://crypto-l2-daily.vercel.app/feed.json",
   "description": "Bitcoin L2, Dogecoin, Monero and Litecoin on X, last 24 hours, with sources.",
   "items": []
 }
