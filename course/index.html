@@ -1,0 +1,362 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#0A0A0B"><title>Course notes — Crypto L2 Daily</title><meta name="description" content="A 70-second video every day at 6 PM. It shows real posts from X about Bitcoin, Dogecoin, Monero and Litecoin add-ons. Every card links to its source."><link rel="alternate" type="application/feed+json" href="../feed.json"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Big+Shoulders:opsz,wght@10..72,700..900&family=IBM+Plex+Mono:wght@500;600&family=Yellowtail&display=swap" rel="stylesheet"><style>
+@property --foil{syntax:'<angle>';inherits:false;initial-value:0deg}
+:root{--ink:#0A0A0B;--onyx:#131315;--onyx-2:#1B1B1F;--plat:#E5E4E2;--plat-2:#B9BBC0;--plat-3:#80838B;
+--gold:#D4AF37;--gold-hi:#F3D77A;--green:#85BB65;--green-deep:#2E6B45;--mint:#9FF5C8;--ice:#A7E8FF;--lilac:#C9B6FF;
+--blush:#FFD1EC;--hair:rgba(229,228,226,.14);--rule:rgba(229,228,226,.08);
+--holo:conic-gradient(from var(--foil),#F3D77A,#9FF5C8,#A7E8FF,#C9B6FF,#FFD1EC,#F3D77A);
+--script:Yellowtail,"Snell Roundhand",cursive;--display:"Big Shoulders","Big Shoulders Display",Impact,sans-serif;
+--body:"Atkinson Hyperlegible",system-ui,-apple-system,sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+--bg:var(--ink);--cream:var(--plat);--muted:var(--plat-3);--amber:var(--gold)}
+*{box-sizing:border-box}
+html{background:var(--ink);scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--plat);font:18px/1.6 var(--body);-webkit-font-smoothing:antialiased;
+overflow-x:hidden}
+a{color:inherit}
+b,strong{color:#fff;font-weight:700}
+::selection{background:var(--gold);color:var(--ink)}
+:focus-visible{outline:2px solid var(--mint);outline-offset:3px}
+#sky{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+main{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:40px 16px 80px}
+.holo-text{background:linear-gradient(100deg,var(--gold-hi),var(--mint) 35%,var(--ice) 55%,var(--lilac) 75%,var(--gold));
+-webkit-background-clip:text;background-clip:text;color:transparent}
+.q{font:600 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--plat-2)}
+.q:before{content:'"'}.q:after{content:'"'}
+.tape{height:10px;margin:36px 0;border-radius:2px;opacity:.55;
+background:repeating-linear-gradient(-45deg,var(--plat) 0 10px,var(--ink) 10px 20px)}
+.micro{overflow:hidden;white-space:nowrap;font:500 8px/1 var(--mono);letter-spacing:.3em;color:var(--plat-3);opacity:.7}
+.serial{font:600 13px/1 var(--mono);letter-spacing:.14em;color:var(--gold)}
+.serial i{font-style:normal;color:var(--green)}
+.hero{position:relative;z-index:1;isolation:isolate;overflow:hidden;border-bottom:1px solid var(--hair);
+background:radial-gradient(60% 60% at 75% 45%,rgba(212,175,55,.14),transparent 70%),
+radial-gradient(50% 60% at 10% 110%,rgba(133,187,101,.16),transparent 70%),linear-gradient(180deg,#0E0E10,#0A0A0B)}
+.hero:before{content:"";position:absolute;z-index:-1;width:760px;height:760px;right:-120px;top:50%;
+transform:translateY(-50%);background:url("../assets/rosette-plat.svg") center/contain no-repeat;opacity:.9;pointer-events:none}
+.hero.full{min-height:min(88vh,780px);display:flex}
+.hero.compact{padding-bottom:6px}
+#monolith{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0;touch-action:pan-y}
+.hero .core{position:absolute;z-index:0;left:72%;top:48%;width:280px;height:280px;margin:-140px 0 0 -140px;
+border-radius:50%;pointer-events:none;transition:opacity .9s;
+background:radial-gradient(circle,rgba(255,250,230,.9) 0,rgba(212,175,55,.45) 18%,rgba(133,187,101,.14) 46%,transparent 70%)}
+.hero.gl-on .core{opacity:0}
+.hero-inner{position:relative;z-index:2;width:100%;max-width:1080px;margin:0 auto;padding:20px 16px 0;
+display:flex;flex-direction:column;pointer-events:none}
+.hero-inner>*{pointer-events:auto}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px 20px;flex-wrap:wrap}
+.brand{display:flex;align-items:baseline;gap:10px;text-decoration:none}
+.brand .sig{font:400 28px/1 var(--script);color:var(--gold-hi)}
+.brand .q{font-size:11px}
+nav{display:flex;align-items:center;gap:6px 16px;flex-wrap:wrap}
+nav a,nav button{font:600 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--plat-2);
+text-decoration:none;background:none;border:0;padding:8px 0;cursor:pointer}
+nav a:hover,nav button:hover,nav a[aria-current]{color:var(--gold-hi)}
+nav .pillbtn{border:1px solid var(--hair);border-radius:999px;padding:9px 14px;color:var(--plat)}
+nav .pillbtn:hover{border-color:var(--gold)}
+.hero-copy{margin:auto 0 0;padding:28px 0 64px;max-width:680px}
+.hero.compact .hero-copy{margin-top:30px;padding-bottom:30px}
+.hero h1{margin:14px 0 0;line-height:.9}
+.hero h1 .script{display:block;font:400 clamp(54px,8vw,104px)/1 var(--script);margin-bottom:-.06em}
+.hero h1 .block{display:block;font:900 clamp(64px,11vw,150px)/.86 var(--display);text-transform:uppercase;
+letter-spacing:.01em;color:var(--plat)}
+.hero.compact h1 .script{font-size:clamp(40px,6vw,64px)}.hero.compact h1 .block{font-size:clamp(44px,7vw,84px)}
+.lede{margin:20px 0 0;font-size:20px;line-height:1.55;color:var(--plat);max-width:560px}
+.lede b{color:var(--gold-hi)}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 20px;border-radius:999px;border:1px solid var(--hair);
+background:rgba(19,19,21,.7);color:var(--plat);font:700 16px/1 var(--body);text-decoration:none;cursor:pointer;
+transition:transform .2s,border-color .2s,box-shadow .2s}
+.btn:hover{border-color:var(--gold);transform:translateY(-1px)}
+.btn.gold{background:linear-gradient(180deg,var(--gold-hi),var(--gold));color:var(--ink);border-color:transparent;
+box-shadow:0 10px 30px -12px rgba(212,175,55,.8)}
+.btn .n{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--ink);
+color:var(--gold-hi);font:900 14px/1 var(--display)}
+.ribbon{position:relative;z-index:2;overflow:hidden;background:#0D0D0F;border-bottom:1px solid var(--hair)}
+.ribbon:before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:var(--holo);
+animation:foil 6s linear infinite}
+.ribbon .track{display:flex;width:max-content;animation:ribbon 80s linear infinite}
+.ribbon:hover .track,.ribbon:focus-within .track{animation-play-state:paused}
+.ribbon .grp{display:flex}
+@keyframes ribbon{to{transform:translateX(-50%)}}
+@keyframes foil{to{--foil:360deg}}
+.tick{display:inline-flex;align-items:center;gap:9px;height:48px;padding:0 24px;border-right:1px solid var(--rule);
+font:500 13px/1 var(--mono);white-space:nowrap;font-variant-numeric:tabular-nums}
+.tick .lbl{color:var(--plat-3);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.tick .val{color:var(--plat);font-weight:600}.tick .sub{color:var(--plat-3)}
+.tick .chg{font-size:12px}.tick .chg.up{color:var(--green)}.tick .chg.down{color:#FF8FA3}
+.dot{position:relative;flex:none;width:7px;height:7px;border-radius:50%;background:var(--plat-3)}
+.dot.live{background:var(--mint);box-shadow:0 0 8px var(--mint)}
+.dot.stale{background:var(--gold);box-shadow:0 0 8px var(--gold)}
+.dot.live:after,.dot.stale:after{content:"";position:absolute;inset:0;border-radius:50%;background:inherit;
+animation:ping 2.2s ease-out infinite}
+@keyframes ping{from{transform:scale(1);opacity:.7}to{transform:scale(3);opacity:0}}
+h2{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px 14px;margin:64px 0 20px;
+font:900 clamp(32px,4.4vw,52px)/1 var(--display);text-transform:uppercase;letter-spacing:.01em}
+h2 .script{font:400 .9em/1 var(--script);text-transform:none;color:var(--gold-hi)}
+h2 .q{font-size:12px;align-self:center}
+.kicker{font:600 13px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+.step{position:relative;overflow:hidden;padding:18px 18px 20px;border:1px solid var(--hair);border-radius:14px;
+background:linear-gradient(160deg,var(--onyx-2),var(--onyx));min-height:170px}
+.step:after{content:"";position:absolute;right:-50px;bottom:-50px;width:150px;height:150px;
+background:url("../assets/rosette-gold.svg") center/contain no-repeat;opacity:.7}
+.step:nth-child(even):after{background-image:url("../assets/rosette-green.svg")}
+.step .den{font:900 64px/.8 var(--display);letter-spacing:-.02em}
+.step:nth-child(odd) .den{color:var(--gold-hi)}.step:nth-child(even) .den{color:var(--green)}
+.step .t{display:block;margin:12px 0 4px;font:700 18px/1.25 var(--body);color:#fff}
+.step .d{margin:0;font-size:15px;line-height:1.45;color:var(--plat-2)}
+.step .em{position:absolute;right:16px;top:16px;font-size:24px}
+.screen{position:relative;margin-top:12px;border-radius:20px;padding:3px;background:var(--holo);
+animation:foil 9s linear infinite;box-shadow:0 30px 80px -30px rgba(212,175,55,.45)}
+video{width:100%;aspect-ratio:16/9;background:#000;border-radius:17px;display:block}
+.meta{color:var(--plat-3);font:500 14px/1.5 var(--mono);margin:14px 0 0}
+.cards{list-style:none;margin:0;padding:0;display:grid;gap:16px;
+grid-template-columns:repeat(auto-fill,minmax(min(100%,470px),1fr))}
+.card{position:relative;isolation:isolate;overflow:hidden;border:1px solid var(--hair);border-radius:18px;
+padding:22px 24px 20px 34px;background:linear-gradient(165deg,var(--onyx-2),var(--onyx) 70%);
+box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 24px 50px -32px rgba(0,0,0,.9);
+transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s,border-color .3s}
+.card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:8px;background:var(--holo);opacity:.9;
+animation:foil 7s linear infinite}
+.card .den{position:absolute;right:18px;top:12px;font:900 44px/1 var(--display);color:var(--c,var(--gold));opacity:.22}
+.card a.body{text-decoration:none;display:block}
+.card a.body:hover .title{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:5px;
+text-decoration-color:var(--c,var(--gold))}
+.card .title{margin:14px 0 8px;font:800 27px/1.1 var(--display);text-transform:uppercase;letter-spacing:.01em;color:#fff}
+.card .sentence{margin:0;font-size:19px;line-height:1.5;color:var(--plat)}
+.card.quiet .sentence{color:var(--plat-3)}
+.card .explain{margin:14px 0 0;padding:10px 12px;border-radius:10px;background:rgba(229,228,226,.05);font-size:16px;
+color:var(--plat)}
+.card .explain span{display:block;margin-bottom:2px;font:600 11px var(--mono);letter-spacing:.14em;
+text-transform:uppercase;color:var(--c,var(--gold))}
+.card .stats{margin:10px 0 0;font:500 13px/1.4 var(--mono);color:var(--plat-3)}
+.card .who{margin-top:14px;padding-top:12px;border-top:1px dashed var(--hair);font-size:15px;color:var(--plat-3);
+display:flex;flex-wrap:wrap;gap:4px 14px}
+.card .who b{color:var(--plat)}.card .why{flex-basis:100%;font-size:14px}
+.card.note{margin-top:20px;padding-left:24px;border-color:rgba(212,175,55,.4)}.card.note:before{display:none}
+.card.item:hover,.card.item:focus-within{transform:translateY(-3px);border-color:color-mix(in srgb,var(--c) 55%,transparent);
+box-shadow:0 30px 60px -28px color-mix(in srgb,var(--c) 45%,transparent)}
+.coin-btc{--c:#D4AF37}.coin-doge{--c:#85BB65}.coin-xmr{--c:#E5E4E2}.coin-ltc{--c:#A7E8FF}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:5px 12px 5px 10px;border-radius:999px;
+font:600 12px/1.2 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--c,var(--gold));
+background:color-mix(in srgb,var(--c,#D4AF37) 13%,transparent);border:1px solid color-mix(in srgb,var(--c,#D4AF37) 45%,transparent)}
+.card.quiet .pill{opacity:.75}
+.guide{display:flex;gap:16px;align-items:flex-start;margin:28px 0 0}
+.guide img{flex:none;width:88px;height:88px}
+.guide .bubble{position:relative;background:var(--onyx);border:1px solid var(--hair);border-radius:16px;padding:16px 20px;
+font-size:16px;min-width:0}
+.guide b{font:600 12px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.guide ol{margin:8px 0 0;padding-left:22px}.guide li{margin:3px 0}
+.guide .hear{margin-top:10px;background:none;border:1px solid var(--gold);color:var(--gold);border-radius:999px;
+padding:7px 14px;font:inherit;font-size:14px;cursor:pointer}
+.days{list-style:none;margin:0;padding:0;border-top:1px solid var(--hair)}
+.days li{border-bottom:1px solid var(--rule)}
+.days a{display:grid;grid-template-columns:auto 1fr auto;align-items:baseline;gap:14px;padding:14px 4px;
+text-decoration:none;transition:background .2s}
+.days a:hover{background:rgba(212,175,55,.06)}
+.days .serial{font-size:12px}.days span{color:var(--plat-3);font:500 13px/1.6 var(--mono);text-align:right}
+.teaser{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+footer{margin-top:72px;padding-top:22px;border-top:1px solid var(--hair);color:var(--plat-3);font-size:14px}
+footer .sig{display:block;margin-top:14px;font:400 30px/1 var(--script);color:var(--gold-hi)}
+footer .micro{margin-top:14px}
+dialog{width:min(640px,calc(100vw - 24px));max-height:calc(100vh - 24px);padding:0;border:0;border-radius:22px;
+background:#111113;color:var(--plat);box-shadow:0 40px 120px -20px #000}
+dialog:before{content:"";position:absolute;inset:0;border-radius:22px;padding:2px;background:var(--holo);
+-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;
+mask-composite:exclude;pointer-events:none;animation:foil 8s linear infinite}
+dialog::backdrop{background:rgba(5,5,6,.78)}
+.dlg{position:relative;padding:24px}
+.dlg h3{margin:10px 0 6px;font:900 34px/1 var(--display);text-transform:uppercase}
+.dlg h3 .script{font:400 1em var(--script);text-transform:none;color:var(--gold-hi)}
+.dlg p{margin:0 0 6px;color:var(--plat);font-size:17px}
+.dlg ol{padding-left:0;margin:14px 0;list-style:none;counter-reset:s}
+.dlg li{counter-increment:s;position:relative;min-height:32px;padding:4px 0 0 46px;margin:10px 0;
+font-size:17px;line-height:1.45}
+.dlg li:before{content:counter(s);position:absolute;left:0;top:0;display:grid;place-items:center;width:32px;height:32px;border-radius:50%;
+font:900 18px/1 var(--display);color:var(--ink);background:linear-gradient(180deg,var(--gold-hi),var(--gold))}
+.dlg li:nth-child(even):before{background:linear-gradient(180deg,var(--mint),var(--green))}
+.dlg .x{position:absolute;right:16px;top:16px;width:38px;height:38px;border-radius:50%;border:1px solid var(--hair);
+background:#111113;color:var(--plat-2);font-size:16px;cursor:pointer}
+.dlg .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.dlg small{display:block;margin-top:14px;color:var(--plat-3);font-size:14px}
+.dlg code{font:500 12px var(--mono);color:var(--ice);word-break:break-all}
+.intro .pages{position:relative}
+.intro .page{display:none}.intro .page.on{display:block;animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.intro .dots{display:flex;gap:8px;margin:16px 0 4px}
+.intro .dots button{width:30px;height:6px;border-radius:3px;border:0;background:var(--hair);cursor:pointer;padding:0}
+.intro .dots button.on{background:var(--gold)}
+.intro .nav{display:flex;justify-content:space-between;gap:10px;margin-top:12px}
+.explainer{position:relative;overflow:hidden;border-radius:14px;margin:6px 0 10px;aspect-ratio:16/9;max-height:34vh;
+margin-inline:auto;
+background:radial-gradient(circle at 70% 40%,rgba(212,175,55,.25),transparent 60%),#0D0D0F;display:grid;place-items:center;
+border:1px solid var(--hair)}
+.explainer:after{content:"";position:absolute;inset:0;background:url("../assets/rosette-plat.svg") center/120% no-repeat;opacity:.5}
+.explainer span{position:relative;z-index:1;font:700 16px var(--body);color:var(--plat-2)}
+.explainer video{border-radius:0;position:relative;z-index:1}
+.flow{display:grid;gap:8px;margin:12px 0}
+.flow div{display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:12px;background:var(--onyx-2);
+border:1px solid var(--hair);font-size:16px}
+.flow div b{font:900 22px/1 var(--display);color:var(--gold-hi);min-width:26px}
+.flow div:nth-child(even) b{color:var(--green)}
+.course-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));list-style:none;
+margin:0;padding:0}
+.qcard{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:10px;padding:20px 20px 18px;
+border:1px solid var(--hair);border-radius:18px;background:linear-gradient(165deg,var(--onyx-2),var(--onyx) 70%)}
+.qcard:after{content:"";position:absolute;right:-60px;top:-60px;width:170px;height:170px;
+background:url("../assets/rosette-gold.svg") center/contain no-repeat;opacity:.5;pointer-events:none}
+.qcard:nth-child(even):after{background-image:url("../assets/rosette-green.svg")}
+.qcard .top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.qcard .den{font:900 46px/.8 var(--display);color:var(--gold-hi)}
+.qcard:nth-child(even) .den{color:var(--green)}
+.qcard .question{margin:0;font:700 20px/1.3 var(--body);color:#fff}
+.qcard details{border-radius:12px;background:rgba(229,228,226,.05);padding:10px 14px}
+.qcard summary{cursor:pointer;font:600 13px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+.qcard details.ans summary{color:var(--green)}
+.qcard details p{margin:8px 0 2px;font-size:16px}
+.qcard .more{margin-top:auto;font:600 13px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--plat-2);
+text-decoration:none}.qcard .more:hover{color:var(--gold-hi)}
+.group-title{margin:44px 0 14px;font:600 13px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--plat-3)}
+.toggle-all{margin-top:6px}
+.note{max-width:780px}
+.note .qcard{margin-bottom:28px}
+.prose{font-size:18px;line-height:1.7}
+.prose h1{font:900 clamp(36px,5vw,56px)/1 var(--display);text-transform:uppercase;margin:0 0 18px}
+.prose h2{font-size:clamp(26px,3vw,34px);margin:44px 0 12px}
+.prose h3{font:700 21px/1.3 var(--body);margin:28px 0 8px;color:var(--gold-hi)}
+.prose p{margin:12px 0}.prose ul,.prose ol{padding-left:24px}.prose li{margin:6px 0}
+.prose code{font:500 .85em var(--mono);background:rgba(229,228,226,.08);padding:2px 6px;border-radius:6px;color:var(--ice)}
+.prose pre{overflow:auto;padding:14px;border-radius:12px;background:#0D0D0F;border:1px solid var(--hair)}
+.prose pre code{background:none;padding:0}
+.prose table{width:100%;border-collapse:collapse;margin:16px 0;font-size:16px;display:block;overflow-x:auto}
+.prose th,.prose td{padding:10px 12px;border-bottom:1px solid var(--hair);text-align:left;vertical-align:top}
+.prose th{font:600 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+.prose a{color:var(--ice);text-underline-offset:3px}
+.prose hr{border:0;height:10px;margin:34px 0;opacity:.4;background:repeating-linear-gradient(-45deg,var(--plat) 0 10px,var(--ink) 10px 20px)}
+.callout{margin:18px 0;padding:14px 18px;border-radius:14px;border:1px solid var(--hair);background:var(--onyx);
+border-left:6px solid var(--cc,var(--gold))}
+.callout .ct{display:block;font:600 13px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--cc,var(--gold));
+margin-bottom:4px}
+.callout p{margin:6px 0}
+.callout.tip{--cc:var(--green)}.callout.important,.callout.success{--cc:var(--mint)}.callout.warning{--cc:#FF8FA3}
+.callout.note,.callout.info{--cc:var(--ice)}.callout.question,.callout.example{--cc:var(--lilac)}
+.pager{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:44px}
+@media (max-width:760px){.hero:before{width:520px;height:520px;right:-180px;top:28%}
+.hero.full{min-height:0}.hero.full .hero-copy{padding-top:min(70vw,320px)}
+.hero .core{left:50%;top:220px;width:220px;height:220px;margin:-110px 0 0 -110px}}
+@media (max-width:600px){.card{padding:18px 18px 18px 28px}.card .title{font-size:23px}.guide img{width:60px;height:60px}
+.tick{padding:0 18px}.days a{grid-template-columns:1fr auto}.days .serial{display:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}
+.ribbon{overflow-x:auto;scrollbar-width:none}.ribbon .grp[aria-hidden]{display:none}}
+</style></head><body><canvas id="sky" aria-hidden="true"></canvas><section class="hero compact"><div class="hero-inner"><header><a class="brand" href="../"><span class="sig">L2 Daily</span><span class="q">by NOT2L8</span></a><nav><a href="../">🏠 Home</a><a href="../course/" aria-current="page">📚 Course</a><a href="../archive/">🗂️ Archive</a><button type="button" data-open-intro>❓ Guide</button><button class="pillbtn" type="button" data-open-widget>📱 Widget</button></nav></header><div class="hero-copy"><p class="serial">NO. AI101 <i>·</i> PROJECT 2 <i>·</i> 21 QUESTIONS</p><h1><a href="../" style="text-decoration:none"><span class="script holo-text">Course</span><span class="block">Notes</span></a></h1><p class="lede">This is the <b>AI 101</b> project, step by step. Every card is <b>one question</b>. Tap <b>💡 Hint</b> to get help. Tap <b>✅ Answer</b> to see the answer.</p><div class="ctas"><button type="button" class="btn gold toggle-all" data-toggle-answers>👀 Show all answers</button><a class="btn" href="README/">🗺️ Folder map</a></div></div></div></section><div class="ribbon" id="ribbon" role="region" aria-label="Live network numbers"><div class="track"><div class="grp"><span class="tick" data-k="price"><span class="dot"></span><span class="lbl">₿ BTC</span><span class="val">—</span><span class="chg"></span></span><span class="tick" data-k="fee"><span class="dot"></span><span class="lbl">⛽ Fast fee</span><span class="val">—</span><span class="sub"></span></span><span class="tick" data-k="block"><span class="dot"></span><span class="lbl">🧱 Block</span><span class="val">—</span></span><span class="tick" data-k="ln"><span class="dot"></span><span class="lbl">⚡ Lightning</span><span class="val">—</span><span class="sub"></span></span><span class="tick" data-k="doge"><span class="dot"></span><span class="lbl">🐕 DOGE</span><span class="val">—</span><span class="chg"></span><span class="sub"></span></span><span class="tick" data-k="xmr"><span class="dot"></span><span class="lbl">🔒 XMR</span><span class="val">—</span><span class="chg"></span><span class="sub"></span></span><span class="tick" data-k="ltc"><span class="dot"></span><span class="lbl">🪙 LTC</span><span class="val">—</span><span class="chg"></span><span class="sub"></span></span></div><div class="grp" aria-hidden="true"><span class="tick" data-k="price"><span class="dot"></span><span class="lbl">₿ BTC</span><span class="val">—</span><span class="chg"></span></span><span class="tick" data-k="fee"><span class="dot"></span><span class="lbl">⛽ Fast fee</span><span class="val">—</span><span class="sub"></span></span><span class="tick" data-k="block"><span class="dot"></span><span class="lbl">🧱 Block</span><span class="val">—</span></span><span class="tick" data-k="ln"><span class="dot"></span><span class="lbl">⚡ Lightning</span><span class="val">—</span><span class="sub"></span></span><span class="tick" data-k="doge"><span class="dot"></span><span class="lbl">🐕 DOGE</span><span class="val">—</span><span class="chg"></span><span class="sub"></span></span><span class="tick" data-k="xmr"><span class="dot"></span><span class="lbl">🔒 XMR</span><span class="val">—</span><span class="chg"></span><span class="sub"></span></span><span class="tick" data-k="ltc"><span class="dot"></span><span class="lbl">🪙 LTC</span><span class="val">—</span><span class="chg"></span><span class="sub"></span></span></div></div></div><main><h2><span class="script">The</span> questions <span class="q">tap to reveal</span></h2><p class="group-title">Start</p><ul class="course-grid"><li class="qcard"><div class="top"><span class="den">00</span><span class="q">Start</span></div><p class="question">❓ Where do I start, and what is in this folder?</p><details><summary>💡 Hint</summary><p>Look for the file with the number 01.</p></details><details class="ans"><summary>✅ Answer</summary><p>Start with 00-start-here. Then read the files in number order. Each file answers one question.</p></details><a class="more" href="../course/README/">📖 Read the full note →</a></li><li class="qcard"><div class="top"><span class="den">01</span><span class="q">Start</span></div><p class="question">❓ What does the robot make, and what rules does it follow?</p><details><summary>💡 Hint</summary><p>Think about the clock, the video length, and where the posts come from.</p></details><details class="ans"><summary>✅ Answer</summary><p>Every day at 6 PM, it makes a 70-second video and a web page. It uses only real posts from X, from the last 24 hours. It never makes up news.</p></details><a class="more" href="../course/00-start-here/">📖 Read the full note →</a></li><li class="qcard"><div class="top"><span class="den">02</span><span class="q">Start</span></div><p class="question">❓ What was my problem before I used AI?</p><details><summary>💡 Hint</summary><p>Count the hours. Think about scrolling, ads and dates.</p></details><details class="ans"><summary>✅ Answer</summary><p>Thousands of crypto posts come every day. Finding the real news by hand takes hours. It is easy to miss a day or use a post from the wrong day.</p></details><a class="more" href="../course/intent/">📖 Read the full note →</a></li></ul><p class="group-title">The 5 steps</p><ul class="course-grid"><li class="qcard"><div class="top"><span class="den">03</span><span class="q">The 5 steps</span></div><p class="question">❓ Step 1: How does the robot get the posts?</p><details><summary>💡 Hint</summary><p>It is like 4 searches, one for each coin, at the same time every day.</p></details><details class="ans"><summary>✅ Answer</summary><p>At 6 PM, a timer starts the robot. It searches X 4 times, once per coin. It keeps the top 25 posts for each search.</p></details><a class="more" href="../course/01-collect-posts/">📖 Read the full note →</a></li><li class="qcard"><div class="top"><span class="den">04</span><span class="q">The 5 steps</span></div><p class="question">❓ Step 2: How does the robot remove the junk?</p><details><summary>💡 Hint</summary><p>There is a list of &#x27;throw it out&#x27; rules. Dates are rule number 1.</p></details><details class="ans"><summary>✅ Answer</summary><p>It removes posts from the wrong day, price guesses, ads, giveaways, tiny accounts and copies. Then it keeps up to 3 good posts for each coin.</p></details><a class="more" href="../course/02-check-posts/">📖 Read the full note →</a></li><li class="qcard"><div class="top"><span class="den">05</span><span class="q">The 5 steps</span></div><p class="question">❓ Step 3: How does the robot make the 70-second video?</p><details><summary>💡 Hint</summary><p>Cards plus a free robot voice. What happens if the voice is too long?</p></details><details class="ans"><summary>✅ Answer</summary><p>It makes 8 to 10 cards and reads them with the free Piper voice. If the voice is too long, it reads fewer words. The card still shows all the words.</p></details><a class="more" href="../course/03-make-video/">📖 Read the full note →</a></li><li class="qcard"><div class="top"><span class="den">06</span><span class="q">The 5 steps</span></div><p class="question">❓ Step 4: What do I check before a video goes online?</p><details><summary>💡 Hint</summary><p>Watch it, open the links, check the dates, look for hype.</p></details><details class="ans"><summary>✅ Answer</summary><p>I watch the whole video. I open 2 post links and compare the words. I check every date. I check for price guesses, ads and made-up news. Then I approve it.</p></details><a class="more" href="../course/04-human-check/">📖 Read the full note →</a></li><li class="qcard"><div class="top"><span class="den">07</span><span class="q">The 5 steps</span></div><p class="question">❓ Step 5: How does the video get onto the website?</p><details><summary>💡 Hint</summary><p>Build the pages, back up, send to the host, then test the page.</p></details><details class="ans"><summary>✅ Answer</summary><p>build_site.py builds the pages. The robot saves a backup on GitHub and sends the site to Vercel. Then it loads the page. It says LIVE only if the page loads.</p></details><a class="more" href="../course/05-publish/">📖 Read the full note →</a></li><li class="qcard"><div class="top"><span class="den">08</span><span class="q">The 5 steps</span></div><p class="question">❓ What is the order of the 5 steps?</p><details><summary>💡 Hint</summary><p>Input at the start, output at the end. One step has a &#x27;no&#x27; path.</p></details><details class="ans"><summary>✅ Answer</summary><p>6 PM input → 1 Collect → 2 Check → 3 Make video → 4 Human check → 5 Publish → output. If the human check says no, the robot goes back to step 2.</p></details><a class="more" href="../course/diagram/">📖 Read the full note →</a></li></ul><p class="group-title">Proof</p><ul class="course-grid"><li class="qcard"><div class="top"><span class="den">09</span><span class="q">Proof</span></div><p class="question">❓ How do I know each source is real?</p><details><summary>💡 Hint</summary><p>I opened every source myself. I did not trust a search result.</p></details><details class="ans"><summary>✅ Answer</summary><p>I opened and read 6 sources on October 5, 2026. For each one, I wrote what it says and how I checked it. I dropped 1 claim and fixed 1 claim.</p></details><a class="more" href="../course/source-verification-log/">📖 Read the full note →</a></li><li class="qcard"><div class="top"><span class="den">10</span><span class="q">Proof</span></div><p class="question">❓ Which 2 facts does the robot depend on, and are they true?</p><details><summary>💡 Hint</summary><p>One fact is about money. One fact is about a broken tool.</p></details><details class="ans"><summary>✅ Answer</summary><p>Fact 1: X&#x27;s official API is not free ($0.005 per post). Fact 2: the normal free scraper (twikit) is broken, so the robot uses a fixed copy that I checked.</p></details><a class="more" href="../course/research-brief/">📖 Read the full note →</a></li><li class="qcard"><div class="top"><span class="den">11</span><span class="q">Proof</span></div><p class="question">❓ When did the AI work, and what did I keep, change or reject?</p><details><summary>💡 Hint</summary><p>Each row is one run. Look at the last column.</p></details><details class="ans"><summary>✅ Answer</summary><p>The log has 15 runs, in order. For each run, I wrote what I asked, what the AI made, and my decision: keep, change or reject, with a reason.</p></details><a class="more" href="../course/ai-use-log/">📖 Read the full note →</a></li><li class="qcard"><div class="top"><span class="den">12</span><span class="q">Proof</span></div><p class="question">❓ What did the robot&#x27;s first try look like?</p><details><summary>💡 Hint</summary><p>Count the cards marked Bad or Weak.</p></details><details class="ans"><summary>✅ Answer</summary><p>The first try picked 8 cards. 4 were bad or weak: a price guess, a &#x27;crypto shiller&#x27; and 2 tiny promo accounts. It was never published.</p></details><a class="more" href="../course/outputs-first-run/">📖 Read the full note →</a></li><li class="qcard"><div class="top"><span class="den">13</span><span class="q">Proof</span></div><p class="question">❓ What did the fixed try look like?</p><details><summary>💡 Hint</summary><p>Look for the coin that became &#x27;Quiet today.</p></details><details class="ans"><summary>✅ Answer</summary><p>After the strict rules, every card is a real post with a date and a link. No card is price talk or an ad. Dogecoin became &#x27;Quiet today&#x27; because every Dogecoin post pushed another coin.</p></details><a class="more" href="../course/outputs-revised-run/">📖 Read the full note →</a></li><li class="qcard"><div class="top"><span class="den">14</span><span class="q">Proof</span></div><p class="question">❓ What went wrong, what did I change, and why?</p><details><summary>💡 Hint</summary><p>Two gaps: bad posts, and posts from the wrong day.</p></details><details class="ans"><summary>✅ Answer</summary><p>The robot picked bad posts and trusted X&#x27;s date filter. I added strict rules and a date check. Rule I keep: never trust a website&#x27;s date filter. Check every item&#x27;s own date.</p></details><a class="more" href="../course/decision-note/">📖 Read the full note →</a></li><li class="qcard"><div class="top"><span class="den">15</span><span class="q">Proof</span></div><p class="question">❓ What feedback did I get, and what did I do with it?</p><details><summary>💡 Hint</summary><p>There are 3 feedback cards. Each one has &#x27;My call.</p></details><details class="ans"><summary>✅ Answer</summary><p>3 pieces of feedback: add more than a quote to each slide, archive every day, and make the setup simpler. I changed all 3. Peer critique comes after class.</p></details><a class="more" href="../course/feedback/">📖 Read the full note →</a></li><li class="qcard"><div class="top"><span class="den">16</span><span class="q">Proof</span></div><p class="question">❓ What did the AI do, and what did I do?</p><details><summary>💡 Hint</summary><p>The AI wrote the code. Who made the decisions?</p></details><details class="ans"><summary>✅ Answer</summary><p>The AI (Claude) wrote all the code and these notes, checked sources and fixed its own mistakes. I made every decision: the idea, the rules, the free scraper, approving the first video, and the redesign.</p></details><a class="more" href="../course/disclosure/">📖 Read the full note →</a></li></ul><p class="group-title">Extras</p><ul class="course-grid"><li class="qcard"><div class="top"><span class="den">17</span><span class="q">Extras</span></div><p class="question">❓ How was each part built? What is generic, and what is unique?</p><details><summary>💡 Hint</summary><p>Every AI 101 workflow has the same 5 parts. Look at the right column for what makes this one different.</p></details><details class="ans"><summary>✅ Answer</summary><p>It uses the generic AI 101 shape: Trigger, Context, Task, Output, Human check. The unique parts are the strict post rules, the date check, the 70-second card video, the Black Platinum site, the course hub and the phone widget.</p></details><a class="more" href="../course/how-it-was-built/">📖 Read the full note →</a></li><li class="qcard"><div class="top"><span class="den">18</span><span class="q">Extras</span></div><p class="question">❓ How do I set it up, click by click?</p><details><summary>💡 Hint</summary><p>There are 5 steps. Step 3 is about 2 login codes.</p></details><details class="ans"><summary>✅ Answer</summary><p>Ask for the robot. The X API did not work, so switch to the free scraper. Save 2 login codes with the helper script. Install the fixed scraper. Make the first video and approve it.</p></details><a class="more" href="../course/setup-guide/">📖 Read the full note →</a></li><li class="qcard"><div class="top"><span class="den">19</span><span class="q">Extras</span></div><p class="question">❓ What do the crypto words mean?</p><details><summary>💡 Hint</summary><p>Start with Crypto, Blockchain and Layer 2.</p></details><details class="ans"><summary>✅ Answer</summary><p>Crypto is money that lives on computers. A blockchain is a shared notebook that nobody can secretly change. A layer 2 is an add-on that makes a coin faster or cheaper.</p></details><a class="more" href="../course/glossary/">📖 Read the full note →</a></li><li class="qcard"><div class="top"><span class="den">20</span><span class="q">Extras</span></div><p class="question">❓ How do I make the explainer video for the site?</p><details><summary>💡 Hint</summary><p>Use the master prompt. Then make the 8 shots one at a time.</p></details><details class="ans"><summary>✅ Answer</summary><p>Copy the master prompt into a video tool. Make the 8 shots in order. Save the result as site/assets/explainer.mp4. The next build puts it in the site&#x27;s intro guide and the README.</p></details><a class="more" href="../course/explainer-video/">📖 Read the full note →</a></li></ul><div class="tape" aria-hidden="true"></div><p class="meta">📝 These pages come from the Obsidian vault. Obsidian and this site read the same files. <a href="https://github.com/cornishlikeadam/crypto-l2-daily/blob/main/vault/project-02/">See them on GitHub ↗</a></p><footer><p>🔎 Posts come from X. Only the last 24 hours, up to 6 PM New York time. 🚫 Price guesses, giveaways and rumors are removed. 😴 A coin with no news says "Quiet today."</p><p>🎙️ Voice: Piper. 🎬 Video: OpenMontage. 📡 Live numbers: CoinGecko, mempool.space, Blockchair, litecoinspace. 🧾 <a href="../feed.json">feed.json</a> · <a href="../widget.json">widget.json</a> · <a href="https://github.com/cornishlikeadam/crypto-l2-daily" rel="noopener">GitHub</a></p><span class="sig">NOT2L8</span><span class="q">Not Too Late. Always Forward.</span><div class="micro" aria-hidden="true">CRYPTO L2 DAILY ✦ REAL POSTS ONLY ✦ NOT2L8 ✦ SERIES 2026 ✦ CRYPTO L2 DAILY ✦ REAL POSTS ONLY ✦ NOT2L8 ✦ SERIES 2026 ✦ CRYPTO L2 DAILY ✦ REAL POSTS ONLY ✦ NOT2L8 ✦ SERIES 2026 ✦ CRYPTO L2 DAILY ✦ REAL POSTS ONLY ✦ NOT2L8 ✦ SERIES 2026 ✦ CRYPTO L2 DAILY ✦ REAL POSTS ONLY ✦ NOT2L8 ✦ SERIES 2026 ✦ CRYPTO L2 DAILY ✦ REAL POSTS ONLY ✦ NOT2L8 ✦ SERIES 2026 ✦ </div></footer></main><dialog id="widget-dialog" aria-labelledby="wd-title"><form method="dialog" class="dlg"><button class="x" aria-label="Close">✕</button><span class="q">Phone widget · test feature</span><h3 id="wd-title"><span class="script">Put it on</span> your phone</h3><p>The widget is a small card on your Home Screen. It shows the <b>Bitcoin price</b>, the <b>fee</b>, and <b>today's top news</b>.</p><ol><li>Install the free <a href="https://apps.apple.com/app/scriptable/id1405459188" rel="noopener">Scriptable</a> app. Open it one time.</li><li>Tap <b>Download script</b>. The file goes to the Files app.</li><li>In Files, move <b>scriptable.js</b> into <b>iCloud Drive › Scriptable</b>.</li><li>Hold your Home Screen. Tap <b>+</b>. Choose <b>Scriptable</b>. Tap <b>Add</b>.</li><li>Hold the new widget. Tap <b>Edit Widget</b>. Choose the script.</li></ol><div class="row"><a class="btn gold" href="../scriptable.js" download>⬇️ Download script</a><a class="btn" href="../scriptable.js" rel="noopener">👀 View the code</a></div><small>🤖 Android: use any JSON widget app. Point it at <code>https://not2l8-l2-daily.vercel.app/widget.json</code></small></form></dialog><dialog id="intro" class="intro" aria-label="How Crypto L2 Daily works"><div class="dlg"><button class="x" type="button" data-close aria-label="Close">✕</button><div class="pages"><section class="page on" data-page="0"><span class="q">Step 1 of 4</span><h3><span class="script">How to</span> use it</h3><div class="explainer"><span>🎬 The explainer video is coming soon.</span></div><ol><li>Press <b>▶ play</b>. The video is 70 seconds.</li><li>Read the <b>cards</b> under the video.</li><li><b>Tap a card</b>. The real post opens on X.</li><li>Open <b>📚 Course</b> to learn how it works.</li></ol></section><section class="page" data-page="1"><span class="q">Step 2 of 4</span><h3><span class="script">What it</span> does</h3><p>Every day at <b>6 PM</b>, a robot reads X. X is a social media app.</p><p>The robot finds <b>real posts</b> about <b>4 coins</b>: Bitcoin, Dogecoin, Monero and Litecoin.</p><p>Then it makes a <b>70-second video</b> and a set of cards. Every card shows <b>who</b> posted and <b>when</b>.</p><p>It never makes up news. If a coin has no news, the card says <b>"Quiet today."</b></p></section><section class="page" data-page="2"><span class="q">Step 3 of 4</span><h3><span class="script">The</span> core</h3><p>This is the automation. It runs by itself every day.</p><div class="flow"><div><b>1</b>⏰ At 6 PM, a timer on the Mac starts the robot.</div><div><b>2</b>🔎 The robot collects posts from the last 24 hours.</div><div><b>3</b>🧹 It removes ads, price guesses and copies.</div><div><b>4</b>🎬 It makes the video and adds a voice.</div><div><b>5</b>🌐 It puts the video online. Then it checks that the page loads.</div></div></section><section class="page" data-page="3"><span class="q">Step 4 of 4</span><h3><span class="script">Phone</span> widget</h3><p>You can put a <b>small card</b> on your phone. It shows the Bitcoin price, the fee and today's top news.</p><p>It uses the free <b>Scriptable</b> app on iPhone. This is a <b>test feature</b>.</p><div class="row"><button type="button" class="btn gold" data-open-widget>📱 Get the widget</button></div></section></div><div class="dots"><button type="button" data-go="0" aria-label="Step 1" class=on></button><button type="button" data-go="1" aria-label="Step 2"></button><button type="button" data-go="2" aria-label="Step 3"></button><button type="button" data-go="3" aria-label="Step 4"></button></div><div class="nav"><button type="button" class="btn" data-prev>← Back</button><button type="button" class="btn gold" data-next>Next →</button></div></div></dialog><script>(function(){
+var reduce=matchMedia('(prefers-reduced-motion: reduce)');
+var c=document.getElementById('sky'),x=c&&c.getContext&&c.getContext('2d');
+if(x){
+  var W=0,H=0,stars=[],shots=[],next=0,raf=0,n=Math.min(200,Math.round(innerWidth*innerHeight/8000));
+  for(var i=0;i<n;i++){var q=Math.random();stars.push({x:Math.random(),y:Math.random(),r:Math.random()*1.1+.2,
+    a:Math.random()*.45+.12,s:Math.random()*1.4+.4,p:Math.random()*6.28,col:q<.1?'#F3D77A':q<.18?'#9FF5C8':'#E5E4E2'});}
+  var size=function(){var d=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;
+    c.width=W*d|0;c.height=H*d|0;x.setTransform(d,0,0,d,0,0);if(!raf)draw(performance.now());};
+  var shoot=function(t){var a=Math.PI/5+Math.random()*.3;
+    shots.push({x:Math.random()*W*.75,y:Math.random()*H*.35,dx:Math.cos(a),dy:Math.sin(a),
+      v:Math.max(W,H)*(.8+Math.random()*.5),len:110+Math.random()*150,t0:t,life:650+Math.random()*650});};
+  var draw=function(t){
+    x.clearRect(0,0,W,H);
+    for(var i=0;i<stars.length;i++){var s=stars[i];
+      x.globalAlpha=s.a*(reduce.matches?1:.55+.45*Math.sin(t/1000*s.s+s.p));
+      x.fillStyle=s.col;x.beginPath();x.arc(s.x*W,s.y*H,s.r,0,6.283);x.fill();}
+    x.globalAlpha=1;
+    if(reduce.matches)return;
+    if(t>next){shoot(t);next=t+4500+Math.random()*7000;}
+    shots=shots.filter(function(s){var k=(t-s.t0)/s.life;if(k>=1)return false;
+      var d=s.v*(t-s.t0)/1000,hx=s.x+s.dx*d,hy=s.y+s.dy*d,tx=hx-s.dx*s.len,ty=hy-s.dy*s.len,f=Math.sin(Math.PI*k);
+      var g=x.createLinearGradient(hx,hy,tx,ty);g.addColorStop(0,'rgba(255,250,235,'+f+')');
+      g.addColorStop(.3,'rgba(243,215,122,'+.5*f+')');g.addColorStop(.7,'rgba(159,245,200,'+.25*f+')');
+      g.addColorStop(1,'rgba(159,245,200,0)');
+      x.strokeStyle=g;x.lineWidth=1.6;x.lineCap='round';x.beginPath();x.moveTo(hx,hy);x.lineTo(tx,ty);x.stroke();return true;});
+  };
+  var loop=function(t){draw(t);raf=requestAnimationFrame(loop);};
+  var start=function(){if(!raf&&!reduce.matches&&!document.hidden){next=performance.now()+2500;raf=requestAnimationFrame(loop);}};
+  var stop=function(){cancelAnimationFrame(raf);raf=0;};
+  var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(size,150);});
+  document.addEventListener('visibilitychange',function(){document.hidden?stop():start();});
+  size();start();
+}
+var R=document.getElementById('ribbon');
+if(R&&window.fetch){
+  var KEY='l2d-ribbon-v2',cache={},last=0;
+  try{cache=JSON.parse(localStorage.getItem(KEY))||{};}catch(e){}
+  for(var k in cache)if(cache[k])cache[k].live=false;
+  var num=function(v,d){return v.toLocaleString('en-US',{maximumFractionDigits:d||0});};
+  var usd=function(v){return '$'+(v>=100?num(Math.round(v)):v>=1?v.toFixed(2):v.toFixed(4));};
+  var short=function(v){return v>=1e6?(v/1e6).toFixed(1)+'M':v>=1e3?(v/1e3).toFixed(1)+'k':String(v);};
+  var ago=function(t){var m=Math.round((Date.now()-t)/60000);
+    return m<1?'just now':m<90?m+' min ago':m<2880?Math.round(m/60)+' h ago':Math.round(m/1440)+' days ago';};
+  var put=function(key,val,sub,chg,e,src,fresh){
+    R.querySelectorAll('[data-k="'+key+'"]').forEach(function(b){
+      b.querySelector('.val').textContent=val;
+      var s=b.querySelector('.sub');if(s)s.textContent=sub||'';
+      var cc=b.querySelector('.chg');
+      if(cc){if(typeof chg==='number'){cc.textContent=(chg>=0?'▲':'▼')+Math.abs(chg).toFixed(2)+'%';
+        cc.className='chg '+(chg>=0?'up':'down');}else{cc.textContent='';cc.className='chg';}}
+      var when=e&&(e.asof||e.t),st=!e?'':e.live&&Date.now()-when<(fresh||300000)?'live':'stale';
+      b.querySelector('.dot').className='dot '+st;
+      b.title=e?src+' · '+(st==='live'?'live':'last update')+' '+ago(when):src+' · not available now';});};
+  var paint=function(){
+    var cg=cache.cg&&cache.cg.v,f=cache.fee,h=cache.height,ln=cache.ln,dg=cache.doge,xm=cache.xmr,lt=cache.ltc;
+    var coin=function(id){return cg&&cg[id]?cg[id]:null;};
+    var b=coin('bitcoin');put('price',b?usd(b.usd):'—','',b&&b.usd_24h_change,b&&cache.cg,'CoinGecko');
+    put('fee',f?f.v.fastestFee+' sat/vB':'—',f?'½h '+f.v.halfHourFee:'',null,f,'mempool.space');
+    put('block',h?'#'+num(h.v):'—','',null,h,'mempool.space');
+    put('ln',ln?num(ln.v.cap)+' BTC':'—',ln?short(ln.v.ch)+' channels':'',null,ln,'mempool.space Lightning',2*864e5);
+    var d=coin('dogecoin');put('doge',d?usd(d.usd):'—',dg?short(dg.v)+' tx/24h':'',d&&d.usd_24h_change,d&&cache.cg,'CoinGecko + Blockchair');
+    var m=coin('monero');put('xmr',m?usd(m.usd):'—',xm?'#'+num(xm.v):'',m&&m.usd_24h_change,m&&cache.cg,'CoinGecko + Blockchair');
+    var l=coin('litecoin');put('ltc',l?usd(l.usd):'—',lt?'#'+num(lt.v):'',l&&l.usd_24h_change,l&&cache.cg,'CoinGecko + litecoinspace');
+  };
+  var get=function(u){return fetch(u,{cache:'no-store'}).then(function(r){if(!r.ok)throw r.status;return r.json();});};
+  var SOURCES=[
+    ['cg',120000,'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,dogecoin,monero,litecoin&vs_currencies=usd&include_24hr_change=true',
+      function(d){if(!d.bitcoin||typeof d.bitcoin.usd!=='number')throw 0;return d;}],
+    ['fee',60000,'https://mempool.space/api/v1/fees/recommended',function(d){if(typeof d.fastestFee!=='number')throw 0;return d;}],
+    ['height',60000,'https://mempool.space/api/blocks/tip/height',function(d){if(typeof d!=='number')throw 0;return d;}],
+    ['ln',1800000,'https://mempool.space/api/v1/lightning/statistics/latest',function(d){var s=d.latest;
+      if(!s||typeof s.total_capacity!=='number')throw 0;return {cap:s.total_capacity/1e8,ch:s.channel_count,asof:Date.parse(s.added)};}],
+    ['doge',300000,'https://api.blockchair.com/dogecoin/stats',function(d){var v=d.data&&d.data.transactions_24h;
+      if(typeof v!=='number')throw 0;return v;}],
+    ['xmr',300000,'https://api.blockchair.com/monero/stats',function(d){var v=d.data&&d.data.best_block_height;
+      if(typeof v!=='number')throw 0;return v;}],
+    ['ltc',60000,'https://litecoinspace.org/api/blocks/tip/height',function(d){if(typeof d!=='number')throw 0;return d;}]];
+  var refresh=function(){var now=last=Date.now();
+    var jobs=SOURCES.filter(function(s){var e=cache[s[0]];return !e||!e.live||now-e.t>=s[1]-5000;}).map(function(s){
+      return get(s[2]).then(function(d){var v=s[3](d);cache[s[0]]={v:v,t:now,live:true,asof:v&&v.asof};})
+        .catch(function(){});});
+    Promise.all(jobs).then(function(){try{localStorage.setItem(KEY,JSON.stringify(cache));}catch(e){}paint();});};
+  paint();refresh();
+  setInterval(function(){if(!document.hidden)refresh();},30000);
+  document.addEventListener('visibilitychange',function(){if(!document.hidden&&Date.now()-last>30000)refresh();});
+}
+var open=function(d){if(!d)return;if(d.showModal){if(!d.open)d.showModal();}else d.setAttribute('open','');};
+var wd=document.getElementById('widget-dialog'),intro=document.getElementById('intro');
+document.querySelectorAll('[data-open-widget]').forEach(function(b){b.addEventListener('click',function(){
+  if(intro&&intro.open)intro.close();open(wd);});});
+document.querySelectorAll('dialog').forEach(function(d){d.addEventListener('click',function(e){if(e.target===d)d.close();});});
+if(intro){
+  var pages=intro.querySelectorAll('.page'),dots=intro.querySelectorAll('[data-go]'),cur=0;
+  var nextB=intro.querySelector('[data-next]'),prevB=intro.querySelector('[data-prev]');
+  var go=function(i){cur=Math.max(0,Math.min(pages.length-1,i));
+    pages.forEach(function(p,j){p.classList.toggle('on',j===cur);});
+    dots.forEach(function(b,j){b.classList.toggle('on',j===cur);});
+    prevB.style.visibility=cur?'visible':'hidden';nextB.textContent=cur===pages.length-1?'Done ✓':'Next →';};
+  nextB.addEventListener('click',function(){if(cur===pages.length-1)intro.close();else go(cur+1);});
+  prevB.addEventListener('click',function(){go(cur-1);});
+  dots.forEach(function(b){b.addEventListener('click',function(){go(+b.getAttribute('data-go'));});});
+  intro.querySelector('[data-close]').addEventListener('click',function(){intro.close();});
+  document.querySelectorAll('[data-open-intro]').forEach(function(b){b.addEventListener('click',function(){go(0);open(intro);});});
+  go(0);
+  var seen=null;try{seen=localStorage.getItem('l2d-intro-v1');}catch(e){}
+  if(!seen&&intro.hasAttribute('data-auto')&&location.hash.indexOf('nointro')<0){setTimeout(function(){open(intro);},600);
+    try{localStorage.setItem('l2d-intro-v1','1');}catch(e){}}
+}
+var all=document.querySelector('[data-toggle-answers]');
+if(all)all.addEventListener('click',function(){var ds=document.querySelectorAll('.qcard details');
+  var openAll=[].some.call(ds,function(d){return !d.open;});ds.forEach(function(d){d.open=openAll;});
+  all.textContent=openAll?'🙈 Hide all answers':'👀 Show all answers';});
+})();</script></body></html>
