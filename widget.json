@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "generated_at": "2026-10-06T04:11:08+00:00",
+  "generated_at": "2026-10-06T16:50:36+00:00",
   "edition": "2026-10-05",
   "edition_label": "Monday, October 5, 2026",
   "edition_short": "Oct 5",
-  "url": "https://crypto-l2-daily.vercel.app/days/2026-10-05/",
-  "poster": "https://crypto-l2-daily.vercel.app/days/2026-10-05/poster.jpg",
+  "url": "https://not2l8-l2-daily.vercel.app/days/2026-10-05/",
+  "poster": "https://not2l8-l2-daily.vercel.app/days/2026-10-05/poster.jpg",
   "item_count": 8,
   "coins": [
     "BTC L2",
@@ -49,11 +49,11 @@
     "hour": 1,
     "economy": 1,
     "source": "mempool.space",
-    "as_of": "2026-10-06T04:11:08+00:00"
+    "as_of": "2026-10-06T16:50:36+00:00"
   },
   "links": {
-    "site": "https://crypto-l2-daily.vercel.app/",
-    "feed": "https://crypto-l2-daily.vercel.app/feed.json",
-    "scriptable": "https://crypto-l2-daily.vercel.app/scriptable.js"
+    "site": "https://not2l8-l2-daily.vercel.app/",
+    "feed": "https://not2l8-l2-daily.vercel.app/feed.json",
+    "scriptable": "https://not2l8-l2-daily.vercel.app/scriptable.js"
   }
 }

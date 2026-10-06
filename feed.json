@@ -1,13 +1,13 @@
 {
   "version": "https://jsonfeed.org/version/1.1",
   "title": "Crypto L2 Daily",
-  "home_page_url": "https://crypto-l2-daily.vercel.app/",
-  "feed_url": "https://crypto-l2-daily.vercel.app/feed.json",
+  "home_page_url": "https://not2l8-l2-daily.vercel.app/",
+  "feed_url": "https://not2l8-l2-daily.vercel.app/feed.json",
   "description": "Bitcoin L2, Dogecoin, Monero and Litecoin on X, last 24 hours, with sources.",
   "items": [
     {
       "id": "2026-10-05",
-      "url": "https://crypto-l2-daily.vercel.app/days/2026-10-05/",
+      "url": "https://not2l8-l2-daily.vercel.app/days/2026-10-05/",
       "title": "Crypto L2 Daily — Monday, October 5, 2026",
       "content_text": "Bitcoin · Lightning: Utexo is backing the builders building on Bitcoin!! (@Durjoy___das, https://x.com/Durjoy___das/status/2107083190431281283)\nBitcoin · Lightning: Another week to keep building, learning, and watching @utexocom shape the future of stablecoin payments on Bitcoin. (@inwrld_, https://x.com/inwrld_/status/2106990835287900538)\nDogecoin · Community: Every crypto wants what Dogecoin already has: a global brand identity that doesn’t need explaining. (@CryptoSLE10, https://x.com/CryptoSLE10/status/2107070249648443848)\nDogecoin · Community: You see a Doge doing something stupid, notice a Bitcoin reference somewhere in the image, laugh, and keep scrolling. (@hoanhphuc01, https://x.com/hoanhphuc01/status/2106975931588059305)\nMonero · FCMP++: The third version of beta stressnet for Full-Chain Membership Proofs (FCMP++) and CARROT is live! (@monero, https://x.com/monero/status/2107181059859448004)\nMonero · FCMP++: For everyone who keeps asking why I am adding @Zcash but not @monero to my Tools directory - here is my response. (@iAnonymous3000, https://x.com/iAnonymous3000/status/2107136094118769014)\nMonero · FCMP++: Moneros FCMP++ stressnet goes live TOMORROW! (@exitnode_, https://x.com/exitnode_/status/2106878866505773228)\nLitecoin · MWEB: $LTC MWEB Daily Flow At close: Sun, 4 Oct 2026 Pool: 459,146.34 LTC (0.6% of supply) ↑ Peg-ins: +25,883.23 LTC ↓ Peg-outs… (@LitecoinTracker, https://x.com/LitecoinTracker/status/2107079619740327966)",
       "date_published": "2026-10-05T21:59:31.147820+00:00",
@@ -126,7 +126,7 @@
     },
     {
       "id": "2026-09-30",
-      "url": "https://crypto-l2-daily.vercel.app/days/2026-09-30/",
+      "url": "https://not2l8-l2-daily.vercel.app/days/2026-09-30/",
       "title": "Crypto L2 Daily — Wednesday, September 30, 2026",
       "content_text": "Bitcoin · Lightning: A wrapped car is driving from Lagos to Dakar, stopping at markets to set people up on Bitcoin. (@btcafricastory, https://x.com/btcafricastory/status/2105198699609489823)\nBitcoin · Lightning: Pay any Mexican bank account with Bitcoin from anywhere in the world, whether you’re an individual or a business. (@gustavojfe, https://x.com/gustavojfe/status/2105355266833190985)\nBitcoin · Sidechains: The signal starts on Bitcoin. (@audionals, https://x.com/audionals/status/2105392030478487815)\nDogecoin: Quiet today.\nMonero: Quiet today.\nLitecoin · MWEB: Litecoin has the coolest designed privacy logo out of any privacy coin. (@bitstoys, https://x.com/bitstoys/status/2105320284009951730)\nLitecoin · MWEB: DOES MWEB MAKE LITECOIN “INVISIBLE”? (@LearnLitecoin, https://x.com/LearnLitecoin/status/2105271983965708703)\nLitecoin · MWEB: MWEB LOGO IS BEAUTIFUL AND PERFECT! (@flippifi, https://x.com/flippifi/status/2105344741999001959)",
       "date_published": "2026-09-30T22:00:00+00:00",
@@ -245,7 +245,7 @@
     },
     {
       "id": "2026-08-02",
-      "url": "https://crypto-l2-daily.vercel.app/days/2026-08-02/",
+      "url": "https://not2l8-l2-daily.vercel.app/days/2026-08-02/",
       "title": "Crypto L2 Daily — Sunday, August 2, 2026",
       "content_text": "Bitcoin · Lightning: Native USDT on Bitcoin: A New Era for Digital Payments The arrival of native USDT on Bitcoin is more than another stablecoin… (@0x0rashed, https://x.com/0x0rashed/status/2084026283902767480)\nBitcoin · Lightning: Decoding the Future of Bitcoin L2: How RGB and Utexo Are Building a Unified Economy The Fragmentation Paradox of Bitcoin Layer 2… (@bekhanhlinh98, https://x.com/bekhanhlinh98/status/2083846936952770668)\nBitcoin · Lightning: Everyone shares the polished vision of bringing USDT back to Bitcoin. (@BadhonAI, https://x.com/BadhonAI/status/2083849499798335963)\nDogecoin · Community: Whether $DOGE is printing all-time highs or sitting at all-time lows... (@TeslaModelDoge, https://x.com/TeslaModelDoge/status/2083687095634166047)\nMonero: Quiet today.\nLitecoin · MWEB: Critical Litecoin Core maintenance release available Version 0.21.5.6 strengthens MWEB transaction, block, and P2P validation. (@litecoin, https://x.com/litecoin/status/2083943455277932875)\nLitecoin · MWEB: An urgent Litecoin Core maintenance release is now available: Version 0.21.5.6 strengthens MWEB transaction, block, and P2P validation. (@omieds, https://x.com/omieds/status/2083942433243472145)\nLitecoin · MWEB: LOOK : Litecoin Core v0.21.5.6 is out with key MWEB security updates. (@lookintoltc, https://x.com/lookintoltc/status/2083943770223964256)",
       "date_published": "2026-08-02T22:00:00+00:00",
@@ -364,7 +364,7 @@
     },
     {
       "id": "2026-07-22",
-      "url": "https://crypto-l2-daily.vercel.app/days/2026-07-22/",
+      "url": "https://not2l8-l2-daily.vercel.app/days/2026-07-22/",
       "title": "Crypto L2 Daily — Wednesday, July 22, 2026",
       "content_text": "Ethereum · via Bitcoin posts: Bitcoin, Ethereum, and Solana devs can now build on the same liquidity LunarBase just picked IBVM a Bitcoin L2 with EVM support… (@NoobSlayerKris, https://x.com/NoobSlayerKris/status/2079994699515879783)\nBitcoin · Lightning: The Dark Truth Behind Wall Streets Embrace of Bitcoin Lea Thompson from @CakeWallet joins me in the Vienna studio to dissect why… (@NikoJilch, https://x.com/NikoJilch/status/2079954645649170625)\nBitcoin · Lightning: Lightning Labs Launches Wavelength: “Bitcoin on Easy Mode” for Developers and Autonomous Agents via @bitcoinmagazine @lightning. (@JuanSGalt, https://x.com/JuanSGalt/status/2080024101184225432)\nDogecoin · Community: \"The App Layer for Dogecoin\" - where community, culture, and liquidity meet. (@MyDogeVN, https://x.com/MyDogeVN/status/2079949714360021091)\nDogecoin · Community: If your at @MiningDisrupt come get some stickers, I have too many, #Bitcoin #BTC #litecoin #Dogecoin and members of the #CryptoMining community. (@SerpentXTech, https://x.com/SerpentXTech/status/2079954130009829692)\nDogecoin · Community: Dogeus Maximus is bouncing back from the lows Shoutout to the core legion still holding strong. (@oyester56, https://x.com/oyester56/status/2079950261863211453)\nMonero: Quiet today.\nLitecoin · MWEB: The amount of $LTC pegged into Litecoin's MWEB privacy extension breaks all time high. (@LTCFoundation, https://x.com/LTCFoundation/status/2080001273987014847)",
       "date_published": "2026-07-22T22:00:00+00:00",
