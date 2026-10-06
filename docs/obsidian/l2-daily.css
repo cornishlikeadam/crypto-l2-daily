@@ -1,0 +1,49 @@
+/* 💎 Crypto L2 Daily: Black Platinum theme for Obsidian.
+   It only styles notes with "cssclasses: [l2-daily]" in their header. Other notes keep their look.
+   Install: copy this file to <your vault>/.obsidian/snippets/. Then turn it on in
+   Settings → Appearance → CSS snippets. */
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Big+Shoulders:opsz,wght@10..72,800..900&family=IBM+Plex+Mono:wght@500;600&family=Yellowtail&display=swap");
+
+.l2-daily {
+  --l2-ink: #0A0A0B; --l2-onyx: #141416; --l2-plat: #E5E4E2; --l2-plat-3: #9A9DA4;
+  --l2-gold: #D4AF37; --l2-gold-hi: #F3D77A; --l2-green: #85BB65; --l2-mint: #9FF5C8; --l2-ice: #A7E8FF;
+  --background-primary: var(--l2-ink);
+  --background-secondary: var(--l2-onyx);
+  --text-normal: var(--l2-plat);
+  --text-muted: var(--l2-plat-3);
+  --text-accent: var(--l2-gold);
+  --interactive-accent: var(--l2-gold);
+  --link-color: var(--l2-ice);
+  --link-unresolved-color: var(--l2-plat-3);
+  --bold-color: #FFFFFF;
+  --text-highlight-bg: rgba(212, 175, 55, .35);
+  --code-normal: var(--l2-ice);
+  --code-background: rgba(229, 228, 226, .07);
+  --table-header-color: var(--l2-gold);
+  --table-border-color: rgba(229, 228, 226, .14);
+  --hr-color: rgba(229, 228, 226, .2);
+  --font-text-theme: "Atkinson Hyperlegible", sans-serif;
+  --font-monospace-theme: "IBM Plex Mono", monospace;
+  --h1-font: "Big Shoulders", Impact, sans-serif; --h2-font: "Big Shoulders", Impact, sans-serif;
+  --h1-color: var(--l2-gold-hi); --h2-color: var(--l2-plat); --h3-color: var(--l2-green);
+  --h1-size: 2.6em; --h2-size: 1.9em; --h1-weight: 900; --h2-weight: 900;
+  font-size: 1.06em; line-height: 1.7;
+  background:
+    radial-gradient(60% 40% at 90% 0%, rgba(212, 175, 55, .10), transparent 70%),
+    radial-gradient(50% 40% at 0% 100%, rgba(133, 187, 101, .10), transparent 70%),
+    var(--l2-ink);
+}
+.l2-daily h1, .l2-daily h2 { text-transform: uppercase; letter-spacing: .01em; line-height: 1; }
+.l2-daily h1 { border-bottom: 3px solid; border-image: linear-gradient(90deg, #F3D77A, #9FF5C8, #A7E8FF, #C9B6FF, #FFD1EC) 1; padding-bottom: .2em; }
+.l2-daily strong { color: #fff; }
+.l2-daily th { font-family: "IBM Plex Mono", monospace; text-transform: uppercase; letter-spacing: .08em; font-size: .8em; }
+.l2-daily hr { height: 10px; border: 0; opacity: .45;
+  background: repeating-linear-gradient(-45deg, var(--l2-plat) 0 10px, var(--l2-ink) 10px 20px); }
+.l2-daily .callout { border-radius: 14px; border-left: 6px solid rgb(var(--callout-color)); background: var(--l2-onyx); }
+.l2-daily .callout[data-callout="tip"] { --callout-color: 133, 187, 101; }
+.l2-daily .callout[data-callout="important"], .l2-daily .callout[data-callout="success"] { --callout-color: 159, 245, 200; }
+.l2-daily .callout[data-callout="abstract"], .l2-daily .callout[data-callout="summary"] { --callout-color: 212, 175, 55; }
+.l2-daily .callout[data-callout="info"], .l2-daily .callout[data-callout="note"] { --callout-color: 167, 232, 255; }
+.l2-daily .callout[data-callout="warning"] { --callout-color: 255, 143, 163; }
+.l2-daily .callout[data-callout="question"], .l2-daily .callout[data-callout="example"] { --callout-color: 201, 182, 255; }
+.l2-daily .metadata-container { border: 1px solid rgba(212, 175, 55, .35); border-radius: 14px; padding: 8px 12px; }

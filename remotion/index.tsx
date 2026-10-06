@@ -1,4 +1,4 @@
-// Entry for the daily card deck. Staged by scripts/render.py into
+// 🎞️ Entry for the daily card deck. Staged by scripts/render.py into
 // OpenMontage/projects/crypto-l2-YYYY-MM-DD/composition/ and rendered through
 // OpenMontage's video_compose atelier path. Original code; depends only on
 // the remotion packages installed in OpenMontage/remotion-composer.

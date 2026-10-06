@@ -1,4 +1,4 @@
-# Shared helpers for daily.sh and approve_sample.sh. Source, don't run.
+# 🚀 Shared helpers for daily.sh and approve_sample.sh. Source, don't run.
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 OM="${OPENMONTAGE_DIR:-$(cd "$ROOT/.." && pwd)/OpenMontage}"

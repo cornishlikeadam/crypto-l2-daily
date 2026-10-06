@@ -1,25 +1,48 @@
-# Step 4: Human check (me)
+---
+number: 6
+group: "The 5 steps"
+short: "Step 4 · My check"
+question: "Step 4: What do I check before a video goes online?"
+hint: "Watch it, open the links, check the dates, look for hype."
+answer: "I watch the whole video. I open 2 post links and compare the words. I check every date. I check for price guesses, ads and made-up news. Then I approve it."
+cssclasses: [l2-daily]
+tags: [ai101, project-2, step, human-check]
+---
 
-**What starts this step:** the first video was ready (October 5, 2026), or a new archive day is ready.
+# 🧑‍⚖️ Step 4: Human check (me)
 
-**What goes in:** the video and the card list.
+> [!info] ⏰ What starts this step
+> The **first video** is ready (October 5, 2026). Or a **new archive day** is ready.
 
-**What this step does:** I decide if it is allowed on the website.
+## 📥 What goes in
 
-**Directions for me:**
+The **video** and the **card list**.
 
-1. Watch the whole video.
-2. Open at least two of the post links. Check that the words match the card.
-3. Check that every date is inside the right 24 hours.
-4. Check that nothing is a price guess, an ad, or made up.
-5. If it is good, run: `/bin/bash ~/crypto-l2-daily/scripts/approve_sample.sh 2026-10-05`
+## ⚙️ What this step does
 
-**Good looks like:** every card passes checks 2 to 4.
+**I decide** if the video can go on the website.
 
-**Human check:** this whole step is the check. Until I approved, the robot was not allowed to publish. After I approved the first video on October 5, 2026, the robot was allowed to publish by itself every day (`human_approval_default` was switched to `false`).
+## 🔢 Directions for me
 
-## What this check caught
+1. 👀 Watch **the whole video**.
+2. 🔗 Open **at least 2** post links. Check that the words **match the card**.
+3. 📅 Check that **every date** is inside the right 24 hours.
+4. 🚫 Check that **nothing** is a price guess, an ad, or made up.
+5. ✅ If it is good, run this command:
+   `/bin/bash ~/crypto-l2-daily/scripts/approve_sample.sh 2026-10-05`
 
-- A Monero post from October 5 showing up in the July, August and September archive days. Fixed: a strict date rule.
-- A post about the government "DOGE" office counted as Dogecoin. Fixed: a new rule.
-- Price talk ("$CATE will go to a billion") and ad accounts. Fixed: new rules.
+## ✅ What "good" looks like
+
+Every card **passes checks 2, 3 and 4**.
+
+> [!important] ⭐ This whole step is the check
+> Until I approved, the robot **could not publish**.
+> On **October 5, 2026**, I approved the first video. After that, the robot **publishes by itself** every day. (`human_approval_default` changed to `false`.)
+
+## 🕵️ What this check found
+
+| 🐞 Problem | 🔧 Fix |
+|---|---|
+| A Monero post from **October 5** showed up on the July, August and September archive days. | A **strict date rule**. |
+| A post about the **government "DOGE" office** counted as Dogecoin. | A **new rule**. |
+| **Price talk** ("$CATE will go to a billion") and **ad accounts**. | **New rules**. |

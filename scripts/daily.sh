@@ -1,5 +1,5 @@
 #!/bin/bash
-# Daily run: collect X posts -> render via OpenMontage -> copy into site/days -> rebuild index + feed -> publish.
+# ⏰ Daily run: collect X posts -> render via OpenMontage -> copy into site/days -> rebuild index + feed -> publish.
 # Cron (America/New_York): 0 18 * * * /bin/bash <repo>/scripts/daily.sh >> <repo>/logs/daily.log 2>&1
 # Optional arg: YYYY-MM-DD (defaults to today, ET).
 set -uo pipefail

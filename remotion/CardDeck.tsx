@@ -1,6 +1,6 @@
-// NOT2L8 card deck: "SpaceX cleanroom x GTA golden hour x white barndominium", matching the site's design layer
-// in scripts/build_site.py. Same props as before, so scripts/render.py is unchanged. Everything is frame-driven and
-// seeded (remotion's random), so renders are deterministic.
+// 💎 Black Platinum card deck. It matches the site (scripts/site_theme.py): black platinum, holographic foil,
+// gold and money green, banknote rosettes and denomination numbers. Same props as before, so scripts/render.py
+// does not change. Everything is frame-driven and seeded (remotion's random), so every render is the same.
 import React from "react";
 import {
   AbsoluteFill,
@@ -13,35 +13,63 @@ import {
   useCurrentFrame,
   useVideoConfig,
 } from "remotion";
-import { loadFont as loadDisplay } from "@remotion/google-fonts/Archivo";
-import { loadFont as loadSans } from "@remotion/google-fonts/Inter";
-import { loadFont as loadMono } from "@remotion/google-fonts/JetBrainsMono";
+import { loadFont as loadDisplay } from "@remotion/google-fonts/BigShoulders";
+import { loadFont as loadSans } from "@remotion/google-fonts/AtkinsonHyperlegible";
+import { loadFont as loadMono } from "@remotion/google-fonts/IBMPlexMono";
+import { loadFont as loadScript } from "@remotion/google-fonts/Yellowtail";
 
-const display = loadDisplay("normal", { weights: ["700", "800", "900"], subsets: ["latin"] }).fontFamily;
-const sans = loadSans("normal", { weights: ["400", "500", "600"], subsets: ["latin"] }).fontFamily;
+const display = loadDisplay("normal", { weights: ["800", "900"], subsets: ["latin"] }).fontFamily;
+const sans = loadSans("normal", { weights: ["400", "700"], subsets: ["latin"] }).fontFamily;
 const mono = loadMono("normal", { weights: ["500", "600"], subsets: ["latin"] }).fontFamily;
+const script = loadScript("normal", { weights: ["400"], subsets: ["latin"] }).fontFamily;
 
-// NOT2L8 brand tokens (same values as the site's --n2l8-* variables).
+// 🎨 Black Platinum tokens (same values as the site). Old names kept so the layout code stays the same.
 const N = {
-  solar: "#FFBC00",
-  orange: "#FF8C00",
-  magenta: "#FF1493",
-  sky: "#89CFF0",
-  green: "#32CD32",
-  slate: "#708090",
-  dark: "#111111",
-  cream: "#F8F6F1",
-  soft: "rgba(248,246,241,0.78)",
-  muted: "#98A1AB",
-  hair: "rgba(255,255,255,0.12)",
-  rule: "rgba(255,255,255,0.08)",
+  solar: "#D4AF37", // gold
+  orange: "#9FF5C8", // mint
+  magenta: "#85BB65", // money green
+  sky: "#A7E8FF", // ice
+  green: "#9FF5C8", // live dot
+  slate: "#80838B",
+  dark: "#0A0A0B",
+  cream: "#E5E4E2", // platinum
+  soft: "rgba(229,228,226,0.8)",
+  muted: "#9A9DA4",
+  hair: "rgba(229,228,226,0.14)",
+  rule: "rgba(229,228,226,0.08)",
 };
+const GOLD_HI = "#F3D77A";
+const HOLO = "linear-gradient(100deg, #F3D77A, #9FF5C8 30%, #A7E8FF 52%, #C9B6FF 74%, #FFD1EC 90%, #F3D77A)";
+
+// 💵 Banknote guilloche rosette (a hypotrochoid), drawn once.
+const rosette = (R: number, r: number, d: number, lines: number, size: number) => {
+  const k = (R - r) / r;
+  const turns = r;
+  const steps = 360 * turns / 2;
+  const scale = (size * 0.46) / (R - r + d);
+  const c = size / 2;
+  let path = "";
+  for (let j = 0; j < lines; j++) {
+    const rot = (2 * Math.PI * j) / lines / R;
+    for (let i = 0; i <= steps; i++) {
+      const t = (2 * Math.PI * turns * i) / steps;
+      const x = (R - r) * Math.cos(t) + d * Math.cos(k * t);
+      const y = (R - r) * Math.sin(t) - d * Math.sin(k * t);
+      const xr = x * Math.cos(rot) - y * Math.sin(rot);
+      const yr = x * Math.sin(rot) + y * Math.cos(rot);
+      path += (i === 0 ? "M" : "L") + (c + xr * scale).toFixed(1) + "," + (c + yr * scale).toFixed(1);
+    }
+    path += "Z";
+  }
+  return path;
+};
+const ROSETTE = rosette(7, 4, 3.2, 9, 900);
 
 const COINS: Record<string, { tag: string; icon: string; c: string; c2: string }> = {
-  Bitcoin: { tag: "BTC L2", icon: "⚡", c: "#FFBC00", c2: "#FF8C00" },
-  Dogecoin: { tag: "DOGE", icon: "🐕", c: "#E8B547", c2: "#FFE29A" },
-  Monero: { tag: "XMR", icon: "🔒", c: "#FF8C00", c2: "#FF1493" },
-  Litecoin: { tag: "LTC", icon: "🪙", c: "#C9D1DA", c2: "#89CFF0" },
+  Bitcoin: { tag: "BTC L2", icon: "⚡", c: "#D4AF37", c2: "#F3D77A" },
+  Dogecoin: { tag: "DOGE", icon: "🐕", c: "#85BB65", c2: "#9FF5C8" },
+  Monero: { tag: "XMR", icon: "🔒", c: "#E5E4E2", c2: "#C9B6FF" },
+  Litecoin: { tag: "LTC", icon: "🪙", c: "#A7E8FF", c2: "#E5E4E2" },
 };
 const coinOf = (coin: string | null) =>
   (coin && COINS[coin]) || { tag: coin ?? "", icon: "", c: N.solar, c2: N.magenta };
@@ -108,7 +136,8 @@ const Sky: React.FC = () => {
       <AbsoluteFill style={{ background: N.dark }} />
       <AbsoluteFill style={{
         opacity: breathe,
-        background: "radial-gradient(70% 55% at 72% 118%, rgba(255,140,0,0.30), rgba(255,20,147,0.10) 45%, transparent 72%)",
+        background: "radial-gradient(60% 60% at 78% 50%, rgba(212,175,55,0.16), transparent 70%)," +
+          "radial-gradient(50% 60% at 8% 112%, rgba(133,187,101,0.18), transparent 70%)",
       }} />
       <AbsoluteFill style={{
         background: "radial-gradient(26% 42% at 16% -8%, rgba(255,244,222,0.10), transparent 70%)," +
@@ -118,6 +147,10 @@ const Sky: React.FC = () => {
         background: "repeating-linear-gradient(180deg, rgba(248,246,241,0.03) 0 1px, transparent 1px 72px)",
         WebkitMaskImage: "linear-gradient(180deg, #000, transparent 70%)",
       }} />
+      <svg width={900} height={900} viewBox="0 0 900 900"
+        style={{ position: "absolute", right: -160, top: 90, transform: `rotate(${frame * 0.03}deg)` }}>
+        <path d={ROSETTE} fill="none" stroke="#E5E4E2" strokeOpacity={0.09} strokeWidth={0.8} />
+      </svg>
       <svg width={1920} height={1080} style={{ position: "absolute", inset: 0 }}>
         {STARS.map((s, i) => (
           <circle key={i} cx={s.x} cy={s.y} r={s.r} fill={s.col}
@@ -134,8 +167,8 @@ const Sky: React.FC = () => {
           <div key={k} style={{
             position: "absolute", left: s.x + travel * 0.85, top: s.y + travel * 0.53, width: s.len, height: 2.5,
             transform: "rotate(32deg) translateX(-100%)", transformOrigin: "100% 50%", opacity: fade, borderRadius: 2,
-            background: `linear-gradient(90deg, rgba(255,20,147,0), rgba(255,20,147,0.35) 35%, ${N.solar} 80%, #FFF6DA)`,
-            boxShadow: "0 0 12px rgba(255,188,0,0.5)",
+            background: `linear-gradient(90deg, rgba(159,245,200,0), rgba(159,245,200,0.35) 35%, ${GOLD_HI} 80%, #FFFAEB)`,
+            boxShadow: "0 0 12px rgba(212,175,55,0.5)",
           }} />
         );
       })}
@@ -151,7 +184,8 @@ const Hud: React.FC<{ cards: Card[] }> = ({ cards }) => {
   return (
     <>
       <div style={{ ...label, position: "absolute", left: 120, top: 56, fontSize: 18, color: N.soft, opacity: on }}>
-        <span style={{ color: N.solar }}>NOT2L8</span> // Signal
+        <span style={{ fontFamily: script, fontSize: 34, letterSpacing: 0, textTransform: "none", color: GOLD_HI }}>
+          L2 Daily</span>{"  "}"BY NOT2L8"
       </div>
       <div style={{ ...label, position: "absolute", right: 120, top: 56, fontSize: 18, color: N.muted, opacity: on,
                     display: "flex", alignItems: "center", gap: 14 }}>
@@ -166,8 +200,7 @@ const Hud: React.FC<{ cards: Card[] }> = ({ cards }) => {
                                    left: `${(c.start * fps / durationInFrames) * 100}%` }} />
         ))}
         <div style={{ width: `${progress * 100}%`, height: "100%", borderRadius: 2,
-                      background: `linear-gradient(90deg, ${N.solar}, ${N.orange} 60%, ${N.magenta})`,
-                      boxShadow: "0 0 14px rgba(255,140,0,0.6)" }} />
+                      background: HOLO, boxShadow: "0 0 14px rgba(212,175,55,0.6)" }} />
       </div>
     </>
   );
@@ -191,19 +224,19 @@ const Core: React.FC<{ cx: number; cy: number; size: number; frame: number }> = 
       <div style={{
         position: "absolute", left: cx - size, top: cy - size, width: size * 2, height: size * 2, borderRadius: "50%",
         transform: `scale(${pulse})`,
-        background: "radial-gradient(circle, rgba(255,246,218,0.95) 0, rgba(255,188,0,0.55) 14%, " +
-          "rgba(255,140,0,0.22) 32%, rgba(255,20,147,0.10) 50%, transparent 70%)",
+        background: "radial-gradient(circle, rgba(255,250,230,0.95) 0, rgba(243,215,122,0.55) 14%, " +
+          "rgba(212,175,55,0.22) 32%, rgba(133,187,101,0.12) 50%, transparent 70%)",
       }} />
       <svg width={1920} height={1080} style={{ position: "absolute", inset: 0 }}>
-        {ring(size * 1.15, size * 0.32, -14 + frame * 0.05, N.magenta, 0.6, 0)}
-        {ring(size * 1.4, size * 0.42, 18 - frame * 0.04, N.sky, 0.4, 2.4)}
+        {ring(size * 1.15, size * 0.32, -14 + frame * 0.05, GOLD_HI, 0.6, 0)}
+        {ring(size * 1.4, size * 0.42, 18 - frame * 0.04, N.magenta, 0.5, 2.4)}
       </svg>
       <div style={{
         // the streak stays to the right of the headline column so it never strikes through text
         position: "absolute", left: cx - 440, right: 0, top: cy - 1.5, height: 3, opacity: 0.85 * pulse,
-        background: "linear-gradient(90deg, transparent, rgba(255,20,147,0.55) 28%, #FFF6DA 48%, " +
-          "rgba(255,188,0,0.6) 78%, transparent)",
-        boxShadow: "0 0 26px 4px rgba(255,188,0,0.32)",
+        background: "linear-gradient(90deg, transparent, rgba(159,245,200,0.55) 28%, #FFFAEB 48%, " +
+          "rgba(212,175,55,0.6) 78%, transparent)",
+        boxShadow: "0 0 26px 4px rgba(212,175,55,0.32)",
       }} />
     </AbsoluteFill>
   );
@@ -236,16 +269,20 @@ const BookendCard: React.FC<{ card: Card; frame: number }> = ({ card, frame }) =
         <div style={{ ...label, ...rise(frame, 2), color: N.sky, marginBottom: 30 }}>
           {isTitle ? <>Daily<span style={{ color: N.magenta }}> / </span>X, last 24 hours</> : "That's the day"}
         </div>
-        {words.map((w, i) => (
-          <div key={w} style={{
-            ...rise(frame, 6 + i * 6, 24), fontFamily: display, fontWeight: 900, textTransform: "uppercase",
-            fontSize: isTitle ? 210 : 170, lineHeight: 0.88, letterSpacing: "-0.02em",
-            ...(i === 1 || !isTitle
-              ? { background: `linear-gradient(90deg, ${N.solar}, ${N.orange} 55%, ${N.magenta})`,
-                  WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" }
-              : { color: N.cream }),
-          }}>{w}</div>
-        ))}
+        {words.map((w, i) => {
+          const isScript = i === 0; // calligraphy word in holographic foil, then a bold platinum block word
+          return (
+            <div key={w} style={{
+              ...rise(frame, 6 + i * 6, 24),
+              ...(isScript
+                ? { fontFamily: script, fontWeight: 400, fontSize: isTitle ? 190 : 210, lineHeight: 1.05,
+                    background: HOLO, WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent",
+                    paddingRight: 30, marginBottom: -20 }
+                : { fontFamily: display, fontWeight: 900, textTransform: "uppercase", fontSize: 250, lineHeight: 0.86,
+                    letterSpacing: "0.01em", color: N.cream }),
+            }}>{w}</div>
+          );
+        })}
         <div style={{ ...rise(frame, 18, 24), fontFamily: sans, fontWeight: 400, fontSize: isTitle ? 44 : 38,
                       lineHeight: 1.35, color: N.soft, maxWidth: 1180, marginTop: 44 }}>
           {card.sentence}
@@ -278,7 +315,7 @@ const PostCard: React.FC<{ card: Card; index: number; total: number; frame: numb
   const quiet = card.kind === "quiet";
   const enter = interpolate(frame, [0, 22], [0, 1], { ...clamp, easing: ease });
   const sweep = interpolate(frame, [6, 40], [-10, 110], { ...clamp, easing: ease });
-  const titleSize = quiet ? 150 : card.title.length > 18 ? 92 : 108;
+  const titleSize = quiet ? 170 : card.title.length > 18 ? 112 : 128;
   const sentenceSize = quiet ? 60 : card.sentence.length > 170 ? 42 : card.sentence.length > 110 ? 48 : 56;
   return (
     <div style={{
@@ -290,9 +327,15 @@ const PostCard: React.FC<{ card: Card; index: number; total: number; frame: numb
       <div style={{
         position: "relative", height: "100%", borderRadius: 36, overflow: "hidden", padding: "56px 76px 52px",
         display: "flex", flexDirection: "column",
-        background: "linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.012) 60%), rgba(22,22,24,0.88)",
+        background: "linear-gradient(165deg, rgba(27,27,31,0.94), rgba(19,19,21,0.94) 70%)",
         boxShadow: "inset 0 1px 0 rgba(255,255,255,0.08)",
       }}>
+        {/* holographic foil strip, like a banknote security band */}
+        <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 14, background: HOLO,
+                      backgroundSize: "100% 300%", backgroundPosition: `0 ${frame * 0.6}%` }} />
+        {/* big denomination number */}
+        <div style={{ position: "absolute", right: 64, top: 24, fontFamily: display, fontWeight: 900, fontSize: 190,
+                      lineHeight: 1, color: k.c, opacity: 0.16 }}>{String(index).padStart(2, "0")}</div>
         {/* anamorphic rim light sweeping along the top edge as the card lands */}
         <div style={{
           position: "absolute", top: 0, left: `${sweep}%`, width: 640, height: 2, transform: "translateX(-50%)",
@@ -301,19 +344,19 @@ const PostCard: React.FC<{ card: Card; index: number; total: number; frame: numb
         }} />
         <div style={{ ...rise(frame, 4), display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <Pill coin={card.coin ?? card.title} dim={quiet} />
-          <div style={{ ...label, color: N.muted, fontSize: 22 }}>
-            {String(index).padStart(2, "0")} <span style={{ color: N.magenta }}>/</span>{" "}
+          <div style={{ ...label, color: N.muted, fontSize: 20, marginRight: 230 }}>
+            NO. {String(index).padStart(2, "0")} <span style={{ color: N.magenta }}>OF</span>{" "}
             {String(total - 2).padStart(2, "0")}
           </div>
         </div>
         <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", paddingBottom: 20 }}>
-        <div style={{ ...rise(frame, 8, 22), fontFamily: display, fontWeight: 800, textTransform: "uppercase",
-                      fontSize: titleSize, lineHeight: 0.98, letterSpacing: "-0.01em", color: N.cream }}>
+        <div style={{ ...rise(frame, 8, 22), fontFamily: display, fontWeight: 900, textTransform: "uppercase",
+                      fontSize: titleSize, lineHeight: 0.95, letterSpacing: "0.01em", color: N.cream }}>
           {card.title}
         </div>
         <div style={{ ...rise(frame, 10, 26), height: 4, width: 150, borderRadius: 2, margin: "34px 0 34px",
                       background: `linear-gradient(90deg, ${k.c}, ${k.c2})`, boxShadow: `0 0 18px ${k.c}88` }} />
-        <div style={{ ...rise(frame, 16, 24), position: "relative", fontFamily: sans, fontWeight: quiet ? 400 : 500,
+        <div style={{ ...rise(frame, 16, 24), position: "relative", fontFamily: sans, fontWeight: 400,
                       fontSize: sentenceSize, lineHeight: 1.3, color: quiet ? N.muted : N.cream, maxWidth: 1500 }}>
           {quiet ? card.sentence : (
             <>

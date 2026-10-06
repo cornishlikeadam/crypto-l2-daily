@@ -1,85 +1,94 @@
-# source-verification-log.md
+---
+number: 9
+group: "Proof"
+short: "Source log"
+question: "How do I know each source is real?"
+hint: "I opened every source myself. I did not trust a search result."
+answer: "I opened and read 6 sources on October 5, 2026. For each one, I wrote what it says and how I checked it. I dropped 1 claim and fixed 1 claim."
+cssclasses: [l2-daily]
+tags: [ai101, project-2, sources]
+---
 
-Every source here was opened and read, not just seen in a search result. Accessed on October 5, 2026.
+# 🧾 source-verification-log.md
 
-## Source 1
+> [!important] ⭐ The rule for this log
+> I **opened and read** every source. A search result alone is **not** enough. Date checked: **October 5, 2026**.
 
-- **Author or organization:** OpenTweet
-- **Title:** X API Pay-Per-Use Explained
-- **Date:** updated July 2026
-- **Link:** https://opentweet.io/how-to/x-api-pay-per-use-explained
-- **Type:** article
-- **Accessed:** October 5, 2026
-- **What it says:** X charges $0.005 for each post you read, and the free plan ended for new users on February 6, 2026.
-- **How I checked it:** opened the page and read the pricing table and the line about February 6.
+## 📄 Source 1
 
-## Source 2
+- 🏢 **Who:** OpenTweet
+- 📰 **Title:** X API Pay-Per-Use Explained
+- 📅 **Date:** updated July 2026
+- 🔗 **Link:** https://opentweet.io/how-to/x-api-pay-per-use-explained
+- 🗂️ **Type:** article
+- 💬 **What it says:** X charges **$0.005** for each post you read. The free plan ended for new users on **February 6, 2026**.
+- 🔍 **How I checked:** I opened the page. I read the price table and the line about February 6.
 
-- **Author or organization:** rsimik (GitHub user), on the twikit project
-- **Title:** ClientTransaction broken as of March 18 2026: Couldn't get KEY_BYTE indices (issue #408)
-- **Date:** March 18, 2026
-- **Link:** https://github.com/d60/twikit/issues/408
-- **Type:** documentation (bug report)
-- **Accessed:** October 5, 2026
-- **What it says:** X changed its website code, so the free scraper twikit stopped working.
-- **How I checked it:** opened the issue. My robot showed the exact same error ("Couldn't get KEY_BYTE indices") on my Mac.
+## 📄 Source 2
 
-## Source 3
+- 🏢 **Who:** rsimik (a GitHub user), on the twikit project
+- 📰 **Title:** ClientTransaction broken as of March 18 2026: Couldn't get KEY_BYTE indices (issue #408)
+- 📅 **Date:** March 18, 2026
+- 🔗 **Link:** https://github.com/d60/twikit/issues/408
+- 🗂️ **Type:** bug report
+- 💬 **What it says:** X changed its website code. The free scraper **twikit** stopped working.
+- 🔍 **How I checked:** I opened the issue. My robot showed the **same error** on my Mac.
 
-- **Author or organization:** Bitcoin Magazine
-- **Title:** Lightning Labs Launches Wavelength: "Bitcoin on Easy Mode" for Developers and Autonomous Agents
-- **Date:** July 22, 2026
-- **Link:** https://bitcoinmagazine.com/technical/lightning-labs-launches-wavelength-bitcoin-on-easy-mode-for-developers-and-autonomous-agents
-- **Type:** article
-- **Accessed:** October 5, 2026
-- **What it says:** Lightning Labs released Wavelength, a kit for adding Bitcoin payments to apps.
-- **How I checked it:** opened the article and read the date and the first paragraph. A Bitcoin Magazine reporter (@JuanSGalt) also posted it on X that day, and that post is on the July 22 card.
+## 📄 Source 3
 
-## Source 4
+- 🏢 **Who:** Bitcoin Magazine
+- 📰 **Title:** Lightning Labs Launches Wavelength: "Bitcoin on Easy Mode" for Developers and Autonomous Agents
+- 📅 **Date:** July 22, 2026
+- 🔗 **Link:** https://bitcoinmagazine.com/technical/lightning-labs-launches-wavelength-bitcoin-on-easy-mode-for-developers-and-autonomous-agents
+- 🗂️ **Type:** article
+- 💬 **What it says:** Lightning Labs released **Wavelength**. It is a kit that adds Bitcoin payments to apps.
+- 🔍 **How I checked:** I read the date and the first paragraph. A Bitcoin Magazine reporter (@JuanSGalt) posted it on X that day. That post is on the July 22 card.
 
-- **Author or organization:** Litecoin Project
-- **Title:** Litecoin Core v0.21.5.6
-- **Date:** August 2, 2026
-- **Link:** https://github.com/litecoin-project/litecoin/releases/tag/v0.21.5.6
-- **Type:** documentation (software release)
-- **Accessed:** October 5, 2026
-- **What it says:** a maintenance release that strengthens MWEB checks.
-- **How I checked it:** read the release date straight from GitHub (published August 2, 2026). @litecoin's post that day says the same thing.
+## 📄 Source 4
 
-## Source 5
+- 🏢 **Who:** Litecoin Project
+- 📰 **Title:** Litecoin Core v0.21.5.6
+- 📅 **Date:** August 2, 2026
+- 🔗 **Link:** https://github.com/litecoin-project/litecoin/releases/tag/v0.21.5.6
+- 🗂️ **Type:** software release
+- 💬 **What it says:** A maintenance release. It makes the **MWEB** checks stronger.
+- 🔍 **How I checked:** I read the release date on GitHub (August 2, 2026). @litecoin posted the same thing that day.
 
-- **Author or organization:** The Block
-- **Title:** DogeOS launches testnet to bring EVM smart contracts to Dogecoin
-- **Date:** September 30, 2026
-- **Link:** https://theblock.co/news/ecosystems/2026-09-30-dogeos-launches-public-testnet-dogecoin-zk-rollup-evm-417307
-- **Type:** article
-- **Accessed:** October 5, 2026
-- **What it says:** DogeOS, a layer 2 for Dogecoin apps, opened its public testnet on September 30.
-- **How I checked it:** the date is in the article's web address. Decrypt and crypto.news reported the same day.
+## 📄 Source 5
 
-## Source 6
+- 🏢 **Who:** The Block
+- 📰 **Title:** DogeOS launches testnet to bring EVM smart contracts to Dogecoin
+- 📅 **Date:** September 30, 2026
+- 🔗 **Link:** https://theblock.co/news/ecosystems/2026-09-30-dogeos-launches-public-testnet-dogecoin-zk-rollup-evm-417307
+- 🗂️ **Type:** article
+- 💬 **What it says:** **DogeOS** is a layer 2 for Dogecoin apps. Its public test network opened on September 30.
+- 🔍 **How I checked:** The date is in the web address. Decrypt and crypto.news reported it the same day.
 
-- **Author or organization:** seraphis-migration (Monero developers)
-- **Title:** FCMP++ & Carrot beta stressnet v3.0
-- **Date:** September 25, 2026
-- **Link:** https://github.com/seraphis-migration/monero/releases/tag/v0.19.0.0-beta.3.0
-- **Type:** documentation (software release)
-- **Accessed:** October 5, 2026
-- **What it says:** the third Monero test network for the FCMP++ upgrade was released, and it forked on October 5.
-- **How I checked it:** read the release date from GitHub. @monero posted on October 5 that it is live, which is on the October 5 card.
+## 📄 Source 6
 
-## Claim check
+- 🏢 **Who:** seraphis-migration (Monero developers)
+- 📰 **Title:** FCMP++ & Carrot beta stressnet v3.0
+- 📅 **Date:** September 25, 2026
+- 🔗 **Link:** https://github.com/seraphis-migration/monero/releases/tag/v0.19.0.0-beta.3.0
+- 🗂️ **Type:** software release
+- 💬 **What it says:** The third Monero test network for **FCMP++** was released. It started on October 5.
+- 🔍 **How I checked:** I read the release date on GitHub. @monero posted on October 5 that it is live. That post is on the October 5 card.
 
-| Claim | Source | Exact sentence | Status | Keep, fix, or drop |
+## ✅ Claim check
+
+| 💬 Claim | 📄 Source | 🔎 Exact words | 🏷️ Status | ✂️ Keep, fix or drop |
 |---|---|---|---|---|
-| X's API costs money to read posts | Source 1 | "Read a post" costs "$0.005 per post returned" | verified | keep |
-| X's free API plan is gone | Source 1 | "On February 6, 2026, X made pay-per-use the default pricing model for its API and discontinued the free tier for new developer signups." | verified | keep |
-| The normal twikit download is broken | Source 2 | "Twitter changed their ondemand.s.js structure so the regex in transaction.py no longer matches." | verified | keep |
-| July 22 matters for Bitcoin Lightning | Source 3 | Lightning Labs released Wavelength | verified | keep |
-| August 2 matters for Litecoin MWEB | Source 4 | release v0.21.5.6 published 2026-08-02 | verified | keep |
-| September 30 matters for Dogecoin layer 2 | Source 5 | DogeOS public testnet launched September 30 | verified | keep |
+| X's API costs money to read posts | Source 1 | "Read a post" costs "$0.005 per post returned" | ✅ verified | keep |
+| X's free API plan is gone | Source 1 | "On February 6, 2026, X made pay-per-use the default pricing model for its API and discontinued the free tier for new developer signups." | ✅ verified | keep |
+| The normal twikit download is broken | Source 2 | "Twitter changed their ondemand.s.js structure so the regex in transaction.py no longer matches." | ✅ verified | keep |
+| July 22 matters for Bitcoin Lightning | Source 3 | Lightning Labs released Wavelength | ✅ verified | keep |
+| August 2 matters for Litecoin MWEB | Source 4 | release v0.21.5.6 published 2026-08-02 | ✅ verified | keep |
+| September 30 matters for Dogecoin layer 2 | Source 5 | DogeOS public testnet launched September 30 | ✅ verified | keep |
 
-## Claims revised or dropped
+## ✂️ Claims I fixed or dropped
 
-- **Dropped:** "X search only returns posts from the dates you ask for." My own test showed this is false: X returned an October 5 Monero post when I searched July 22. So the robot now checks every post's date itself.
-- **Revised:** "September 25 is the big Monero day." The release was September 25, but the network actually went live October 5, so Monero's big day is covered by October 5 instead.
+> [!warning] ❌ Dropped
+> "X search only gives posts from the dates you ask for." **This is false.** My test asked for July 22. X gave back a Monero post from **October 5**. Now the robot **checks every date itself**.
+
+> [!note] 🔧 Fixed
+> "September 25 is the big Monero day." The release was on September 25. But the network **started on October 5**. So the October 5 video covers Monero's big day.

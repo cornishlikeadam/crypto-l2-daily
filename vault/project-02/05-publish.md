@@ -1,19 +1,46 @@
-# Step 5: Put it on the website
+---
+number: 7
+group: "The 5 steps"
+short: "Step 5 · Publish"
+question: "Step 5: How does the video get onto the website?"
+hint: "Build the pages, back up, send to the host, then test the page."
+answer: "build_site.py builds the pages. The robot saves a backup on GitHub and sends the site to Vercel. Then it loads the page. It says LIVE only if the page loads."
+cssclasses: [l2-daily]
+tags: [ai101, project-2, step]
+---
 
-**What starts this step:** Step 3 made a good video (and, for the first video, Step 4 said yes).
+# 🌐 Step 5: Put it on the website
 
-**What goes in:** `final.mp4` and the card list.
+> [!info] ⏰ What starts this step
+> Step 3 made a good video. (For the **first** video, Step 4 also said **yes**.)
 
-**What this step does:** `scripts/build_site.py` builds the web pages, then the robot sends them to the internet.
+## 📥 What goes in
 
-**Directions for the robot:**
+`final.mp4` and the **card list**.
 
-1. Copy the video to `site/days/YYYY-MM-DD/`.
-2. Rebuild the home page, the day page, the archive page, `feed.json`, and the day's note in this vault ([[archive/README]]).
-3. Save a backup to GitHub.
-4. Send the website to Vercel.
-5. Load the new day's page. Only if it loads, write "LIVE" in `logs/daily.log`.
+## ⚙️ What this step does
 
-**Good looks like:** https://not2l8-l2-daily.vercel.app/ shows today's video at the top, with the cards under it.
+`scripts/build_site.py` builds the **web pages**. Then the robot sends them to the **internet**.
 
-**Human check:** if the page does not load, the log says "NOT LIVE" and gives the exact command to try again. The robot never says "live" when it isn't.
+## 🔢 Directions for the robot
+
+1. 📁 Copy the video to `site/days/YYYY-MM-DD/`.
+2. 🏗️ Rebuild these things:
+   - the **home** page, the **day** page and the **archive** page;
+   - the **course** pages (from this vault);
+   - `feed.json` and `widget.json`;
+   - the day's **note** in this vault ([[archive/README]]).
+3. 💾 Save a **backup** on GitHub.
+4. 🚀 Send the website to **Vercel**.
+5. ✅ Load the new day's page. **Only if it loads**, write **"LIVE"** in `logs/daily.log`.
+
+## ✅ What "good" looks like
+
+https://not2l8-l2-daily.vercel.app/ shows **today's video** at the top. The **cards** are under it.
+
+> [!warning] 🧑‍⚖️ Robot check
+> If the page **does not load**, the log says **"NOT LIVE"**. It gives the **exact command** to try again.
+> The robot **never** says "live" when the page is not live.
+
+> [!note] 🛟 The address changed on October 6, 2026
+> Vercel stopped serving the old address (`crypto-l2-daily.vercel.app`). The site moved to **not2l8-l2-daily.vercel.app**.

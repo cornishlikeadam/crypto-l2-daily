@@ -1,5 +1,5 @@
 #!/bin/bash
-# Archive past days: same pipeline as daily.sh, with the 24h window ending 18:00 ET on each date.
+# 🗂️ Archive past days: same pipeline as daily.sh, with the 24h window ending 18:00 ET on each date.
 #   /bin/bash scripts/backfill.sh 2026-07-22 2026-08-02 2026-09-30
 set -uo pipefail
 source "$(dirname "$0")/lib.sh"

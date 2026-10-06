@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render the daily card slideshow through OpenMontage (separate project).
+"""🎬 Render the daily card slideshow through OpenMontage (separate project).
 
 Run with OpenMontage's own interpreter so its tools resolve:
   ../OpenMontage/.venv/bin/python scripts/render.py --date 2026-10-05
@@ -48,21 +48,21 @@ MIN_TAIL = 0.45  # minimum hold after narration ends
 # full sentence; only the spoken version is shortened. Never faster than ~1.15x.
 FIT_PLAN = [(1.0, 99), (0.95, 14), (0.9, 11), (0.87, 9), (0.87, 7), (0.87, 5)]
 
-THEME = {  # NOT2L8 palette, matching remotion/CardDeck.tsx and the site's design layer
-    "primaryColor": "#F8F6F1",
-    "accentColor": "#FFBC00",
-    "backgroundColor": "#111111",
-    "surfaceColor": "#161618",
-    "textColor": "#F8F6F1",
-    "mutedTextColor": "#98A1AB",
-    "headingFont": "Archivo",
-    "bodyFont": "Inter",
-    "monoFont": "JetBrains Mono",
-    "chartColors": ["#FFBC00", "#FF8C00", "#FF1493", "#89CFF0", "#32CD32", "#708090"],
+THEME = {  # 💎 Black Platinum, matching remotion/CardDeck.tsx and scripts/site_theme.py
+    "primaryColor": "#E5E4E2",
+    "accentColor": "#D4AF37",
+    "backgroundColor": "#0A0A0B",
+    "surfaceColor": "#1B1B1F",
+    "textColor": "#E5E4E2",
+    "mutedTextColor": "#9A9DA4",
+    "headingFont": "Big Shoulders",
+    "bodyFont": "Atkinson Hyperlegible",
+    "monoFont": "IBM Plex Mono",
+    "chartColors": ["#D4AF37", "#85BB65", "#9FF5C8", "#A7E8FF", "#C9B6FF", "#E5E4E2"],
     "springConfig": {"damping": 22, "stiffness": 110, "mass": 1},
     "transitionDuration": 0.4,
-    "captionHighlightColor": "#FFBC00",
-    "captionBackgroundColor": "rgba(17,17,17,0.85)",
+    "captionHighlightColor": "#F3D77A",
+    "captionBackgroundColor": "rgba(10,10,11,0.85)",
 }
 
 # Plain-language "what is this?" lines, written once and checked. They explain the topic word,
@@ -389,7 +389,7 @@ def delivery_promise() -> dict:
 def proposal_packet(day: str, approved_by: str) -> dict:
     concept = lambda cid, title, hook, structure, why: {  # noqa: E731
         "id": cid, "title": title, "hook": hook, "narrative_structure": structure,
-        "visual_approach": "NOT2L8 dark glass cards, solar/magenta accents, handle/date badge; no b-roll, no faces",
+        "visual_approach": "Black Platinum banknote-style cards, gold/green accents, handle/date badge; no b-roll, no faces",
         "suggested_playbook": "flat-motion-graphics", "target_platform": "generic",
         "target_duration_seconds": 70, "key_points": ["sourced posts only", "quiet coins stated"],
         "why_this_works": why}
@@ -560,11 +560,11 @@ def asset_manifest_artifact(cards: list[dict], narration: Path) -> dict:
     return {"version": "1.0", "assets": assets, "total_cost_usd": 0.0}
 
 
-ART_DIRECTION = ("NOT2L8 'SpaceX cleanroom x GTA golden hour x white barndominium' source cards: #111111 base, "
-                 "solar #FFBC00 / orange #FF8C00 / magenta #FF1493 sunset bloom, frosted glass panel with a "
-                 "coin-coloured gradient rim, Archivo heavy uppercase titles, Inter body, JetBrains Mono telemetry "
-                 "labels; glowing core + orbit rings + anamorphic flare on bookends; seeded stars and shooting stars; "
-                 "handle + date bottom-right; no b-roll, no faces")
+ART_DIRECTION = ("Black Platinum source cards: #0A0A0B base, platinum #E5E4E2 type, gold #D4AF37 and money-green "
+                 "#85BB65 accents, a holographic foil strip, banknote guilloche rosette and denomination numbers; "
+                 "Yellowtail calligraphy + Big Shoulders capitals, Atkinson Hyperlegible body, IBM Plex Mono labels; "
+                 "glowing core + orbit rings + flare on bookends; seeded stars and shooting stars; handle + date "
+                 "bottom-right; no b-roll, no faces")
 
 
 def edit_decisions_artifact(cards: list[dict], project: Path) -> dict:

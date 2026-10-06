@@ -1,11 +1,19 @@
-# The archive
+---
+cssclasses: [l2-daily]
+tags: [crypto-l2-daily, archive]
+---
 
-Every day the robot made a video. Newest first.
+# 🗂️ The archive
 
-- [[archive/2026-10-05|Monday, October 5, 2026]]: 8 posts
-- [[archive/2026-09-30|Wednesday, September 30, 2026]]: 6 posts, quiet: Dogecoin, Monero
-- [[archive/2026-08-02|Sunday, August 2, 2026]]: 7 posts, quiet: Monero
-- [[archive/2026-07-22|Wednesday, July 22, 2026]]: 7 posts, quiet: Monero
+> [!tip] 📅 Every day the robot made a video
+> The **newest** day is first. Tap a date to see its cards.
+
+| # | 📅 Day | 🧾 Posts | 😴 Quiet coins |
+|---|---|---|---|
+| 01 | [[archive/2026-10-05\|Monday, October 5, 2026]] | 8 | — |
+| 02 | [[archive/2026-09-30\|Wednesday, September 30, 2026]] | 6 | Dogecoin, Monero |
+| 03 | [[archive/2026-08-02\|Sunday, August 2, 2026]] | 7 | Monero |
+| 04 | [[archive/2026-07-22\|Wednesday, July 22, 2026]] | 7 | Monero |
 
 ---
-Back to [[00-start-here]]
+⬅️ Back to [[README|the folder map]] · 🚀 [[00-start-here]]

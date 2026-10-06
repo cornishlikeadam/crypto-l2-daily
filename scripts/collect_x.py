@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Collect the last 24h of X posts for the daily crypto L2 slideshow.
+"""🔎 Collect the last 24h of X posts for the daily crypto L2 slideshow.
 
 Source of truth is X recent search (api.x.com /2/tweets/search/recent).
 Nothing here is written from memory: every item carries the handle, post url

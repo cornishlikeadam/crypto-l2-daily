@@ -1,26 +1,45 @@
-# Start Here: Crypto L2 Daily
+---
+number: 1
+group: "Start"
+short: "Start here"
+question: "What does the robot make, and what rules does it follow?"
+hint: "Think about the clock, the video length, and where the posts come from."
+answer: "Every day at 6 PM, it makes a 70-second video and a web page. It uses only real posts from X, from the last 24 hours. It never makes up news."
+cssclasses: [l2-daily]
+tags: [ai101, project-2]
+---
 
-## Goal
+# 🚀 Start here: Crypto L2 Daily
 
-Every day at 6 PM, make a 70-second video and a web page that show what people really posted on X about Bitcoin, Dogecoin, Monero and Litecoin add-ons, so anyone can see the news and click through to the real posts.
+## 🎯 The goal
 
-## How to use this folder
+Every day at **6 PM**, the robot makes **two things**:
 
-1. Look at `process-map.canvas` to see the steps in order.
-2. Follow the step files in order: [[01-collect-posts]], [[02-check-posts]], [[03-make-video]], [[04-human-check]], [[05-publish]].
-3. Do one step at a time. After each step, stop and say what happened before going on.
+1. 🎬 A **70-second video**.
+2. 🌐 A **web page** with one card for each post.
 
-## Rules
+They show what people **really posted** on X. X is a social media app. The posts are about **4 coins**: Bitcoin, Dogecoin, Monero and Litecoin. Each card links to the **real post**.
 
-- **Only real posts.** Every card must come from a real post on X, with the account name, the date and a link. If a coin had nothing good, the card says "Quiet today." Never make up news.
-- **Only the last 24 hours.** A post from another day gets thrown out, even if X shows it.
-- **No price guesses, giveaways, rumors or ads.** Those get thrown out before any card is made.
-- **No copies.** If three accounts post the same words, only one card gets made.
-- **Free and simple.** No paid tools. The voice is Piper (free). The video is made by OpenMontage (free).
-- **Never claim it is live until it is live.** The robot checks that the web page actually loads before it says "LIVE."
+## 🔢 How to use this folder
 
-## What stays my decision
+1. 🗺️ Open `process-map.canvas`. It shows the steps in order.
+2. 📄 Read the step files in order: [[01-collect-posts]], [[02-check-posts]], [[03-make-video]], [[04-human-check]], [[05-publish]].
+3. ✋ Do **one step at a time**. After each step, stop. Say what happened. Then go on.
 
-- Whether a video is good enough to go on the website. I approved the first one by hand ([[04-human-check]]).
-- Which days go in the archive, and why they matter.
-- Whether to use my X account for the free scraper, knowing X might limit it.
+## 📜 The rules
+
+> [!important] ⭐ Rule 1: Only real posts
+> Every card comes from a **real post** on X. It shows the **account name**, the **date** and a **link**.
+> If a coin has nothing good, the card says **"Quiet today."** The robot **never makes up news**.
+
+- ⏰ **Only the last 24 hours.** A post from another day is removed. This is true even if X shows it.
+- 🚫 **No price guesses, giveaways, rumors or ads.** The robot removes them **before** it makes a card.
+- 👯 **No copies.** If 3 accounts post the same words, the robot makes **1 card**.
+- 🆓 **Free and simple.** No paid tools. The voice is **Piper** (free). **OpenMontage** (free) makes the video.
+- ✅ **Never say "live" too early.** The robot checks that the page **loads**. Only then does it say **"LIVE."**
+
+## 🧑‍⚖️ What stays **my** decision
+
+1. ✅ Is a video **good enough** for the website? I approved the first one by hand ([[04-human-check]]).
+2. 🗂️ Which old days go in the archive, and **why** they matter.
+3. ⚠️ Do I use **my X account** for the free scraper? X can limit the account.

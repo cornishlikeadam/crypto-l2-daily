@@ -1,5 +1,5 @@
 #!/bin/bash
-# Save the ElevenLabs API key (hidden) and the chosen voice for the daily videos, the ad, and the site guide.
+# 🎙️ Save the ElevenLabs API key (hidden) and the chosen voice for the daily videos, the ad, and the site guide.
 #   /bin/bash ~/crypto-l2-daily/scripts/set_voice.sh
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"

@@ -1,13 +1,13 @@
-// Crypto L2 Daily: iPhone widget for the free Scriptable app (NOT2L8 edition).
-// Read-only: it fetches today's briefing from the site plus public BTC price/fee data, and draws a widget.
-// 1. Install Scriptable from the App Store and open it once.
-// 2. Move this file into iCloud Drive > Scriptable (Files app). It then appears in Scriptable.
-// 3. Long-press the Home Screen > + > Scriptable > pick a size > Add.
-// 4. Long-press the widget > Edit Widget > Script: this one.  Lock Screen widgets work too.
+// 📱 Crypto L2 Daily: an iPhone widget for the free Scriptable app. Black Platinum edition.
+// It only reads data. It gets today's news from the site, and the BTC price and fee from public sites.
+// 1. Install Scriptable from the App Store. Open it one time.
+// 2. Move this file into iCloud Drive > Scriptable (in the Files app).
+// 3. Hold the Home Screen. Tap +. Choose Scriptable. Tap Add.
+// 4. Hold the widget. Tap Edit Widget. Choose this script. Lock Screen widgets work too.
 const SITE = "https://not2l8-l2-daily.vercel.app/";
-const C = { dark: "#111111", warm: "#22150A", solar: "#FFBC00", magenta: "#FF1493", sky: "#89CFF0",
-  green: "#32CD32", slate: "#708090", cream: "#F8F6F1" };
-const COIN = { "BTC L2": "#FFBC00", DOGE: "#E8B547", XMR: "#FF8C00", LTC: "#C9D1DA" };
+const C = { ink: "#0A0A0B", onyx: "#1B1B1F", gold: "#D4AF37", goldHi: "#F3D77A", green: "#85BB65",
+  mint: "#9FF5C8", plat: "#E5E4E2", dim: "#80838B", pink: "#FF8FA3" };
+const COIN = { "BTC L2": "#D4AF37", DOGE: "#85BB65", XMR: "#E5E4E2", LTC: "#A7E8FF" };
 
 async function getJSON(url) {
   try { const r = new Request(url); r.timeoutInterval = 12; return await r.loadJSON(); } catch (e) { return null; }
@@ -47,13 +47,13 @@ if (family === "accessoryInline") {
   add(w, "sat/vB", Font.mediumSystemFont(9)).centerAlignText();
   w.addSpacer();
 } else if (family === "accessoryRectangular") {
-  add(w, "CRYPTO L2 DAILY", Font.boldMonospacedSystemFont(10));
+  add(w, "L2 DAILY", Font.boldMonospacedSystemFont(10));
   add(w, usd + "  ⛽ " + feeText, Font.semiboldSystemFont(13));
   if (heads[0]) add(w, heads[0].sentence, Font.systemFont(11), null, 2);
 } else {
   const g = new LinearGradient();
-  g.colors = [new Color(C.dark), new Color(C.dark), new Color(C.warm)];
-  g.locations = [0, 0.55, 1];
+  g.colors = [new Color(C.ink), new Color(C.onyx), new Color("#14201A")];
+  g.locations = [0, 0.6, 1];
   g.startPoint = new Point(0, 0);
   g.endPoint = new Point(1, 1);
   w.backgroundGradient = g;
@@ -61,39 +61,39 @@ if (family === "accessoryInline") {
 
   const top = w.addStack();
   top.centerAlignContent();
-  add(top, "CRYPTO L2 DAILY", Font.boldMonospacedSystemFont(10), C.solar);
+  add(top, "“L2 DAILY”", Font.boldMonospacedSystemFont(10), C.goldHi);
   top.addSpacer();
-  if (family !== "small" && brief) add(top, brief.edition_short, Font.mediumMonospacedSystemFont(10), C.slate);
+  if (family !== "small" && brief) add(top, "NO. " + brief.edition, Font.mediumMonospacedSystemFont(10), C.dim);
   w.addSpacer(6);
 
   const row = w.addStack();
   row.bottomAlignContent();
-  add(row, usd, Font.heavySystemFont(family === "small" ? 22 : 26), C.cream).minimumScaleFactor = 0.6;
+  add(row, usd, Font.heavySystemFont(family === "small" ? 22 : 26), C.plat).minimumScaleFactor = 0.6;
   row.addSpacer(6);
   if (chg != null) {
     add(row, (chg >= 0 ? "▲" : "▼") + Math.abs(chg).toFixed(2) + "%", Font.semiboldMonospacedSystemFont(11),
-      chg >= 0 ? C.green : C.magenta);
+      chg >= 0 ? C.green : C.pink);
   }
   w.addSpacer(4);
   const feeRow = w.addStack();
   feeRow.centerAlignContent();
-  add(feeRow, "●", Font.systemFont(8), liveFee ? C.green : C.magenta);
+  add(feeRow, "●", Font.systemFont(8), liveFee ? C.mint : C.gold);
   feeRow.addSpacer(4);
-  add(feeRow, "⛽ " + feeText + " fast fee", Font.mediumMonospacedSystemFont(10), C.sky);
+  add(feeRow, "⛽ " + feeText + " fast fee", Font.mediumMonospacedSystemFont(10), C.plat);
 
   const n = family === "small" ? 1 : family === "medium" ? 2 : 3;
   w.addSpacer(family === "small" ? 6 : 8);
-  if (!heads.length) add(w, "Today's briefing lands at 6 PM ET.", Font.systemFont(12), C.cream, 2);
+  if (!heads.length) add(w, "Today's news comes at 6 PM ET.", Font.systemFont(12), C.plat, 2);
   heads.slice(0, n).forEach((h, i) => {
     if (i) w.addSpacer(5);
     const s = w.addStack();
     s.layoutVertically();
     if (family !== "small") s.url = h.post_url;
-    add(s, h.tag, Font.boldMonospacedSystemFont(9), COIN[h.tag] || C.solar);
-    add(s, h.sentence, Font.mediumSystemFont(family === "small" ? 11 : 12), C.cream, family === "large" ? 3 : 2);
+    add(s, h.tag, Font.boldMonospacedSystemFont(9), COIN[h.tag] || C.gold);
+    add(s, h.sentence, Font.mediumSystemFont(family === "small" ? 11 : 12), C.plat, family === "large" ? 3 : 2);
   });
   w.addSpacer();
-  if (family === "large") add(w, "Tap to watch today's 70-second edition", Font.mediumSystemFont(10), C.slate);
+  if (family === "large") add(w, "Tap to watch today's 70-second video", Font.mediumSystemFont(10), C.dim);
 }
 
 if (config.runsInWidget) Script.setWidget(w);

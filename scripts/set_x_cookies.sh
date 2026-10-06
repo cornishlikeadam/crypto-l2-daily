@@ -1,5 +1,5 @@
 #!/bin/bash
-# Save the two X login cookies into .env without showing them on screen.
+# 🍪 Save the two X login cookies into .env without showing them on screen.
 #   /bin/bash ~/crypto-l2-daily/scripts/set_x_cookies.sh
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"

@@ -1,43 +1,62 @@
-# decision-note.md
+---
+number: 14
+group: "Proof"
+short: "Decision note"
+question: "What went wrong, what did I change, and why?"
+hint: "Two gaps: bad posts, and posts from the wrong day."
+answer: "The robot picked bad posts and trusted X's date filter. I added strict rules and a date check. Rule I keep: never trust a website's date filter. Check every item's own date."
+cssclasses: [l2-daily]
+tags: [ai101, project-2, decision]
+---
 
-## The gap I found
+# 🧠 decision-note.md
 
-My rule was "never invent a launch, partnership, or price." The first run didn't invent anything, but it **picked bad posts**: a price guess ("$CATE … will go to billion"), a self-described "crypto shiller," and tiny promo accounts.
+## 1️⃣ The gap I found
 
-Then the archive run showed a bigger gap. I asked for posts from July 22, and X sent back a Monero post from **October 5**. The robot trusted X's date filter, so a July video would have shown October news.
+My rule was: **"Never invent a launch, a partnership or a price."**
 
-## What I changed
+- 🃏 The first run **did not invent** anything. But it **picked bad posts**:
+  - a price guess ("$CATE … will go to billion");
+  - a self-named "crypto shiller";
+  - tiny promo accounts.
+- 📅 Then the archive run showed a **bigger gap**. I asked for posts from **July 22**. X gave back a Monero post from **October 5**. The robot **trusted X's date filter**. So a July video would show October news.
 
-- In `scripts/collect_x.py`:
-  - added rules that throw out other-coin tickers, market-cap guesses, "shill/NFA/DYOR" bios, posts with fewer than 5 likes, and accounts with fewer than 500 followers;
-  - added a strict date check: the post's own date must be inside the 24 hours, or it's thrown out;
-  - added a rule for the government "DOGE" office;
-  - turned fancy fonts into normal letters;
-  - removed copies.
-- In `scripts/render.py`: the voice now reads fewer words of each post so it fits 70 seconds, and the card still shows the whole sentence.
-- On every slide: a "What is this?" line, the source link, and the like count.
+## 2️⃣ What I changed
 
-## Why
+1. 🧹 In `scripts/collect_x.py`:
+   - New rules remove other-coin tickers, market-cap guesses, and "shill/NFA/DYOR" bios.
+   - New rules remove posts with **fewer than 5 likes** and accounts with **fewer than 500 followers**.
+   - A **strict date check**: the post's own date must be inside the 24 hours. If not, the robot removes it.
+   - A rule for the **government "DOGE" office**.
+   - Fancy fonts become **normal letters**.
+   - **Copies** are removed.
+2. 🎙️ In `scripts/render.py`: the voice reads **fewer words** of each post. Now it fits 70 seconds. The card still shows **the whole sentence**.
+3. 🃏 On every slide: a **"What is this?"** line, the **source link** and the **like count**.
 
-My intent says the AI must not decide what counts as news. Price hype and wrong-day posts are exactly the mistakes a viewer would believe. The date check protects the most basic promise: "the last 24 hours."
+## 3️⃣ Why
 
-## What improved
+My intent says: the AI must **not** decide what counts as news. **Price hype** and **wrong-day posts** are the mistakes a viewer believes. The date check protects the most basic promise: **"the last 24 hours."**
 
-- First run: 4 of 8 cards were bad. Revised run: none of the cards are price talk or ads (see [[outputs/first-run]] and [[outputs/revised-run]]).
-- Archive days: 45 wrong-day posts were caught and removed across July 22, August 2, and September 30.
+## 4️⃣ What got better
 
-## What's unresolved
+| 📊 Check | Before | After |
+|---|---|---|
+| Bad cards on October 5 | **4 of 8** | **0** price talk or ads ([[outputs/first-run]] → [[outputs/revised-run]]) |
+| Wrong-day posts on archive days | trusted X | **45** caught and removed (July 22, August 2, September 30) |
 
-- **Words with two meanings:** "Lightning Lake" (a fishing trip) still counts as Bitcoin Lightning, because the robot matches words, not meaning.
-- **Big news can be missed:** the biggest news of a day isn't always the most-liked post. On July 22 the Wavelength post made it; on September 30 the DogeOS post did not.
-- **X can break the scraper:** this happens every few weeks. When it does, no video gets made that day.
+## 5️⃣ What is not solved yet
 
-## What stayed mine
+- 🔤 **Words with 2 meanings.** "Lightning Lake" (a fishing trip) still counts as Bitcoin Lightning. The robot matches **words**, not **meaning**.
+- 📰 **Big news can be missed.** The biggest news is not always the most-liked post. On July 22, the Wavelength post made it. On September 30, the DogeOS post did **not**.
+- 🧱 **X can break the scraper.** This happens every few weeks. Then **no video** gets made that day.
 
-- Choosing the free scraper, knowing X could limit my account.
-- Choosing which three past days matter, each backed by a real source.
-- Approving the first video before anything went public.
+## 6️⃣ What stayed **mine**
 
-## What I would encode as a rule
+1. 🆓 I chose the free scraper. I know X can limit my account.
+2. 🗂️ I chose which 3 past days matter. Each one has a **real source**.
+3. ✅ I approved the first video **before** anything went public.
 
-**Never trust a website's date filter. Check every item's own date before you use it.**
+## 7️⃣ The rule I would encode
+
+> [!important] ⭐ My rule
+> **Never trust a website's date filter. Check every item's own date before you use it.**

@@ -1,5 +1,5 @@
 #!/bin/bash
-# One-time: record the human approval of the first sample, turn human_approval_default off
+# 🧑‍⚖️ One-time: record the human approval of the first sample, turn human_approval_default off
 # for future daily runs, and publish the sample.
 #   /bin/bash scripts/approve_sample.sh YYYY-MM-DD
 set -uo pipefail
