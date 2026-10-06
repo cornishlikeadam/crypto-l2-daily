@@ -1,0 +1,151 @@
+{
+  "date": "2026-10-06",
+  "window_start": "2026-10-05T21:59:31.410007+00:00",
+  "window_end": "2026-10-06T21:59:31.410007+00:00",
+  "source": "X search (twikit, session cookies)",
+  "queries": {
+    "Bitcoin": "(Bitcoin OR BTC) (Lightning OR Ark OR \"layer 2\" OR L2) -filter:replies -filter:retweets -filter:nativeretweets lang:en since:2026-10-05 until:2026-10-07 since_time:1791237571 until_time:1791323971",
+    "Dogecoin": "(Dogecoin OR DOGE) (\"layer 2\" OR L2 OR Dogechain OR community) -filter:replies -filter:retweets -filter:nativeretweets lang:en since:2026-10-05 until:2026-10-07 since_time:1791237571 until_time:1791323971",
+    "Monero": "(Monero OR XMR) (FCMP OR CARROT OR hardfork OR upgrade) -filter:replies -filter:retweets -filter:nativeretweets lang:en since:2026-10-05 until:2026-10-07 since_time:1791237571 until_time:1791323971",
+    "Litecoin": "(Litecoin OR LTC) (Lightning OR MWEB OR \"layer 2\") -filter:replies -filter:retweets -filter:nativeretweets lang:en since:2026-10-05 until:2026-10-07 since_time:1791237571 until_time:1791323971"
+  },
+  "items": [
+    {
+      "coin": "Bitcoin",
+      "topic": "Lightning",
+      "claim": "Swap BTC for USDT on Bitcoin.",
+      "handle": "@kaleidoswap",
+      "display_name": "KaleidoSwap",
+      "why_this_account": "Bio: “Trustless Swaps on Bitcoin Layers. Use → Extension & DesktopApp Build → KaleidoSDK” · 2,178 followers",
+      "post_url": "https://x.com/kaleidoswap/status/2107494646058553651",
+      "date": "2026-10-06T15:34:13Z",
+      "date_et": "Oct 6, 11:34 AM ET",
+      "engagement": 186,
+      "likes": 83,
+      "reposts": 27,
+      "replies": 27,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Bitcoin",
+      "topic": "Lightning",
+      "claim": "What Does It Actually Take to Build a Bitcoin + RGB Wallet?",
+      "handle": "@AriseAura",
+      "display_name": "𝐀𝐑𝐈𝐒𝐄𝐀𝐔𝐑𝐀",
+      "why_this_account": "Bio: “Web3 | Exploring Crypto | Seeking Opportunities Ambassador - @playtaunt KOL - @Bitgetwallet Creator -…” · 3,107 followers",
+      "post_url": "https://x.com/AriseAura/status/2107400027719278622",
+      "date": "2026-10-06T09:18:14Z",
+      "date_et": "Oct 6, 5:18 AM ET",
+      "engagement": 78,
+      "likes": 43,
+      "reposts": 1,
+      "replies": 33,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Bitcoin",
+      "topic": "Lightning",
+      "claim": "NEW: Block creates Lightning Lake exhibition where an attendee wins 1 whole Bitcoin.",
+      "handle": "@BitcoinNewsCom",
+      "display_name": "Bitcoin News",
+      "why_this_account": "Bio: “Daily News on Bitcoin • Read Our Latest Article 📖 • Live on X and YouTube every Wednesday @ 11 EST” · 265,017 followers",
+      "post_url": "https://x.com/BitcoinNewsCom/status/2107259945188217066",
+      "date": "2026-10-06T00:01:36Z",
+      "date_et": "Oct 5, 8:01 PM ET",
+      "engagement": 35,
+      "likes": 23,
+      "reposts": 1,
+      "replies": 4,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Dogecoin",
+      "topic": "Community",
+      "claim": "MORE $DOGE NEWS FOR YOU So much happening in the Dogecoin community.",
+      "handle": "@TeslaModelDoge",
+      "display_name": "Tesla Model Doge",
+      "why_this_account": "Bio: “Dogecoin Aficionado” · 25,663 followers",
+      "post_url": "https://x.com/TeslaModelDoge/status/2107307775617274240",
+      "date": "2026-10-06T03:11:40Z",
+      "date_et": "Oct 5, 11:11 PM ET",
+      "engagement": 132,
+      "likes": 97,
+      "reposts": 15,
+      "replies": 5,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Monero",
+      "topic": null,
+      "claim": "Quiet today.",
+      "handle": null,
+      "display_name": null,
+      "why_this_account": null,
+      "post_url": null,
+      "date": null,
+      "date_et": null,
+      "engagement": 0,
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "other_chain_if_any": null,
+      "quiet": true
+    },
+    {
+      "coin": "Litecoin",
+      "topic": "MWEB",
+      "claim": "$LTC MWEB Daily Flow At close: Mon, 5 Oct 2026 Pool: 458,503.34 LTC (0.6% of supply) ↑ Peg-ins: +4,851.01 LTC ↓ Peg-outs…",
+      "handle": "@LitecoinTracker",
+      "display_name": "Litecoin Tracker",
+      "why_this_account": "Bio: “Tracking key Litecoin statistics and metrics such as ETF flows and MWEB adoption.” · 616 followers",
+      "post_url": "https://x.com/LitecoinTracker/status/2107442008428011657",
+      "date": "2026-10-06T12:05:03Z",
+      "date_et": "Oct 6, 8:05 AM ET",
+      "engagement": 11,
+      "likes": 10,
+      "reposts": 0,
+      "replies": 1,
+      "other_chain_if_any": null,
+      "quiet": false
+    }
+  ],
+  "stats": {
+    "dropped": {
+      "Bitcoin": {
+        "low_follower_account": 1,
+        "under_5_likes": 15,
+        "promo_account": 1,
+        "other_token_shill": 1,
+        "price_call": 2,
+        "too_short": 1
+      },
+      "Dogecoin": {
+        "promo_account": 3,
+        "under_5_likes": 14,
+        "low_follower_account": 3,
+        "other_token_shill": 1,
+        "cashtag_spam": 2
+      },
+      "Monero": {
+        "low_follower_account": 3,
+        "outside_24h_window": 2,
+        "under_5_likes": 8,
+        "price_call": 1
+      },
+      "Litecoin": {
+        "low_follower_account": 3
+      }
+    },
+    "kept": {
+      "Bitcoin": 4,
+      "Dogecoin": 2,
+      "Monero": 0,
+      "Litecoin": 1
+    },
+    "other_chains": {}
+  }
+}
