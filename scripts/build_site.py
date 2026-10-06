@@ -26,7 +26,7 @@ ROOT = Path(__file__).resolve().parent.parent
 OM = Path(os.environ.get("OPENMONTAGE_DIR", ROOT.parent / "OpenMontage")).resolve()
 SITE = ROOT / "site"
 DAYS = SITE / "days"
-SITE_URL = os.environ.get("SITE_URL", "https://crypto-l2-daily.vercel.app/")
+SITE_URL = os.environ.get("SITE_URL", "https://not2l8-l2-daily.vercel.app/")
 # Vercel gets only the last LIST_DAYS videos (upload size cap); older videos are served from the
 # GitHub Pages copy of site/, which keeps everything.
 ARCHIVE_URL = os.environ.get("ARCHIVE_URL", "https://cornishlikeadam.github.io/crypto-l2-daily/")
@@ -261,13 +261,15 @@ def widget_dialog(p: str) -> str:
             '<h3 id="wd-title">Put Crypto L2 Daily on your Home Screen</h3>'
             '<p>A live card with the BTC price, the fast fee and today\'s top headlines. Free, no account.</p>'
             '<ol><li>Install the free <a href="https://apps.apple.com/app/scriptable/id1405459188" rel="noopener">'
-            'Scriptable</a> app.</li>'
-            '<li>Tap <b>Copy script</b>. In Scriptable tap <b>+</b>, paste, and name it <b>Crypto L2 Daily</b>.</li>'
-            '<li>Long-press your Home Screen, tap <b>+</b>, choose <b>Scriptable</b>, pick a size, tap <b>Add</b>.</li>'
-            '<li>Long-press the new widget, tap <b>Edit Widget</b>, set Script to <b>Crypto L2 Daily</b>. '
-            'Lock Screen widgets work the same way.</li></ol>'
-            f'<div class="row"><button type="button" class="btn primary" data-copy="{p}scriptable.js">Copy script</button>'
-            f'<a class="btn" href="{p}scriptable.js" download>Download .js</a></div>'
+            'Scriptable</a> app and open it once.</li>'
+            '<li>Tap <b>Download script</b>. It saves to the Files app.</li>'
+            '<li>In Files, move <b>scriptable.js</b> into <b>iCloud Drive › Scriptable</b>. '
+            'It now shows up in Scriptable.</li>'
+            '<li>Long-press your Home Screen, tap <b>+</b>, choose <b>Scriptable</b>, pick a size, tap <b>Add</b>. '
+            'Then long-press the widget, tap <b>Edit Widget</b> and pick the script. Lock Screen works the same way.'
+            '</li></ol>'
+            f'<div class="row"><a class="btn primary" href="{p}scriptable.js" download>Download script</a>'
+            f'<a class="btn" href="{p}scriptable.js" rel="noopener">View the code</a></div>'
             f'<small>Android: point any JSON widget app (KWGT, HTTP Request Shortcuts) at '
             f'<code>{SITE_URL}widget.json</code></small></form></dialog>')
 
@@ -370,11 +372,6 @@ if(dlg){
   document.querySelectorAll('[data-open-widget]').forEach(function(b){b.addEventListener('click',function(){
     if(dlg.showModal)dlg.showModal();else dlg.setAttribute('open','');});});
   dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close();});
-  var cp=dlg.querySelector('[data-copy]');
-  if(cp)cp.addEventListener('click',function(){
-    fetch(cp.getAttribute('data-copy')).then(function(r){if(!r.ok)throw 0;return r.text();})
-      .then(function(t){return navigator.clipboard.writeText(t);})
-      .then(function(){cp.textContent='Copied ✓';},function(){cp.textContent='Copy blocked: use Download';});});
 }
 })();"""
 
@@ -720,9 +717,11 @@ def rebuild() -> None:
 
 # iOS Scriptable widget, written to site/scriptable.js on every build. __SITE__ is replaced with SITE_URL.
 SCRIPTABLE = r"""// Crypto L2 Daily: iPhone widget for the free Scriptable app (NOT2L8 edition).
-// 1. Install Scriptable from the App Store.  2. Tap +, paste this script, name it "Crypto L2 Daily".
+// Read-only: it fetches today's briefing from the site plus public BTC price/fee data, and draws a widget.
+// 1. Install Scriptable from the App Store and open it once.
+// 2. Move this file into iCloud Drive > Scriptable (Files app). It then appears in Scriptable.
 // 3. Long-press the Home Screen > + > Scriptable > pick a size > Add.
-// 4. Long-press the widget > Edit Widget > Script: Crypto L2 Daily.  Lock Screen widgets work too.
+// 4. Long-press the widget > Edit Widget > Script: this one.  Lock Screen widgets work too.
 const SITE = "__SITE__";
 const C = { dark: "#111111", warm: "#22150A", solar: "#FFBC00", magenta: "#FF1493", sky: "#89CFF0",
   green: "#32CD32", slate: "#708090", cream: "#F8F6F1" };

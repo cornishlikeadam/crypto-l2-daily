@@ -25,7 +25,7 @@ Read the files in this order. Each one is short.
 
 ## Where things live
 
-- **The website:** https://crypto-l2-daily.vercel.app/
+- **The website:** https://not2l8-l2-daily.vercel.app/
 - **The code (backup):** https://github.com/cornishlikeadam/crypto-l2-daily
 - **On my Mac:** `~/crypto-l2-daily` (the robot) and `~/OpenMontage` (the video maker)
 

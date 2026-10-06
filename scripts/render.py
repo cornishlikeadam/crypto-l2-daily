@@ -41,7 +41,7 @@ from tools.video.video_compose import VideoCompose  # noqa: E402
 PIPELINE = "animated-explainer"
 TARGET_SECONDS = 70.0
 VOICE_MODEL = str(Path.home() / ".piper" / "models" / "en_US-lessac-medium.onnx")
-SITE_URL = os.environ.get("SITE_URL", "https://crypto-l2-daily.vercel.app/")
+SITE_URL = os.environ.get("SITE_URL", "https://not2l8-l2-daily.vercel.app/")
 LEAD_IN = 0.3    # silence before each card's narration
 MIN_TAIL = 0.45  # minimum hold after narration ends
 # Fit plan: (voice length_scale, max words of the post read aloud). The card always shows the

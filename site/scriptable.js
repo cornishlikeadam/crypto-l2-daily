@@ -1,8 +1,10 @@
 // Crypto L2 Daily: iPhone widget for the free Scriptable app (NOT2L8 edition).
-// 1. Install Scriptable from the App Store.  2. Tap +, paste this script, name it "Crypto L2 Daily".
+// Read-only: it fetches today's briefing from the site plus public BTC price/fee data, and draws a widget.
+// 1. Install Scriptable from the App Store and open it once.
+// 2. Move this file into iCloud Drive > Scriptable (Files app). It then appears in Scriptable.
 // 3. Long-press the Home Screen > + > Scriptable > pick a size > Add.
-// 4. Long-press the widget > Edit Widget > Script: Crypto L2 Daily.  Lock Screen widgets work too.
-const SITE = "https://crypto-l2-daily.vercel.app/";
+// 4. Long-press the widget > Edit Widget > Script: this one.  Lock Screen widgets work too.
+const SITE = "https://not2l8-l2-daily.vercel.app/";
 const C = { dark: "#111111", warm: "#22150A", solar: "#FFBC00", magenta: "#FF1493", sky: "#89CFF0",
   green: "#32CD32", slate: "#708090", cream: "#F8F6F1" };
 const COIN = { "BTC L2": "#FFBC00", DOGE: "#E8B547", XMR: "#FF8C00", LTC: "#C9D1DA" };

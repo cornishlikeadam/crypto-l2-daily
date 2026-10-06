@@ -2,7 +2,7 @@
 
 A 70-second card slideshow every day at 18:00 America/New_York. Each edition covers the last 24 hours of X posts about Bitcoin L2 (Lightning, Ark, sidechains), Dogecoin, Monero (FCMP++/CARROT) and Litecoin (Lightning/MWEB). Every card names the account behind the post and links to it.
 
-Site: https://crypto-l2-daily.vercel.app/ (archive with every video: https://cornishlikeadam.github.io/crypto-l2-daily/)
+Site: https://not2l8-l2-daily.vercel.app/ (archive with every video: https://cornishlikeadam.github.io/crypto-l2-daily/)
 
 ## How a run works
 

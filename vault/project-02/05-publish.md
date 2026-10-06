@@ -14,6 +14,6 @@
 4. Send the website to Vercel.
 5. Load the new day's page. Only if it loads, write "LIVE" in `logs/daily.log`.
 
-**Good looks like:** https://crypto-l2-daily.vercel.app/ shows today's video at the top, with the cards under it.
+**Good looks like:** https://not2l8-l2-daily.vercel.app/ shows today's video at the top, with the cards under it.
 
 **Human check:** if the page does not load, the log says "NOT LIVE" and gives the exact command to try again. The robot never says "live" when it isn't.
