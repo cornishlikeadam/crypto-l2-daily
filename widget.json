@@ -1,46 +1,47 @@
 {
   "version": 1,
-  "generated_at": "2026-10-06T17:25:32+00:00",
-  "edition": "2026-10-05",
-  "edition_label": "Monday, October 5, 2026",
-  "edition_short": "Oct 5",
-  "url": "https://not2l8-l2-daily.vercel.app/days/2026-10-05/",
-  "poster": "https://not2l8-l2-daily.vercel.app/days/2026-10-05/poster.jpg",
-  "item_count": 8,
+  "generated_at": "2026-10-06T22:04:28+00:00",
+  "edition": "2026-10-06",
+  "edition_label": "Tuesday, October 6, 2026",
+  "edition_short": "Oct 6",
+  "url": "https://not2l8-l2-daily.vercel.app/days/2026-10-06/",
+  "poster": "https://not2l8-l2-daily.vercel.app/days/2026-10-06/poster.jpg",
+  "item_count": 5,
   "coins": [
     "BTC L2",
     "DOGE",
-    "XMR",
     "LTC"
   ],
-  "quiet": [],
+  "quiet": [
+    "Monero"
+  ],
   "headlines": [
-    {
-      "coin": "Monero",
-      "tag": "XMR",
-      "title": "Monero · FCMP++",
-      "sentence": "The third version of beta stressnet for Full-Chain Membership Proofs (FCMP++) and CARROT is live!",
-      "handle": "@monero",
-      "post_url": "https://x.com/monero/status/2107181059859448004",
-      "likes": 174
-    },
     {
       "coin": "Dogecoin",
       "tag": "DOGE",
       "title": "Dogecoin · Community",
-      "sentence": "Every crypto wants what Dogecoin already has: a global brand identity that doesn’t need explaining.",
-      "handle": "@CryptoSLE10",
-      "post_url": "https://x.com/CryptoSLE10/status/2107070249648443848",
-      "likes": 54
+      "sentence": "MORE $DOGE NEWS FOR YOU So much happening in the Dogecoin community.",
+      "handle": "@TeslaModelDoge",
+      "post_url": "https://x.com/TeslaModelDoge/status/2107307775617274240",
+      "likes": 97
     },
     {
       "coin": "Bitcoin",
       "tag": "BTC L2",
       "title": "Bitcoin · Lightning",
-      "sentence": "Utexo is backing the builders building on Bitcoin!!",
-      "handle": "@Durjoy___das",
-      "post_url": "https://x.com/Durjoy___das/status/2107083190431281283",
-      "likes": 30
+      "sentence": "Swap BTC for USDT on Bitcoin.",
+      "handle": "@kaleidoswap",
+      "post_url": "https://x.com/kaleidoswap/status/2107494646058553651",
+      "likes": 83
+    },
+    {
+      "coin": "Litecoin",
+      "tag": "LTC",
+      "title": "Litecoin · MWEB",
+      "sentence": "$LTC MWEB Daily Flow At close: Mon, 5 Oct 2026 Pool: 458,503.34 LTC (0.6% of supply) ↑ Peg-ins: +4,851.01 LTC ↓ Peg-outs…",
+      "handle": "@LitecoinTracker",
+      "post_url": "https://x.com/LitecoinTracker/status/2107442008428011657",
+      "likes": 10
     }
   ],
   "fees": {
@@ -49,7 +50,7 @@
     "hour": 1,
     "economy": 1,
     "source": "mempool.space",
-    "as_of": "2026-10-06T17:25:32+00:00"
+    "as_of": "2026-10-06T22:04:28+00:00"
   },
   "links": {
     "site": "https://not2l8-l2-daily.vercel.app/",

@@ -6,6 +6,99 @@
   "description": "Bitcoin L2, Dogecoin, Monero and Litecoin on X, last 24 hours, with sources.",
   "items": [
     {
+      "id": "2026-10-06",
+      "url": "https://not2l8-l2-daily.vercel.app/days/2026-10-06/",
+      "title": "Crypto L2 Daily — Tuesday, October 6, 2026",
+      "content_text": "Bitcoin · Lightning: Swap BTC for USDT on Bitcoin. (@kaleidoswap, https://x.com/kaleidoswap/status/2107494646058553651)\nBitcoin · Lightning: What Does It Actually Take to Build a Bitcoin + RGB Wallet? (@AriseAura, https://x.com/AriseAura/status/2107400027719278622)\nBitcoin · Lightning: NEW: Block creates Lightning Lake exhibition where an attendee wins 1 whole Bitcoin. (@BitcoinNewsCom, https://x.com/BitcoinNewsCom/status/2107259945188217066)\nDogecoin · Community: MORE $DOGE NEWS FOR YOU So much happening in the Dogecoin community. (@TeslaModelDoge, https://x.com/TeslaModelDoge/status/2107307775617274240)\nMonero: Quiet today.\nLitecoin · MWEB: $LTC MWEB Daily Flow At close: Mon, 5 Oct 2026 Pool: 458,503.34 LTC (0.6% of supply) ↑ Peg-ins: +4,851.01 LTC ↓ Peg-outs… (@LitecoinTracker, https://x.com/LitecoinTracker/status/2107442008428011657)",
+      "date_published": "2026-10-06T21:59:31.410007+00:00",
+      "attachments": [
+        {
+          "url": "https://cornishlikeadam.github.io/crypto-l2-daily/days/2026-10-06/final.mp4",
+          "mime_type": "video/mp4"
+        }
+      ],
+      "_cards": [
+        {
+          "kind": "item",
+          "coin": "Bitcoin",
+          "title": "Bitcoin · Lightning",
+          "sentence": "Swap BTC for USDT on Bitcoin.",
+          "explain": "Lightning is a fast lane on top of Bitcoin for quick, cheap payments.",
+          "stats": "83 likes · 27 reposts",
+          "handle": "@kaleidoswap",
+          "why_this_account": "Bio: “Trustless Swaps on Bitcoin Layers. Use → Extension & DesktopApp Build → KaleidoSDK” · 2,178 followers",
+          "post_url": "https://x.com/kaleidoswap/status/2107494646058553651",
+          "date": "2026-10-06T15:34:13Z",
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Bitcoin",
+          "title": "Bitcoin · Lightning",
+          "sentence": "What Does It Actually Take to Build a Bitcoin + RGB Wallet?",
+          "explain": "Lightning is a fast lane on top of Bitcoin for quick, cheap payments.",
+          "stats": "43 likes · 1 reposts",
+          "handle": "@AriseAura",
+          "why_this_account": "Bio: “Web3 | Exploring Crypto | Seeking Opportunities Ambassador - @playtaunt KOL - @Bitgetwallet Creator -…” · 3,107 followers",
+          "post_url": "https://x.com/AriseAura/status/2107400027719278622",
+          "date": "2026-10-06T09:18:14Z",
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Bitcoin",
+          "title": "Bitcoin · Lightning",
+          "sentence": "NEW: Block creates Lightning Lake exhibition where an attendee wins 1 whole Bitcoin.",
+          "explain": "Lightning is a fast lane on top of Bitcoin for quick, cheap payments.",
+          "stats": "23 likes · 1 reposts",
+          "handle": "@BitcoinNewsCom",
+          "why_this_account": "Bio: “Daily News on Bitcoin • Read Our Latest Article 📖 • Live on X and YouTube every Wednesday @ 11 EST” · 265,017 followers",
+          "post_url": "https://x.com/BitcoinNewsCom/status/2107259945188217066",
+          "date": "2026-10-06T00:01:36Z",
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Dogecoin",
+          "title": "Dogecoin · Community",
+          "sentence": "MORE $DOGE NEWS FOR YOU So much happening in the Dogecoin community.",
+          "explain": "These are posts from people who use and talk about Dogecoin.",
+          "stats": "97 likes · 15 reposts",
+          "handle": "@TeslaModelDoge",
+          "why_this_account": "Bio: “Dogecoin Aficionado” · 25,663 followers",
+          "post_url": "https://x.com/TeslaModelDoge/status/2107307775617274240",
+          "date": "2026-10-06T03:11:40Z",
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "quiet",
+          "coin": "Monero",
+          "title": "Monero",
+          "sentence": "Quiet today.",
+          "explain": "We only show real posts. When nothing good was posted, we say so.",
+          "stats": null,
+          "handle": null,
+          "why_this_account": null,
+          "post_url": null,
+          "date": null,
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Litecoin",
+          "title": "Litecoin · MWEB",
+          "sentence": "$LTC MWEB Daily Flow At close: Mon, 5 Oct 2026 Pool: 458,503.34 LTC (0.6% of supply) ↑ Peg-ins: +4,851.01 LTC ↓ Peg-outs…",
+          "explain": "MWEB is Litecoin's optional privacy feature that can hide how much you send.",
+          "stats": "10 likes · 0 reposts",
+          "handle": "@LitecoinTracker",
+          "why_this_account": "Bio: “Tracking key Litecoin statistics and metrics such as ETF flows and MWEB adoption.” · 616 followers",
+          "post_url": "https://x.com/LitecoinTracker/status/2107442008428011657",
+          "date": "2026-10-06T12:05:03Z",
+          "other_chain_if_any": null
+        }
+      ]
+    },
+    {
       "id": "2026-10-05",
       "url": "https://not2l8-l2-daily.vercel.app/days/2026-10-05/",
       "title": "Crypto L2 Daily — Monday, October 5, 2026",
