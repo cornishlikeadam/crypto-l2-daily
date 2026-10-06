@@ -1,29 +1,50 @@
+// NOT2L8 card deck: "SpaceX cleanroom x GTA golden hour x white barndominium", matching the site's design layer
+// in scripts/build_site.py. Same props as before, so scripts/render.py is unchanged. Everything is frame-driven and
+// seeded (remotion's random), so renders are deterministic.
 import React from "react";
 import {
   AbsoluteFill,
   Audio,
   Easing,
   interpolate,
+  random,
   Sequence,
   staticFile,
   useCurrentFrame,
   useVideoConfig,
 } from "remotion";
-import { loadFont as loadSerif } from "@remotion/google-fonts/Newsreader";
+import { loadFont as loadDisplay } from "@remotion/google-fonts/Archivo";
 import { loadFont as loadSans } from "@remotion/google-fonts/Inter";
+import { loadFont as loadMono } from "@remotion/google-fonts/JetBrainsMono";
 
-const serif = loadSerif("normal", { weights: ["500", "600"], subsets: ["latin"] }).fontFamily;
+const display = loadDisplay("normal", { weights: ["700", "800", "900"], subsets: ["latin"] }).fontFamily;
 const sans = loadSans("normal", { weights: ["400", "500", "600"], subsets: ["latin"] }).fontFamily;
+const mono = loadMono("normal", { weights: ["500", "600"], subsets: ["latin"] }).fontFamily;
 
-const C = {
-  bg: "#0E0D0B",
-  bgLift: "#171512",
-  cream: "#F2E8CF",
-  creamSoft: "rgba(242,232,207,0.82)",
-  muted: "#9C927C",
-  amber: "#E3B866",
-  rule: "rgba(242,232,207,0.14)",
+// NOT2L8 brand tokens (same values as the site's --n2l8-* variables).
+const N = {
+  solar: "#FFBC00",
+  orange: "#FF8C00",
+  magenta: "#FF1493",
+  sky: "#89CFF0",
+  green: "#32CD32",
+  slate: "#708090",
+  dark: "#111111",
+  cream: "#F8F6F1",
+  soft: "rgba(248,246,241,0.78)",
+  muted: "#98A1AB",
+  hair: "rgba(255,255,255,0.12)",
+  rule: "rgba(255,255,255,0.08)",
 };
+
+const COINS: Record<string, { tag: string; icon: string; c: string; c2: string }> = {
+  Bitcoin: { tag: "BTC L2", icon: "⚡", c: "#FFBC00", c2: "#FF8C00" },
+  Dogecoin: { tag: "DOGE", icon: "🐕", c: "#E8B547", c2: "#FFE29A" },
+  Monero: { tag: "XMR", icon: "🔒", c: "#FF8C00", c2: "#FF1493" },
+  Litecoin: { tag: "LTC", icon: "🪙", c: "#C9D1DA", c2: "#89CFF0" },
+};
+const coinOf = (coin: string | null) =>
+  (coin && COINS[coin]) || { tag: coin ?? "", icon: "", c: N.solar, c2: N.magenta };
 
 export type Card = {
   id: string;
@@ -47,89 +68,318 @@ export type DeckProps = {
 };
 
 const ease = Easing.bezier(0.22, 1, 0.36, 1);
+const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 
 const rise = (frame: number, delay: number, dur = 18) => ({
-  opacity: interpolate(frame, [delay, delay + dur], [0, 1], {
-    extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: ease,
-  }),
-  transform: `translateY(${interpolate(frame, [delay, delay + dur], [18, 0], {
-    extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: ease,
-  })}px)`,
+  opacity: interpolate(frame, [delay, delay + dur], [0, 1], { ...clamp, easing: ease }),
+  transform: `translateY(${interpolate(frame, [delay, delay + dur], [22, 0], { ...clamp, easing: ease })}px)`,
 });
+
+const label: React.CSSProperties = {
+  fontFamily: mono, fontWeight: 600, fontSize: 20, letterSpacing: "0.16em", textTransform: "uppercase",
+};
+
+// ---------------------------------------------------------------------------------------------------------------
+// Persistent environment: sunset bloom, halogen cans, shiplap, stars, shooting stars, HUD, progress.
+// ---------------------------------------------------------------------------------------------------------------
+const STARS = Array.from({ length: 150 }, (_, i) => ({
+  x: random(`sx${i}`) * 1920,
+  y: random(`sy${i}`) * 1080,
+  r: 0.6 + random(`sr${i}`) * 1.6,
+  a: 0.15 + random(`sa${i}`) * 0.5,
+  s: 0.04 + random(`ss${i}`) * 0.08,
+  p: random(`sp${i}`) * 6.28,
+  col: random(`sc${i}`) < 0.1 ? N.solar : random(`sc${i}`) < 0.16 ? N.sky : N.cream,
+}));
+
+const Sky: React.FC = () => {
+  const frame = useCurrentFrame();
+  const { durationInFrames } = useVideoConfig();
+  const breathe = 0.85 + 0.15 * Math.sin(frame / 45);
+  // One shooting star roughly every 7 s, placed by seed so every render is identical.
+  const shots = Array.from({ length: Math.ceil(durationInFrames / 210) }, (_, k) => ({
+    at: k * 210 + 30 + Math.round(random(`ht${k}`) * 120),
+    x: 200 + random(`hx${k}`) * 1100,
+    y: 40 + random(`hy${k}`) * 320,
+    len: 220 + random(`hl${k}`) * 200,
+  }));
+  return (
+    <AbsoluteFill>
+      <AbsoluteFill style={{ background: N.dark }} />
+      <AbsoluteFill style={{
+        opacity: breathe,
+        background: "radial-gradient(70% 55% at 72% 118%, rgba(255,140,0,0.30), rgba(255,20,147,0.10) 45%, transparent 72%)",
+      }} />
+      <AbsoluteFill style={{
+        background: "radial-gradient(26% 42% at 16% -8%, rgba(255,244,222,0.10), transparent 70%)," +
+          "radial-gradient(26% 42% at 84% -8%, rgba(255,244,222,0.08), transparent 70%)",
+      }} />
+      <AbsoluteFill style={{
+        background: "repeating-linear-gradient(180deg, rgba(248,246,241,0.03) 0 1px, transparent 1px 72px)",
+        WebkitMaskImage: "linear-gradient(180deg, #000, transparent 70%)",
+      }} />
+      <svg width={1920} height={1080} style={{ position: "absolute", inset: 0 }}>
+        {STARS.map((s, i) => (
+          <circle key={i} cx={s.x} cy={s.y} r={s.r} fill={s.col}
+            opacity={s.a * (0.55 + 0.45 * Math.sin(frame * s.s + s.p))} />
+        ))}
+      </svg>
+      {shots.map((s, k) => {
+        const t = frame - s.at;
+        if (t < 0 || t > 26) return null;
+        const k01 = t / 26;
+        const fade = Math.sin(Math.PI * k01);
+        const travel = k01 * 640;
+        return (
+          <div key={k} style={{
+            position: "absolute", left: s.x + travel * 0.85, top: s.y + travel * 0.53, width: s.len, height: 2.5,
+            transform: "rotate(32deg) translateX(-100%)", transformOrigin: "100% 50%", opacity: fade, borderRadius: 2,
+            background: `linear-gradient(90deg, rgba(255,20,147,0), rgba(255,20,147,0.35) 35%, ${N.solar} 80%, #FFF6DA)`,
+            boxShadow: "0 0 12px rgba(255,188,0,0.5)",
+          }} />
+        );
+      })}
+    </AbsoluteFill>
+  );
+};
+
+const Hud: React.FC<{ cards: Card[] }> = ({ cards }) => {
+  const frame = useCurrentFrame();
+  const { fps, durationInFrames } = useVideoConfig();
+  const progress = frame / durationInFrames;
+  const on = interpolate(frame, [0, 20], [0, 1], clamp);
+  return (
+    <>
+      <div style={{ ...label, position: "absolute", left: 120, top: 56, fontSize: 18, color: N.soft, opacity: on }}>
+        <span style={{ color: N.solar }}>NOT2L8</span> // Signal
+      </div>
+      <div style={{ ...label, position: "absolute", right: 120, top: 56, fontSize: 18, color: N.muted, opacity: on,
+                    display: "flex", alignItems: "center", gap: 14 }}>
+        <span style={{ width: 10, height: 10, borderRadius: 5, background: N.green,
+                       boxShadow: `0 0 ${10 + 6 * Math.sin(frame / 8)}px ${N.green}` }} />
+        Crypto L2 Daily · X, last 24h
+      </div>
+      <div style={{ position: "absolute", left: 120, right: 120, bottom: 64, height: 3, background: N.rule,
+                    borderRadius: 2 }}>
+        {cards.slice(1).map((c) => (
+          <div key={c.id} style={{ position: "absolute", top: -4, width: 1, height: 11, background: N.hair,
+                                   left: `${(c.start * fps / durationInFrames) * 100}%` }} />
+        ))}
+        <div style={{ width: `${progress * 100}%`, height: "100%", borderRadius: 2,
+                      background: `linear-gradient(90deg, ${N.solar}, ${N.orange} 60%, ${N.magenta})`,
+                      boxShadow: "0 0 14px rgba(255,140,0,0.6)" }} />
+      </div>
+    </>
+  );
+};
+
+// 2D take on the site's 3D monolith core: glowing core, tilted orbit rings, anamorphic lens flare.
+const Core: React.FC<{ cx: number; cy: number; size: number; frame: number }> = ({ cx, cy, size, frame }) => {
+  const pulse = 0.85 + 0.15 * Math.sin(frame / 10);
+  const appear = interpolate(frame, [0, 30], [0, 1], { ...clamp, easing: ease });
+  const ring = (rx: number, ry: number, rot: number, color: string, op: number, bead: number) => {
+    const a = frame / 40 + bead;
+    return (
+      <g transform={`rotate(${rot} ${cx} ${cy})`}>
+        <ellipse cx={cx} cy={cy} rx={rx} ry={ry} fill="none" stroke={color} strokeOpacity={op} strokeWidth={2} />
+        <circle cx={cx + rx * Math.cos(a)} cy={cy + ry * Math.sin(a)} r={7} fill={N.solar} />
+      </g>
+    );
+  };
+  return (
+    <AbsoluteFill style={{ opacity: appear }}>
+      <div style={{
+        position: "absolute", left: cx - size, top: cy - size, width: size * 2, height: size * 2, borderRadius: "50%",
+        transform: `scale(${pulse})`,
+        background: "radial-gradient(circle, rgba(255,246,218,0.95) 0, rgba(255,188,0,0.55) 14%, " +
+          "rgba(255,140,0,0.22) 32%, rgba(255,20,147,0.10) 50%, transparent 70%)",
+      }} />
+      <svg width={1920} height={1080} style={{ position: "absolute", inset: 0 }}>
+        {ring(size * 1.15, size * 0.32, -14 + frame * 0.05, N.magenta, 0.6, 0)}
+        {ring(size * 1.4, size * 0.42, 18 - frame * 0.04, N.sky, 0.4, 2.4)}
+      </svg>
+      <div style={{
+        // the streak stays to the right of the headline column so it never strikes through text
+        position: "absolute", left: cx - 440, right: 0, top: cy - 1.5, height: 3, opacity: 0.85 * pulse,
+        background: "linear-gradient(90deg, transparent, rgba(255,20,147,0.55) 28%, #FFF6DA 48%, " +
+          "rgba(255,188,0,0.6) 78%, transparent)",
+        boxShadow: "0 0 26px 4px rgba(255,188,0,0.32)",
+      }} />
+    </AbsoluteFill>
+  );
+};
+
+// ---------------------------------------------------------------------------------------------------------------
+// Cards
+// ---------------------------------------------------------------------------------------------------------------
+const Pill: React.FC<{ coin: string | null; dim?: boolean }> = ({ coin, dim }) => {
+  const k = coinOf(coin);
+  return (
+    <div style={{
+      ...label, display: "inline-flex", alignItems: "center", gap: 12, padding: "10px 22px 10px 18px",
+      borderRadius: 999, fontSize: 22, color: k.c, opacity: dim ? 0.75 : 1, filter: dim ? "saturate(0.5)" : "none",
+      background: `${k.c}1F`, border: `2px solid ${k.c}66`,
+    }}>
+      {k.icon ? <span style={{ fontSize: 24 }}>{k.icon}</span> : null}
+      {k.tag}
+    </div>
+  );
+};
+
+const BookendCard: React.FC<{ card: Card; frame: number }> = ({ card, frame }) => {
+  const isTitle = card.kind === "title";
+  const words = isTitle ? ["Crypto L2", "Daily"] : [card.title];
+  return (
+    <>
+      <Core cx={1560} cy={isTitle ? 610 : 430} size={isTitle ? 190 : 140} frame={frame} />
+      <AbsoluteFill style={{ padding: "0 120px", justifyContent: "center" }}>
+        <div style={{ ...label, ...rise(frame, 2), color: N.sky, marginBottom: 30 }}>
+          {isTitle ? <>Daily<span style={{ color: N.magenta }}> / </span>X, last 24 hours</> : "That's the day"}
+        </div>
+        {words.map((w, i) => (
+          <div key={w} style={{
+            ...rise(frame, 6 + i * 6, 24), fontFamily: display, fontWeight: 900, textTransform: "uppercase",
+            fontSize: isTitle ? 210 : 170, lineHeight: 0.88, letterSpacing: "-0.02em",
+            ...(i === 1 || !isTitle
+              ? { background: `linear-gradient(90deg, ${N.solar}, ${N.orange} 55%, ${N.magenta})`,
+                  WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" }
+              : { color: N.cream }),
+          }}>{w}</div>
+        ))}
+        <div style={{ ...rise(frame, 18, 24), fontFamily: sans, fontWeight: 400, fontSize: isTitle ? 44 : 38,
+                      lineHeight: 1.35, color: N.soft, maxWidth: 1180, marginTop: 44 }}>
+          {card.sentence}
+        </div>
+        {card.explain ? (
+          <div style={{ ...rise(frame, 30, 22), display: "flex", gap: 20, alignItems: "baseline", marginTop: 30,
+                        maxWidth: 1180 }}>
+            <span style={{ ...label, flex: "none", color: N.solar }}>{isTitle ? "How it works" : "Left out"}</span>
+            <span style={{ fontFamily: sans, fontSize: 30, lineHeight: 1.4, color: N.cream }}>{card.explain}</span>
+          </div>
+        ) : null}
+      </AbsoluteFill>
+      {card.corner ? (
+        <div style={{ ...rise(frame, 24), position: "absolute", right: 120, bottom: 112, textAlign: "right" }}>
+          <div style={{ fontFamily: isTitle ? display : mono, fontWeight: 700, fontSize: isTitle ? 36 : 30,
+                        color: isTitle ? N.cream : N.solar }}>{card.corner}</div>
+          {card.corner_sub ? (
+            <div style={{ ...label, fontSize: 18, color: N.muted, marginTop: 8 }}>{card.corner_sub}</div>
+          ) : null}
+        </div>
+      ) : null}
+    </>
+  );
+};
+
+const PostCard: React.FC<{ card: Card; index: number; total: number; frame: number }> = ({
+  card, index, total, frame,
+}) => {
+  const k = coinOf(card.coin);
+  const quiet = card.kind === "quiet";
+  const enter = interpolate(frame, [0, 22], [0, 1], { ...clamp, easing: ease });
+  const sweep = interpolate(frame, [6, 40], [-10, 110], { ...clamp, easing: ease });
+  const titleSize = quiet ? 150 : card.title.length > 18 ? 92 : 108;
+  const sentenceSize = quiet ? 60 : card.sentence.length > 170 ? 42 : card.sentence.length > 110 ? 48 : 56;
+  return (
+    <div style={{
+      position: "absolute", left: 120, right: 120, top: 120, bottom: 128, borderRadius: 38, padding: 2,
+      opacity: enter, transform: `scale(${0.985 + 0.015 * enter})`,
+      background: `linear-gradient(135deg, ${k.c}, transparent 38%, transparent 64%, ${k.c2})`,
+      boxShadow: `0 40px 120px -40px ${k.c}66`,
+    }}>
+      <div style={{
+        position: "relative", height: "100%", borderRadius: 36, overflow: "hidden", padding: "56px 76px 52px",
+        display: "flex", flexDirection: "column",
+        background: "linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.012) 60%), rgba(22,22,24,0.88)",
+        boxShadow: "inset 0 1px 0 rgba(255,255,255,0.08)",
+      }}>
+        {/* anamorphic rim light sweeping along the top edge as the card lands */}
+        <div style={{
+          position: "absolute", top: 0, left: `${sweep}%`, width: 640, height: 2, transform: "translateX(-50%)",
+          background: "radial-gradient(50% 100% at 50% 50%, #FFF6DA, transparent)", opacity: 0.9,
+          boxShadow: `0 0 30px 6px ${k.c}55`,
+        }} />
+        <div style={{ ...rise(frame, 4), display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+          <Pill coin={card.coin ?? card.title} dim={quiet} />
+          <div style={{ ...label, color: N.muted, fontSize: 22 }}>
+            {String(index).padStart(2, "0")} <span style={{ color: N.magenta }}>/</span>{" "}
+            {String(total - 2).padStart(2, "0")}
+          </div>
+        </div>
+        <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", paddingBottom: 20 }}>
+        <div style={{ ...rise(frame, 8, 22), fontFamily: display, fontWeight: 800, textTransform: "uppercase",
+                      fontSize: titleSize, lineHeight: 0.98, letterSpacing: "-0.01em", color: N.cream }}>
+          {card.title}
+        </div>
+        <div style={{ ...rise(frame, 10, 26), height: 4, width: 150, borderRadius: 2, margin: "34px 0 34px",
+                      background: `linear-gradient(90deg, ${k.c}, ${k.c2})`, boxShadow: `0 0 18px ${k.c}88` }} />
+        <div style={{ ...rise(frame, 16, 24), position: "relative", fontFamily: sans, fontWeight: quiet ? 400 : 500,
+                      fontSize: sentenceSize, lineHeight: 1.3, color: quiet ? N.muted : N.cream, maxWidth: 1500 }}>
+          {quiet ? card.sentence : (
+            <>
+              <span style={{ color: k.c, fontFamily: display, fontWeight: 900 }}>“</span>
+              {card.sentence}
+              <span style={{ color: k.c, fontFamily: display, fontWeight: 900 }}>”</span>
+            </>
+          )}
+        </div>
+        {card.explain ? (
+          <div style={{ ...rise(frame, 30, 22), display: "flex", gap: 20, alignItems: "baseline", marginTop: 30,
+                        maxWidth: 1500 }}>
+            <span style={{ ...label, flex: "none", color: k.c }}>What is this?</span>
+            <span style={{ fontFamily: sans, fontSize: 30, lineHeight: 1.4, color: N.soft }}>{card.explain}</span>
+          </div>
+        ) : null}
+        </div>
+        <div style={{ ...rise(frame, 34), paddingTop: 22, borderTop: `1px solid ${N.rule}`,
+                      display: "flex", justifyContent: "space-between", alignItems: "flex-end", gap: 40 }}>
+          <div style={{ minWidth: 0 }}>
+            {card.link ? (
+              <>
+                <div style={{ ...label, fontSize: 16, color: N.muted }}>Source</div>
+                <div style={{ fontFamily: mono, fontWeight: 500, fontSize: 22, color: N.sky, marginTop: 6,
+                              whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", maxWidth: 1000 }}>
+                  {card.link}
+                </div>
+              </>
+            ) : null}
+            {card.stats ? (
+              <div style={{ fontFamily: mono, fontSize: 20, color: N.muted, marginTop: 6 }}>{card.stats}</div>
+            ) : null}
+          </div>
+          {card.corner ? (
+            <div style={{ textAlign: "right", flex: "none" }}>
+              <div style={{ fontFamily: display, fontWeight: 700, fontSize: 36, color: N.cream }}>{card.corner}</div>
+              {card.corner_sub ? (
+                <div style={{ ...label, fontSize: 17, color: N.muted, marginTop: 6 }}>{card.corner_sub}</div>
+              ) : null}
+            </div>
+          ) : null}
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const CardView: React.FC<{ card: Card; index: number; total: number; frames: number }> = ({
   card, index, total, frames,
 }) => {
   const frame = useCurrentFrame();
-  const fadeOut = interpolate(frame, [frames - 10, frames], [1, 0], {
-    extrapolateLeft: "clamp", extrapolateRight: "clamp",
-  });
-  const isBookend = card.kind === "title" || card.kind === "close";
-  const isQuiet = card.kind === "quiet";
-  const kicker =
-    card.kind === "title" ? "Daily · X, last 24 hours"
-      : card.kind === "close" ? "That's the day"
-      : `${card.coin ?? ""} · ${index} of ${total - 2}`;
-  const titleSize = card.kind === "title" ? 148 : isQuiet ? 132 : card.title.length > 28 ? 92 : 112;
-  const sentenceSize = card.kind === "close" ? 40 : card.sentence.length > 150 ? 42 : 50;
-
+  const fadeOut = interpolate(frame, [frames - 10, frames], [1, 0], clamp);
   return (
-    <AbsoluteFill style={{ opacity: fadeOut, padding: "120px 150px 130px", justifyContent: "center" }}>
-      <div style={{ ...rise(frame, 2), fontFamily: sans, fontSize: 26, fontWeight: 500, letterSpacing: "0.16em",
-                    textTransform: "uppercase", color: C.amber, marginBottom: 36 }}>
-        {kicker}
-      </div>
-      <div style={{ ...rise(frame, 6, 22), fontFamily: serif, fontWeight: 600, fontSize: titleSize,
-                    lineHeight: 1.02, letterSpacing: "-0.015em", color: C.cream, maxWidth: 1500 }}>
-        {card.title}
-      </div>
-      <div style={{ ...rise(frame, 6, 26), height: 2, width: 120, background: C.amber, margin: "44px 0 40px",
-                    transformOrigin: "left" }} />
-      <div style={{ ...rise(frame, 16, 24), fontFamily: isBookend || isQuiet ? sans : serif,
-                    fontStyle: card.kind === "item" ? "italic" : "normal", fontWeight: 400,
-                    fontSize: isQuiet ? 64 : sentenceSize, lineHeight: 1.32,
-                    color: isQuiet ? C.muted : C.creamSoft, maxWidth: 1440 }}>
-        {card.kind === "item" ? `“${card.sentence}”` : card.sentence}
-      </div>
-      {card.explain ? (
-        <div style={{ ...rise(frame, 30, 22), display: "flex", gap: 18, alignItems: "baseline", marginTop: 40,
-                      maxWidth: 1440, fontFamily: sans }}>
-          <span style={{ flex: "none", fontSize: 20, fontWeight: 600, letterSpacing: "0.14em",
-                         textTransform: "uppercase", color: C.amber }}>What is this?</span>
-          <span style={{ fontSize: 32, lineHeight: 1.35, color: C.cream }}>{card.explain}</span>
-        </div>
-      ) : null}
-
-      {card.link ? (
-        <div style={{ ...rise(frame, 36), position: "absolute", left: 150, bottom: 96, fontFamily: sans,
-                      maxWidth: 1000 }}>
-          <div style={{ fontSize: 20, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase",
-                        color: C.muted }}>Source</div>
-          <div style={{ fontSize: 24, color: C.creamSoft, marginTop: 6, whiteSpace: "nowrap", overflow: "hidden",
-                        textOverflow: "ellipsis" }}>{card.link}</div>
-          {card.stats ? <div style={{ fontSize: 22, color: C.muted, marginTop: 4 }}>{card.stats}</div> : null}
-        </div>
-      ) : null}
-
-      {card.corner ? (
-        <div style={{ ...rise(frame, 24), position: "absolute", right: 150, bottom: 96, textAlign: "right",
-                      fontFamily: sans }}>
-          <div style={{ fontSize: 34, fontWeight: 600, color: C.cream }}>{card.corner}</div>
-          {card.corner_sub ? (
-            <div style={{ fontSize: 24, fontWeight: 400, color: C.muted, marginTop: 6 }}>{card.corner_sub}</div>
-          ) : null}
-        </div>
-      ) : null}
+    <AbsoluteFill style={{ opacity: fadeOut }}>
+      {card.kind === "title" || card.kind === "close"
+        ? <BookendCard card={card} frame={frame} />
+        : <PostCard card={card} index={index} total={total} frame={frame} />}
     </AbsoluteFill>
   );
 };
 
 export const CardDeck: React.FC<DeckProps> = ({ cards, audioSrc }) => {
-  const { fps, durationInFrames } = useVideoConfig();
-  const frame = useCurrentFrame();
-  const progress = frame / durationInFrames;
+  const { fps } = useVideoConfig();
   return (
-    <AbsoluteFill style={{ background: `radial-gradient(ellipse at 30% 20%, ${C.bgLift} 0%, ${C.bg} 70%)` }}>
+    <AbsoluteFill style={{ background: N.dark }}>
+      <Sky />
       {cards.map((card, i) => {
         const from = Math.round(card.start * fps);
         const frames = Math.max(1, Math.round(card.end * fps) - from);
@@ -139,9 +389,7 @@ export const CardDeck: React.FC<DeckProps> = ({ cards, audioSrc }) => {
           </Sequence>
         );
       })}
-      <div style={{ position: "absolute", left: 150, right: 150, bottom: 56, height: 2, background: C.rule }}>
-        <div style={{ width: `${progress * 100}%`, height: "100%", background: C.amber }} />
-      </div>
+      <Hud cards={cards} />
       {audioSrc ? <Audio src={staticFile(audioSrc)} /> : null}
     </AbsoluteFill>
   );

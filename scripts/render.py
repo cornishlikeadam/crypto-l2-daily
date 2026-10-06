@@ -48,21 +48,21 @@ MIN_TAIL = 0.45  # minimum hold after narration ends
 # full sentence; only the spoken version is shortened. Never faster than ~1.15x.
 FIT_PLAN = [(1.0, 99), (0.95, 14), (0.9, 11), (0.87, 9), (0.87, 7), (0.87, 5)]
 
-THEME = {
-    "primaryColor": "#F2E8CF",
-    "accentColor": "#E3B866",
-    "backgroundColor": "#0E0D0B",
-    "surfaceColor": "#1A1814",
-    "textColor": "#F2E8CF",
-    "mutedTextColor": "#B9AE95",
-    "headingFont": "Inter",
+THEME = {  # NOT2L8 palette, matching remotion/CardDeck.tsx and the site's design layer
+    "primaryColor": "#F8F6F1",
+    "accentColor": "#FFBC00",
+    "backgroundColor": "#111111",
+    "surfaceColor": "#161618",
+    "textColor": "#F8F6F1",
+    "mutedTextColor": "#98A1AB",
+    "headingFont": "Archivo",
     "bodyFont": "Inter",
     "monoFont": "JetBrains Mono",
-    "chartColors": ["#E3B866", "#F2E8CF", "#B9AE95", "#8C7F66"],
+    "chartColors": ["#FFBC00", "#FF8C00", "#FF1493", "#89CFF0", "#32CD32", "#708090"],
     "springConfig": {"damping": 22, "stiffness": 110, "mass": 1},
     "transitionDuration": 0.4,
-    "captionHighlightColor": "#E3B866",
-    "captionBackgroundColor": "rgba(14,13,11,0.85)",
+    "captionHighlightColor": "#FFBC00",
+    "captionBackgroundColor": "rgba(17,17,17,0.85)",
 }
 
 # Plain-language "what is this?" lines, written once and checked. They explain the topic word,
@@ -389,7 +389,7 @@ def delivery_promise() -> dict:
 def proposal_packet(day: str, approved_by: str) -> dict:
     concept = lambda cid, title, hook, structure, why: {  # noqa: E731
         "id": cid, "title": title, "hook": hook, "narrative_structure": structure,
-        "visual_approach": "dark cards, cream type, handle/date badge; no b-roll, no faces",
+        "visual_approach": "NOT2L8 dark glass cards, solar/magenta accents, handle/date badge; no b-roll, no faces",
         "suggested_playbook": "flat-motion-graphics", "target_platform": "generic",
         "target_duration_seconds": 70, "key_points": ["sourced posts only", "quiet coins stated"],
         "why_this_works": why}
@@ -560,9 +560,11 @@ def asset_manifest_artifact(cards: list[dict], narration: Path) -> dict:
     return {"version": "1.0", "assets": assets, "total_cost_usd": 0.0}
 
 
-ART_DIRECTION = ("NotebookLM-style source cards: near-black #0E0D0B, cream #F2E8CF type, amber #E3B866 "
-                 "kicker/rule; Newsreader serif titles, Inter body; handle + date in the bottom-right corner; "
-                 "no b-roll, no faces")
+ART_DIRECTION = ("NOT2L8 'SpaceX cleanroom x GTA golden hour x white barndominium' source cards: #111111 base, "
+                 "solar #FFBC00 / orange #FF8C00 / magenta #FF1493 sunset bloom, frosted glass panel with a "
+                 "coin-coloured gradient rim, Archivo heavy uppercase titles, Inter body, JetBrains Mono telemetry "
+                 "labels; glowing core + orbit rings + anamorphic flare on bookends; seeded stars and shooting stars; "
+                 "handle + date bottom-right; no b-roll, no faces")
 
 
 def edit_decisions_artifact(cards: list[dict], project: Path) -> dict:
@@ -578,7 +580,7 @@ def edit_decisions_artifact(cards: list[dict], project: Path) -> dict:
             "art_direction": ART_DIRECTION,
             "props_path": str(project / "artifacts" / "composition.json"),
             "public_dir": str(project / "composition_public"),
-            "crf": 23,
+            "crf": 26,  # NOT2L8 gradients + stars cost bits; 26 is visually identical and ~40% smaller
         },
         "cuts": [{"id": f"cut-{c['id']}", "source": f"narr-{c['id']}", "in_seconds": c["start"],
                   "out_seconds": c["end"], "layer": "primary", "transition_in": "fade",
