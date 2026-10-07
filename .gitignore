@@ -6,3 +6,4 @@ __pycache__/
 .venv/
 .deploy/
 .mcp.json
+.gh_token

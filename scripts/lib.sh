@@ -8,6 +8,9 @@ SITE_URL="${SITE_URL:-https://not2l8-l2-daily.vercel.app/}"
 export TZ=America/New_York
 export PATH="$OM/.venv/bin:$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export OPENMONTAGE_DIR="$OM" SITE_URL
+# 🔑 cron cannot open the macOS Keychain, so git can't get the GitHub login there. If you saved a token in
+# .gh_token (gitignored, chmod 600), gh's git helper uses it. See README → "Fix the 6 PM GitHub push".
+if [ -z "${GH_TOKEN:-}" ] && [ -r "$ROOT/.gh_token" ]; then GH_TOKEN="$(tr -d '[:space:]' < "$ROOT/.gh_token")"; export GH_TOKEN; fi
 
 log() { echo "[$(date '+%F %T %Z')] $*"; }
 
@@ -40,14 +43,18 @@ publish() {
     log "  cd $ROOT && git remote add origin https://github.com/cornishlikeadam/crypto-l2-daily.git && git push -u origin main"
     return 1
   fi
-  local pages_ref
-  pages_ref=$(git subtree split -q --prefix site main) || { log "publish: subtree split failed"; return 1; }
-  if ! git push -q origin main 2>&1 || ! git push -q -f origin "$pages_ref:refs/heads/gh-pages" 2>&1; then
-    log "publish: NOT LIVE. git push failed (auth?). Files are committed locally. Push with:"
-    log "  cd $ROOT && git push origin main && git push -f origin \$(git subtree split --prefix site main):refs/heads/gh-pages"
-    return 1
+  # 💾 GitHub is the backup + archive. If it fails, keep going: the public site (Vercel) must still go live.
+  local pages_ref pushed=1
+  pages_ref=$(git subtree split -q --prefix site main) || { log "publish: subtree split failed"; pushed=0; }
+  if [ $pushed = 1 ] && { ! git push -q origin main 2>&1 || ! git push -q -f origin "$pages_ref:refs/heads/gh-pages" 2>&1; }; then
+    pushed=0
   fi
-  log "publish: pushed $(git rev-parse --short HEAD) to GitHub (main + gh-pages archive)"
+  if [ $pushed = 1 ]; then
+    log "publish: pushed $(git rev-parse --short HEAD) to GitHub (main + gh-pages archive)"
+  else
+    log "publish: GitHub backup FAILED (auth?). Committed locally; still deploying to Vercel. Fix once, see README."
+    log "  then push with: cd $ROOT && git push origin main && git push -f origin \$(git subtree split --prefix site main):refs/heads/gh-pages"
+  fi
   local keep
   keep=$(ls -1 site/days 2>/dev/null | sort -r | head -14 | sed 's#^#--include=/days/#;s#$#/final.mp4#')
   mkdir -p .deploy

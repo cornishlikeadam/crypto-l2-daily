@@ -141,13 +141,18 @@ A small card for your iPhone Home Screen. It shows the **Bitcoin price**, the **
 
 ## 🎬 7. The explainer video
 
+<p align="center">
+  <a href="https://not2l8-l2-daily.vercel.app/assets/explainer.mp4"><img src="docs/assets/explainer-poster.jpg" alt="▶ Watch the 90-second explainer video" width="80%"></a><br>
+  <b>▶ <a href="https://not2l8-l2-daily.vercel.app/assets/explainer.mp4">Watch the explainer (90 s)</a></b> · it also plays in the site's <b>❓ Guide</b>
+</p>
+
 > [!TIP]
 > 🎥 A **90-second** explainer: **3Blue1Brown-style 3D** math animation + **Japanese-American manga** style.
 > The full prompt and the **8-shot** plan are in [`vault/project-02/explainer-video.md`](vault/project-02/explainer-video.md).
 
-1. 📋 Use the **master prompt** to make the video.
-2. 💾 Save it as `site/assets/explainer.mp4`. Save a frame as `site/assets/explainer-poster.jpg`.
-3. 🏗️ Run `python3 scripts/build_site.py`. The **❓ Guide** pop-up now plays the video.
+1. 🎬 **It is built in code.** `scripts/make_explainer.py` makes the voice (Piper), the music and the timing.
+2. 🎞️ The animation is in `remotion/explainer/` (3D knot, the Guide, 8 shots).
+3. 🔁 **Rebuild it** with: `../OpenMontage/.venv/bin/python scripts/make_explainer.py`
 
 ---
 
@@ -183,6 +188,22 @@ crypto-l2-daily/
 
 - 🟡 **`true`:** the run **stops** before it publishes. **Do this:** run `scripts/approve_sample.sh YYYY-MM-DD`. It records the approval, sets the switch to `false`, and publishes.
 - 🟢 **`false`:** every daily run publishes by itself.
+
+---
+
+## 🔑 Fix the 6 PM GitHub push (one time)
+
+> [!WARNING]
+> 🔒 The 6 PM timer (cron) **cannot open the macOS Keychain**. So it cannot get your GitHub login, and the **backup push fails**. The site still goes live on Vercel.
+
+**Do this one time** in Terminal. It saves your GitHub login in a private file that only you can read:
+
+```bash
+gh auth token > ~/crypto-l2-daily/.gh_token && chmod 600 ~/crypto-l2-daily/.gh_token
+```
+
+- 🙈 `.gh_token` is in `.gitignore`. It **never** goes to GitHub.
+- 🔁 If you log out of `gh`, run the command again.
 
 ---
 
