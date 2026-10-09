@@ -1,56 +1,55 @@
 {
   "version": 1,
-  "generated_at": "2026-10-07T14:51:04+00:00",
-  "edition": "2026-10-06",
-  "edition_label": "Tuesday, October 6, 2026",
-  "edition_short": "Oct 6",
-  "url": "https://not2l8-l2-daily.vercel.app/days/2026-10-06/",
-  "poster": "https://not2l8-l2-daily.vercel.app/days/2026-10-06/poster.jpg",
-  "item_count": 5,
+  "generated_at": "2026-10-09T22:04:47+00:00",
+  "edition": "2026-10-09",
+  "edition_label": "Friday, October 9, 2026",
+  "edition_short": "Oct 9",
+  "url": "https://not2l8-l2-daily.vercel.app/days/2026-10-09/",
+  "poster": "https://not2l8-l2-daily.vercel.app/days/2026-10-09/poster.jpg",
+  "item_count": 7,
   "coins": [
     "BTC L2",
     "DOGE",
+    "XMR",
     "LTC"
   ],
-  "quiet": [
-    "Monero"
-  ],
+  "quiet": [],
   "headlines": [
-    {
-      "coin": "Dogecoin",
-      "tag": "DOGE",
-      "title": "Dogecoin · Community",
-      "sentence": "MORE $DOGE NEWS FOR YOU So much happening in the Dogecoin community.",
-      "handle": "@TeslaModelDoge",
-      "post_url": "https://x.com/TeslaModelDoge/status/2107307775617274240",
-      "likes": 97
-    },
     {
       "coin": "Bitcoin",
       "tag": "BTC L2",
       "title": "Bitcoin · Lightning",
-      "sentence": "Swap BTC for USDT on Bitcoin.",
-      "handle": "@kaleidoswap",
-      "post_url": "https://x.com/kaleidoswap/status/2107494646058553651",
-      "likes": 83
+      "sentence": "What UTEXO Actually Abstracts for Developers Building with Bitcoin is one challenge.",
+      "handle": "@AriseAura",
+      "post_url": "https://x.com/AriseAura/status/2108417711038730702",
+      "likes": 51
     },
     {
       "coin": "Litecoin",
       "tag": "LTC",
       "title": "Litecoin · MWEB",
-      "sentence": "$LTC MWEB Daily Flow At close: Mon, 5 Oct 2026 Pool: 458,503.34 LTC (0.6% of supply) ↑ Peg-ins: +4,851.01 LTC ↓ Peg-outs…",
-      "handle": "@LitecoinTracker",
-      "post_url": "https://x.com/LitecoinTracker/status/2107442008428011657",
-      "likes": 10
+      "sentence": "Litecoin is stepping up as the most well rounded Proof-of-Work coin I love Bitcoin, but it does not have MWEB.",
+      "handle": "@lite_hause",
+      "post_url": "https://x.com/lite_hause/status/2108645659410584039",
+      "likes": 30
+    },
+    {
+      "coin": "Dogecoin",
+      "tag": "DOGE",
+      "title": "Dogecoin · Community",
+      "sentence": "The interesting thing about DOGE is how it turned internet culture into a global community.",
+      "handle": "@GiggityDoge",
+      "post_url": "https://x.com/GiggityDoge/status/2108372918690603453",
+      "likes": 12
     }
   ],
   "fees": {
-    "fastest": 3,
-    "half_hour": 3,
+    "fastest": 2,
+    "half_hour": 1,
     "hour": 1,
     "economy": 1,
     "source": "mempool.space",
-    "as_of": "2026-10-07T14:51:04+00:00"
+    "as_of": "2026-10-09T22:04:47+00:00"
   },
   "links": {
     "site": "https://not2l8-l2-daily.vercel.app/",
