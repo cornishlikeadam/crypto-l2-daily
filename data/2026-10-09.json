@@ -1,0 +1,166 @@
+{
+  "date": "2026-10-09",
+  "window_start": "2026-10-08T21:59:30.639377+00:00",
+  "window_end": "2026-10-09T21:59:30.639377+00:00",
+  "source": "X search (twikit, session cookies)",
+  "queries": {
+    "Bitcoin": "(Bitcoin OR BTC) (Lightning OR Ark OR \"layer 2\" OR L2) -filter:replies -filter:retweets -filter:nativeretweets lang:en since:2026-10-08 until:2026-10-10 since_time:1791496770 until_time:1791583170",
+    "Dogecoin": "(Dogecoin OR DOGE) (\"layer 2\" OR L2 OR Dogechain OR community) -filter:replies -filter:retweets -filter:nativeretweets lang:en since:2026-10-08 until:2026-10-10 since_time:1791496770 until_time:1791583170",
+    "Monero": "(Monero OR XMR) (FCMP OR CARROT OR hardfork OR upgrade) -filter:replies -filter:retweets -filter:nativeretweets lang:en since:2026-10-08 until:2026-10-10 since_time:1791496770 until_time:1791583170",
+    "Litecoin": "(Litecoin OR LTC) (Lightning OR MWEB OR \"layer 2\") -filter:replies -filter:retweets -filter:nativeretweets lang:en since:2026-10-08 until:2026-10-10 since_time:1791496770 until_time:1791583170"
+  },
+  "items": [
+    {
+      "coin": "Bitcoin",
+      "topic": "Lightning",
+      "claim": "What UTEXO Actually Abstracts for Developers Building with Bitcoin is one challenge.",
+      "handle": "@AriseAura",
+      "display_name": "𝐀𝐑𝐈𝐒𝐄𝐀𝐔𝐑𝐀",
+      "why_this_account": "Bio: “Web3 | Exploring Crypto | Seeking Opportunities Ambassador - @playtaunt KOL - @Bitgetwallet Creator -…” · 3,321 followers",
+      "post_url": "https://x.com/AriseAura/status/2108417711038730702",
+      "date": "2026-10-09T04:42:09Z",
+      "date_et": "Oct 9, 12:42 AM ET",
+      "engagement": 89,
+      "likes": 51,
+      "reposts": 1,
+      "replies": 36,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Bitcoin",
+      "topic": "Lightning",
+      "claim": "Mostro Node v0.19.3 is out.",
+      "handle": "@MostroP2P",
+      "display_name": "Mostro",
+      "why_this_account": "Bio: “Peer-to-peer lightning network Nostr platform. No-KYC.…” · 3,228 followers",
+      "post_url": "https://x.com/MostroP2P/status/2108638615379038420",
+      "date": "2026-10-09T19:19:57Z",
+      "date_et": "Oct 9, 3:19 PM ET",
+      "engagement": 23,
+      "likes": 8,
+      "reposts": 6,
+      "replies": 1,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Dogecoin",
+      "topic": "Community",
+      "claim": "The interesting thing about DOGE is how it turned internet culture into a global community.",
+      "handle": "@GiggityDoge",
+      "display_name": "giggity giggity goo",
+      "why_this_account": "Bio: “Alright, alright, alright! Who's ready for some fun? | $DOGE holder since Feb 2021 🐕💰 | Shitcoin…” · 993 followers",
+      "post_url": "https://x.com/GiggityDoge/status/2108372918690603453",
+      "date": "2026-10-09T01:44:10Z",
+      "date_et": "Oct 8, 9:44 PM ET",
+      "engagement": 16,
+      "likes": 12,
+      "reposts": 0,
+      "replies": 4,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Monero",
+      "topic": "Upgrade",
+      "claim": "The Great Domain Reset ICANN 2026 is reshaping the namespace.",
+      "handle": "@VibeCoder_x",
+      "display_name": "VibeCoder.X",
+      "why_this_account": "Bio: “🌐 Domain investor & AI explorer | Building AI agents & Web3 projects | Collector of premium Domains |…” · 972 followers",
+      "post_url": "https://x.com/VibeCoder_x/status/2108341389574414449",
+      "date": "2026-10-08T23:38:53Z",
+      "date_et": "Oct 8, 7:38 PM ET",
+      "engagement": 9,
+      "likes": 6,
+      "reposts": 1,
+      "replies": 1,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Litecoin",
+      "topic": "MWEB",
+      "claim": "Litecoin is stepping up as the most well rounded Proof-of-Work coin I love Bitcoin, but it does not have MWEB.",
+      "handle": "@lite_hause",
+      "display_name": "Aldo",
+      "why_this_account": "Bio: “tracking the future of tech and money from outside the echo chamber” · 6,856 followers",
+      "post_url": "https://x.com/lite_hause/status/2108645659410584039",
+      "date": "2026-10-09T19:47:56Z",
+      "date_et": "Oct 9, 3:47 PM ET",
+      "engagement": 33,
+      "likes": 30,
+      "reposts": 1,
+      "replies": 1,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Litecoin",
+      "topic": "MWEB",
+      "claim": "This is another reason why Litecoin is less susceptible to quantum attacks and better positioned with El Gamal switch on MWEB and…",
+      "handle": "@MASTERBTCLTC",
+      "display_name": "master",
+      "why_this_account": "Bio: “Wrote the books about finding Charlie and Litecoin, and how the game theory between two chains will be…” · 54,152 followers",
+      "post_url": "https://x.com/MASTERBTCLTC/status/2108534054676992425",
+      "date": "2026-10-09T12:24:27Z",
+      "date_et": "Oct 9, 8:24 AM ET",
+      "engagement": 16,
+      "likes": 12,
+      "reposts": 1,
+      "replies": 2,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Litecoin",
+      "topic": "MWEB",
+      "claim": "$LTC MWEB Daily Flow At close: Thu, 8 Oct 2026 Pool: 464,763.13 LTC (0.6% of supply) ↑ Peg-ins: +16,672.64 LTC ↓ Peg-outs…",
+      "handle": "@LitecoinTracker",
+      "display_name": "Litecoin Tracker",
+      "why_this_account": "Bio: “Tracking key Litecoin statistics and metrics such as ETF flows and MWEB adoption.” · 627 followers",
+      "post_url": "https://x.com/LitecoinTracker/status/2108529171307573612",
+      "date": "2026-10-09T12:05:03Z",
+      "date_et": "Oct 9, 8:05 AM ET",
+      "engagement": 14,
+      "likes": 9,
+      "reposts": 2,
+      "replies": 1,
+      "other_chain_if_any": null,
+      "quiet": false
+    }
+  ],
+  "stats": {
+    "dropped": {
+      "Bitcoin": {
+        "under_5_likes": 20,
+        "low_follower_account": 1,
+        "price_call": 1
+      },
+      "Dogecoin": {
+        "under_5_likes": 15,
+        "other_token_shill": 3,
+        "promo_account": 1,
+        "low_follower_account": 5
+      },
+      "Monero": {
+        "outside_24h_window": 1,
+        "promo_account": 1
+      },
+      "Litecoin": {
+        "price_call": 2,
+        "low_follower_account": 4,
+        "under_5_likes": 1,
+        "other_token_shill": 1,
+        "promo_account": 1
+      }
+    },
+    "kept": {
+      "Bitcoin": 3,
+      "Dogecoin": 1,
+      "Monero": 1,
+      "Litecoin": 4
+    },
+    "other_chains": {}
+  }
+}
