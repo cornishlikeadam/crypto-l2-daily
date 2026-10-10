@@ -1,0 +1,164 @@
+{
+  "date": "2026-10-10",
+  "window_start": "2026-10-09T21:59:31.432503+00:00",
+  "window_end": "2026-10-10T21:59:31.432503+00:00",
+  "source": "X search (twikit, session cookies)",
+  "queries": {
+    "Bitcoin": "(Bitcoin OR BTC) (Lightning OR Ark OR \"layer 2\" OR L2) -filter:replies -filter:retweets -filter:nativeretweets lang:en since:2026-10-09 until:2026-10-11 since_time:1791583171 until_time:1791669571",
+    "Dogecoin": "(Dogecoin OR DOGE) (\"layer 2\" OR L2 OR Dogechain OR community) -filter:replies -filter:retweets -filter:nativeretweets lang:en since:2026-10-09 until:2026-10-11 since_time:1791583171 until_time:1791669571",
+    "Monero": "(Monero OR XMR) (FCMP OR CARROT OR hardfork OR upgrade) -filter:replies -filter:retweets -filter:nativeretweets lang:en since:2026-10-09 until:2026-10-11 since_time:1791583171 until_time:1791669571",
+    "Litecoin": "(Litecoin OR LTC) (Lightning OR MWEB OR \"layer 2\") -filter:replies -filter:retweets -filter:nativeretweets lang:en since:2026-10-09 until:2026-10-11 since_time:1791583171 until_time:1791669571"
+  },
+  "items": [
+    {
+      "coin": "Bitcoin",
+      "topic": "Lightning",
+      "claim": "Bitcoin deserves a new way to launch and swap assets.",
+      "handle": "@hoangconan",
+      "display_name": "Thor BK",
+      "why_this_account": "Bio: “🚀Sharing real stories, life perspectives & food. 💡 Vietnam • Life • Money • Food • Mindset 🤝 Let’s connect…” · 4,953 followers",
+      "post_url": "https://x.com/hoangconan/status/2108951961290887495",
+      "date": "2026-10-10T16:05:04Z",
+      "date_et": "Oct 10, 12:05 PM ET",
+      "engagement": 14,
+      "likes": 9,
+      "reposts": 0,
+      "replies": 5,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Bitcoin",
+      "topic": "Lightning",
+      "claim": "At Lightning Koffee we want that origin to be felt in every cup.",
+      "handle": "@josebitcoiner",
+      "display_name": "The Bitcoin Coffee Guy⚡️☕️",
+      "why_this_account": "Bio: “CEO at @LightningKoffee⚡️☕️ 💯% Colombian Specialty Coffee 🇨🇴 • Co-Founder of @BtcMedellinConf • Marketing…” · 7,301 followers",
+      "post_url": "https://x.com/josebitcoiner/status/2109018161240531271",
+      "date": "2026-10-10T20:28:07Z",
+      "date_et": "Oct 10, 4:28 PM ET",
+      "engagement": 12,
+      "likes": 6,
+      "reposts": 3,
+      "replies": 0,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Bitcoin",
+      "topic": "Lightning",
+      "claim": "Ben @arcbtc did it first with the Lightning slap.",
+      "handle": "@Vladcostea",
+      "display_name": "VLAD HOSTS THE BEST PODCAST IN BITCOIN",
+      "why_this_account": "Bio: “Bitcoin post-maximalist / Building Bitcoin Takeover Podcast since Jan 2019 / Self-hosted AI enthusiast /…” · 25,971 followers",
+      "post_url": "https://x.com/Vladcostea/status/2108693835740328362",
+      "date": "2026-10-09T22:59:22Z",
+      "date_et": "Oct 9, 6:59 PM ET",
+      "engagement": 9,
+      "likes": 7,
+      "reposts": 1,
+      "replies": 0,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Dogecoin",
+      "topic": "Community",
+      "claim": "This is the power of community.",
+      "handle": "@doginaldogs",
+      "display_name": "Doginal Dogs",
+      "why_this_account": "Bio: “10,000 pixel dogs inscribed on $DOGE” · 26,132 followers",
+      "post_url": "https://x.com/doginaldogs/status/2109003962158551351",
+      "date": "2026-10-10T19:31:42Z",
+      "date_et": "Oct 10, 3:31 PM ET",
+      "engagement": 276,
+      "likes": 105,
+      "reposts": 53,
+      "replies": 49,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Dogecoin",
+      "topic": "Community",
+      "claim": "DOGEOS UPÐATE @MyDoge Version 3 Is Now Currently Live For Worldwide Usage!",
+      "handle": "@dogecoinsteve",
+      "display_name": "ÐÐĐOGE Steve",
+      "why_this_account": "Bio: “I Give News Updates On $DOGE And Post #DOGE Memes • Let's Just Be Happy And Have Fun • Introvert💛 • $DOGE…” · 813 followers",
+      "post_url": "https://x.com/dogecoinsteve/status/2108700694509498795",
+      "date": "2026-10-09T23:26:37Z",
+      "date_et": "Oct 9, 7:26 PM ET",
+      "engagement": 49,
+      "likes": 37,
+      "reposts": 6,
+      "replies": 0,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Monero",
+      "topic": null,
+      "claim": "Quiet today.",
+      "handle": null,
+      "display_name": null,
+      "why_this_account": null,
+      "post_url": null,
+      "date": null,
+      "date_et": null,
+      "engagement": 0,
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "other_chain_if_any": null,
+      "quiet": true
+    },
+    {
+      "coin": "Litecoin",
+      "topic": "MWEB",
+      "claim": "Using and storing my Private Litecoin (MWEB) via @cakewallet's Cupcake feels like this shielded knight in medieval times.",
+      "handle": "@bogdanoffig",
+      "display_name": "boglee Ⓜ️🕸",
+      "why_this_account": "Bio: “decentralized, p2p, secure, scalable, fairly-launched digital cash purist. #PayWithLitecoin” · 1,664 followers",
+      "post_url": "https://x.com/bogdanoffig/status/2108937433236553947",
+      "date": "2026-10-10T15:07:20Z",
+      "date_et": "Oct 10, 11:07 AM ET",
+      "engagement": 30,
+      "likes": 23,
+      "reposts": 3,
+      "replies": 1,
+      "other_chain_if_any": null,
+      "quiet": false
+    }
+  ],
+  "stats": {
+    "dropped": {
+      "Bitcoin": {
+        "under_5_likes": 20,
+        "price_call": 1,
+        "other_token_shill": 1
+      },
+      "Dogecoin": {
+        "under_5_likes": 20,
+        "other_token_shill": 1,
+        "promo_account": 2
+      },
+      "Monero": {
+        "outside_24h_window": 2,
+        "under_5_likes": 2
+      },
+      "Litecoin": {
+        "price_call": 3,
+        "cashtag_spam": 1,
+        "low_follower_account": 1,
+        "under_5_likes": 1
+      }
+    },
+    "kept": {
+      "Bitcoin": 3,
+      "Dogecoin": 2,
+      "Monero": 0,
+      "Litecoin": 1
+    },
+    "other_chains": {}
+  }
+}

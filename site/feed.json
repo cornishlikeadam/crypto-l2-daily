@@ -6,6 +6,112 @@
   "description": "Bitcoin L2, Dogecoin, Monero and Litecoin on X, last 24 hours, with sources.",
   "items": [
     {
+      "id": "2026-10-10",
+      "url": "https://not2l8-l2-daily.vercel.app/days/2026-10-10/",
+      "title": "Crypto L2 Daily — Saturday, October 10, 2026",
+      "content_text": "Bitcoin · Lightning: Bitcoin deserves a new way to launch and swap assets. (@hoangconan, https://x.com/hoangconan/status/2108951961290887495)\nBitcoin · Lightning: At Lightning Koffee we want that origin to be felt in every cup. (@josebitcoiner, https://x.com/josebitcoiner/status/2109018161240531271)\nBitcoin · Lightning: Ben @arcbtc did it first with the Lightning slap. (@Vladcostea, https://x.com/Vladcostea/status/2108693835740328362)\nDogecoin · Community: This is the power of community. (@doginaldogs, https://x.com/doginaldogs/status/2109003962158551351)\nDogecoin · Community: DOGEOS UPÐATE @MyDoge Version 3 Is Now Currently Live For Worldwide Usage! (@dogecoinsteve, https://x.com/dogecoinsteve/status/2108700694509498795)\nMonero: Quiet today.\nLitecoin · MWEB: Using and storing my Private Litecoin (MWEB) via @cakewallet's Cupcake feels like this shielded knight in medieval times. (@bogdanoffig, https://x.com/bogdanoffig/status/2108937433236553947)",
+      "date_published": "2026-10-10T21:59:31.432503+00:00",
+      "attachments": [
+        {
+          "url": "https://cornishlikeadam.github.io/crypto-l2-daily/days/2026-10-10/final.mp4",
+          "mime_type": "video/mp4"
+        }
+      ],
+      "_cards": [
+        {
+          "kind": "item",
+          "coin": "Bitcoin",
+          "title": "Bitcoin · Lightning",
+          "sentence": "Bitcoin deserves a new way to launch and swap assets.",
+          "explain": "Lightning is a fast lane on top of Bitcoin for quick, cheap payments.",
+          "stats": "9 likes · 0 reposts",
+          "handle": "@hoangconan",
+          "why_this_account": "Bio: “🚀Sharing real stories, life perspectives & food. 💡 Vietnam • Life • Money • Food • Mindset 🤝 Let’s connect…” · 4,953 followers",
+          "post_url": "https://x.com/hoangconan/status/2108951961290887495",
+          "date": "2026-10-10T16:05:04Z",
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Bitcoin",
+          "title": "Bitcoin · Lightning",
+          "sentence": "At Lightning Koffee we want that origin to be felt in every cup.",
+          "explain": "Lightning is a fast lane on top of Bitcoin for quick, cheap payments.",
+          "stats": "6 likes · 3 reposts",
+          "handle": "@josebitcoiner",
+          "why_this_account": "Bio: “CEO at @LightningKoffee⚡️☕️ 💯% Colombian Specialty Coffee 🇨🇴 • Co-Founder of @BtcMedellinConf • Marketing…” · 7,301 followers",
+          "post_url": "https://x.com/josebitcoiner/status/2109018161240531271",
+          "date": "2026-10-10T20:28:07Z",
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Bitcoin",
+          "title": "Bitcoin · Lightning",
+          "sentence": "Ben @arcbtc did it first with the Lightning slap.",
+          "explain": "Lightning is a fast lane on top of Bitcoin for quick, cheap payments.",
+          "stats": "7 likes · 1 reposts",
+          "handle": "@Vladcostea",
+          "why_this_account": "Bio: “Bitcoin post-maximalist / Building Bitcoin Takeover Podcast since Jan 2019 / Self-hosted AI enthusiast /…” · 25,971 followers",
+          "post_url": "https://x.com/Vladcostea/status/2108693835740328362",
+          "date": "2026-10-09T22:59:22Z",
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Dogecoin",
+          "title": "Dogecoin · Community",
+          "sentence": "This is the power of community.",
+          "explain": "These are posts from people who use and talk about Dogecoin.",
+          "stats": "105 likes · 53 reposts",
+          "handle": "@doginaldogs",
+          "why_this_account": "Bio: “10,000 pixel dogs inscribed on $DOGE” · 26,132 followers",
+          "post_url": "https://x.com/doginaldogs/status/2109003962158551351",
+          "date": "2026-10-10T19:31:42Z",
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Dogecoin",
+          "title": "Dogecoin · Community",
+          "sentence": "DOGEOS UPÐATE @MyDoge Version 3 Is Now Currently Live For Worldwide Usage!",
+          "explain": "These are posts from people who use and talk about Dogecoin.",
+          "stats": "37 likes · 6 reposts",
+          "handle": "@dogecoinsteve",
+          "why_this_account": "Bio: “I Give News Updates On $DOGE And Post #DOGE Memes • Let's Just Be Happy And Have Fun • Introvert💛 • $DOGE…” · 813 followers",
+          "post_url": "https://x.com/dogecoinsteve/status/2108700694509498795",
+          "date": "2026-10-09T23:26:37Z",
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "quiet",
+          "coin": "Monero",
+          "title": "Monero",
+          "sentence": "Quiet today.",
+          "explain": "We only show real posts. When nothing good was posted, we say so.",
+          "stats": null,
+          "handle": null,
+          "why_this_account": null,
+          "post_url": null,
+          "date": null,
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Litecoin",
+          "title": "Litecoin · MWEB",
+          "sentence": "Using and storing my Private Litecoin (MWEB) via @cakewallet's Cupcake feels like this shielded knight in medieval times.",
+          "explain": "MWEB is Litecoin's optional privacy feature that can hide how much you send.",
+          "stats": "23 likes · 3 reposts",
+          "handle": "@bogdanoffig",
+          "why_this_account": "Bio: “decentralized, p2p, secure, scalable, fairly-launched digital cash purist. #PayWithLitecoin” · 1,664 followers",
+          "post_url": "https://x.com/bogdanoffig/status/2108937433236553947",
+          "date": "2026-10-10T15:07:20Z",
+          "other_chain_if_any": null
+        }
+      ]
+    },
+    {
       "id": "2026-10-09",
       "url": "https://not2l8-l2-daily.vercel.app/days/2026-10-09/",
       "title": "Crypto L2 Daily — Friday, October 9, 2026",
