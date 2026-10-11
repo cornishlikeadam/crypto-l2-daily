@@ -311,6 +311,244 @@
       ]
     },
     {
+      "id": "2026-10-08",
+      "url": "https://not2l8-l2-daily.vercel.app/days/2026-10-08/",
+      "title": "Crypto L2 Daily — Thursday, October 8, 2026",
+      "content_text": "Bitcoin · Lightning: BITCOIN ARK PROTOCOL EXPLOITED FOR 0.75 BTC, LINKED TO PREVIOUS BLINK HACK Bitcoin infrastructure company Second reports an attacker exploited a bug… (@BitcoinNewsCom, https://x.com/BitcoinNewsCom/status/2108173726789321183)\nDogecoin · Community: MyDoge v3 is LIVE Extremely proud of the team and the work that went into bringing this to everyone Special thanks to… (@MyDogeCTO, https://x.com/MyDogeCTO/status/2108233622688067796)\nDogecoin · Community: #DogecoinVM could be a viable option? (@inevitable360, https://x.com/inevitable360/status/2108123555242111205)\nDogecoin · Community: Bitcoin references mixed with Doge humor, memes and the kind of randomness that actually feels native to the internet. (@hoanhphuc01, https://x.com/hoanhphuc01/status/2108094790977933442)\nMonero · FCMP++: FCMP++ inflation safeguards are in the open integration PRs. (@MoneroResearchL, https://x.com/MoneroResearchL/status/2108027114582847525)\nMonero · FCMP++: I dont care if FCMP++ takes forever to ship My entire networth is in $XMR so if this update has an inflation… (@XMRVoid, https://x.com/XMRVoid/status/2108174397433614833)\nBitcoin · via Litecoin posts: Dead now • Solana, Algorand: address = public key • Monero: forgery, hidden inflation, deanonymization • ETH proof-of-stake: BLS/KZG forgeable • Any… (@testinprodcap, https://x.com/testinprodcap/status/2108215106274263461)\nBitcoin · via Litecoin posts: Litecoin is the payments coin and goes back and forth with Bitcoin for #1 most used coin for real world purchases Although… (@lite_hause, https://x.com/lite_hause/status/2108017461949768145)",
+      "date_published": "2026-10-08T22:00:00+00:00",
+      "attachments": [
+        {
+          "url": "https://cornishlikeadam.github.io/crypto-l2-daily/days/2026-10-08/final.mp4",
+          "mime_type": "video/mp4"
+        }
+      ],
+      "_cards": [
+        {
+          "kind": "item",
+          "coin": "Bitcoin",
+          "title": "Bitcoin · Lightning",
+          "sentence": "BITCOIN ARK PROTOCOL EXPLOITED FOR 0.75 BTC, LINKED TO PREVIOUS BLINK HACK Bitcoin infrastructure company Second reports an attacker exploited a bug…",
+          "explain": "Lightning is a fast lane on top of Bitcoin for quick, cheap payments.",
+          "stats": "36 likes · 5 reposts",
+          "handle": "@BitcoinNewsCom",
+          "why_this_account": "Bio: “Daily News on Bitcoin • Read Our Latest Article 📖 • Live on X and YouTube every Wednesday @ 11 EST” · 264,504 followers",
+          "post_url": "https://x.com/BitcoinNewsCom/status/2108173726789321183",
+          "date": "2026-10-08T12:32:39Z",
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Dogecoin",
+          "title": "Dogecoin · Community",
+          "sentence": "MyDoge v3 is LIVE Extremely proud of the team and the work that went into bringing this to everyone Special thanks to…",
+          "explain": "These are posts from people who use and talk about Dogecoin.",
+          "stats": "266 likes · 53 reposts",
+          "handle": "@MyDogeCTO",
+          "why_this_account": "Bio: “Cheems Techmology Omfficer @MyDoge @MyDogeTip @DogeOS” · 41,754 followers",
+          "post_url": "https://x.com/MyDogeCTO/status/2108233622688067796",
+          "date": "2026-10-08T16:30:39Z",
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Dogecoin",
+          "title": "Dogecoin · Community",
+          "sentence": "#DogecoinVM could be a viable option?",
+          "explain": "These are posts from people who use and talk about Dogecoin.",
+          "stats": "42 likes · 11 reposts",
+          "handle": "@inevitable360",
+          "why_this_account": "Bio: “I'm just a silly @DogecoinFdn Dev that loves to think out of the box 🤪 Doge tips are welcome:” · 74,407 followers",
+          "post_url": "https://x.com/inevitable360/status/2108123555242111205",
+          "date": "2026-10-08T09:13:17Z",
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Dogecoin",
+          "title": "Dogecoin · Community",
+          "sentence": "Bitcoin references mixed with Doge humor, memes and the kind of randomness that actually feels native to the internet.",
+          "explain": "These are posts from people who use and talk about Dogecoin.",
+          "stats": "30 likes · 3 reposts",
+          "handle": "@hoanhphuc01",
+          "why_this_account": "Bio: “Community is everything .Content Creator , Web3 Researcher | AI • DeFi • RWA • Infrastructure.” · 5,053 followers",
+          "post_url": "https://x.com/hoanhphuc01/status/2108094790977933442",
+          "date": "2026-10-08T07:18:59Z",
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Monero",
+          "title": "Monero · FCMP++",
+          "sentence": "FCMP++ inflation safeguards are in the open integration PRs.",
+          "explain": "FCMP++ is Monero's next privacy upgrade: it hides your coin among every coin on the chain.",
+          "stats": "99 likes · 13 reposts",
+          "handle": "@MoneroResearchL",
+          "why_this_account": "Bio: “Full logs: | IRC/Matrix | Nostr npub1m0ner0mtjgs74aghus7qxrxl7mqv06d4v8rz9pmnux2dpr4cmhmsjgcfay” · 2,918 followers",
+          "post_url": "https://x.com/MoneroResearchL/status/2108027114582847525",
+          "date": "2026-10-08T02:50:04Z",
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Monero",
+          "title": "Monero · FCMP++",
+          "sentence": "I dont care if FCMP++ takes forever to ship My entire networth is in $XMR so if this update has an inflation…",
+          "explain": "FCMP++ is Monero's next privacy upgrade: it hides your coin among every coin on the chain.",
+          "stats": "116 likes · 3 reposts",
+          "handle": "@XMRVoid",
+          "why_this_account": "Bio: “Founder @xmrhub_org | @xmrmap | @XMRPredictions | @monerosociety” · 7,082 followers",
+          "post_url": "https://x.com/XMRVoid/status/2108174397433614833",
+          "date": "2026-10-08T12:35:18Z",
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Litecoin",
+          "title": "Bitcoin · via Litecoin posts",
+          "sentence": "Dead now • Solana, Algorand: address = public key • Monero: forgery, hidden inflation, deanonymization • ETH proof-of-stake: BLS/KZG forgeable • Any…",
+          "explain": "Bitcoin is a different blockchain that Litecoin fans were talking about.",
+          "stats": "63 likes · 2 reposts",
+          "handle": "@testinprodcap",
+          "why_this_account": "Bio: “psyops only. high priest @mutCarolineDAO. what would 奶奶 do? tweeting stream of consciousness” · 12,609 followers",
+          "post_url": "https://x.com/testinprodcap/status/2108215106274263461",
+          "date": "2026-10-08T15:17:04Z",
+          "other_chain_if_any": "Bitcoin"
+        },
+        {
+          "kind": "item",
+          "coin": "Litecoin",
+          "title": "Bitcoin · via Litecoin posts",
+          "sentence": "Litecoin is the payments coin and goes back and forth with Bitcoin for #1 most used coin for real world purchases Although…",
+          "explain": "Bitcoin is a different blockchain that Litecoin fans were talking about.",
+          "stats": "54 likes · 7 reposts",
+          "handle": "@lite_hause",
+          "why_this_account": "Bio: “tracking the future of tech and money from outside the echo chamber” · 6,840 followers",
+          "post_url": "https://x.com/lite_hause/status/2108017461949768145",
+          "date": "2026-10-08T02:11:42Z",
+          "other_chain_if_any": "Bitcoin"
+        }
+      ]
+    },
+    {
+      "id": "2026-10-07",
+      "url": "https://not2l8-l2-daily.vercel.app/days/2026-10-07/",
+      "title": "Crypto L2 Daily — Wednesday, October 7, 2026",
+      "content_text": "Bitcoin · Lightning: 10 years since @Snyke and @rusty_twit made the first lightning test transaction @AaronvanW later came the first real-value bitcoin store (jan 2018). (@adam3us, https://x.com/adam3us/status/2107795406273020265)\nBitcoin · Ark: Kilowallet v0.20.0 Hot wallet + watch-only side by side, full backup passwd in a file (words, Ark, coinjoins, settings), opt-in Ark &amp… (@Kilombino_, https://x.com/Kilombino_/status/2107797544562463065)\nBitcoin · Lightning: #SPEDN Lightning Address: goodmorning@blink.sv Our Bitcoin Diploma students are putting their knowledge into practice earning, saving, and spending sats in the real… (@BitcoinEkasi, https://x.com/BitcoinEkasi/status/2107836684125733066)\nDogecoin · Community: The key to surviving this market is a strong community. (@doginaldogs, https://x.com/doginaldogs/status/2107879858323783769)\nMonero · FCMP++: FCMP++ stressnet v3 forked Oct 5 at block 3,102,800. (@anonkyc, https://x.com/anonkyc/status/2107731872453124102)\nMonero · FCMP++: I'm personally appreciative for the meme coin communities that funded $XMR proposals. (@xmr_jake, https://x.com/xmr_jake/status/2107808066301501595)\nLitecoin · Lightning: ON THIS DAY IN CRYPTO, OCT 7 Litecoin’s genesis block was mined and the network was officially born!! (@ROGUE_of_Web3, https://x.com/ROGUE_of_Web3/status/2107883219324436716)\nLitecoin · MWEB: “Happy 15th birthday to litecoin:native aka me, Lester. (@bitstoys, https://x.com/bitstoys/status/2107940355085934816)",
+      "date_published": "2026-10-07T22:00:00+00:00",
+      "attachments": [
+        {
+          "url": "https://cornishlikeadam.github.io/crypto-l2-daily/days/2026-10-07/final.mp4",
+          "mime_type": "video/mp4"
+        }
+      ],
+      "_cards": [
+        {
+          "kind": "item",
+          "coin": "Bitcoin",
+          "title": "Bitcoin · Lightning",
+          "sentence": "10 years since @Snyke and @rusty_twit made the first lightning test transaction @AaronvanW later came the first real-value bitcoin store (jan 2018).",
+          "explain": "Lightning is a fast lane on top of Bitcoin for quick, cheap payments.",
+          "stats": "126 likes · 26 reposts",
+          "handle": "@adam3us",
+          "why_this_account": "Bio: “cypherpunk, cryptographer, privacy/ecash, inventor hashcash (Bitcoin mining) PhD Comp Sci. Co-Founder/CEO…” · 973,145 followers",
+          "post_url": "https://x.com/adam3us/status/2107795406273020265",
+          "date": "2026-10-07T11:29:20Z",
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Bitcoin",
+          "title": "Bitcoin · Ark",
+          "sentence": "Kilowallet v0.20.0 Hot wallet + watch-only side by side, full backup passwd in a file (words, Ark, coinjoins, settings), opt-in Ark &amp…",
+          "explain": "Ark is a newer Bitcoin add-on that bundles many small payments together to save fees.",
+          "stats": "22 likes · 6 reposts",
+          "handle": "@Kilombino_",
+          "why_this_account": "Bio: “Bitcoin without Core since block #961,632 𓅦…” · 938 followers",
+          "post_url": "https://x.com/Kilombino_/status/2107797544562463065",
+          "date": "2026-10-07T11:37:50Z",
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Bitcoin",
+          "title": "Bitcoin · Lightning",
+          "sentence": "#SPEDN Lightning Address: goodmorning@blink.sv Our Bitcoin Diploma students are putting their knowledge into practice earning, saving, and spending sats in the real…",
+          "explain": "Lightning is a fast lane on top of Bitcoin for quick, cheap payments.",
+          "stats": "15 likes · 4 reposts",
+          "handle": "@BitcoinEkasi",
+          "why_this_account": "Bio: “Building a #Bitcoin circular economy in a #SouthAfrican township | Cooperation, Support & Inspiration:…” · 29,275 followers",
+          "post_url": "https://x.com/BitcoinEkasi/status/2107836684125733066",
+          "date": "2026-10-07T14:13:21Z",
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Dogecoin",
+          "title": "Dogecoin · Community",
+          "sentence": "The key to surviving this market is a strong community.",
+          "explain": "These are posts from people who use and talk about Dogecoin.",
+          "stats": "144 likes · 57 reposts",
+          "handle": "@doginaldogs",
+          "why_this_account": "Bio: “10,000 pixel dogs inscribed on $DOGE” · 26,110 followers",
+          "post_url": "https://x.com/doginaldogs/status/2107879858323783769",
+          "date": "2026-10-07T17:04:55Z",
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Monero",
+          "title": "Monero · FCMP++",
+          "sentence": "FCMP++ stressnet v3 forked Oct 5 at block 3,102,800.",
+          "explain": "FCMP++ is Monero's next privacy upgrade: it hides your coin among every coin on the chain.",
+          "stats": "20 likes · 1 reposts",
+          "handle": "@anonkyc",
+          "why_this_account": "Bio: “A non-KYC exchange built for Anons | Trade Crypto, Stocks, Gold & more on one platform | Industry-low 0.1%…” · 2,282 followers",
+          "post_url": "https://x.com/anonkyc/status/2107731872453124102",
+          "date": "2026-10-07T07:16:52Z",
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Monero",
+          "title": "Monero · FCMP++",
+          "sentence": "I'm personally appreciative for the meme coin communities that funded $XMR proposals.",
+          "explain": "FCMP++ is Monero's next privacy upgrade: it hides your coin among every coin on the chain.",
+          "stats": "13 likes · 0 reposts",
+          "handle": "@xmr_jake",
+          "why_this_account": "Bio: “Bringing attention to privacy and $XMR.” · 1,135 followers",
+          "post_url": "https://x.com/xmr_jake/status/2107808066301501595",
+          "date": "2026-10-07T12:19:38Z",
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Litecoin",
+          "title": "Litecoin · Lightning",
+          "sentence": "ON THIS DAY IN CRYPTO, OCT 7 Litecoin’s genesis block was mined and the network was officially born!!",
+          "explain": "Lightning also works on Litecoin, for fast and cheap small payments.",
+          "stats": "56 likes · 39 reposts",
+          "handle": "@ROGUE_of_Web3",
+          "why_this_account": "Bio: “↯ rogue takes only 🖊️ || Web3 | AI | NFTs | trader ∞ builder || curator : “ON THIS DAY IN CRYPTO” || #CFC 💙” · 6,839 followers",
+          "post_url": "https://x.com/ROGUE_of_Web3/status/2107883219324436716",
+          "date": "2026-10-07T17:18:16Z",
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Litecoin",
+          "title": "Litecoin · MWEB",
+          "sentence": "“Happy 15th birthday to litecoin:native aka me, Lester.",
+          "explain": "MWEB is Litecoin's optional privacy feature that can hide how much you send.",
+          "stats": "32 likes · 8 reposts",
+          "handle": "@bitstoys",
+          "why_this_account": "Bio: “Founder of Litecoin Trading Cards • Collector • Musician • Libertarian” · 1,334 followers",
+          "post_url": "https://x.com/bitstoys/status/2107940355085934816",
+          "date": "2026-10-07T21:05:18Z",
+          "other_chain_if_any": null
+        }
+      ]
+    },
+    {
       "id": "2026-10-06",
       "url": "https://not2l8-l2-daily.vercel.app/days/2026-10-06/",
       "title": "Crypto L2 Daily — Tuesday, October 6, 2026",

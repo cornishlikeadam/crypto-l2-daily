@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-10-11T22:04:24+00:00",
+  "generated_at": "2026-10-11T22:49:02+00:00",
   "edition": "2026-10-11",
   "edition_label": "Sunday, October 11, 2026",
   "edition_short": "Oct 11",
@@ -50,7 +50,7 @@
     "hour": 1,
     "economy": 1,
     "source": "mempool.space",
-    "as_of": "2026-10-11T22:04:24+00:00"
+    "as_of": "2026-10-11T22:49:02+00:00"
   },
   "links": {
     "site": "https://not2l8-l2-daily.vercel.app/",
