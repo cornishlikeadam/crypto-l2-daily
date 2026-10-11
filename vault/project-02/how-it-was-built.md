@@ -18,7 +18,7 @@ tags: [ai101, project-2, build]
 
 | # | 🧩 Generic part (AI 101) | 📄 Here | 💎 What is unique here |
 |---|---|---|---|
-| 01 | ⏰ **Trigger:** a set time starts the workflow. | [[01-collect-posts]] | **6 PM** New York time, every day. The Mac's **cron** timer starts `scripts/daily.sh`. |
+| 01 | ⏰ **Trigger:** a set time starts the workflow. | [[01-collect-posts]] | **6 PM** New York time, every day. The Mac's **launchd** timer starts `scripts/daily.sh`. If the Mac sleeps, it runs at the next wake. |
 | 02 | 📥 **Context:** what the model needs first. | [[02-check-posts]] | **4 coin searches** and a list of **"remove it" rules**. The **date check** is rule 1. |
 | 03 | ⚙️ **Task:** the job itself. | [[03-make-video]] | Pick up to **3 posts per coin**. Make **8–10 cards**. Add a **free voice**. Fit it into **70 seconds**. |
 | 04 | 📦 **Output:** what comes out. | [[05-publish]] | A **video**, a **web page**, **course pages**, a **feed** and a **phone-widget file**. It says **LIVE** only if the page loads. |

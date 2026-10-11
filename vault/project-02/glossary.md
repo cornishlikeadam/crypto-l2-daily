@@ -58,7 +58,7 @@ tags: [ai101, project-2, glossary]
 | **API** | A door. One computer program uses it to ask another program for data. X charges money for its door. |
 | **Scraper** | A program that reads a website like a person does. |
 | **Cookie / login code** 🍪 | A small code your browser keeps. The website uses it to remember that you logged in. **Keep it secret.** |
-| **Cron** ⏰ | The Mac's alarm clock for programs. It starts the robot at 6 PM. |
+| **launchd** ⏰ | The Mac's alarm clock for programs. It starts the robot at 6 PM. If the Mac sleeps, it starts the robot when the Mac wakes. |
 | **GitHub** | A website that keeps a backup of the code. |
 | **Vercel** | The website host. It shows the videos. |
 | **Obsidian** | The note app for this folder. |

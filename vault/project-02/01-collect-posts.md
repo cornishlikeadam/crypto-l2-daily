@@ -12,7 +12,7 @@ tags: [ai101, project-2, step]
 # 🔎 Step 1: Collect the posts
 
 > [!info] ⏰ What starts this step
-> The clock gets to **6:00 PM** (New York time). The Mac's timer (**cron**) starts `scripts/daily.sh`.
+> The clock gets to **6:00 PM** (New York time). The Mac's timer (**launchd**) starts `scripts/daily.sh`. If the Mac is asleep, it starts when the Mac wakes up.
 
 ## 📥 What goes in
 

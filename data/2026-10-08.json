@@ -1,0 +1,190 @@
+{
+  "date": "2026-10-08",
+  "window_start": "2026-10-07T22:00:00+00:00",
+  "window_end": "2026-10-08T22:00:00+00:00",
+  "source": "X search (twikit, session cookies)",
+  "queries": {
+    "Bitcoin": "(Bitcoin OR BTC) (Lightning OR Ark OR \"layer 2\" OR L2) -filter:replies -filter:retweets -filter:nativeretweets lang:en since:2026-10-07 until:2026-10-09 since_time:1791410400 until_time:1791496800",
+    "Dogecoin": "(Dogecoin OR DOGE) (\"layer 2\" OR L2 OR Dogechain OR community) -filter:replies -filter:retweets -filter:nativeretweets lang:en since:2026-10-07 until:2026-10-09 since_time:1791410400 until_time:1791496800",
+    "Monero": "(Monero OR XMR) (FCMP OR CARROT OR hardfork OR upgrade) -filter:replies -filter:retweets -filter:nativeretweets lang:en since:2026-10-07 until:2026-10-09 since_time:1791410400 until_time:1791496800",
+    "Litecoin": "(Litecoin OR LTC) (Lightning OR MWEB OR \"layer 2\") -filter:replies -filter:retweets -filter:nativeretweets lang:en since:2026-10-07 until:2026-10-09 since_time:1791410400 until_time:1791496800"
+  },
+  "items": [
+    {
+      "coin": "Bitcoin",
+      "topic": "Lightning",
+      "claim": "BITCOIN ARK PROTOCOL EXPLOITED FOR 0.75 BTC, LINKED TO PREVIOUS BLINK HACK Bitcoin infrastructure company Second reports an attacker exploited a bug…",
+      "handle": "@BitcoinNewsCom",
+      "display_name": "Bitcoin News",
+      "why_this_account": "Bio: “Daily News on Bitcoin • Read Our Latest Article 📖 • Live on X and YouTube every Wednesday @ 11 EST” · 264,504 followers",
+      "post_url": "https://x.com/BitcoinNewsCom/status/2108173726789321183",
+      "date": "2026-10-08T12:32:39Z",
+      "date_et": "Oct 8, 8:32 AM ET",
+      "engagement": 53,
+      "likes": 36,
+      "reposts": 5,
+      "replies": 1,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Dogecoin",
+      "topic": "Community",
+      "claim": "MyDoge v3 is LIVE Extremely proud of the team and the work that went into bringing this to everyone Special thanks to…",
+      "handle": "@MyDogeCTO",
+      "display_name": "Ale𝕏",
+      "why_this_account": "Bio: “Cheems Techmology Omfficer @MyDoge @MyDogeTip @DogeOS” · 41,754 followers",
+      "post_url": "https://x.com/MyDogeCTO/status/2108233622688067796",
+      "date": "2026-10-08T16:30:39Z",
+      "date_et": "Oct 8, 12:30 PM ET",
+      "engagement": 411,
+      "likes": 266,
+      "reposts": 53,
+      "replies": 31,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Dogecoin",
+      "topic": "Community",
+      "claim": "#DogecoinVM could be a viable option?",
+      "handle": "@inevitable360",
+      "display_name": "Paulo Vidal",
+      "why_this_account": "Bio: “I'm just a silly @DogecoinFdn Dev that loves to think out of the box 🤪 Doge tips are welcome:” · 74,407 followers",
+      "post_url": "https://x.com/inevitable360/status/2108123555242111205",
+      "date": "2026-10-08T09:13:17Z",
+      "date_et": "Oct 8, 5:13 AM ET",
+      "engagement": 71,
+      "likes": 42,
+      "reposts": 11,
+      "replies": 5,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Dogecoin",
+      "topic": "Community",
+      "claim": "Bitcoin references mixed with Doge humor, memes and the kind of randomness that actually feels native to the internet.",
+      "handle": "@hoanhphuc01",
+      "display_name": "Jacob 🐍",
+      "why_this_account": "Bio: “Community is everything .Content Creator , Web3 Researcher | AI • DeFi • RWA • Infrastructure.” · 5,053 followers",
+      "post_url": "https://x.com/hoanhphuc01/status/2108094790977933442",
+      "date": "2026-10-08T07:18:59Z",
+      "date_et": "Oct 8, 3:18 AM ET",
+      "engagement": 64,
+      "likes": 30,
+      "reposts": 3,
+      "replies": 28,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Monero",
+      "topic": "FCMP++",
+      "claim": "FCMP++ inflation safeguards are in the open integration PRs.",
+      "handle": "@MoneroResearchL",
+      "display_name": "Monero Research Lab (Unofficial)",
+      "why_this_account": "Bio: “Full logs: | IRC/Matrix | Nostr npub1m0ner0mtjgs74aghus7qxrxl7mqv06d4v8rz9pmnux2dpr4cmhmsjgcfay” · 2,918 followers",
+      "post_url": "https://x.com/MoneroResearchL/status/2108027114582847525",
+      "date": "2026-10-08T02:50:04Z",
+      "date_et": "Oct 7, 10:50 PM ET",
+      "engagement": 135,
+      "likes": 99,
+      "reposts": 13,
+      "replies": 2,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Monero",
+      "topic": "FCMP++",
+      "claim": "I dont care if FCMP++ takes forever to ship My entire networth is in $XMR so if this update has an inflation…",
+      "handle": "@XMRVoid",
+      "display_name": "Mav",
+      "why_this_account": "Bio: “Founder @xmrhub_org | @xmrmap | @XMRPredictions | @monerosociety” · 7,082 followers",
+      "post_url": "https://x.com/XMRVoid/status/2108174397433614833",
+      "date": "2026-10-08T12:35:18Z",
+      "date_et": "Oct 8, 8:35 AM ET",
+      "engagement": 129,
+      "likes": 116,
+      "reposts": 3,
+      "replies": 5,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Litecoin",
+      "topic": "Bitcoin",
+      "claim": "Dead now • Solana, Algorand: address = public key • Monero: forgery, hidden inflation, deanonymization • ETH proof-of-stake: BLS/KZG forgeable • Any…",
+      "handle": "@testinprodcap",
+      "display_name": "奶奶 capital",
+      "why_this_account": "Bio: “psyops only. high priest @mutCarolineDAO. what would 奶奶 do? tweeting stream of consciousness” · 12,609 followers",
+      "post_url": "https://x.com/testinprodcap/status/2108215106274263461",
+      "date": "2026-10-08T15:17:04Z",
+      "date_et": "Oct 8, 11:17 AM ET",
+      "engagement": 77,
+      "likes": 63,
+      "reposts": 2,
+      "replies": 8,
+      "other_chain_if_any": "Bitcoin",
+      "quiet": false
+    },
+    {
+      "coin": "Litecoin",
+      "topic": "Bitcoin",
+      "claim": "Litecoin is the payments coin and goes back and forth with Bitcoin for #1 most used coin for real world purchases Although…",
+      "handle": "@lite_hause",
+      "display_name": "Aldo",
+      "why_this_account": "Bio: “tracking the future of tech and money from outside the echo chamber” · 6,840 followers",
+      "post_url": "https://x.com/lite_hause/status/2108017461949768145",
+      "date": "2026-10-08T02:11:42Z",
+      "date_et": "Oct 7, 10:11 PM ET",
+      "engagement": 72,
+      "likes": 54,
+      "reposts": 7,
+      "replies": 4,
+      "other_chain_if_any": "Bitcoin",
+      "quiet": false
+    }
+  ],
+  "stats": {
+    "dropped": {
+      "Bitcoin": {
+        "under_5_likes": 15,
+        "other_token_shill": 2,
+        "price_call": 1,
+        "promo_account": 1,
+        "low_follower_account": 1
+      },
+      "Dogecoin": {
+        "under_5_likes": 8,
+        "low_follower_account": 5,
+        "other_token_shill": 2,
+        "promo_account": 3,
+        "too_short": 1,
+        "cashtag_spam": 1
+      },
+      "Monero": {
+        "outside_24h_window": 21,
+        "under_5_likes": 2
+      },
+      "Litecoin": {
+        "under_5_likes": 5,
+        "low_follower_account": 2,
+        "price_call": 1
+      }
+    },
+    "kept": {
+      "Bitcoin": 5,
+      "Dogecoin": 5,
+      "Monero": 2,
+      "Litecoin": 4
+    },
+    "other_chains": {
+      "Litecoin": {
+        "chain": "Bitcoin",
+        "authors": 3
+      }
+    }
+  }
+}
