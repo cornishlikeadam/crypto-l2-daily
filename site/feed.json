@@ -6,6 +6,99 @@
   "description": "Bitcoin L2, Dogecoin, Monero and Litecoin on X, last 24 hours, with sources.",
   "items": [
     {
+      "id": "2026-10-11",
+      "url": "https://not2l8-l2-daily.vercel.app/days/2026-10-11/",
+      "title": "Crypto L2 Daily — Sunday, October 11, 2026",
+      "content_text": "Bitcoin: Quiet today.\nDogecoin: Quiet today.\nMonero: Quiet today.\nLitecoin · MWEB: Litecoin has been around since 2011, which is basically ancient history in crypto at this point And now, Litecoin Foundation working with… (@kisc_0, https://x.com/kisc_0/status/2109148827487736133)\nLitecoin · MWEB: Litecoin's MWEB – #MWEB keeps your transaction amounts and addresses private, leaving no trace on the public ledger. (@LTCFoundation, https://x.com/LTCFoundation/status/2109282883273699475)\nLitecoin · MWEB: We also talked about two important privacy technologies: @firoorg ’s Lelantus Spark and @litecoin ’s MWEB. (@mercianoalia, https://x.com/mercianoalia/status/2109055045962481937)",
+      "date_published": "2026-10-11T21:59:31.290606+00:00",
+      "attachments": [
+        {
+          "url": "https://cornishlikeadam.github.io/crypto-l2-daily/days/2026-10-11/final.mp4",
+          "mime_type": "video/mp4"
+        }
+      ],
+      "_cards": [
+        {
+          "kind": "quiet",
+          "coin": "Bitcoin",
+          "title": "Bitcoin",
+          "sentence": "Quiet today.",
+          "explain": "We only show real posts. When nothing good was posted, we say so.",
+          "stats": null,
+          "handle": null,
+          "why_this_account": null,
+          "post_url": null,
+          "date": null,
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "quiet",
+          "coin": "Dogecoin",
+          "title": "Dogecoin",
+          "sentence": "Quiet today.",
+          "explain": "We only show real posts. When nothing good was posted, we say so.",
+          "stats": null,
+          "handle": null,
+          "why_this_account": null,
+          "post_url": null,
+          "date": null,
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "quiet",
+          "coin": "Monero",
+          "title": "Monero",
+          "sentence": "Quiet today.",
+          "explain": "We only show real posts. When nothing good was posted, we say so.",
+          "stats": null,
+          "handle": null,
+          "why_this_account": null,
+          "post_url": null,
+          "date": null,
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Litecoin",
+          "title": "Litecoin · MWEB",
+          "sentence": "Litecoin has been around since 2011, which is basically ancient history in crypto at this point And now, Litecoin Foundation working with…",
+          "explain": "MWEB is Litecoin's optional privacy feature that can hide how much you send.",
+          "stats": "331 likes · 4 reposts",
+          "handle": "@kisc_0",
+          "why_this_account": "Bio: “Figma 🎨👨🏽‍💻 | MSc Data science | Vibe Coder | My tweets are my honest opinion, don't come for me.” · 9,781 followers",
+          "post_url": "https://x.com/kisc_0/status/2109148827487736133",
+          "date": "2026-10-11T05:07:21Z",
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Litecoin",
+          "title": "Litecoin · MWEB",
+          "sentence": "Litecoin's MWEB – #MWEB keeps your transaction amounts and addresses private, leaving no trace on the public ledger.",
+          "explain": "MWEB is Litecoin's optional privacy feature that can hide how much you send.",
+          "stats": "82 likes · 15 reposts",
+          "handle": "@LTCFoundation",
+          "why_this_account": "Bio: “We’re a registered nonprofit dedicated to the growth, development & adoption of @Litecoin | $LTC | Est. 2017” · 233,646 followers",
+          "post_url": "https://x.com/LTCFoundation/status/2109282883273699475",
+          "date": "2026-10-11T14:00:02Z",
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Litecoin",
+          "title": "Litecoin · MWEB",
+          "sentence": "We also talked about two important privacy technologies: @firoorg ’s Lelantus Spark and @litecoin ’s MWEB.",
+          "explain": "MWEB is Litecoin's optional privacy feature that can hide how much you send.",
+          "stats": "12 likes · 3 reposts",
+          "handle": "@mercianoalia",
+          "why_this_account": "Bio: “I am a Web3 CM & SMM. I build regional communities | Growth Strategic | @minds3o owner |” · 2,363 followers",
+          "post_url": "https://x.com/mercianoalia/status/2109055045962481937",
+          "date": "2026-10-10T22:54:41Z",
+          "other_chain_if_any": null
+        }
+      ]
+    },
+    {
       "id": "2026-10-10",
       "url": "https://not2l8-l2-daily.vercel.app/days/2026-10-10/",
       "title": "Crypto L2 Daily — Saturday, October 10, 2026",
