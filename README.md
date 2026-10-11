@@ -94,7 +94,7 @@ Every **AI 101** workflow has the **same 5 parts**. This project uses that **gen
 
 | # | 🧩 Generic part (AI 101) | 💎 What is unique here |
 |:---:|---|---|
-| 01 | ⏰ **Trigger** | **6 PM** New York time. The Mac's **cron** timer starts `scripts/daily.sh`. |
+| 01 | ⏰ **Trigger** | **6 PM** New York time. The Mac's **launchd** timer starts `scripts/daily.sh`. |
 | 02 | 📥 **Context** | **4 coin searches** and a list of **"remove it" rules**. The **date check** is rule 1. |
 | 03 | ⚙️ **Task** | Pick **3 posts per coin**. Make **8–10 cards**. Fit the voice into **70 seconds**. |
 | 04 | 📦 **Output** | A **video**, a **site**, **course pages**, a **feed** and a **phone-widget file**. |
@@ -191,19 +191,16 @@ crypto-l2-daily/
 
 ---
 
-## 🔑 Fix the 6 PM GitHub push (one time)
+## ⏰ The 6 PM timer (launchd)
 
-> [!WARNING]
-> 🔒 The 6 PM timer (cron) **cannot open the macOS Keychain**. So it cannot get your GitHub login, and the **backup push fails**. The site still goes live on Vercel.
+> [!NOTE]
+> 🍎 The robot runs from **launchd**, the Mac's own scheduler: `config/com.not2l8.l2daily.plist`.
 
-**Do this one time** in Terminal. It saves your GitHub login in a private file that only you can read:
-
-```bash
-gh auth token > ~/crypto-l2-daily/.gh_token && chmod 600 ~/crypto-l2-daily/.gh_token
-```
-
-- 🙈 `.gh_token` is in `.gitignore`. It **never** goes to GitHub.
-- 🔁 If you log out of `gh`, run the command again.
+1. ⏰ It starts `scripts/daily.sh` every day at **6 PM**.
+2. 😴 If the Mac is **asleep** at 6 PM, it runs **as soon as the Mac wakes up**. It makes the **missed** edition.
+3. ☕ While it runs, it keeps the Mac **awake** (`caffeinate`).
+4. 🔑 It runs inside your login, so the **GitHub backup** works.
+5. 🩺 Test it any time: `/bin/bash scripts/check_publish.sh`
 
 ---
 
