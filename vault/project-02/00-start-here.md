@@ -22,7 +22,7 @@ They show what people **really posted** on X. X is a social media app. The posts
 
 ## 🔢 How to use this folder
 
-1. 🗺️ Open `process-map.canvas`. It shows the steps in order.
+1. Read this file first. Then open `process-map.canvas` to see the sequence.
 2. 📄 Read the step files in order: [[01-collect-posts]], [[02-check-posts]], [[03-make-video]], [[04-human-check]], [[05-publish]].
 3. ✋ Do **one step at a time**. After each step, stop. Say what happened. Then go on.
 
@@ -43,3 +43,12 @@ They show what people **really posted** on X. X is a social media app. The posts
 1. ✅ Is a video **good enough** for the website? I approved the first one by hand ([[04-human-check]]).
 2. 🗂️ Which old days go in the archive, and **why** they matter.
 3. ⚠️ Do I use **my X account** for the free scraper? X can limit the account.
+
+## October 11 operating notes
+
+- Read [[documentation-standard]] for the manual format and formal-compliance limits.
+- Read [[crypto-layer-2-reference]] before classifying a topic as layer 2.
+- Manual execution pauses between steps. The installed daily program runs unattended under standing approval.
+- A quiet card means no sampled posts passed the filters. It does not prove there was no news.
+- A LIVE log entry means the edition URL returned HTTP 200. Playback and other features require separate checks.
+- The intent draft and missing peer/Class 8 feedback must be completed by the student before submission.

@@ -4,7 +4,7 @@ group: "Proof"
 short: "Source log"
 question: "How do I know each source is real?"
 hint: "I opened every source myself. I did not trust a search result."
-answer: "I opened and read 6 sources on October 5, 2026. For each one, I wrote what it says and how I checked it. I dropped 1 claim and fixed 1 claim."
+answer: "Six historical entries are preserved. The October 11 audit adds primary-source checks, limitations and corrected claims."
 cssclasses: [l2-daily]
 tags: [ai101, project-2, sources]
 ---
@@ -12,7 +12,8 @@ tags: [ai101, project-2, sources]
 # 🧾 source-verification-log.md
 
 > [!important] ⭐ The rule for this log
-> I **opened and read** every source. A search result alone is **not** enough. Date checked: **October 5, 2026**.
+> The entries below are the earlier AI-assisted account of checks on **October 5, 2026**.
+> They are preserved as historical reports. The dated audit below states what Codex rechecked directly.
 
 ## 📄 Source 1
 
@@ -92,3 +93,24 @@ tags: [ai101, project-2, sources]
 
 > [!note] 🔧 Fixed
 > "September 25 is the big Monero day." The release was on September 25. But the network **started on October 5**. So the October 5 video covers Monero's big day.
+
+## October 11, 2026: source audit and corrections
+
+Checked by Codex in this session. These are new checks, not claims that KJ personally repeated them.
+
+| Entry | Source and method | Finding | Limitation or action |
+|---|---|---|---|
+| 1 | Opened [X's official pricing](https://docs.x.com/x-api/getting-started/pricing), read operations table. | Ordinary post reads are listed at $0.005 each. | Replace vendor pricing as the primary evidence. Drop the unsupported exact free-tier-end date. Prices and credit eligibility can change. |
+| 2 | Opened [twikit issue 408](https://github.com/d60/twikit/issues/408). | A dated transaction-code bug was reported. | Narrow the claim to the reported version/time. Do not claim every current install is broken. This session did not repeat the old full fork security review. |
+| 3 | Attempted the historical Bitcoin Magazine URL. | The browser research tool could not fetch the article. | Keep as historical/unconfirmed in this audit. Do not use it alone to certify Wavelength's launch date. |
+| 4 | Opened [Litecoin's release](https://github.com/litecoin-project/litecoin/releases/tag/v0.21.5.6); checked GitHub release metadata. | Published 2026-08-02T15:17:39Z. Notes concern MWEB validation. | A release source supports this release, not every social post about it. |
+| 5 | Opened [DogeOS's issuer announcement](https://www.globenewswire.com/news-release/2026/09/30/3372073/0/en/DogeOS-Opens-Public-Testnet-as-Builders-Bring-New-Apps-to-Dogecoin.html). | Public EVM-compatible testnet announced September 30. | Issuer claim; does not independently prove bridge security, production adoption or mainnet launch. A URL date alone was insufficient verification. |
+| 6 | Opened [Monero beta release](https://github.com/seraphis-migration/monero/releases/tag/v0.19.0.0-beta.3.0); checked release metadata. | Published September 25. It schedules an October 5 stressnet fork at block 3,102,800. | Distinguish release date, scheduled test fork and observed activation. It does not prove mainnet activation. |
+| 7 | Opened [Lightning Labs overview](https://docs.lightning.engineering/the-lightning-network/overview). | Describes channels anchored to Bitcoin and off-chain payment routing. | Supports the mechanism, not every performance promise or news post. |
+| 8 | Opened [Ark protocol documentation](https://ark-protocol.org/). | Describes virtual outputs, server coordination and different in-round/out-of-round assumptions. | Check the named implementation before reporting its status. |
+| 9 | Opened [Litecoin Foundation MWEB explanation](https://litecoin.com/news/litecoins-pivotal-mweb-upgrade). | Explains optional confidentiality and extension blocks. | Its 2022 release-candidate announcement does not establish current wallet or security status. |
+| 10 | Searched the [official ASD site](https://www.asd-ste100.org/); attempted to retrieve the standard. | Official descriptions identify a controlled technical language. | Direct full-standard retrieval was blocked. This audit does not certify dictionary/rule compliance. |
+
+**Revised claim:** all covered upgrades are layer 2s → name each mechanism separately.
+**Revised claim:** quiet today means no news → no sampled posts passed these filters.
+**Dropped claim:** the September 30 date in a URL alone verifies a launch → read an original dated announcement.

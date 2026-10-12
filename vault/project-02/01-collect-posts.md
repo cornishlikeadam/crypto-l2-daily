@@ -1,45 +1,40 @@
 ---
 number: 3
 group: "The 5 steps"
-short: "Step 1 · Collect"
-question: "Step 1: How does the robot get the posts?"
-hint: "It is like 4 searches, one for each coin, at the same time every day."
-answer: "At 6 PM, a timer starts the robot. It searches X 4 times, once per coin. It keeps the top 25 posts for each search."
+short: "Step 1 \u00b7 Collect"
+question: "How does the automation collect posts?"
+hint: "Read the input, procedure, check and failure action."
+answer: "Follow the numbered procedure. Check the output. Stop or record a defect if the check fails."
 cssclasses: [l2-daily]
-tags: [ai101, project-2, step]
+tags: [ai101, project-2, crypto-l2-daily]
 ---
 
-# 🔎 Step 1: Collect the posts
+# Step 1: Collect posts
 
-> [!info] ⏰ What starts this step
-> The clock gets to **6:00 PM** (New York time). The Mac's timer (**launchd**) starts `scripts/daily.sh`. If the Mac is asleep, it starts when the Mac wakes up.
+## Purpose
+Collect public X posts for four searches. Preserve the account, post URL and timestamp.
 
-## 📥 What goes in
+## Before you start
+Read [[00-start-here]]. The Mac must have internet access, the project environment and valid X access.
+Keep login cookies in the private `.env` file. Do not copy that file into the submission.
 
-**4 searches** on X. There is **1 search for each coin**. Each search covers the **24 hours** before 6 PM.
+## Input
+The edition date and the four search definitions in `scripts/collect_x.py`.
 
-| 🪙 Coin | 🔎 Search words |
-|---|---|
-| ⚡ Bitcoin | `(Bitcoin OR BTC) (Lightning OR Ark OR "layer 2" OR L2)` |
-| 🐕 Dogecoin | `(Dogecoin OR DOGE) ("layer 2" OR L2 OR Dogechain OR community)` |
-| 🔒 Monero | `(Monero OR XMR) (FCMP OR CARROT OR hardfork OR upgrade)` |
-| 🪙 Litecoin | `(Litecoin OR LTC) (Lightning OR MWEB OR "layer 2")` |
+## Procedure
+1. Start `scripts/daily.sh` for a normal edition.
+2. Use `scripts/backfill.sh YYYY-MM-DD` for an archive edition.
+3. Search once per coin through one shared twikit connection.
+4. Request up to 25 posts per search with the default configuration.
+5. Save the raw response in `data/raw/YYYY-MM-DD.json`.
+6. Record `window_start`, `window_end` and the source method.
 
-## ⚙️ What this step does
+The normal window ends about 30 seconds before collection. An archive window ends at 6 PM New York time.
+Each window lasts 24 hours. A missed-day run must use the archive window for that date.
 
-`scripts/collect_x.py` logs in to X with **my saved login codes**. It gets the **top 25 posts** for each search.
+## Check and output
+The raw file has four search results and UTC window boundaries. Continue to [[02-check-posts]].
 
-## 🔢 Directions for the robot
-
-1. Search X **one time for each coin**. Use **one connection** for all 4 searches.
-2. Keep only posts that have an **account name** and a **date**.
-3. Save all the posts in `data/raw/YYYY-MM-DD.json`. This file stays **on my Mac only**.
-
-## ✅ What "good" looks like
-
-The log shows lines like these:
-`Bitcoin: 25 posts` · `Dogecoin: 25 posts` · `Monero: 18 posts` · `Litecoin: 9 posts`
-
-> [!warning] 🧑‍⚖️ Human check
-> The log can say **"X rejected the session cookies."** Then **nothing** goes forward that day.
-> **Do this:** Get fresh login codes with `scripts/set_x_cookies.sh`. See [[setup-guide]].
+## If the step fails
+Stop the run. Read the collection error in `logs/daily.log`. Refresh the cookies with the existing helper if required.
+Do not manufacture posts or reuse a different day's data under this date.

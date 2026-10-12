@@ -43,5 +43,13 @@ tags: [ai101, project-2, disclosure]
 | **three.js** | the 3D shape on the home page |
 | **GitHub** | backup |
 | **Vercel** | website host |
-| **cron** | the daily timer on my Mac |
+| **launchd** | the current daily timer on my Mac (replaced cron October 11) |
 | **Obsidian** | this vault |
+
+## October 11, 2026: Codex contribution
+
+Codex inspected the local project, private repository metadata, logs and deployed site.
+It corrected procedural documentation, added crypto scope and writing-standard notes, and prepared a named submission export.
+It fixed local catch-up collection, an archive approval bypass, feed attachment URLs and the favicon reference.
+It added focused regression checks. It did not supply student-authored intent, peer feedback or human approval.
+KJ has not yet recorded acceptance of this session's changes.

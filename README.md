@@ -11,7 +11,7 @@
   <img alt="Runs daily" src="https://img.shields.io/badge/⏰_RUNS-6_PM_New_York-9FF5C8?style=flat-square&labelColor=0A0A0B">
   <img alt="Length" src="https://img.shields.io/badge/🎬_VIDEO-70_seconds-F3D77A?style=flat-square&labelColor=0A0A0B">
   <img alt="Readers" src="https://img.shields.io/badge/👀_READ_LEVEL-ages_8+-A7E8FF?style=flat-square&labelColor=0A0A0B">
-  <img alt="Writing" src="https://img.shields.io/badge/✍️_WRITING-ASD--STE100-C9B6FF?style=flat-square&labelColor=0A0A0B">
+  <img alt="Writing" src="https://img.shields.io/badge/✍️_WRITING-STE100--inspired-C9B6FF?style=flat-square&labelColor=0A0A0B">
   <img alt="Built with" src="https://img.shields.io/badge/🤖_BUILT_WITH-Claude_Code-FFD1EC?style=flat-square&labelColor=0A0A0B">
 </p>
 
@@ -211,3 +211,12 @@ crypto-l2-daily/
 > 🎞️ `remotion/` is **original code**. It needs only the `remotion` npm packages from OpenMontage's composer.
 
 <p align="center"><sub>✒️ <b>NOT2L8</b> · <i>Not Too Late. Always Forward.</i> · SERIES 2026</sub></p>
+
+## October 11 deliverable audit
+
+The numbered vault instructions now use purpose, input, procedure, check and failure-action sections.
+See `vault/project-02/documentation-standard.md` for the ASD-STE100-inspired writing status.
+See `vault/project-02/crypto-layer-2-reference.md` for the crypto classification boundaries.
+The named submission is generated in `submission/project-02/`; human intent and class feedback remain pending.
+The first launchd-triggered run has not yet occurred. Existing successful runs are recorded in `logs/daily.log`.
+The GitHub Pages archive is not enabled. Current videos use Vercel; the older-video fallback needs repair before retention exceeds 14 editions.

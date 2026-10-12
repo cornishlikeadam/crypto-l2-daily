@@ -33,7 +33,10 @@ trap 'rmdir "$LOCK" 2>/dev/null; log "Next run: $(next_run)"' EXIT
 
 log "=== daily run $DAY ==="
 
-if ! "$COLLECT_PY" scripts/collect_x.py --date "$DAY"; then
+collect_args=(--date "$DAY")
+# A catch-up edition must use that date's window, not today's recent posts.
+if [ "$DAY" != "$(date +%F)" ]; then collect_args+=(--backfill); fi
+if ! "$COLLECT_PY" scripts/collect_x.py "${collect_args[@]}"; then
   log "collect failed; nothing rendered or published"
   exit 1
 fi

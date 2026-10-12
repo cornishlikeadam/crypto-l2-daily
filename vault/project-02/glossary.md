@@ -34,11 +34,11 @@ tags: [ai101, project-2, glossary]
 | **Lightning** ⚡ | A fast lane on top of Bitcoin (and Litecoin). It is for quick, cheap payments. |
 | **Ark** | A newer Bitcoin add-on. It puts many small payments together to save fees. |
 | **Sidechain** | A separate network linked to Bitcoin. It can try new features. |
-| **FCMP++** | Monero's next privacy upgrade. It hides your coin among every coin on the chain. |
-| **CARROT** | Monero's new address system. It comes with FCMP++. |
+| **FCMP++** | A proposed Monero privacy upgrade under test. It is not a layer 2. |
+| **CARROT** | A proposed Monero addressing upgrade tested with FCMP++. It is not a layer 2. |
 | **Stressnet / testnet** | A practice network. People test new software there with fake money. |
-| **Hard fork** | A planned upgrade. Everyone who runs the network must install it. |
-| **MWEB** | Litecoin's optional privacy feature. It can hide how much you send. |
+| **Hard fork** | A change in consensus rules that can split participants using incompatible rules. |
+| **MWEB** | Optional Litecoin confidentiality through extension blocks. It is different from Lightning. |
 | **DogeOS** | A layer 2 for Dogecoin. It lets people build apps. |
 
 ## 📡 The live numbers on the site
@@ -64,4 +64,4 @@ tags: [ai101, project-2, glossary]
 | **Obsidian** | The note app for this folder. |
 | **Widget** 📱 | A small live card on your phone's Home Screen. |
 | **Scriptable** | A free iPhone app. It runs small scripts, like our widget. |
-| **ASD-STE100** ✍️ | A set of rules for simple, clear writing. These notes follow it. |
+| **ASD-STE100** ✍️ | A set of rules for simple, clear writing. These notes use an inspired approach; formal compliance is unverified. |

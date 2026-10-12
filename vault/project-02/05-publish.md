@@ -1,46 +1,45 @@
 ---
 number: 7
 group: "The 5 steps"
-short: "Step 5 · Publish"
-question: "Step 5: How does the video get onto the website?"
-hint: "Build the pages, back up, send to the host, then test the page."
-answer: "build_site.py builds the pages. The robot saves a backup on GitHub and sends the site to Vercel. Then it loads the page. It says LIVE only if the page loads."
+short: "Step 5 \u00b7 Publish"
+question: "How does the automation publish and verify an edition?"
+hint: "Read the input, procedure, check and failure action."
+answer: "Follow the numbered procedure. Check the output. Stop or record a defect if the check fails."
 cssclasses: [l2-daily]
-tags: [ai101, project-2, step]
+tags: [ai101, project-2, crypto-l2-daily]
 ---
 
-# 🌐 Step 5: Put it on the website
+# Step 5: Publish the edition
 
-> [!info] ⏰ What starts this step
-> Step 3 made a good video. (For the **first** video, Step 4 also said **yes**.)
+## Purpose
+Build the site, save the project and check the published edition.
 
-## 📥 What goes in
+## Before you start
+The render must pass. The first sample must be approved, or standing approval must be active.
+The configured GitHub and Vercel accounts must be available.
 
-`final.mp4` and the **card list**.
+## Procedure
+1. Copy the render into `site/days/YYYY-MM-DD/`.
+2. Build the home, day, archive and course pages.
+3. Build `feed.json`, `widget.json` and the widget script.
+4. Save the edition note in the vault archive.
+5. Commit the generated edition and push the private GitHub backup.
+6. Deploy the site to Vercel.
+7. Request the edition URL and check for HTTP 200.
+8. Record the deployment result in `logs/daily.log`.
 
-## ⚙️ What this step does
+GitHub backup failure is logged separately. The present code can still deploy to Vercel after that failure.
+The LIVE check proves that the edition page responds. It does not prove playback, source accuracy or every feature.
 
-`scripts/build_site.py` builds the **web pages**. Then the robot sends them to the **internet**.
+## Check and output
+Open the live edition. Play the video. Open a source card, the course and the archive.
+Check the feed attachment and widget JSON. Record failures separately from page availability.
 
-## 🔢 Directions for the robot
+## Archive limitation
+Vercel receives the 14 newest edition videos, counted by edition date.
+Older videos use the configured GitHub Pages archive URL. That archive returned 404 during the October 11 audit.
+All ten current editions fit on Vercel. Older-video hosting must be repaired before it is needed.
 
-1. 📁 Copy the video to `site/days/YYYY-MM-DD/`.
-2. 🏗️ Rebuild these things:
-   - the **home** page, the **day** page and the **archive** page;
-   - the **course** pages (from this vault);
-   - `feed.json` and `widget.json`;
-   - the day's **note** in this vault ([[archive/README]]).
-3. 💾 Save a **backup** on GitHub.
-4. 🚀 Send the website to **Vercel**.
-5. ✅ Load the new day's page. **Only if it loads**, write **"LIVE"** in `logs/daily.log`.
-
-## ✅ What "good" looks like
-
-https://not2l8-l2-daily.vercel.app/ shows **today's video** at the top. The **cards** are under it.
-
-> [!warning] 🧑‍⚖️ Robot check
-> If the page **does not load**, the log says **"NOT LIVE"**. It gives the **exact command** to try again.
-> The robot **never** says "live" when the page is not live.
-
-> [!note] 🛟 The address changed on October 6, 2026
-> Vercel stopped serving the old address (`crypto-l2-daily.vercel.app`). The site moved to **not2l8-l2-daily.vercel.app**.
+## If the step fails
+Preserve the local output. Read the deploy error. Repair access or hosting and retry publication.
+Do not label an unavailable page or video as verified.

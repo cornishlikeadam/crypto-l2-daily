@@ -119,8 +119,8 @@ def cards_html(cards: list[dict]) -> str:
         if c["kind"] == "quiet":
             cls, pill = coin_bits(c.get("coin") or c["title"])
             rows.append(f'<li class="card quiet{cls}">{pill}'
-                        f'<p class="title">{esc(c["title"])}</p><p class="sentence">😴 Quiet today. Nothing good was '
-                        f'posted, so we made nothing up.</p>'
+                        f'<p class="title">{esc(c["title"])}</p><p class="sentence">😴 Quiet today. No sampled posts '
+                        f'passed our filters. Other news may exist.</p>'
                         + (f'<p class="explain"><span>🤔 What is this?</span> {esc(c["explain"])}</p>'
                            if c.get("explain") else "") + '</li>')
             continue
@@ -151,13 +151,14 @@ def page(title: str, top: str, body: str, prefix: str, gl: bool = False, intro_a
             f'<meta name="viewport" content="width=device-width,initial-scale=1">'
             f'<meta name="color-scheme" content="dark"><meta name="theme-color" content="#0A0A0B">'
             f'<title>{esc(title)}</title>'
+            f'<link rel="icon" type="image/svg+xml" href="{prefix}assets/rosette-gold.svg">'
             f'<meta name="description" content="A 70-second video every day at 6 PM. It shows real posts from X about '
             f'Bitcoin, Dogecoin, Monero and Litecoin add-ons. Every card links to its source.">'
             f'<link rel="alternate" type="application/feed+json" href="{prefix}feed.json">'
             f'{FONTS}<style>{css_for(prefix)}</style></head><body><canvas id="sky" aria-hidden="true"></canvas>{top}'
             f'<main>{body}'
             f'<footer><p>🔎 Posts come from X. Only the last 24 hours, up to 6 PM New York time. '
-            f'🚫 Price guesses, giveaways and rumors are removed. 😴 A coin with no news says "Quiet today."</p>'
+            f'🚫 Posts are filtered for price guesses, giveaways and rumors. 😴 "Quiet today" means no sampled posts passed.</p>'
             f'<p>🎙️ Voice: Piper. 🎬 Video: OpenMontage. 📡 Live numbers: CoinGecko, mempool.space, Blockchair, '
             f'litecoinspace. 🧾 <a href="{prefix}feed.json">feed.json</a> · <a href="{prefix}widget.json">widget.json</a> · '
             f'<a href="https://github.com/cornishlikeadam/crypto-l2-daily" rel="noopener">GitHub</a></p>'
@@ -279,7 +280,7 @@ def rebuild() -> None:
                 f"{c['title']}: {c['sentence']}" + (f" ({c['handle']}, {c['post_url']})" if c["kind"] == "item" else "")
                 for c in rec["cards"] if c["kind"] in ("item", "quiet")),
             "date_published": rec.get("window_end") or f"{rec['date']}T22:00:00Z",
-            "attachments": [{"url": f"{ARCHIVE_URL}days/{rec['date']}/final.mp4", "mime_type": "video/mp4"}],
+            "attachments": [{"url": f"{SITE_URL if rec['date'] in recent_dates else ARCHIVE_URL}days/{rec['date']}/final.mp4", "mime_type": "video/mp4"}],
             "_cards": [{k: c.get(k) for k in ("kind", "coin", "title", "sentence", "explain", "stats", "handle",
                                                "why_this_account", "post_url", "date", "other_chain_if_any")}
                        for c in rec["cards"] if c["kind"] in ("item", "quiet")],
@@ -394,7 +395,7 @@ def write_vault(records: list[dict]) -> None:
         n = 0
         for c in rec["cards"]:
             if c["kind"] == "quiet":
-                lines += [f"### 😴 {c['title']}: quiet today", "", "Nothing good was posted. We made **nothing** up.", ""]
+                lines += [f"### 😴 {c['title']}: quiet today", "", "No sampled posts passed the filters. Other news may exist.", ""]
             elif c["kind"] == "item":
                 n += 1
                 lines += [f"### {n:02d} · {c['title']}", "",

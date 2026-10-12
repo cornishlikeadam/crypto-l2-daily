@@ -27,3 +27,11 @@ tags: [ai101, project-2, output]
 
 > [!note] 🧮 The score
 > The robot removed **23 other posts** by itself (price talk, giveaways, tiny accounts). But **4 of 8** cards were still bad or weak. The rules were **not strict enough**. See [[decision-note]].
+
+## Evidence note added October 11, 2026
+
+This table is the earlier retrospective run record, preserved without inventing a replacement run.
+The original first-run raw output and rejected video have not been located in this audit.
+The seven-post revised selection is recoverable from `data/2026-10-05.json` at commit `9e3bfa2`.
+The current published October 5 edition has eight post cards and different account selections.
+It is a later edition, not the exact seven-post table above. See the submission's evidence manifest.

@@ -1,0 +1,93 @@
+---
+number: "2026-10-09"
+group: "Archive"
+cssclasses: [l2-daily]
+tags: [crypto-l2-daily, archive]
+---
+
+# 📅 Friday, October 9, 2026
+
+> [!abstract] 💵 Edition NO. CL2-20261009-07
+> This is **one day** of Crypto L2 Daily. It shows the **real posts** in that day's video.
+
+- 🎬 **Watch the video:** https://not2l8-l2-daily.vercel.app/days/2026-10-09/
+- 🧾 **Real posts used:** 7
+
+## 🃏 The cards
+
+### 01 · Bitcoin · Lightning
+
+- 💬 **What they said:** “What UTEXO Actually Abstracts for Developers Building with Bitcoin is one challenge.”
+- 👤 **Who said it:** @AriseAura. Bio: “Web3 | Exploring Crypto | Seeking Opportunities Ambassador - @playtaunt KOL - @Bitgetwallet Creator -…” · 3,321 followers
+- 📅 **When:** Oct 9, 12:42 AM ET
+- 🤔 **What is this?** Lightning is a fast lane on top of Bitcoin for quick, cheap payments.
+- ❤️ **How many people liked it:** 51 likes · 1 reposts
+- 🔗 **See the real post:** https://x.com/AriseAura/status/2108417711038730702
+
+### 02 · Bitcoin · Lightning
+
+- 💬 **What they said:** “Mostro Node v0.19.3 is out.”
+- 👤 **Who said it:** @MostroP2P. Bio: “Peer-to-peer lightning network Nostr platform. No-KYC.…” · 3,228 followers
+- 📅 **When:** Oct 9, 3:19 PM ET
+- 🤔 **What is this?** Lightning is a fast lane on top of Bitcoin for quick, cheap payments.
+- ❤️ **How many people liked it:** 8 likes · 6 reposts
+- 🔗 **See the real post:** https://x.com/MostroP2P/status/2108638615379038420
+
+### 03 · Dogecoin · Community
+
+- 💬 **What they said:** “The interesting thing about DOGE is how it turned internet culture into a global community.”
+- 👤 **Who said it:** @GiggityDoge. Bio: “Alright, alright, alright! Who's ready for some fun? | $DOGE holder since Feb 2021 🐕💰 | Shitcoin…” · 993 followers
+- 📅 **When:** Oct 8, 9:44 PM ET
+- 🤔 **What is this?** These are posts from people who use and talk about Dogecoin.
+- ❤️ **How many people liked it:** 12 likes · 0 reposts
+- 🔗 **See the real post:** https://x.com/GiggityDoge/status/2108372918690603453
+
+### 04 · Monero · Upgrade
+
+- 💬 **What they said:** “The Great Domain Reset ICANN 2026 is reshaping the namespace.”
+- 👤 **Who said it:** @VibeCoder_x. Bio: “🌐 Domain investor & AI explorer | Building AI agents & Web3 projects | Collector of premium Domains |…” · 972 followers
+- 📅 **When:** Oct 8, 7:38 PM ET
+- 🤔 **What is this?** An upgrade is new software that adds features or fixes problems.
+- ❤️ **How many people liked it:** 6 likes · 1 reposts
+- 🔗 **See the real post:** https://x.com/VibeCoder_x/status/2108341389574414449
+
+### 05 · Litecoin · MWEB
+
+- 💬 **What they said:** “Litecoin is stepping up as the most well rounded Proof-of-Work coin I love Bitcoin, but it does not have MWEB.”
+- 👤 **Who said it:** @lite_hause. Bio: “tracking the future of tech and money from outside the echo chamber” · 6,856 followers
+- 📅 **When:** Oct 9, 3:47 PM ET
+- 🤔 **What is this?** MWEB is Litecoin's optional privacy feature that can hide how much you send.
+- ❤️ **How many people liked it:** 30 likes · 1 reposts
+- 🔗 **See the real post:** https://x.com/lite_hause/status/2108645659410584039
+
+### 06 · Litecoin · MWEB
+
+- 💬 **What they said:** “This is another reason why Litecoin is less susceptible to quantum attacks and better positioned with El Gamal switch on MWEB and…”
+- 👤 **Who said it:** @MASTERBTCLTC. Bio: “Wrote the books about finding Charlie and Litecoin, and how the game theory between two chains will be…” · 54,152 followers
+- 📅 **When:** Oct 9, 8:24 AM ET
+- 🤔 **What is this?** MWEB is Litecoin's optional privacy feature that can hide how much you send.
+- ❤️ **How many people liked it:** 12 likes · 1 reposts
+- 🔗 **See the real post:** https://x.com/MASTERBTCLTC/status/2108534054676992425
+
+### 07 · Litecoin · MWEB
+
+- 💬 **What they said:** “$LTC MWEB Daily Flow At close: Thu, 8 Oct 2026 Pool: 464,763.13 LTC (0.6% of supply) ↑ Peg-ins: +16,672.64 LTC ↓ Peg-outs…”
+- 👤 **Who said it:** @LitecoinTracker. Bio: “Tracking key Litecoin statistics and metrics such as ETF flows and MWEB adoption.” · 627 followers
+- 📅 **When:** Oct 9, 8:05 AM ET
+- 🤔 **What is this?** MWEB is Litecoin's optional privacy feature that can hide how much you send.
+- ❤️ **How many people liked it:** 9 likes · 2 reposts
+- 🔗 **See the real post:** https://x.com/LitecoinTracker/status/2108529171307573612
+
+## 🗑️ What the robot threw away
+
+The robot read more posts than it used. It left these out **on purpose**:
+
+- 36 posts almost nobody liked
+- 10 very small accounts
+- 4 posts pushing other coins
+- 3 price guesses
+- 3 ad accounts
+- 1 posts from the wrong day
+
+---
+⬅️ Back to [[archive/AI101_P2_Cornish_KJ_Archive_README.md|the archive list]] · 🗺️ [[AI101_P2_Cornish_KJ_README.md|the folder map]]

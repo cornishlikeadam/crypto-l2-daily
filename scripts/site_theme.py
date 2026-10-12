@@ -413,7 +413,7 @@ def intro_dialog(p: str, has_video: bool) -> str:
          '<p>Every day at <b>6 PM</b>, a robot reads X. X is a social media app.</p>'
          '<p>The robot finds <b>real posts</b> about <b>4 coins</b>: Bitcoin, Dogecoin, Monero and Litecoin.</p>'
          '<p>Then it makes a <b>70-second video</b> and a set of cards. Every card shows <b>who</b> posted and '
-         '<b>when</b>.</p><p>It never makes up news. If a coin has no news, the card says <b>"Quiet today."</b></p>'),
+         '<b>when</b>.</p><p>If no sampled posts pass the filters, the card says <b>"Quiet today."</b> Other news may exist.</p>'),
         ("The", "core",
          '<p>This is the automation. It runs by itself every day.</p><div class="flow">'
          '<div><b>1</b>⏰ At 6 PM, a timer on the Mac starts the robot.</div>'

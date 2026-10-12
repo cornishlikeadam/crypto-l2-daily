@@ -1,58 +1,41 @@
 ---
 number: 5
 group: "The 5 steps"
-short: "Step 3 · Video"
-question: "Step 3: How does the robot make the 70-second video?"
-hint: "Cards plus a free robot voice. What happens if the voice is too long?"
-answer: "It makes 8 to 10 cards and reads them with the free Piper voice. If the voice is too long, it reads fewer words. The card still shows all the words."
+short: "Step 3 \u00b7 Video"
+question: "How does the automation make the video?"
+hint: "Read the input, procedure, check and failure action."
+answer: "Follow the numbered procedure. Check the output. Stop or record a defect if the check fails."
 cssclasses: [l2-daily]
-tags: [ai101, project-2, step]
+tags: [ai101, project-2, crypto-l2-daily]
 ---
 
-# 🎬 Step 3: Make the video
+# Step 3: Make the video
 
-> [!info] ⏰ What starts this step
-> Step 2 saves `data/YYYY-MM-DD.json`.
+## Purpose
+Make a narrated video from the selected post excerpts.
 
-## 📥 What goes in
+## Before you start
+Step 2 must have finished. OpenMontage, Remotion, Piper and the media tools must be available locally.
 
-The **checked posts** from Step 2.
+## Input
+`data/YYYY-MM-DD.json` and the card template in `remotion/CardDeck.tsx`.
 
-## ⚙️ What this step does
+## Procedure
+1. Run `scripts/render.py --date YYYY-MM-DD` through the configured environment.
+2. Make a title card, selected-post cards, quiet cards and a closing source card.
+3. Show the handle, date, source URL and a topic explanation on each post card.
+4. Generate the narration with Piper.
+5. Shorten the spoken excerpts if the narration is too long.
+6. Keep the displayed excerpt and source attribution on the card.
+7. Save `final.mp4` and `cards.json` in the edition's OpenMontage render folder.
 
-`scripts/render.py` asks **OpenMontage** to make a **70-second card video**. OpenMontage is a free video maker.
+The target is 70 seconds at 1920 × 1080. The current program accepts a duration within 5% of 70 seconds.
+The checked October 11 video is about 70.06 seconds. Short days may use fewer than eight cards.
 
-## 🔢 Directions for the robot
+## Check and output
+Confirm the resolution, duration, audio track and render checks. Watch for unreadable or clipped cards.
+Continue to [[04-human-check]].
 
-1. 🃏 Make **8 to 10 cards**:
-   - 1 **title** card.
-   - 1 card for **each post**.
-   - 1 **"Quiet today"** card for each empty coin.
-   - 1 **sources** card at the end.
-2. 🖼️ Put these things on each card:
-   - A **big title**, like **Monero · FCMP++**.
-   - The **post's own sentence**, in quotes.
-   - A simple **"What is this?"** line. Example: "MWEB is Litecoin's optional privacy feature."
-   - The **source link** and the **like count**, bottom left.
-   - The **account name** and the **date**, bottom right.
-3. 🎙️ Read each card out loud with **Piper**. Piper is a free robot voice.
-   - If the voice is **longer than 70 seconds**, read **fewer words** of each post.
-   - The card **still shows all the words**.
-   - **Never** speed up the voice more than about **1.15×**.
-4. 💾 Save the video in `OpenMontage/projects/crypto-l2-YYYY-MM-DD/renders/final.mp4`.
-
-## 🎨 The look
-
-> [!example] 💎 Black Platinum style
-> Black platinum background. Holographic foil. **Gold** and **money-green** numbers. Banknote patterns and serial numbers.
-> The card design is in `remotion/CardDeck.tsx`. It matches the website.
-
-## ✅ What "good" looks like
-
-- ⏱️ The video is **exactly 70 seconds**.
-- 📺 It is **1920 × 1080**.
-- 🔊 It **has sound**.
-- 👀 **Every card is easy to read.**
-
-> [!warning] 🤖 Robot check
-> The robot checks the **length**, the **size** and the **sound** by itself. If one is wrong, it **stops**. It publishes **nothing**.
+## If the step fails
+Stop. Preserve the error and source data. Do not publish a missing or failed render.
+Exit code 3 means the render is ready but the approval gate is waiting.

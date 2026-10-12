@@ -34,3 +34,11 @@ tags: [ai101, project-2, output]
 
 > [!warning] ⚠️ One weak card stayed
 > Card 03 is about a fishing trip at "Lightning **Lake**." It is **not** Bitcoin Lightning. The robot matches **words**, not **meaning**. See [[decision-note]].
+
+## Evidence note added October 11, 2026
+
+This table is the earlier retrospective run record, preserved without inventing a replacement run.
+The original first-run raw output and rejected video have not been located in this audit.
+The seven-post revised selection is recoverable from `data/2026-10-05.json` at commit `9e3bfa2`.
+The current published October 5 edition has eight post cards and different account selections.
+It is a later edition, not the exact seven-post table above. See the submission's evidence manifest.

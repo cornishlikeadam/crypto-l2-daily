@@ -60,3 +60,19 @@ My intent says: the AI must **not** decide what counts as news. **Price hype** a
 
 > [!important] ⭐ My rule
 > **Never trust a website's date filter. Check every item's own date before you use it.**
+
+## October 11 audit: proposed corrections for KJ to review
+
+The prior first/revised tables remain historical records. The current published October 5 edition has eight posts, not the seven-post revised table.
+Codex proposed these additional fixes:
+
+| Gap | Local correction | Reason |
+|---|---|---|
+| Missed-day run labels today's recent search with an old date | Use historical collection for past edition dates | The edition date must match the data window. |
+| Archive renderer returns approval-pending but the backfill still publishes | Stop the archive run with exit code 3 | A pending sample must not reach publication in that run. |
+| Feed attachments point to an unavailable GitHub Pages host | Use Vercel URLs for retained videos | The feed must link to the same playable media as the day page. |
+| All privacy and scaling features described as layer 2 | Add a classification reference | Protocol upgrades, extension blocks and payment channels differ. |
+| Broad STE100 compliance statement | State an inspired approach with compliance unverified | Clear prose alone does not demonstrate full rule and dictionary compliance. |
+
+Six local regression checks pass. These changes are prepared locally.
+KJ's acceptance, rejection or revision of these proposals is **pending**.

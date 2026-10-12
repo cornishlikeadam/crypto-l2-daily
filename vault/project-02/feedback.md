@@ -42,3 +42,14 @@ tags: [ai101, project-2, feedback]
 
 > [!tip] ➕ Add a peer card
 > Copy one card above. Fill in **Noticed first**, **Suggestion**, **About**, **My call** and **Why**.
+
+## Submission evidence still required
+
+The three cards above report earlier self-review. They are not peer critique or Class 8 observation cards.
+
+- Peer name, date and artifact reviewed: **not supplied**.
+- Peer observation and recommendation: **not supplied**.
+- Class 8 observation cards: **not supplied**.
+- KJ's response and reason: **not supplied**.
+
+Add the actual feedback and response. Do not rename self-review or this AI audit as peer feedback.

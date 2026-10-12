@@ -75,15 +75,15 @@ EXPLAIN = {
     ("Dogecoin", "Dogechain"): "Dogechain is a separate network that was built for Dogecoin apps.",
     ("Dogecoin", "Layer 2"): "A layer 2 is an extra layer built on top of Dogecoin so it can run apps.",
     ("Dogecoin", "Community"): "These are posts from people who use and talk about Dogecoin.",
-    ("Monero", "FCMP++"): "FCMP++ is Monero's next privacy upgrade: it hides your coin among every coin on the chain.",
-    ("Monero", "CARROT"): "CARROT is Monero's new address system that comes with the FCMP++ upgrade.",
+    ("Monero", "FCMP++"): "FCMP++ is a proposed Monero privacy upgrade under test. It is not a separate layer 2.",
+    ("Monero", "CARROT"): "CARROT is a proposed Monero addressing upgrade under test with FCMP++. It is not a layer 2.",
     ("Monero", "Hard fork"): "A hard fork is a planned upgrade that everyone running the network must install.",
     ("Monero", "Upgrade"): "An upgrade is new software that adds features or fixes problems.",
     ("Litecoin", "MWEB"): "MWEB is Litecoin's optional privacy feature that can hide how much you send.",
     ("Litecoin", "Lightning"): "Lightning also works on Litecoin, for fast and cheap small payments.",
     ("Litecoin", "Layer 2"): "A layer 2 is an extra layer built on top of Litecoin to make it faster or cheaper.",
 }
-QUIET_EXPLAIN = "We only show real posts. When nothing good was posted, we say so."
+QUIET_EXPLAIN = "No posts in this search passed our filters. Other news may exist."
 
 
 def explain_for(item: dict) -> str:

@@ -1,45 +1,45 @@
 ---
 number: 4
 group: "The 5 steps"
-short: "Step 2 · Check"
-question: "Step 2: How does the robot remove the junk?"
-hint: "There is a list of 'throw it out' rules. Dates are rule number 1."
-answer: "It removes posts from the wrong day, price guesses, ads, giveaways, tiny accounts and copies. Then it keeps up to 3 good posts for each coin."
+short: "Step 2 \u00b7 Check"
+question: "How does the automation select posts?"
+hint: "Read the input, procedure, check and failure action."
+answer: "Follow the numbered procedure. Check the output. Stop or record a defect if the check fails."
 cssclasses: [l2-daily]
-tags: [ai101, project-2, step]
+tags: [ai101, project-2, crypto-l2-daily]
 ---
 
-# 🧹 Step 2: Check the posts and remove the junk
+# Step 2: Check and select posts
 
-> [!info] ⏰ What starts this step
-> Step 1 finishes. It saves the raw posts.
+## Purpose
+Remove posts that fail the project's rules. Select a small, attributed sample.
 
-## 📥 What goes in
+## Before you start
+Step 1 must have saved a raw file with a time window. Read [[crypto-layer-2-reference]] for topic boundaries.
 
-`data/raw/YYYY-MM-DD.json` from Step 1.
+## Input
+`data/raw/YYYY-MM-DD.json`. Steps 1 and 2 run in the same collector program.
 
-## ⚙️ What this step does
+## Procedure
+1. Reject posts with no handle or no timestamp.
+2. Reject timestamps outside the saved 24-hour window.
+3. Apply the price, promotion, giveaway, rumor and government-DOGE filters.
+4. Reject accounts below 500 followers and posts below 5 likes.
+5. Reject disallowed coin tickers and promotion terms in the account bio.
+6. Rank surviving posts by the engagement score.
+7. Select up to three posts per coin, with one post per account.
+8. Remove repeated selected claim text within each coin.
+9. Trim extra posts to fit eight middle cards, including quiet cards.
+10. Save `data/YYYY-MM-DD.json` with the selected items and rejection counts.
 
-It **removes** every post that breaks a rule. Then it **picks up to 3** good posts for each coin.
+The score is likes + 2 × reposts + 2 × quotes + replies. It is a selection rule, not a truth test.
+A guest-chain card needs three distinct authors and at least 25% of the surviving posts for that coin.
 
-## 🔢 Directions for the robot
+## Check and output
+Each selected item has a coin, topic, quoted excerpt, handle, post URL and timestamp.
+Check the topic and source links before approving a sample. Continue to [[03-make-video]].
 
-1. 🚫 **Remove a post** if **one** of these is true:
-   - ⏰ It is from **outside the 24 hours**. (X sometimes sends old posts.)
-   - 📈 It **guesses a price**, like "to the moon," "price target" or "$1 billion."
-   - 🎁 It is a **giveaway**, a **rumor** or an **ad**.
-   - 🏷️ It **pushes a different coin** (an unknown `$TICKER`). Or the bio says "shill," "NFA" or "DYOR."
-   - 🏛️ It is about the **government "DOGE" office**, not Dogecoin.
-   - 👤 The account has **fewer than 500 followers**. Or the post has **fewer than 5 likes**.
-   - 👯 It is a **copy** of a post the robot already picked.
-2. ❤️ For each coin, keep the **most-liked posts**. Keep **1 post per account**. Keep **up to 3**.
-3. 😴 If a coin has nothing left, write **"Quiet today."** **Never** fill the gap.
-4. 💾 Save the result in `data/YYYY-MM-DD.json`. Save these fields: coin, claim, handle, why_this_account, post_url, date, other_chain_if_any.
-
-## ✅ What "good" looks like
-
-I open **any** `post_url`. I see **the same words** that are on the card.
-
-> [!tip] 🧑‍⚖️ Human check
-> I read the card list for the **first video**. I also read it for **every archive day** before it went live. See [[04-human-check]].
-> This check found posts from the **wrong day**, **fancy-font** posts and **copies**. Each problem became **a new rule** above.
+## If the step fails
+Stop if the saved window or required source fields are absent.
+If no posts pass for a coin, use a quiet card. This means no sampled posts passed, not that no news exists.
+Keyword matching can select unrelated content. The historical Lightning Lake card demonstrates this limit.

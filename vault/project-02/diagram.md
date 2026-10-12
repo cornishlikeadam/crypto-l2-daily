@@ -34,3 +34,9 @@ flowchart LR
 
 > [!tip] 🧩 Open the canvas
 > `process-map.canvas` shows the **same 5 steps** in the **same order**. Open it in Obsidian.
+
+## Approval interpretation
+
+Step 4 is an operator gate when `human_approval_default` is `true`.
+When the switch is `false`, standing approval permits the daily run to continue.
+The rejection arrow represents the operator's repair and rerun action, not an automatic retry loop.

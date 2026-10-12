@@ -53,3 +53,10 @@ tags: [ai101, project-2, crypto-l2-daily]
 
 > [!warning] 🔒 Privacy
 > Nothing private is in this folder. The X login codes stay in a hidden file on my Mac (`.env`). They are **never** written here.
+
+## October 11 audit additions
+
+- [[crypto-layer-2-reference]]: topic classification and source limits.
+- [[documentation-standard]]: procedure format and compliance status.
+- Submission copy: `submission/project-02/` in the project repository.
+- Intent authorship and genuine peer/Class 8 feedback remain incomplete.

@@ -1,0 +1,90 @@
+---
+number: "2026-10-10"
+group: "Archive"
+cssclasses: [l2-daily]
+tags: [crypto-l2-daily, archive]
+---
+
+# 📅 Saturday, October 10, 2026
+
+> [!abstract] 💵 Edition NO. CL2-20261010-06
+> This is **one day** of Crypto L2 Daily. It shows the **real posts** in that day's video.
+
+- 🎬 **Watch the video:** https://not2l8-l2-daily.vercel.app/days/2026-10-10/
+- 🧾 **Real posts used:** 6
+- 😴 **Quiet coins (no good posts):** Monero
+
+## 🃏 The cards
+
+### 01 · Bitcoin · Lightning
+
+- 💬 **What they said:** “Bitcoin deserves a new way to launch and swap assets.”
+- 👤 **Who said it:** @hoangconan. Bio: “🚀Sharing real stories, life perspectives & food. 💡 Vietnam • Life • Money • Food • Mindset 🤝 Let’s connect…” · 4,953 followers
+- 📅 **When:** Oct 10, 12:05 PM ET
+- 🤔 **What is this?** Lightning is a fast lane on top of Bitcoin for quick, cheap payments.
+- ❤️ **How many people liked it:** 9 likes · 0 reposts
+- 🔗 **See the real post:** https://x.com/hoangconan/status/2108951961290887495
+
+### 02 · Bitcoin · Lightning
+
+- 💬 **What they said:** “At Lightning Koffee we want that origin to be felt in every cup.”
+- 👤 **Who said it:** @josebitcoiner. Bio: “CEO at @LightningKoffee⚡️☕️ 💯% Colombian Specialty Coffee 🇨🇴 • Co-Founder of @BtcMedellinConf • Marketing…” · 7,301 followers
+- 📅 **When:** Oct 10, 4:28 PM ET
+- 🤔 **What is this?** Lightning is a fast lane on top of Bitcoin for quick, cheap payments.
+- ❤️ **How many people liked it:** 6 likes · 3 reposts
+- 🔗 **See the real post:** https://x.com/josebitcoiner/status/2109018161240531271
+
+### 03 · Bitcoin · Lightning
+
+- 💬 **What they said:** “Ben @arcbtc did it first with the Lightning slap.”
+- 👤 **Who said it:** @Vladcostea. Bio: “Bitcoin post-maximalist / Building Bitcoin Takeover Podcast since Jan 2019 / Self-hosted AI enthusiast /…” · 25,971 followers
+- 📅 **When:** Oct 9, 6:59 PM ET
+- 🤔 **What is this?** Lightning is a fast lane on top of Bitcoin for quick, cheap payments.
+- ❤️ **How many people liked it:** 7 likes · 1 reposts
+- 🔗 **See the real post:** https://x.com/Vladcostea/status/2108693835740328362
+
+### 04 · Dogecoin · Community
+
+- 💬 **What they said:** “This is the power of community.”
+- 👤 **Who said it:** @doginaldogs. Bio: “10,000 pixel dogs inscribed on $DOGE” · 26,132 followers
+- 📅 **When:** Oct 10, 3:31 PM ET
+- 🤔 **What is this?** These are posts from people who use and talk about Dogecoin.
+- ❤️ **How many people liked it:** 105 likes · 53 reposts
+- 🔗 **See the real post:** https://x.com/doginaldogs/status/2109003962158551351
+
+### 05 · Dogecoin · Community
+
+- 💬 **What they said:** “DOGEOS UPÐATE @MyDoge Version 3 Is Now Currently Live For Worldwide Usage!”
+- 👤 **Who said it:** @dogecoinsteve. Bio: “I Give News Updates On $DOGE And Post #DOGE Memes • Let's Just Be Happy And Have Fun • Introvert💛 • $DOGE…” · 813 followers
+- 📅 **When:** Oct 9, 7:26 PM ET
+- 🤔 **What is this?** These are posts from people who use and talk about Dogecoin.
+- ❤️ **How many people liked it:** 37 likes · 6 reposts
+- 🔗 **See the real post:** https://x.com/dogecoinsteve/status/2108700694509498795
+
+### 😴 Monero: quiet today
+
+No sampled posts passed the filters. Other news may exist.
+
+### 06 · Litecoin · MWEB
+
+- 💬 **What they said:** “Using and storing my Private Litecoin (MWEB) via @cakewallet's Cupcake feels like this shielded knight in medieval times.”
+- 👤 **Who said it:** @bogdanoffig. Bio: “decentralized, p2p, secure, scalable, fairly-launched digital cash purist. #PayWithLitecoin” · 1,664 followers
+- 📅 **When:** Oct 10, 11:07 AM ET
+- 🤔 **What is this?** MWEB is Litecoin's optional privacy feature that can hide how much you send.
+- ❤️ **How many people liked it:** 23 likes · 3 reposts
+- 🔗 **See the real post:** https://x.com/bogdanoffig/status/2108937433236553947
+
+## 🗑️ What the robot threw away
+
+The robot read more posts than it used. It left these out **on purpose**:
+
+- 43 posts almost nobody liked
+- 4 price guesses
+- 2 posts pushing other coins
+- 2 ad accounts
+- 2 posts from the wrong day
+- 1 coin-ticker spam
+- 1 very small accounts
+
+---
+⬅️ Back to [[archive/AI101_P2_Cornish_KJ_Archive_README.md|the archive list]] · 🗺️ [[AI101_P2_Cornish_KJ_README.md|the folder map]]

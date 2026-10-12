@@ -1,48 +1,41 @@
 ---
 number: 6
 group: "The 5 steps"
-short: "Step 4 · My check"
-question: "Step 4: What do I check before a video goes online?"
-hint: "Watch it, open the links, check the dates, look for hype."
-answer: "I watch the whole video. I open 2 post links and compare the words. I check every date. I check for price guesses, ads and made-up news. Then I approve it."
+short: "Step 4 \u00b7 My check"
+question: "What does the human approve?"
+hint: "Read the input, procedure, check and failure action."
+answer: "Follow the numbered procedure. Check the output. Stop or record a defect if the check fails."
 cssclasses: [l2-daily]
-tags: [ai101, project-2, step, human-check]
+tags: [ai101, project-2, crypto-l2-daily]
 ---
 
-# 🧑‍⚖️ Step 4: Human check (me)
+# Step 4: Review the sample
 
-> [!info] ⏰ What starts this step
-> The **first video** is ready (October 5, 2026). Or a **new archive day** is ready.
+## Purpose
+The operator decides whether the sample is acceptable and whether automatic publication may continue.
 
-## 📥 What goes in
+## Before you start
+Step 3 must have finished. Open the video, selected items and the saved window.
 
-The **video** and the **card list**.
+## Procedure
+1. Watch the complete video.
+2. Open at least two source links.
+3. Compare each sampled card with its original post.
+4. Check every selected timestamp against the edition window.
+5. Check topic relevance and the layer 2 classifications.
+6. Check for price predictions, promotions and unsupported event claims.
+7. Record keep, change or reject, with a reason.
+8. If the sample passes, use `scripts/approve_sample.sh YYYY-MM-DD`.
 
-## ⚙️ What this step does
+Use the date of the sample being reviewed. Do not approve a sample you have not checked.
+The approval script changes `human_approval_default` to `false` and publishes the built site.
 
-**I decide** if the video can go on the website.
+## Current approval state
+`config/pipeline.json` records first-sample approval on October 5, 2026.
+The switch is currently `false`. Later daily editions run under standing approval.
+The code does not enforce a separate human review for every archive day in this mode.
+Earlier notes report manual archive review; that report is not a per-edition approval receipt.
 
-## 🔢 Directions for me
-
-1. 👀 Watch **the whole video**.
-2. 🔗 Open **at least 2** post links. Check that the words **match the card**.
-3. 📅 Check that **every date** is inside the right 24 hours.
-4. 🚫 Check that **nothing** is a price guess, an ad, or made up.
-5. ✅ If it is good, run this command:
-   `/bin/bash ~/crypto-l2-daily/scripts/approve_sample.sh 2026-10-05`
-
-## ✅ What "good" looks like
-
-Every card **passes checks 2, 3 and 4**.
-
-> [!important] ⭐ This whole step is the check
-> Until I approved, the robot **could not publish**.
-> On **October 5, 2026**, I approved the first video. After that, the robot **publishes by itself** every day. (`human_approval_default` changed to `false`.)
-
-## 🕵️ What this check found
-
-| 🐞 Problem | 🔧 Fix |
-|---|---|
-| A Monero post from **October 5** showed up on the July, August and September archive days. | A **strict date rule**. |
-| A post about the **government "DOGE" office** counted as Dogecoin. | A **new rule**. |
-| **Price talk** ("$CATE will go to a billion") and **ad accounts**. | **New rules**. |
+## If the sample fails
+Record the defect. Return to Step 2 for source problems or Step 3 for presentation problems.
+Repeat the checks after the correction. Do not record acceptance on the operator's behalf.

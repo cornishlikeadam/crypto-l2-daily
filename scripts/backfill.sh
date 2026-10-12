@@ -12,6 +12,12 @@ for DAY in "$@"; do
   "$PY" scripts/render.py --date "$DAY"; rc=$?
   if [ $rc -ne 0 ] && [ $rc -ne 3 ]; then log "render failed for $DAY"; continue; fi
   "$PY" scripts/build_site.py --date "$DAY" || { log "site build failed for $DAY"; continue; }
+  if [ $rc -eq 3 ]; then
+    log "archive sample $DAY is waiting for a human; not included in publish"
+    log "approve with: /bin/bash $ROOT/scripts/approve_sample.sh $DAY"
+    # publish() uploads the entire site. Stop so a later day cannot publish this pending sample.
+    exit 3
+  fi
   ok+=("$DAY")
   sleep 20
 done

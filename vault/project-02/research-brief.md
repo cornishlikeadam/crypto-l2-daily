@@ -2,43 +2,53 @@
 number: 10
 group: "Proof"
 short: "Research"
-question: "Which 2 facts does the robot depend on, and are they true?"
-hint: "One fact is about money. One fact is about a broken tool."
-answer: "Fact 1: X's official API is not free ($0.005 per post). Fact 2: the normal free scraper (twikit) is broken, so the robot uses a fixed copy that I checked."
+question: "Can this workflow produce a sourced crypto digest?"
+hint: "Separate collection cost, software reliability and evidence quality."
+answer: "It can produce an attributed sample with no API charge on the cookie route. Source attribution does not prove every event claim."
 cssclasses: [l2-daily]
-tags: [ai101, project-2, research]
+tags: [ai101, project-2, crypto-l2-daily]
 ---
 
-# 🔬 research-brief.md
+# Research brief: a sourced crypto digest
 
-## ❓ Research question
+## Question
+Can a scheduled workflow collect X posts and make a short, attributed crypto video without fabricating missing items?
 
-Can a **free** robot read X every day? Can it make an **honest** crypto news video with **no made-up posts**?
+## Finding
+Local runs demonstrate collection, filtering, rendering and publication.
+The cookie route avoids X API read charges. It depends on a working session and scraper.
+The output is a filtered sample, not a complete or independently verified news service.
 
-## ✅ Short answer
+## Claim 1: collection can use a free official API
+The current [X pricing documentation](https://docs.x.com/x-api/getting-started/pricing) lists $0.005 per ordinary post read.
+It also describes conditional credit incentives. This does not establish unlimited free collection.
+At 100 distinct ordinary post reads, the post-read charge would be $0.50 before other charges or credits.
+The older 400-post/$2 estimate describes a larger request volume, not the current default.
+The precise February 6 free-tier-end date has not been established from this primary page.
 
-> [!success] 💡 Yes, with 3 conditions
-> 1. 💸 **Not with X's official tool.** It costs money now: **$0.005 for each post**. The free plan ended on **February 6, 2026**.
-> 2. 🛠️ **Use the free scraper "twikit."** It logs in like a person. The normal download is **broken** since **March 18, 2026**. The robot uses a **fixed copy**. I checked it line by line.
-> 3. 📅 **Check every date.** X search can give posts from the **wrong day**. So the robot checks each date itself.
+**Workflow decision:** use the configured cookie route and record the source method. Do not call the service free forever.
 
-## 1️⃣ Claim 1: The official X API is not free
+## Claim 2: a scraper will keep working after installation
+[twikit issue 408](https://github.com/d60/twikit/issues/408) documents a March 18 transaction-code failure.
+Local logs also show scraper failures and later successful runs. A historical bug does not prove every current release is broken.
+The installed patched environment must be checked on its own merits.
 
-- 💬 **The claim I checked:** You can read X posts for free with X's official API.
-- 📄 **What the source says:** OpenTweet (updated July 2026): "On February 6, 2026, X made pay-per-use the default pricing model for its API and discontinued the free tier for new developer signups." Reading a post costs "$0.005 per post returned."
-- 🔧 **The corrected claim:** The official X API costs **$0.005 per post**. New users get **no free plan**.
-- 🎯 **Why it matters:** My first plan used the official API. At 400 posts a day, that is **$2.00 a day**. Also, X did not let me buy credits.
-- 📏 **The rule it supports:** The robot uses the **free route** (login codes + twikit). See [[01-collect-posts]].
+**Workflow decision:** stop on collection failure. Preserve the error and repair the environment before retrying.
 
-## 2️⃣ Claim 2: The free scraper works right away
+## Claim 3: every covered feature is a layer 2
+This claim is too broad. See [[crypto-layer-2-reference]].
+Lightning channels and Ark off-chain payments differ from Monero protocol upgrades and Litecoin extension blocks.
+The Monero release establishes beta-test software and a scheduled October 5 stressnet fork, not mainnet activation.
 
-- 💬 **The claim I checked:** You can install twikit, and it works.
-- 📄 **What the source says:** GitHub issue #408 (March 18, 2026): "Twitter changed their ondemand.s.js structure so the regex in transaction.py no longer matches." My Mac showed the same error.
-- 🔧 **The corrected claim:** The normal twikit download is **broken**. A **fixed copy works**. Before I installed it, I checked that it talks **only to X's own servers**.
-- 🎯 **Why it matters:** Without the fix, step 1 fails **every day**. Then no video gets made. X changes its site every few weeks. So this can **break again**.
-- 📏 **The rule it supports:** If collecting fails, the robot **stops**. It publishes **nothing**. A broken day never becomes a wrong video. See [[01-collect-posts]].
+**Workflow decision:** record each topic's mechanism and release status. Do not turn testnet posts into mainnet news.
 
----
+## Claim revised or dropped
+**Dropped:** a search date filter guarantees the returned posts have the requested dates.
+**Replacement:** check each post timestamp against the saved UTC window.
+**Revised:** a quiet card proves the coin had no news.
+**Replacement:** no posts in the queried sample passed the selection rules.
 
-> [!important] ⭐ The check I protect because of this research
-> The robot **checks every post's date itself**. It **never** trusts X's date filter alone. See [[02-check-posts]].
+## Limits
+Likes and followers are selection thresholds, not accuracy measurements.
+Keyword matches can include irrelevant content. The system does not verify every event with its original developer source.
+Prior first/revised-run notes are retrospective records. Preserve them without claiming they are identical to the current published edition.

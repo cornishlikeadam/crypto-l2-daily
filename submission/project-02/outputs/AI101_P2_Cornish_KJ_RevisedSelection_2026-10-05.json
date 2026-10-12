@@ -1,0 +1,186 @@
+{
+  "date": "2026-10-05",
+  "window_start": "2026-10-04T19:50:58.402003+00:00",
+  "window_end": "2026-10-05T19:50:58.402003+00:00",
+  "source": "X search (twikit, session cookies)",
+  "queries": {
+    "Bitcoin": "(Bitcoin OR BTC) (Lightning OR Ark OR \"layer 2\" OR L2) -filter:replies -filter:retweets -filter:nativeretweets lang:en since_time:1791143458 until_time:1791229858",
+    "Dogecoin": "(Dogecoin OR DOGE) (\"layer 2\" OR L2 OR Dogechain OR community) -filter:replies -filter:retweets -filter:nativeretweets lang:en since_time:1791143458 until_time:1791229858",
+    "Monero": "(Monero OR XMR) (FCMP OR CARROT OR hardfork OR upgrade) -filter:replies -filter:retweets -filter:nativeretweets lang:en since_time:1791143458 until_time:1791229858",
+    "Litecoin": "(Litecoin OR LTC) (Lightning OR MWEB OR \"layer 2\") -filter:replies -filter:retweets -filter:nativeretweets lang:en since_time:1791143458 until_time:1791229858"
+  },
+  "items": [
+    {
+      "coin": "Bitcoin",
+      "topic": "Lightning",
+      "claim": "Alyssa has spent nearly a decade building Lightning from the inside.",
+      "handle": "@utexocom",
+      "display_name": "Utexo",
+      "why_this_account": "Bio: “Instant, private USDT payments on Bitcoin. Move stablecoins the way you move money.” · 10,935 followers",
+      "post_url": "https://x.com/utexocom/status/2107100289983807814",
+      "date": "2026-10-05T13:27:11Z",
+      "date_et": "Oct 5, 9:27 AM ET",
+      "engagement": 549,
+      "likes": 198,
+      "reposts": 99,
+      "replies": 109,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Bitcoin",
+      "topic": "Lightning",
+      "claim": "Utexo is backing the builders building on Bitcoin!!",
+      "handle": "@Durjoy___das",
+      "display_name": "—͟͞͞Durjoy!! ᥫ᭡",
+      "why_this_account": "Bio: “Creator • Researcher” · 6,904 followers",
+      "post_url": "https://x.com/Durjoy___das/status/2107083190431281283",
+      "date": "2026-10-05T12:19:14Z",
+      "date_et": "Oct 5, 8:19 AM ET",
+      "engagement": 55,
+      "likes": 30,
+      "reposts": 0,
+      "replies": 25,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Bitcoin",
+      "topic": "Lightning",
+      "claim": "Day 2 of fishing and recreation was electric Lightning Lake.",
+      "handle": "@BitcoinatBlock",
+      "display_name": "Bitcoin at Block",
+      "why_this_account": "Bio: “Making bitcoin everyday money across @blocks @cashapp @square @bitkey @protomining @spiral_xyz” · 29,150 followers",
+      "post_url": "https://x.com/BitcoinatBlock/status/2107156465110909109",
+      "date": "2026-10-05T17:10:25Z",
+      "date_et": "Oct 5, 1:10 PM ET",
+      "engagement": 31,
+      "likes": 18,
+      "reposts": 4,
+      "replies": 3,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Dogecoin",
+      "topic": null,
+      "claim": "Quiet today.",
+      "handle": null,
+      "display_name": null,
+      "why_this_account": null,
+      "post_url": null,
+      "date": null,
+      "date_et": null,
+      "engagement": 0,
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "other_chain_if_any": null,
+      "quiet": true
+    },
+    {
+      "coin": "Monero",
+      "topic": "FCMP++",
+      "claim": "The third version of beta stressnet for Full-Chain Membership Proofs (FCMP++) and CARROT is live!",
+      "handle": "@monero",
+      "display_name": "Monero (XMR)",
+      "why_this_account": "Bio: “Monero (XMR) - The secure, private, untraceable cryptocurrency that keeps your money confidential.…” · 532,048 followers",
+      "post_url": "https://x.com/monero/status/2107181059859448004",
+      "date": "2026-10-05T18:48:08Z",
+      "date_et": "Oct 5, 2:48 PM ET",
+      "engagement": 169,
+      "likes": 119,
+      "reposts": 19,
+      "replies": 10,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Monero",
+      "topic": "FCMP++",
+      "claim": "For everyone who keeps asking why I am adding @Zcash but not @monero to my Tools directory - here is my response.",
+      "handle": "@iAnonymous3000",
+      "display_name": "Sooraj",
+      "why_this_account": "Bio: “DOGE for privacy. @Brave | priv/acc 🚀 views ≠ employer's.” · 15,298 followers",
+      "post_url": "https://x.com/iAnonymous3000/status/2107136094118769014",
+      "date": "2026-10-05T15:49:28Z",
+      "date_et": "Oct 5, 11:49 AM ET",
+      "engagement": 138,
+      "likes": 80,
+      "reposts": 15,
+      "replies": 20,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Monero",
+      "topic": "FCMP++",
+      "claim": "Moneros FCMP++ stressnet goes live TOMORROW!",
+      "handle": "@exitnode_",
+      "display_name": "Exitnode_",
+      "why_this_account": "Bio: “...Follow the white rabbit...Time is running out...” · 2,370 followers",
+      "post_url": "https://x.com/exitnode_/status/2106878866505773228",
+      "date": "2026-10-04T22:47:20Z",
+      "date_et": "Oct 4, 6:47 PM ET",
+      "engagement": 123,
+      "likes": 84,
+      "reposts": 13,
+      "replies": 9,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Litecoin",
+      "topic": "MWEB",
+      "claim": "$LTC MWEB Daily Flow At close: Sun, 4 Oct 2026 Pool: 459,146.34 LTC (0.6% of supply) ↑ Peg-ins: +25,883.23 LTC ↓ Peg-outs…",
+      "handle": "@LitecoinTracker",
+      "display_name": "Litecoin Tracker",
+      "why_this_account": "Bio: “Tracking key Litecoin statistics and metrics such as ETF flows and MWEB adoption.” · 604 followers",
+      "post_url": "https://x.com/LitecoinTracker/status/2107079619740327966",
+      "date": "2026-10-05T12:05:03Z",
+      "date_et": "Oct 5, 8:05 AM ET",
+      "engagement": 14,
+      "likes": 13,
+      "reposts": 0,
+      "replies": 1,
+      "other_chain_if_any": null,
+      "quiet": false
+    }
+  ],
+  "stats": {
+    "dropped": {
+      "Bitcoin": {
+        "under_5_likes": 14,
+        "promo_account": 2,
+        "low_follower_account": 1,
+        "too_short": 1,
+        "price_call": 1
+      },
+      "Dogecoin": {
+        "under_5_likes": 20,
+        "other_token_shill": 1,
+        "low_follower_account": 2,
+        "promo_account": 2
+      },
+      "Monero": {
+        "low_follower_account": 5,
+        "under_5_likes": 7,
+        "cashtag_spam": 1,
+        "other_token_shill": 1,
+        "price_call": 1
+      },
+      "Litecoin": {
+        "under_5_likes": 5,
+        "low_follower_account": 1,
+        "too_short": 1
+      }
+    },
+    "kept": {
+      "Bitcoin": 6,
+      "Dogecoin": 0,
+      "Monero": 3,
+      "Litecoin": 2
+    },
+    "other_chains": {}
+  }
+}

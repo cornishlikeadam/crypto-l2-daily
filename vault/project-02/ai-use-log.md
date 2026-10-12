@@ -4,7 +4,7 @@ group: "Proof"
 short: "AI use log"
 question: "When did the AI work, and what did I keep, change or reject?"
 hint: "Each row is one run. Look at the last column."
-answer: "The log has 15 runs, in order. For each run, I wrote what I asked, what the AI made, and my decision: keep, change or reject, with a reason."
+answer: "The log preserves 15 historical entries and adds the October 11 Codex audit. KJ's decision on this audit is pending."
 cssclasses: [l2-daily]
 tags: [ai101, project-2, ai-log]
 ---
@@ -31,3 +31,14 @@ tags: [ai101, project-2, ai-log]
 | 13 | Oct 5 | Add more than a quote to each slide. | A "What is this?" line, the source link and the like count. | ✅ **Keep.** |
 | 14 | Oct 5 | Build this Obsidian vault. | This folder. | ✅ **Keep.** I must rewrite [[intent]] in my own words. |
 | 15 | Oct 6 | Redesign the site and video. Put this vault on the site. Rewrite the notes in short, simple sentences. | The Black Platinum site, the course hub, the intro guide and these notes. | ✅ **Keep.** The old site address was blocked by Vercel. The site moved to **not2l8-l2-daily.vercel.app**. |
+
+## Entry 16 — October 11, 2026: deliverable and operating review
+
+- Tool: Codex desktop; model identifier not independently recorded.
+- Context: the user's screenshot, local Crypto L2 Daily project, source notes, code, logs, repository metadata and live site.
+- User request: check the Project 2 format, Crypto Layer 2 detail, site features and aviation-manual writing approach.
+- AI actions: audited requirements; added scope/standard notes; clarified historical outputs and source limits; fixed local automation/feed defects; packaged named files.
+- Evidence: source-verification-log revision, test results, live-site check and submission manifest.
+- AI recommendation: keep the procedural structure; replace overbroad claims; preserve missing human evidence as pending.
+- Human keep/change/reject decision: **pending KJ's review**. No student decision was fabricated.
+- Publication: these session changes were prepared locally; publication status is stated in the accompanying audit report.

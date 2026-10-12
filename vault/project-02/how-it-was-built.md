@@ -43,7 +43,7 @@ tags: [ai101, project-2, build]
 ## 3️⃣ The writing rules (ASD-STE100)
 
 > [!tip] ✍️ Simple Technical English
-> All notes and site text follow **ASD-STE100** ideas. An **8-year-old** must be able to read them.
+> The notes use an **ASD-STE100-inspired** approach. This is not a formal compliance claim. See [[documentation-standard]].
 > 1. Write **short sentences**. Use **20 words or fewer** for an instruction.
 > 2. Write **one instruction** in each sentence.
 > 3. Use the **active voice**. Example: "The robot removes the post."
