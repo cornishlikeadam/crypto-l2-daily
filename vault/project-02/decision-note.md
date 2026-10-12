@@ -61,7 +61,7 @@ My intent says: the AI must **not** decide what counts as news. **Price hype** a
 > [!important] ⭐ My rule
 > **Never trust a website's date filter. Check every item's own date before you use it.**
 
-## October 11 audit: proposed corrections for KJ to review
+## October 11 audit: 
 
 The prior first/revised tables remain historical records. The current published October 5 edition has eight posts, not the seven-post revised table.
 Codex proposed these additional fixes:
