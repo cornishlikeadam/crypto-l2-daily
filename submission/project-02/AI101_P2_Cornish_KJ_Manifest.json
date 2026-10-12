@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-11T22:22:35.027127-04:00",
+  "generated_at": "2026-10-11T22:22:59.735804-04:00",
   "project": "Crypto L2 Daily",
   "status": "human_completion_required",
   "logical_file_map": {
@@ -79,11 +79,6 @@
       "path": "AI101_P2_Cornish_KJ_05-publish.md",
       "bytes": 1979,
       "sha256": "300dbd73111b8274266c4f8eadc85b8187ca02f00882dba3fbb0efdb4033f61f"
-    },
-    {
-      "path": "AI101_P2_Cornish_KJ_Manifest.json",
-      "bytes": 10538,
-      "sha256": "2fe1680f2a3a8b7c9d42944a95526f60f8bf07c475469fac68dd31a4ba4f59ac"
     },
     {
       "path": "AI101_P2_Cornish_KJ_README.md",
@@ -227,8 +222,8 @@
     },
     {
       "path": "outputs/AI101_P2_Cornish_KJ_DatedCommitHistory.md",
-      "bytes": 2583,
-      "sha256": "0d16a25e93c025108eb84b664eace821a90f5b3d88004c982da4c10cfe3ffc5d"
+      "bytes": 2700,
+      "sha256": "62ef4aa72632306cdfd0871ba063438bc53f8da5f510aa63c28b98cbdfa9cadb"
     },
     {
       "path": "outputs/AI101_P2_Cornish_KJ_EvidenceLimits.md",

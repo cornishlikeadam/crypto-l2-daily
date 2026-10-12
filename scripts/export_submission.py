@@ -127,6 +127,8 @@ Existing dated commits are preserved. The export does not fabricate earlier save
                 'files':[]}
     for path in sorted(out.rglob('*')):
         if path.is_file():
+            # A manifest cannot hash itself. Exclude the previous manifest when re-exporting.
+            if path.name == PREFIX + 'Manifest.json':continue
             if not path.name.startswith(PREFIX):raise ValueError('Unnamed submission file: '+str(path))
             manifest['files'].append({'path':path.relative_to(out).as_posix(),'bytes':path.stat().st_size,
                                       'sha256':hashlib.sha256(path.read_bytes()).hexdigest()})

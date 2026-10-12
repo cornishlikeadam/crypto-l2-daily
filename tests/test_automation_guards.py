@@ -1,5 +1,6 @@
 """Regression checks run with fake collectors/renderers; never collect or deploy."""
 import importlib.util
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -15,6 +16,18 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class AutomationGuards(unittest.TestCase):
+    def test_export_can_be_repeated_with_valid_hashes(self):
+        sys.path.insert(0, str(ROOT / 'scripts'))
+        import export_submission
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp) / 'project-02'
+            export_submission.export(out)
+            export_submission.export(out)
+            manifest = json.loads((out / (export_submission.PREFIX + 'Manifest.json')).read_text())
+            for entry in manifest['files']:
+                self.assertEqual(entry['sha256'], hashlib.sha256((out / entry['path']).read_bytes()).hexdigest())
+                self.assertNotEqual(Path(entry['path']).name, export_submission.PREFIX + 'Manifest.json')
+
     def run_fixture(self, script, day, render_rc=0):
         with tempfile.TemporaryDirectory() as tmp:
             base = Path(tmp)
