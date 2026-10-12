@@ -1,47 +1,46 @@
 {
   "version": 1,
-  "generated_at": "2026-10-12T02:22:34+00:00",
-  "edition": "2026-10-11",
-  "edition_label": "Sunday, October 11, 2026",
-  "edition_short": "Oct 11",
-  "url": "https://not2l8-l2-daily.vercel.app/days/2026-10-11/",
-  "poster": "https://not2l8-l2-daily.vercel.app/days/2026-10-11/poster.jpg",
-  "item_count": 3,
+  "generated_at": "2026-10-12T22:08:51+00:00",
+  "edition": "2026-10-12",
+  "edition_label": "Monday, October 12, 2026",
+  "edition_short": "Oct 12",
+  "url": "https://not2l8-l2-daily.vercel.app/days/2026-10-12/",
+  "poster": "https://not2l8-l2-daily.vercel.app/days/2026-10-12/poster.jpg",
+  "item_count": 4,
   "coins": [
+    "BTC L2",
+    "DOGE",
+    "XMR",
     "LTC"
   ],
-  "quiet": [
-    "Bitcoin",
-    "Dogecoin",
-    "Monero"
-  ],
+  "quiet": [],
   "headlines": [
     {
-      "coin": "Litecoin",
-      "tag": "LTC",
-      "title": "Litecoin · MWEB",
-      "sentence": "Litecoin has been around since 2011, which is basically ancient history in crypto at this point And now, Litecoin Foundation working with…",
-      "handle": "@kisc_0",
-      "post_url": "https://x.com/kisc_0/status/2109148827487736133",
-      "likes": 331
+      "coin": "Monero",
+      "tag": "XMR",
+      "title": "Monero · FCMP++",
+      "sentence": "\"Ledger hacker used zcash and was traced\" → this is an obvious oversimplification of what happened traceability here is a skill issue…",
+      "handle": "@vinibarbosabr",
+      "post_url": "https://x.com/vinibarbosabr/status/2109625255962476838",
+      "likes": 89
     },
     {
-      "coin": "Litecoin",
-      "tag": "LTC",
-      "title": "Litecoin · MWEB",
-      "sentence": "Litecoin's MWEB – #MWEB keeps your transaction amounts and addresses private, leaving no trace on the public ledger.",
-      "handle": "@LTCFoundation",
-      "post_url": "https://x.com/LTCFoundation/status/2109282883273699475",
-      "likes": 82
+      "coin": "Dogecoin",
+      "tag": "DOGE",
+      "title": "Dogecoin · Community",
+      "sentence": "21 DAYS TO DOGE DAY AFRICA The countdown starts NOW!",
+      "handle": "@DogeAfrica_",
+      "post_url": "https://x.com/DogeAfrica_/status/2109571748450779469",
+      "likes": 24
     },
     {
-      "coin": "Litecoin",
-      "tag": "LTC",
-      "title": "Litecoin · MWEB",
-      "sentence": "We also talked about two important privacy technologies: @firoorg ’s Lelantus Spark and @litecoin ’s MWEB.",
-      "handle": "@mercianoalia",
-      "post_url": "https://x.com/mercianoalia/status/2109055045962481937",
-      "likes": 12
+      "coin": "Bitcoin",
+      "tag": "BTC L2",
+      "title": "Bitcoin · Lightning",
+      "sentence": "USDT is coming home to Bitcoin this month.",
+      "handle": "@IJspI",
+      "post_url": "https://x.com/IJspI/status/2109640584532996103",
+      "likes": 9
     }
   ],
   "fees": {
@@ -50,7 +49,7 @@
     "hour": 1,
     "economy": 1,
     "source": "mempool.space",
-    "as_of": "2026-10-12T02:22:34+00:00"
+    "as_of": "2026-10-12T22:08:51+00:00"
   },
   "links": {
     "site": "https://not2l8-l2-daily.vercel.app/",
