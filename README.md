@@ -12,10 +12,12 @@
   <img alt="Length" src="https://img.shields.io/badge/🎬_VIDEO-70_seconds-F3D77A?style=flat-square&labelColor=0A0A0B">
   <img alt="Readers" src="https://img.shields.io/badge/👀_READ_LEVEL-ages_8+-A7E8FF?style=flat-square&labelColor=0A0A0B">
   <img alt="Writing" src="https://img.shields.io/badge/✍️_WRITING-ASD--STE100-C9B6FF?style=flat-square&labelColor=0A0A0B">
-  <img alt="Built with" src="https://img.shields.io/badge/🤖_BUILT_WITH-Claude_Code-FFD1EC?style=flat-square&labelColor=0A0A0B">
+  <img alt="Contributor: Kendren" src="https://img.shields.io/badge/CONTRIBUTOR-Kendren-D4AF37?style=flat-square&labelColor=0A0A0B">
 </p>
 
 # 💵 Crypto L2 Daily
+
+**Contributor: Kendren** ([cornishlikeadam](https://github.com/cornishlikeadam)).
 
 > [!IMPORTANT]
 > ⭐ **The one rule:** every card is a **real post** from X. It shows **who** posted, **when**, and a **link**. The robot **never makes up news**.
