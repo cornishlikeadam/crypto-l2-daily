@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "generated_at": "2026-10-12T22:08:51+00:00",
-  "edition": "2026-10-12",
-  "edition_label": "Monday, October 12, 2026",
-  "edition_short": "Oct 12",
-  "url": "https://not2l8-l2-daily.vercel.app/days/2026-10-12/",
-  "poster": "https://not2l8-l2-daily.vercel.app/days/2026-10-12/poster.jpg",
-  "item_count": 4,
+  "generated_at": "2026-10-15T22:08:10+00:00",
+  "edition": "2026-10-15",
+  "edition_label": "Thursday, October 15, 2026",
+  "edition_short": "Oct 15",
+  "url": "https://not2l8-l2-daily.vercel.app/days/2026-10-15/",
+  "poster": "https://not2l8-l2-daily.vercel.app/days/2026-10-15/poster.jpg",
+  "item_count": 8,
   "coins": [
     "BTC L2",
     "DOGE",
@@ -16,40 +16,40 @@
   "quiet": [],
   "headlines": [
     {
-      "coin": "Monero",
-      "tag": "XMR",
-      "title": "Monero · FCMP++",
-      "sentence": "\"Ledger hacker used zcash and was traced\" → this is an obvious oversimplification of what happened traceability here is a skill issue…",
-      "handle": "@vinibarbosabr",
-      "post_url": "https://x.com/vinibarbosabr/status/2109625255962476838",
-      "likes": 89
-    },
-    {
-      "coin": "Dogecoin",
-      "tag": "DOGE",
-      "title": "Dogecoin · Community",
-      "sentence": "21 DAYS TO DOGE DAY AFRICA The countdown starts NOW!",
-      "handle": "@DogeAfrica_",
-      "post_url": "https://x.com/DogeAfrica_/status/2109571748450779469",
-      "likes": 24
-    },
-    {
       "coin": "Bitcoin",
       "tag": "BTC L2",
       "title": "Bitcoin · Lightning",
-      "sentence": "USDT is coming home to Bitcoin this month.",
-      "handle": "@IJspI",
-      "post_url": "https://x.com/IJspI/status/2109640584532996103",
-      "likes": 9
+      "sentence": "Introducing LayerTree, a non-custodial scaling solution on bitcoin that connects to Lightning.",
+      "handle": "@lightning",
+      "post_url": "https://x.com/lightning/status/2110812651882217677",
+      "likes": 154
+    },
+    {
+      "coin": "Monero",
+      "tag": "XMR",
+      "title": "Monero · FCMP++",
+      "sentence": "The Monero Research Lab has provided an update on the third version of beta stressnet for Full-Chain Membership Proofs (FCMP++) and CARROT!",
+      "handle": "@monero",
+      "post_url": "https://x.com/monero/status/2110804937479217452",
+      "likes": 121
+    },
+    {
+      "coin": "Litecoin",
+      "tag": "LTC",
+      "title": "Litecoin · MWEB",
+      "sentence": "Big move: @Litecoin Foundation x @Americanfort_io They're launching a privacy-default Litecoin wallet powered by AmericanFortress: Stake litecoin:native + L2 solutions MWEB privacy…",
+      "handle": "@kaixweb3",
+      "post_url": "https://x.com/kaixweb3/status/2110630251755675688",
+      "likes": 25
     }
   ],
   "fees": {
-    "fastest": 1,
+    "fastest": 2,
     "half_hour": 1,
     "hour": 1,
     "economy": 1,
     "source": "mempool.space",
-    "as_of": "2026-10-12T22:08:51+00:00"
+    "as_of": "2026-10-15T22:08:10+00:00"
   },
   "links": {
     "site": "https://not2l8-l2-daily.vercel.app/",
