@@ -1,0 +1,186 @@
+{
+  "date": "2026-10-15",
+  "window_start": "2026-10-14T21:59:35.455543+00:00",
+  "window_end": "2026-10-15T21:59:35.455543+00:00",
+  "source": "X search (twikit, session cookies)",
+  "queries": {
+    "Bitcoin": "(Bitcoin OR BTC) (Lightning OR Ark OR \"layer 2\" OR L2) -filter:replies -filter:retweets -filter:nativeretweets lang:en since:2026-10-14 until:2026-10-16 since_time:1792015175 until_time:1792101575",
+    "Dogecoin": "(Dogecoin OR DOGE) (\"layer 2\" OR L2 OR Dogechain OR community) -filter:replies -filter:retweets -filter:nativeretweets lang:en since:2026-10-14 until:2026-10-16 since_time:1792015175 until_time:1792101575",
+    "Monero": "(Monero OR XMR) (FCMP OR CARROT OR hardfork OR upgrade) -filter:replies -filter:retweets -filter:nativeretweets lang:en since:2026-10-14 until:2026-10-16 since_time:1792015175 until_time:1792101575",
+    "Litecoin": "(Litecoin OR LTC) (Lightning OR MWEB OR \"layer 2\") -filter:replies -filter:retweets -filter:nativeretweets lang:en since:2026-10-14 until:2026-10-16 since_time:1792015175 until_time:1792101575"
+  },
+  "items": [
+    {
+      "coin": "Bitcoin",
+      "topic": "Lightning",
+      "claim": "Introducing LayerTree, a non-custodial scaling solution on bitcoin that connects to Lightning.",
+      "handle": "@lightning",
+      "display_name": "Lightning Labs⚡️🌐",
+      "why_this_account": "Bio: “Lightning scales and speeds up #bitcoin. We build lnd, taproot assets, lightning loop.⚡️ Support:…” · 159,973 followers",
+      "post_url": "https://x.com/lightning/status/2110812651882217677",
+      "date": "2026-10-15T19:18:47Z",
+      "date_et": "Oct 15, 3:18 PM ET",
+      "engagement": 265,
+      "likes": 154,
+      "reposts": 41,
+      "replies": 11,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Bitcoin",
+      "topic": "Lightning",
+      "claim": "Kilowallet: a self-custodial Android/GrapheneOS wallet for Bitcoin.",
+      "handle": "@Kilombino_",
+      "display_name": "ꓘɨℓσꬺƄℓɑꓘҽ2ƄꓘɳσŦƨ \\\\ BTC = XBT",
+      "why_this_account": "Bio: “Bitcoin without Core since block #961,632 𓅦…” · 945 followers",
+      "post_url": "https://x.com/Kilombino_/status/2110739563614257192",
+      "date": "2026-10-15T14:28:22Z",
+      "date_et": "Oct 15, 10:28 AM ET",
+      "engagement": 42,
+      "likes": 27,
+      "reposts": 5,
+      "replies": 3,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Bitcoin",
+      "topic": "Lightning",
+      "claim": "Roblosats is here: RoboSats for Bitcoin on the BLAKE2b chain Buy and sell BTC (BLAKE2b) for euros, dollars, or any currency, peer…",
+      "handle": "@MarcanoFilms",
+      "display_name": "Luis Marcano 🦉 Bitcoin",
+      "why_this_account": "Bio: “Found #962348 RUG THE SPAMMERS, FIRE THE MINERS, SLAY YOUR HEROES! Bitcoin Knots. • 🎖️BIP-110🎖️ 👈🏽…” · 1,343 followers",
+      "post_url": "https://x.com/MarcanoFilms/status/2110755627022622728",
+      "date": "2026-10-15T15:32:12Z",
+      "date_et": "Oct 15, 11:32 AM ET",
+      "engagement": 42,
+      "likes": 21,
+      "reposts": 9,
+      "replies": 1,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Dogecoin",
+      "topic": "Community",
+      "claim": "Attention to the Dogecoin community.",
+      "handle": "@_dogegod_",
+      "display_name": "dogegod",
+      "why_this_account": "Bio: “All the #Doge news you need. Tg:” · 65,622 followers",
+      "post_url": "https://x.com/_dogegod_/status/2110834809903976617",
+      "date": "2026-10-15T20:46:50Z",
+      "date_et": "Oct 15, 4:46 PM ET",
+      "engagement": 11,
+      "likes": 9,
+      "reposts": 1,
+      "replies": 0,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Monero",
+      "topic": "FCMP++",
+      "claim": "The Monero Research Lab has provided an update on the third version of beta stressnet for Full-Chain Membership Proofs (FCMP++) and CARROT!",
+      "handle": "@monero",
+      "display_name": "Monero (XMR)",
+      "why_this_account": "Bio: “Monero (XMR) - The secure, private, untraceable cryptocurrency that keeps your money confidential.…” · 531,338 followers",
+      "post_url": "https://x.com/monero/status/2110804937479217452",
+      "date": "2026-10-15T18:48:08Z",
+      "date_et": "Oct 15, 2:48 PM ET",
+      "engagement": 161,
+      "likes": 121,
+      "reposts": 13,
+      "replies": 4,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Litecoin",
+      "topic": "MWEB",
+      "claim": "Big move: @Litecoin Foundation x @Americanfort_io They're launching a privacy-default Litecoin wallet powered by AmericanFortress: Stake litecoin:native + L2 solutions MWEB privacy…",
+      "handle": "@kaixweb3",
+      "display_name": "🇻🇳🇯🇵 Kai | Web3",
+      "why_this_account": "Bio: “AI enthusiast exploring artificial intelligence, LLMs, AI agents, and prompt engineering. Learning about…” · 3,968 followers",
+      "post_url": "https://x.com/kaixweb3/status/2110630251755675688",
+      "date": "2026-10-15T07:14:00Z",
+      "date_et": "Oct 15, 3:14 AM ET",
+      "engagement": 54,
+      "likes": 25,
+      "reposts": 0,
+      "replies": 29,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Litecoin",
+      "topic": "MWEB",
+      "claim": "Someone put 20k $LTC straight into MWEB today!",
+      "handle": "@Minimilian84",
+      "display_name": "Minimilian",
+      "why_this_account": "Bio: “Building a free world with Litecoin as the second chance Bitcoin! 💎 $LTC” · 3,741 followers",
+      "post_url": "https://x.com/Minimilian84/status/2110778371282194701",
+      "date": "2026-10-15T17:02:34Z",
+      "date_et": "Oct 15, 1:02 PM ET",
+      "engagement": 19,
+      "likes": 14,
+      "reposts": 2,
+      "replies": 1,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Litecoin",
+      "topic": "MWEB",
+      "claim": "$LTC MWEB Daily Flow At close: Wed, 14 Oct 2026 Pool: 446,738.45 LTC (0.6% of supply) ↑ Peg-ins: +9,266.90 LTC ↓ Peg-outs…",
+      "handle": "@LitecoinTracker",
+      "display_name": "Litecoin Tracker",
+      "why_this_account": "Bio: “Tracking key Litecoin statistics and metrics such as ETF flows and MWEB adoption.” · 639 followers",
+      "post_url": "https://x.com/LitecoinTracker/status/2110703496907345942",
+      "date": "2026-10-15T12:05:03Z",
+      "date_et": "Oct 15, 8:05 AM ET",
+      "engagement": 7,
+      "likes": 5,
+      "reposts": 0,
+      "replies": 2,
+      "other_chain_if_any": null,
+      "quiet": false
+    }
+  ],
+  "stats": {
+    "dropped": {
+      "Bitcoin": {
+        "under_5_likes": 13,
+        "low_follower_account": 2,
+        "cashtag_spam": 2,
+        "promo_account": 1,
+        "too_short": 1
+      },
+      "Dogecoin": {
+        "low_follower_account": 4,
+        "cashtag_spam": 1,
+        "promo_account": 1,
+        "under_5_likes": 16,
+        "other_token_shill": 1,
+        "price_call": 1
+      },
+      "Monero": {
+        "outside_24h_window": 2,
+        "low_follower_account": 2,
+        "under_5_likes": 5,
+        "other_token_shill": 1
+      },
+      "Litecoin": {
+        "price_call": 2,
+        "under_5_likes": 1
+      }
+    },
+    "kept": {
+      "Bitcoin": 6,
+      "Dogecoin": 1,
+      "Monero": 1,
+      "Litecoin": 4
+    },
+    "other_chains": {}
+  }
+}

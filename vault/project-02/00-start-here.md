@@ -23,7 +23,7 @@ They show what people **really posted** on X. X is a social media app. The posts
 ## 🔢 How to use this folder
 
 1. Read this file first. Then open `process-map.canvas` to see the sequence.
-2. 📄 Read the step files in order: [[01-collect-posts]], [[02-check-posts]], [[03-make-video]], [[04-human-check]], [[05-publish]].
+2. 📄 Read the workflow in order: [[01-collect-posts]], [[agents/post-verifier|Agent: Post Verifier (Replaces Step 2)]], [[03-make-video]], [[04-human-check]], [[05-publish]].
 3. ✋ Do **one step at a time**. After each step, stop. Say what happened. Then go on.
 
 ## 📜 The rules

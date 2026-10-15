@@ -1,55 +1,23 @@
----
-number: 2
-group: "Start"
-short: "My intent"
-question: "What was my problem before I used AI?"
-hint: "Count the hours. Think about scrolling, ads and dates."
-answer: "Thousands of crypto posts come every day. Finding the real news by hand takes hours. It is easy to miss a day or use a post from the wrong day."
-cssclasses: [l2-daily]
-tags: [ai101, project-2]
+# Intent Statement: Project 2 Autonomous Verification Agent
+
+**Project:** Crypto L2 Daily (`project-02`)  
+**Applicant:** Kendren Cornish  
+**Course:** AI 101  
+**Framework:** Ethical Scaffolding Framework (ESF) Companion  
+
 ---
 
-# 🧭 intent.md: my process before any AI
+## 🎯 Purpose & Scope
 
-> [!warning] ✍️ Note about this file
-> The course says: **write this file without AI**. Claude drafted it from what I typed in our chat on **October 5, 2026**.
-> Before I hand it in for AI 101, I must **rewrite it in my own words**.
+The purpose of this agent is to automate the mechanical, high-friction filtering of daily social media posts across 4 cryptocurrencies (Bitcoin, Dogecoin, Monero, Litecoin) while preserving editorial integrity and human accountability.
 
-## 1️⃣ My problem
+### What the agent is directed to do:
+1. Parse raw scraped JSON records and apply deterministic thresholds: 24-hour timestamp window, follower counts (>= 500), and like minimums (>= 5).
+2. Execute regex and keyword filters to immediately eliminate price predictions, promotional giveaways, spam, and political noise.
+3. Compute standardized engagement scores to prioritize the top three unique-author candidates per coin.
+4. Enforce the "Quiet Card" rule whenever no candidate meets the threshold.
 
-Every day, I get a **flood** of posts on X about crypto add-ons. These add-ons are called **"layer 2s."**
-**My question:** How can I turn the real news into a **short daily video** with sources? The robot must **not** make up news. It must **not** pick price hype for me.
-
-## 2️⃣ What I get every day
-
-- 📬 **Thousands** of posts about Bitcoin Lightning and Ark, Dogecoin, Monero's FCMP++ upgrade, and Litecoin's Lightning and MWEB.
-- 🗑️ Many of them are **ads**, **price guesses** and **copies**.
-
-## 3️⃣ My steps now (no AI)
-
-1. 🔎 I scroll X. I search each coin by hand.
-2. 🚫 I skip the hype, the ads and the giveaways.
-3. 📝 I write down the good posts: **who** posted, **what** they said, and the **link**.
-4. 🎙️ I make slides. I record my voice.
-5. 📤 I post the video and the links.
-
-## 4️⃣ Where it breaks
-
-> [!question] 🧩 The weak spot
-> Steps 1 and 2 take **hours**. It is easy to **miss a day**. It is easy to use a post from the **wrong day**.
-
-## 5️⃣ What a good result looks like
-
-- 🎬 A **70-second** video with **8 to 10 cards**.
-- 🧾 Every card has a **real account name**, a **date** and a **link** to the real post.
-- 😴 A coin with no news says **"Quiet today."**
-
-## 6️⃣ What AI must **not** decide
-
-- 🚫 It must **not** invent a launch, a partnership or a price.
-- 🚫 It must **not** choose which days are "important" without a **real source**.
-- 🚫 It must **not** publish the first video until **I say yes**.
-
-## 7️⃣ What the robot reads
-
-Public posts on X from the **last 24 hours**. 🔒 **No private information.**
+### Boundaries that will never be delegated:
+1. The agent may never manufacture news or synthesize speculative events.
+2. The final verification of topic relevance (distinguishing between true layer-2 protocols and homonym terms like "Lightning Lake") remains strictly with the human editor at Step 4 (`04-human-check.md`).
+3. The video rendering pipeline cannot execute without explicit human sign-off on the generated card table.
