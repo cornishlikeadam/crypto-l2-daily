@@ -6,6 +6,86 @@
   "description": "Bitcoin L2, Dogecoin, Monero and Litecoin on X, last 24 hours, with sources.",
   "items": [
     {
+      "id": "2026-10-16",
+      "url": "https://not2l8-l2-daily.vercel.app/days/2026-10-16/",
+      "title": "Crypto L2 Daily — Friday, October 16, 2026",
+      "content_text": "Bitcoin · Lightning: My UTEXO Journey: The Bigger Vision Over the past 30 days, I've explored different parts of the @utexocom ecosystem, from RGB asset… (@AriseAura, https://x.com/AriseAura/status/2110969701870563681)\nDogecoin · Community: BarkSwap x DogeOS: Mainnet Is Coming Official collaboration bringing new opportunities to the DOGE ecosystem. (@barkfi_hub, https://x.com/barkfi_hub/status/2111021152210423814)\nMonero: Quiet today.\nLitecoin · MWEB: It is an optional layer on Litecoin where amounts are known only to the sender and the receiver. (@hidden_swap, https://x.com/hidden_swap/status/2111082554115924372)\nLitecoin · MWEB: $LTC MWEB Daily Flow At close: Thu, 15 Oct 2026 Pool: 478,761.96 LTC (0.6% of supply) ↑ Peg-ins: +40,934.06 LTC ↓ Peg-outs… (@LitecoinTracker, https://x.com/LitecoinTracker/status/2111065889462210968)",
+      "date_published": "2026-10-16T21:59:36.473975+00:00",
+      "attachments": [
+        {
+          "url": "https://not2l8-l2-daily.vercel.app/days/2026-10-16/final.mp4",
+          "mime_type": "video/mp4"
+        }
+      ],
+      "_cards": [
+        {
+          "kind": "item",
+          "coin": "Bitcoin",
+          "title": "Bitcoin · Lightning",
+          "sentence": "My UTEXO Journey: The Bigger Vision Over the past 30 days, I've explored different parts of the @utexocom ecosystem, from RGB asset…",
+          "explain": "Lightning is a fast lane on top of Bitcoin for quick, cheap payments.",
+          "stats": "66 likes · 3 reposts",
+          "handle": "@AriseAura",
+          "why_this_account": "Bio: “Web3 | Exploring Crypto | Seeking Opportunities AMB - @playtaunt @kindworldlabs KOL/creator -…” · 3,524 followers",
+          "post_url": "https://x.com/AriseAura/status/2110969701870563681",
+          "date": "2026-10-16T05:42:51Z",
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Dogecoin",
+          "title": "Dogecoin · Community",
+          "sentence": "BarkSwap x DogeOS: Mainnet Is Coming Official collaboration bringing new opportunities to the DOGE ecosystem.",
+          "explain": "These are posts from people who use and talk about Dogecoin.",
+          "stats": "55 likes · 0 reposts",
+          "handle": "@barkfi_hub",
+          "why_this_account": "Bio: “Testnet by DogeOS powered by ve(3,3) & pure memeonomics.” · 1,081 followers",
+          "post_url": "https://x.com/barkfi_hub/status/2111021152210423814",
+          "date": "2026-10-16T09:07:18Z",
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "quiet",
+          "coin": "Monero",
+          "title": "Monero",
+          "sentence": "Quiet today.",
+          "explain": "No posts in this search passed our filters. Other news may exist.",
+          "stats": null,
+          "handle": null,
+          "why_this_account": null,
+          "post_url": null,
+          "date": null,
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Litecoin",
+          "title": "Litecoin · MWEB",
+          "sentence": "It is an optional layer on Litecoin where amounts are known only to the sender and the receiver.",
+          "explain": "MWEB is Litecoin's optional privacy feature that can hide how much you send.",
+          "stats": "29 likes · 4 reposts",
+          "handle": "@hidden_swap",
+          "why_this_account": "Bio: “Anonymous, no KYC crypto exchange. Swap BTC, XMR, ETH, USDT and 1,000+ coins and networks with no account,…” · 1,453 followers",
+          "post_url": "https://x.com/hidden_swap/status/2111082554115924372",
+          "date": "2026-10-16T13:11:17Z",
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Litecoin",
+          "title": "Litecoin · MWEB",
+          "sentence": "$LTC MWEB Daily Flow At close: Thu, 15 Oct 2026 Pool: 478,761.96 LTC (0.6% of supply) ↑ Peg-ins: +40,934.06 LTC ↓ Peg-outs…",
+          "explain": "MWEB is Litecoin's optional privacy feature that can hide how much you send.",
+          "stats": "20 likes · 5 reposts",
+          "handle": "@LitecoinTracker",
+          "why_this_account": "Bio: “Tracking key Litecoin statistics and metrics such as ETF flows and MWEB adoption.” · 647 followers",
+          "post_url": "https://x.com/LitecoinTracker/status/2111065889462210968",
+          "date": "2026-10-16T12:05:04Z",
+          "other_chain_if_any": null
+        }
+      ]
+    },
+    {
       "id": "2026-10-15",
       "url": "https://not2l8-l2-daily.vercel.app/days/2026-10-15/",
       "title": "Crypto L2 Daily — Thursday, October 15, 2026",

@@ -1,0 +1,132 @@
+{
+  "date": "2026-10-16",
+  "window_start": "2026-10-15T21:59:36.473975+00:00",
+  "window_end": "2026-10-16T21:59:36.473975+00:00",
+  "source": "X search (twikit, session cookies)",
+  "queries": {
+    "Bitcoin": "(Bitcoin OR BTC) (Lightning OR Ark OR \"layer 2\" OR L2) -filter:replies -filter:retweets -filter:nativeretweets lang:en since:2026-10-15 until:2026-10-17 since_time:1792101576 until_time:1792187976",
+    "Dogecoin": "(Dogecoin OR DOGE) (\"layer 2\" OR L2 OR Dogechain OR community) -filter:replies -filter:retweets -filter:nativeretweets lang:en since:2026-10-15 until:2026-10-17 since_time:1792101576 until_time:1792187976",
+    "Monero": "(Monero OR XMR) (FCMP OR CARROT OR hardfork OR upgrade) -filter:replies -filter:retweets -filter:nativeretweets lang:en since:2026-10-15 until:2026-10-17 since_time:1792101576 until_time:1792187976",
+    "Litecoin": "(Litecoin OR LTC) (Lightning OR MWEB OR \"layer 2\") -filter:replies -filter:retweets -filter:nativeretweets lang:en since:2026-10-15 until:2026-10-17 since_time:1792101576 until_time:1792187976"
+  },
+  "items": [
+    {
+      "coin": "Bitcoin",
+      "topic": "Lightning",
+      "claim": "My UTEXO Journey: The Bigger Vision Over the past 30 days, I've explored different parts of the @utexocom ecosystem, from RGB asset…",
+      "handle": "@AriseAura",
+      "display_name": "𝐀𝐑𝐈𝐒𝐄𝐀𝐔𝐑𝐀",
+      "why_this_account": "Bio: “Web3 | Exploring Crypto | Seeking Opportunities AMB - @playtaunt @kindworldlabs KOL/creator -…” · 3,524 followers",
+      "post_url": "https://x.com/AriseAura/status/2110969701870563681",
+      "date": "2026-10-16T05:42:51Z",
+      "date_et": "Oct 16, 1:42 AM ET",
+      "engagement": 120,
+      "likes": 66,
+      "reposts": 3,
+      "replies": 48,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Dogecoin",
+      "topic": "Community",
+      "claim": "BarkSwap x DogeOS: Mainnet Is Coming Official collaboration bringing new opportunities to the DOGE ecosystem.",
+      "handle": "@barkfi_hub",
+      "display_name": "Bark Doge",
+      "why_this_account": "Bio: “Testnet by DogeOS powered by ve(3,3) & pure memeonomics.” · 1,081 followers",
+      "post_url": "https://x.com/barkfi_hub/status/2111021152210423814",
+      "date": "2026-10-16T09:07:18Z",
+      "date_et": "Oct 16, 5:07 AM ET",
+      "engagement": 217,
+      "likes": 55,
+      "reposts": 0,
+      "replies": 0,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Monero",
+      "topic": null,
+      "claim": "Quiet today.",
+      "handle": null,
+      "display_name": null,
+      "why_this_account": null,
+      "post_url": null,
+      "date": null,
+      "date_et": null,
+      "engagement": 0,
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "other_chain_if_any": null,
+      "quiet": true
+    },
+    {
+      "coin": "Litecoin",
+      "topic": "MWEB",
+      "claim": "It is an optional layer on Litecoin where amounts are known only to the sender and the receiver.",
+      "handle": "@hidden_swap",
+      "display_name": "HiddenSwap",
+      "why_this_account": "Bio: “Anonymous, no KYC crypto exchange. Swap BTC, XMR, ETH, USDT and 1,000+ coins and networks with no account,…” · 1,453 followers",
+      "post_url": "https://x.com/hidden_swap/status/2111082554115924372",
+      "date": "2026-10-16T13:11:17Z",
+      "date_et": "Oct 16, 9:11 AM ET",
+      "engagement": 38,
+      "likes": 29,
+      "reposts": 4,
+      "replies": 1,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Litecoin",
+      "topic": "MWEB",
+      "claim": "$LTC MWEB Daily Flow At close: Thu, 15 Oct 2026 Pool: 478,761.96 LTC (0.6% of supply) ↑ Peg-ins: +40,934.06 LTC ↓ Peg-outs…",
+      "handle": "@LitecoinTracker",
+      "display_name": "Litecoin Tracker",
+      "why_this_account": "Bio: “Tracking key Litecoin statistics and metrics such as ETF flows and MWEB adoption.” · 647 followers",
+      "post_url": "https://x.com/LitecoinTracker/status/2111065889462210968",
+      "date": "2026-10-16T12:05:04Z",
+      "date_et": "Oct 16, 8:05 AM ET",
+      "engagement": 33,
+      "likes": 20,
+      "reposts": 5,
+      "replies": 1,
+      "other_chain_if_any": null,
+      "quiet": false
+    }
+  ],
+  "stats": {
+    "dropped": {
+      "Bitcoin": {
+        "under_5_likes": 23,
+        "too_short": 1
+      },
+      "Dogecoin": {
+        "low_follower_account": 3,
+        "other_token_shill": 3,
+        "under_5_likes": 16,
+        "price_call": 1,
+        "cashtag_spam": 1
+      },
+      "Monero": {
+        "under_5_likes": 3,
+        "too_short": 1,
+        "cashtag_spam": 1,
+        "outside_24h_window": 2
+      },
+      "Litecoin": {
+        "under_5_likes": 4,
+        "too_short": 1,
+        "price_call": 2
+      }
+    },
+    "kept": {
+      "Bitcoin": 1,
+      "Dogecoin": 1,
+      "Monero": 1,
+      "Litecoin": 2
+    },
+    "other_chains": {}
+  }
+}
