@@ -1,55 +1,56 @@
 {
   "version": 1,
-  "generated_at": "2026-10-15T22:08:10+00:00",
-  "edition": "2026-10-15",
-  "edition_label": "Thursday, October 15, 2026",
-  "edition_short": "Oct 15",
-  "url": "https://not2l8-l2-daily.vercel.app/days/2026-10-15/",
-  "poster": "https://not2l8-l2-daily.vercel.app/days/2026-10-15/poster.jpg",
-  "item_count": 8,
+  "generated_at": "2026-10-16T22:08:38+00:00",
+  "edition": "2026-10-16",
+  "edition_label": "Friday, October 16, 2026",
+  "edition_short": "Oct 16",
+  "url": "https://not2l8-l2-daily.vercel.app/days/2026-10-16/",
+  "poster": "https://not2l8-l2-daily.vercel.app/days/2026-10-16/poster.jpg",
+  "item_count": 4,
   "coins": [
     "BTC L2",
     "DOGE",
-    "XMR",
     "LTC"
   ],
-  "quiet": [],
+  "quiet": [
+    "Monero"
+  ],
   "headlines": [
     {
       "coin": "Bitcoin",
       "tag": "BTC L2",
       "title": "Bitcoin · Lightning",
-      "sentence": "Introducing LayerTree, a non-custodial scaling solution on bitcoin that connects to Lightning.",
-      "handle": "@lightning",
-      "post_url": "https://x.com/lightning/status/2110812651882217677",
-      "likes": 154
+      "sentence": "My UTEXO Journey: The Bigger Vision Over the past 30 days, I've explored different parts of the @utexocom ecosystem, from RGB asset…",
+      "handle": "@AriseAura",
+      "post_url": "https://x.com/AriseAura/status/2110969701870563681",
+      "likes": 66
     },
     {
-      "coin": "Monero",
-      "tag": "XMR",
-      "title": "Monero · FCMP++",
-      "sentence": "The Monero Research Lab has provided an update on the third version of beta stressnet for Full-Chain Membership Proofs (FCMP++) and CARROT!",
-      "handle": "@monero",
-      "post_url": "https://x.com/monero/status/2110804937479217452",
-      "likes": 121
+      "coin": "Dogecoin",
+      "tag": "DOGE",
+      "title": "Dogecoin · Community",
+      "sentence": "BarkSwap x DogeOS: Mainnet Is Coming Official collaboration bringing new opportunities to the DOGE ecosystem.",
+      "handle": "@barkfi_hub",
+      "post_url": "https://x.com/barkfi_hub/status/2111021152210423814",
+      "likes": 55
     },
     {
       "coin": "Litecoin",
       "tag": "LTC",
       "title": "Litecoin · MWEB",
-      "sentence": "Big move: @Litecoin Foundation x @Americanfort_io They're launching a privacy-default Litecoin wallet powered by AmericanFortress: Stake litecoin:native + L2 solutions MWEB privacy…",
-      "handle": "@kaixweb3",
-      "post_url": "https://x.com/kaixweb3/status/2110630251755675688",
-      "likes": 25
+      "sentence": "It is an optional layer on Litecoin where amounts are known only to the sender and the receiver.",
+      "handle": "@hidden_swap",
+      "post_url": "https://x.com/hidden_swap/status/2111082554115924372",
+      "likes": 29
     }
   ],
   "fees": {
-    "fastest": 2,
+    "fastest": 1,
     "half_hour": 1,
     "hour": 1,
     "economy": 1,
     "source": "mempool.space",
-    "as_of": "2026-10-15T22:08:10+00:00"
+    "as_of": "2026-10-16T22:08:38+00:00"
   },
   "links": {
     "site": "https://not2l8-l2-daily.vercel.app/",
