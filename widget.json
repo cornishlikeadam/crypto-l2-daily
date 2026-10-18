@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "generated_at": "2026-10-16T22:08:38+00:00",
-  "edition": "2026-10-16",
-  "edition_label": "Friday, October 16, 2026",
-  "edition_short": "Oct 16",
-  "url": "https://not2l8-l2-daily.vercel.app/days/2026-10-16/",
-  "poster": "https://not2l8-l2-daily.vercel.app/days/2026-10-16/poster.jpg",
-  "item_count": 4,
+  "generated_at": "2026-10-18T22:09:30+00:00",
+  "edition": "2026-10-18",
+  "edition_label": "Sunday, October 18, 2026",
+  "edition_short": "Oct 18",
+  "url": "https://not2l8-l2-daily.vercel.app/days/2026-10-18/",
+  "poster": "https://not2l8-l2-daily.vercel.app/days/2026-10-18/poster.jpg",
+  "item_count": 5,
   "coins": [
     "BTC L2",
     "DOGE",
@@ -17,31 +17,31 @@
   ],
   "headlines": [
     {
-      "coin": "Bitcoin",
-      "tag": "BTC L2",
-      "title": "Bitcoin · Lightning",
-      "sentence": "My UTEXO Journey: The Bigger Vision Over the past 30 days, I've explored different parts of the @utexocom ecosystem, from RGB asset…",
-      "handle": "@AriseAura",
-      "post_url": "https://x.com/AriseAura/status/2110969701870563681",
-      "likes": 66
-    },
-    {
       "coin": "Dogecoin",
       "tag": "DOGE",
       "title": "Dogecoin · Community",
-      "sentence": "BarkSwap x DogeOS: Mainnet Is Coming Official collaboration bringing new opportunities to the DOGE ecosystem.",
-      "handle": "@barkfi_hub",
-      "post_url": "https://x.com/barkfi_hub/status/2111021152210423814",
-      "likes": 55
+      "sentence": "DogeOS is seriously COOKING If you’re in the Dogecoin community..",
+      "handle": "@TeslaModelDoge",
+      "post_url": "https://x.com/TeslaModelDoge/status/2111588062593483233",
+      "likes": 105
+    },
+    {
+      "coin": "Bitcoin",
+      "tag": "BTC L2",
+      "title": "Bitcoin · Lightning",
+      "sentence": "Got a Spamchain Lightning invoice?",
+      "handle": "@Kilombino_",
+      "post_url": "https://x.com/Kilombino_/status/2111615018772926672",
+      "likes": 21
     },
     {
       "coin": "Litecoin",
       "tag": "LTC",
-      "title": "Litecoin · MWEB",
-      "sentence": "It is an optional layer on Litecoin where amounts are known only to the sender and the receiver.",
-      "handle": "@hidden_swap",
-      "post_url": "https://x.com/hidden_swap/status/2111082554115924372",
-      "likes": 29
+      "title": "Litecoin · Lightning",
+      "sentence": "Lester, the Scrypt Mage, joins Litecoin Legends: Rush in 1.0.30.",
+      "handle": "@litecoinjsd",
+      "post_url": "https://x.com/litecoinjsd/status/2111621147452137588",
+      "likes": 13
     }
   ],
   "fees": {
@@ -50,7 +50,7 @@
     "hour": 1,
     "economy": 1,
     "source": "mempool.space",
-    "as_of": "2026-10-16T22:08:38+00:00"
+    "as_of": "2026-10-18T22:09:30+00:00"
   },
   "links": {
     "site": "https://not2l8-l2-daily.vercel.app/",
