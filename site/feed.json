@@ -6,6 +6,99 @@
   "description": "Bitcoin L2, Dogecoin, Monero and Litecoin on X, last 24 hours, with sources.",
   "items": [
     {
+      "id": "2026-10-18",
+      "url": "https://not2l8-l2-daily.vercel.app/days/2026-10-18/",
+      "title": "Crypto L2 Daily — Sunday, October 18, 2026",
+      "content_text": "Bitcoin · Lightning: Got a Spamchain Lightning invoice? (@Kilombino_, https://x.com/Kilombino_/status/2111615018772926672)\nBitcoin · Lightning: Agentic Dollars on Bitcoin: the winners 24 teams, one weekend at @bloxspace_turin, digital dollars on RGB Protocol on Bitcoin with local AI. (@RGBAssociation, https://x.com/RGBAssociation/status/2111929665854243119)\nBitcoin · Lightning: WHAT IF BITCOIN BECAME A SERIOUS RAIL FOR EVERYDAY DIGITAL DOLLARS? (@feurimas10, https://x.com/feurimas10/status/2111810147916128764)\nDogecoin · Community: DogeOS is seriously COOKING If you’re in the Dogecoin community.. (@TeslaModelDoge, https://x.com/TeslaModelDoge/status/2111588062593483233)\nMonero: Quiet today.\nLitecoin · Lightning: Lester, the Scrypt Mage, joins Litecoin Legends: Rush in 1.0.30. (@litecoinjsd, https://x.com/litecoinjsd/status/2111621147452137588)",
+      "date_published": "2026-10-18T21:59:30.367556+00:00",
+      "attachments": [
+        {
+          "url": "https://not2l8-l2-daily.vercel.app/days/2026-10-18/final.mp4",
+          "mime_type": "video/mp4"
+        }
+      ],
+      "_cards": [
+        {
+          "kind": "item",
+          "coin": "Bitcoin",
+          "title": "Bitcoin · Lightning",
+          "sentence": "Got a Spamchain Lightning invoice?",
+          "explain": "Lightning is a fast lane on top of Bitcoin for quick, cheap payments.",
+          "stats": "21 likes · 6 reposts",
+          "handle": "@Kilombino_",
+          "why_this_account": "Bio: “Bitcoin without Core since block #961,632 𓅦…” · 954 followers",
+          "post_url": "https://x.com/Kilombino_/status/2111615018772926672",
+          "date": "2026-10-18T00:27:07Z",
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Bitcoin",
+          "title": "Bitcoin · Lightning",
+          "sentence": "Agentic Dollars on Bitcoin: the winners 24 teams, one weekend at @bloxspace_turin, digital dollars on RGB Protocol on Bitcoin with local AI.",
+          "explain": "Lightning is a fast lane on top of Bitcoin for quick, cheap payments.",
+          "stats": "7 likes · 0 reposts",
+          "handle": "@RGBAssociation",
+          "why_this_account": "Bio: “RGB Protocol Association-supporting the development of RGB Protocol on Bitcoin. Official announcements and…” · 2,970 followers",
+          "post_url": "https://x.com/RGBAssociation/status/2111929665854243119",
+          "date": "2026-10-18T21:17:24Z",
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Bitcoin",
+          "title": "Bitcoin · Lightning",
+          "sentence": "WHAT IF BITCOIN BECAME A SERIOUS RAIL FOR EVERYDAY DIGITAL DOLLARS?",
+          "explain": "Lightning is a fast lane on top of Bitcoin for quick, cheap payments.",
+          "stats": "7 likes · 1 reposts",
+          "handle": "@feurimas10",
+          "why_this_account": "Bio: “Building @degenkolss & @BengaleWeb3Community Community Manager | Web3 Enthusiast🔰 Moderator | NFT & DeFi…” · 5,032 followers",
+          "post_url": "https://x.com/feurimas10/status/2111810147916128764",
+          "date": "2026-10-18T13:22:29Z",
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Dogecoin",
+          "title": "Dogecoin · Community",
+          "sentence": "DogeOS is seriously COOKING If you’re in the Dogecoin community..",
+          "explain": "These are posts from people who use and talk about Dogecoin.",
+          "stats": "105 likes · 6 reposts",
+          "handle": "@TeslaModelDoge",
+          "why_this_account": "Bio: “Dogecoin Aficionado” · 25,554 followers",
+          "post_url": "https://x.com/TeslaModelDoge/status/2111588062593483233",
+          "date": "2026-10-17T22:40:00Z",
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "quiet",
+          "coin": "Monero",
+          "title": "Monero",
+          "sentence": "Quiet today.",
+          "explain": "No posts in this search passed our filters. Other news may exist.",
+          "stats": null,
+          "handle": null,
+          "why_this_account": null,
+          "post_url": null,
+          "date": null,
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Litecoin",
+          "title": "Litecoin · Lightning",
+          "sentence": "Lester, the Scrypt Mage, joins Litecoin Legends: Rush in 1.0.30.",
+          "explain": "Lightning also works on Litecoin, for fast and cheap small payments.",
+          "stats": "13 likes · 2 reposts",
+          "handle": "@litecoinjsd",
+          "why_this_account": "Bio: “Charting #Litecoin analysis, trends, transactions, culture. #PayWithŁitecoin advocate. #Litecoinfigurines” · 1,162 followers",
+          "post_url": "https://x.com/litecoinjsd/status/2111621147452137588",
+          "date": "2026-10-18T00:51:28Z",
+          "other_chain_if_any": null
+        }
+      ]
+    },
+    {
       "id": "2026-10-16",
       "url": "https://not2l8-l2-daily.vercel.app/days/2026-10-16/",
       "title": "Crypto L2 Daily — Friday, October 16, 2026",

@@ -1,0 +1,147 @@
+{
+  "date": "2026-10-18",
+  "window_start": "2026-10-17T21:59:30.367556+00:00",
+  "window_end": "2026-10-18T21:59:30.367556+00:00",
+  "source": "X search (twikit, session cookies)",
+  "queries": {
+    "Bitcoin": "(Bitcoin OR BTC) (Lightning OR Ark OR \"layer 2\" OR L2) -filter:replies -filter:retweets -filter:nativeretweets lang:en since:2026-10-17 until:2026-10-19 since_time:1792274370 until_time:1792360770",
+    "Dogecoin": "(Dogecoin OR DOGE) (\"layer 2\" OR L2 OR Dogechain OR community) -filter:replies -filter:retweets -filter:nativeretweets lang:en since:2026-10-17 until:2026-10-19 since_time:1792274370 until_time:1792360770",
+    "Monero": "(Monero OR XMR) (FCMP OR CARROT OR hardfork OR upgrade) -filter:replies -filter:retweets -filter:nativeretweets lang:en since:2026-10-17 until:2026-10-19 since_time:1792274370 until_time:1792360770",
+    "Litecoin": "(Litecoin OR LTC) (Lightning OR MWEB OR \"layer 2\") -filter:replies -filter:retweets -filter:nativeretweets lang:en since:2026-10-17 until:2026-10-19 since_time:1792274370 until_time:1792360770"
+  },
+  "items": [
+    {
+      "coin": "Bitcoin",
+      "topic": "Lightning",
+      "claim": "Got a Spamchain Lightning invoice?",
+      "handle": "@Kilombino_",
+      "display_name": "ꓘɨℓσꬺƄℓɑꓘҽ2ƄꓘɳσŦƨ \\\\ BTC = XBT",
+      "why_this_account": "Bio: “Bitcoin without Core since block #961,632 𓅦…” · 954 followers",
+      "post_url": "https://x.com/Kilombino_/status/2111615018772926672",
+      "date": "2026-10-18T00:27:07Z",
+      "date_et": "Oct 17, 8:27 PM ET",
+      "engagement": 36,
+      "likes": 21,
+      "reposts": 6,
+      "replies": 1,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Bitcoin",
+      "topic": "Lightning",
+      "claim": "Agentic Dollars on Bitcoin: the winners 24 teams, one weekend at @bloxspace_turin, digital dollars on RGB Protocol on Bitcoin with local AI.",
+      "handle": "@RGBAssociation",
+      "display_name": "RGB Protocol Association",
+      "why_this_account": "Bio: “RGB Protocol Association-supporting the development of RGB Protocol on Bitcoin. Official announcements and…” · 2,970 followers",
+      "post_url": "https://x.com/RGBAssociation/status/2111929665854243119",
+      "date": "2026-10-18T21:17:24Z",
+      "date_et": "Oct 18, 5:17 PM ET",
+      "engagement": 13,
+      "likes": 7,
+      "reposts": 0,
+      "replies": 2,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Bitcoin",
+      "topic": "Lightning",
+      "claim": "WHAT IF BITCOIN BECAME A SERIOUS RAIL FOR EVERYDAY DIGITAL DOLLARS?",
+      "handle": "@feurimas10",
+      "display_name": "Feurimas",
+      "why_this_account": "Bio: “Building @degenkolss & @BengaleWeb3Community Community Manager | Web3 Enthusiast🔰 Moderator | NFT & DeFi…” · 5,032 followers",
+      "post_url": "https://x.com/feurimas10/status/2111810147916128764",
+      "date": "2026-10-18T13:22:29Z",
+      "date_et": "Oct 18, 9:22 AM ET",
+      "engagement": 13,
+      "likes": 7,
+      "reposts": 1,
+      "replies": 4,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Dogecoin",
+      "topic": "Community",
+      "claim": "DogeOS is seriously COOKING If you’re in the Dogecoin community..",
+      "handle": "@TeslaModelDoge",
+      "display_name": "Tesla Model Doge",
+      "why_this_account": "Bio: “Dogecoin Aficionado” · 25,554 followers",
+      "post_url": "https://x.com/TeslaModelDoge/status/2111588062593483233",
+      "date": "2026-10-17T22:40:00Z",
+      "date_et": "Oct 17, 6:40 PM ET",
+      "engagement": 126,
+      "likes": 105,
+      "reposts": 6,
+      "replies": 7,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Monero",
+      "topic": null,
+      "claim": "Quiet today.",
+      "handle": null,
+      "display_name": null,
+      "why_this_account": null,
+      "post_url": null,
+      "date": null,
+      "date_et": null,
+      "engagement": 0,
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "other_chain_if_any": null,
+      "quiet": true
+    },
+    {
+      "coin": "Litecoin",
+      "topic": "Lightning",
+      "claim": "Lester, the Scrypt Mage, joins Litecoin Legends: Rush in 1.0.30.",
+      "handle": "@litecoinjsd",
+      "display_name": "Captain Litecoin",
+      "why_this_account": "Bio: “Charting #Litecoin analysis, trends, transactions, culture. #PayWithŁitecoin advocate. #Litecoinfigurines” · 1,162 followers",
+      "post_url": "https://x.com/litecoinjsd/status/2111621147452137588",
+      "date": "2026-10-18T00:51:28Z",
+      "date_et": "Oct 17, 8:51 PM ET",
+      "engagement": 18,
+      "likes": 13,
+      "reposts": 2,
+      "replies": 1,
+      "other_chain_if_any": null,
+      "quiet": false
+    }
+  ],
+  "stats": {
+    "dropped": {
+      "Bitcoin": {
+        "under_5_likes": 19,
+        "low_follower_account": 2
+      },
+      "Dogecoin": {
+        "under_5_likes": 17,
+        "low_follower_account": 4,
+        "price_call": 1,
+        "other_token_shill": 2
+      },
+      "Monero": {
+        "under_5_likes": 4,
+        "cashtag_spam": 1,
+        "outside_24h_window": 1
+      },
+      "Litecoin": {
+        "low_follower_account": 1,
+        "price_call": 1,
+        "under_5_likes": 2
+      }
+    },
+    "kept": {
+      "Bitcoin": 4,
+      "Dogecoin": 1,
+      "Monero": 0,
+      "Litecoin": 2
+    },
+    "other_chains": {}
+  }
+}
