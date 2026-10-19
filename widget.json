@@ -1,47 +1,46 @@
 {
   "version": 1,
-  "generated_at": "2026-10-18T22:09:30+00:00",
-  "edition": "2026-10-18",
-  "edition_label": "Sunday, October 18, 2026",
-  "edition_short": "Oct 18",
-  "url": "https://not2l8-l2-daily.vercel.app/days/2026-10-18/",
-  "poster": "https://not2l8-l2-daily.vercel.app/days/2026-10-18/poster.jpg",
-  "item_count": 5,
+  "generated_at": "2026-10-19T22:09:45+00:00",
+  "edition": "2026-10-19",
+  "edition_label": "Monday, October 19, 2026",
+  "edition_short": "Oct 19",
+  "url": "https://not2l8-l2-daily.vercel.app/days/2026-10-19/",
+  "poster": "https://not2l8-l2-daily.vercel.app/days/2026-10-19/poster.jpg",
+  "item_count": 8,
   "coins": [
     "BTC L2",
     "DOGE",
+    "XMR",
     "LTC"
   ],
-  "quiet": [
-    "Monero"
-  ],
+  "quiet": [],
   "headlines": [
     {
       "coin": "Dogecoin",
       "tag": "DOGE",
       "title": "Dogecoin · Community",
-      "sentence": "DogeOS is seriously COOKING If you’re in the Dogecoin community..",
-      "handle": "@TeslaModelDoge",
-      "post_url": "https://x.com/TeslaModelDoge/status/2111588062593483233",
-      "likes": 105
+      "sentence": "The next big DOGE app might come from someone who's never coded before That's exactly what we're betting on 36,000 dogecoin:native up…",
+      "handle": "@NoahAINetwork",
+      "post_url": "https://x.com/NoahAINetwork/status/2112245635915399187",
+      "likes": 206
     },
     {
-      "coin": "Bitcoin",
-      "tag": "BTC L2",
-      "title": "Bitcoin · Lightning",
-      "sentence": "Got a Spamchain Lightning invoice?",
-      "handle": "@Kilombino_",
-      "post_url": "https://x.com/Kilombino_/status/2111615018772926672",
-      "likes": 21
+      "coin": "Monero",
+      "tag": "XMR",
+      "title": "Monero · Upgrade",
+      "sentence": "The next @THORChain upgrade is being voted on right now.",
+      "handle": "@raynalytics",
+      "post_url": "https://x.com/raynalytics/status/2112199941544439895",
+      "likes": 61
     },
     {
       "coin": "Litecoin",
       "tag": "LTC",
-      "title": "Litecoin · Lightning",
-      "sentence": "Lester, the Scrypt Mage, joins Litecoin Legends: Rush in 1.0.30.",
-      "handle": "@litecoinjsd",
-      "post_url": "https://x.com/litecoinjsd/status/2111621147452137588",
-      "likes": 13
+      "title": "Litecoin · MWEB",
+      "sentence": "$LTC has something few projects can replicate: 15 years of proven operation Decentralised.",
+      "handle": "@markcrypto8",
+      "post_url": "https://x.com/markcrypto8/status/2112214493526688152",
+      "likes": 39
     }
   ],
   "fees": {
@@ -50,7 +49,7 @@
     "hour": 1,
     "economy": 1,
     "source": "mempool.space",
-    "as_of": "2026-10-18T22:09:30+00:00"
+    "as_of": "2026-10-19T22:09:45+00:00"
   },
   "links": {
     "site": "https://not2l8-l2-daily.vercel.app/",
