@@ -6,6 +6,125 @@
   "description": "Bitcoin L2, Dogecoin, Monero and Litecoin on X, last 24 hours, with sources.",
   "items": [
     {
+      "id": "2026-10-19",
+      "url": "https://not2l8-l2-daily.vercel.app/days/2026-10-19/",
+      "title": "Crypto L2 Daily — Monday, October 19, 2026",
+      "content_text": "Bitcoin · Lightning: Just like Apple tried to make everything lightning cables and ultimately had to switch to USB-C, the rest of the world is… (@TimJSwan, https://x.com/TimJSwan/status/2112178209408405863)\nBitcoin · Lightning: Buy &amp; Sell BTC, ETH, USDT, USDC, SOL &amp; more instantly on Sancus. (@sancus_africa, https://x.com/sancus_africa/status/2112217859640496645)\nBitcoin · Lightning: Bitcoin on-chain ↔ Lightning is now live on Satora From on-chain to Lightning. (@satora_io, https://x.com/satora_io/status/2112128121973731670)\nDogecoin · Community: The next big DOGE app might come from someone who's never coded before That's exactly what we're betting on 36,000 dogecoin:native up… (@NoahAINetwork, https://x.com/NoahAINetwork/status/2112245635915399187)\nDogecoin · Community: GM Did you know you can claim a free starter Doginal Dog right now? (@FlameMetaX, https://x.com/FlameMetaX/status/2112205787678515295)\nDogecoin · Community: Interested in acquiring a Dog and supporting a great community? (@GavinValenti, https://x.com/GavinValenti/status/2112010332009095212)\nMonero · Upgrade: The next @THORChain upgrade is being voted on right now. (@raynalytics, https://x.com/raynalytics/status/2112199941544439895)\nLitecoin · MWEB: $LTC has something few projects can replicate: 15 years of proven operation Decentralised. (@markcrypto8, https://x.com/markcrypto8/status/2112214493526688152)",
+      "date_published": "2026-10-19T21:59:30.495412+00:00",
+      "attachments": [
+        {
+          "url": "https://not2l8-l2-daily.vercel.app/days/2026-10-19/final.mp4",
+          "mime_type": "video/mp4"
+        }
+      ],
+      "_cards": [
+        {
+          "kind": "item",
+          "coin": "Bitcoin",
+          "title": "Bitcoin · Lightning",
+          "sentence": "Just like Apple tried to make everything lightning cables and ultimately had to switch to USB-C, the rest of the world is…",
+          "explain": "Lightning is a fast lane on top of Bitcoin for quick, cheap payments.",
+          "stats": "38 likes · 4 reposts",
+          "handle": "@TimJSwan",
+          "why_this_account": "No bio; posting in the Bitcoin conversation · 606 followers",
+          "post_url": "https://x.com/TimJSwan/status/2112178209408405863",
+          "date": "2026-10-19T13:45:02Z",
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Bitcoin",
+          "title": "Bitcoin · Lightning",
+          "sentence": "Buy &amp; Sell BTC, ETH, USDT, USDC, SOL &amp; more instantly on Sancus.",
+          "explain": "Lightning is a fast lane on top of Bitcoin for quick, cheap payments.",
+          "stats": "7 likes · 5 reposts",
+          "handle": "@sancus_africa",
+          "why_this_account": "Bio: “Buy and Sell Crypto instantly | Gift cards | Cheap Data + Utilities | 0% fee on crypto deposit - Claim…” · 2,483 followers",
+          "post_url": "https://x.com/sancus_africa/status/2112217859640496645",
+          "date": "2026-10-19T16:22:35Z",
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Bitcoin",
+          "title": "Bitcoin · Lightning",
+          "sentence": "Bitcoin on-chain ↔ Lightning is now live on Satora From on-chain to Lightning.",
+          "explain": "Lightning is a fast lane on top of Bitcoin for quick, cheap payments.",
+          "stats": "13 likes · 1 reposts",
+          "handle": "@satora_io",
+          "why_this_account": "Bio: “Swap Bitcoin and stablecoins, wallet to wallet. Building a wallet? Explore our SDK. Also making Bitcoin…” · 3,133 followers",
+          "post_url": "https://x.com/satora_io/status/2112128121973731670",
+          "date": "2026-10-19T10:26:00Z",
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Dogecoin",
+          "title": "Dogecoin · Community",
+          "sentence": "The next big DOGE app might come from someone who's never coded before That's exactly what we're betting on 36,000 dogecoin:native up…",
+          "explain": "These are posts from people who use and talk about Dogecoin.",
+          "stats": "206 likes · 40 reposts",
+          "handle": "@NoahAINetwork",
+          "why_this_account": "Bio: “AI-native apps and autonomous onchain agents. Build, deploy, and execute across any chain. Powered by:…” · 271,200 followers",
+          "post_url": "https://x.com/NoahAINetwork/status/2112245635915399187",
+          "date": "2026-10-19T18:12:57Z",
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Dogecoin",
+          "title": "Dogecoin · Community",
+          "sentence": "GM Did you know you can claim a free starter Doginal Dog right now?",
+          "explain": "These are posts from people who use and talk about Dogecoin.",
+          "stats": "55 likes · 9 reposts",
+          "handle": "@FlameMetaX",
+          "why_this_account": "Bio: “@Doginaldogs | @DDLTCG | 🧑‍🚒 God will steer but you must row” · 3,126 followers",
+          "post_url": "https://x.com/FlameMetaX/status/2112205787678515295",
+          "date": "2026-10-19T15:34:37Z",
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Dogecoin",
+          "title": "Dogecoin · Community",
+          "sentence": "Interested in acquiring a Dog and supporting a great community?",
+          "explain": "These are posts from people who use and talk about Dogecoin.",
+          "stats": "43 likes · 7 reposts",
+          "handle": "@GavinValenti",
+          "why_this_account": "Bio: “Crypto OG • Life Settlements Uncorrelated Alpha Specialist Wildlife Keeper • Sports Fanatic” · 5,038 followers",
+          "post_url": "https://x.com/GavinValenti/status/2112010332009095212",
+          "date": "2026-10-19T02:37:57Z",
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Monero",
+          "title": "Monero · Upgrade",
+          "sentence": "The next @THORChain upgrade is being voted on right now.",
+          "explain": "An upgrade is new software that adds features or fixes problems.",
+          "stats": "61 likes · 9 reposts",
+          "handle": "@raynalytics",
+          "why_this_account": "Bio: “The @THORChain data guy” · 2,300 followers",
+          "post_url": "https://x.com/raynalytics/status/2112199941544439895",
+          "date": "2026-10-19T15:11:23Z",
+          "other_chain_if_any": null
+        },
+        {
+          "kind": "item",
+          "coin": "Litecoin",
+          "title": "Litecoin · MWEB",
+          "sentence": "$LTC has something few projects can replicate: 15 years of proven operation Decentralised.",
+          "explain": "MWEB is Litecoin's optional privacy feature that can hide how much you send.",
+          "stats": "39 likes · 7 reposts",
+          "handle": "@markcrypto8",
+          "why_this_account": "Bio: “Crypto Researcher & Investor 🔎 Finding projects & narratives the market may be underestimating. Tokenomics…” · 7,690 followers",
+          "post_url": "https://x.com/markcrypto8/status/2112214493526688152",
+          "date": "2026-10-19T16:09:12Z",
+          "other_chain_if_any": null
+        }
+      ]
+    },
+    {
       "id": "2026-10-18",
       "url": "https://not2l8-l2-daily.vercel.app/days/2026-10-18/",
       "title": "Crypto L2 Daily — Sunday, October 18, 2026",
@@ -1365,7 +1484,7 @@
       "date_published": "2026-07-22T22:00:00+00:00",
       "attachments": [
         {
-          "url": "https://not2l8-l2-daily.vercel.app/days/2026-07-22/final.mp4",
+          "url": "https://cornishlikeadam.github.io/crypto-l2-daily/days/2026-07-22/final.mp4",
           "mime_type": "video/mp4"
         }
       ],

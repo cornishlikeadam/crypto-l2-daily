@@ -1,0 +1,181 @@
+{
+  "date": "2026-10-19",
+  "window_start": "2026-10-18T21:59:30.495412+00:00",
+  "window_end": "2026-10-19T21:59:30.495412+00:00",
+  "source": "X search (twikit, session cookies)",
+  "queries": {
+    "Bitcoin": "(Bitcoin OR BTC) (Lightning OR Ark OR \"layer 2\" OR L2) -filter:replies -filter:retweets -filter:nativeretweets lang:en since:2026-10-18 until:2026-10-20 since_time:1792360770 until_time:1792447170",
+    "Dogecoin": "(Dogecoin OR DOGE) (\"layer 2\" OR L2 OR Dogechain OR community) -filter:replies -filter:retweets -filter:nativeretweets lang:en since:2026-10-18 until:2026-10-20 since_time:1792360770 until_time:1792447170",
+    "Monero": "(Monero OR XMR) (FCMP OR CARROT OR hardfork OR upgrade) -filter:replies -filter:retweets -filter:nativeretweets lang:en since:2026-10-18 until:2026-10-20 since_time:1792360770 until_time:1792447170",
+    "Litecoin": "(Litecoin OR LTC) (Lightning OR MWEB OR \"layer 2\") -filter:replies -filter:retweets -filter:nativeretweets lang:en since:2026-10-18 until:2026-10-20 since_time:1792360770 until_time:1792447170"
+  },
+  "items": [
+    {
+      "coin": "Bitcoin",
+      "topic": "Lightning",
+      "claim": "Just like Apple tried to make everything lightning cables and ultimately had to switch to USB-C, the rest of the world is…",
+      "handle": "@TimJSwan",
+      "display_name": "Timothy John Swan ✝️",
+      "why_this_account": "No bio; posting in the Bitcoin conversation · 606 followers",
+      "post_url": "https://x.com/TimJSwan/status/2112178209408405863",
+      "date": "2026-10-19T13:45:02Z",
+      "date_et": "Oct 19, 9:45 AM ET",
+      "engagement": 48,
+      "likes": 38,
+      "reposts": 4,
+      "replies": 0,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Bitcoin",
+      "topic": "Lightning",
+      "claim": "Buy &amp; Sell BTC, ETH, USDT, USDC, SOL &amp; more instantly on Sancus.",
+      "handle": "@sancus_africa",
+      "display_name": "Sancus Africa - Do More With Crypto",
+      "why_this_account": "Bio: “Buy and Sell Crypto instantly | Gift cards | Cheap Data + Utilities | 0% fee on crypto deposit - Claim…” · 2,483 followers",
+      "post_url": "https://x.com/sancus_africa/status/2112217859640496645",
+      "date": "2026-10-19T16:22:35Z",
+      "date_et": "Oct 19, 12:22 PM ET",
+      "engagement": 22,
+      "likes": 7,
+      "reposts": 5,
+      "replies": 3,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Bitcoin",
+      "topic": "Lightning",
+      "claim": "Bitcoin on-chain ↔ Lightning is now live on Satora From on-chain to Lightning.",
+      "handle": "@satora_io",
+      "display_name": "Satora (ex-Lendasat)",
+      "why_this_account": "Bio: “Swap Bitcoin and stablecoins, wallet to wallet. Building a wallet? Explore our SDK. Also making Bitcoin…” · 3,133 followers",
+      "post_url": "https://x.com/satora_io/status/2112128121973731670",
+      "date": "2026-10-19T10:26:00Z",
+      "date_et": "Oct 19, 6:26 AM ET",
+      "engagement": 18,
+      "likes": 13,
+      "reposts": 1,
+      "replies": 1,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Dogecoin",
+      "topic": "Community",
+      "claim": "The next big DOGE app might come from someone who's never coded before That's exactly what we're betting on 36,000 dogecoin:native up…",
+      "handle": "@NoahAINetwork",
+      "display_name": "Noah Network",
+      "why_this_account": "Bio: “AI-native apps and autonomous onchain agents. Build, deploy, and execute across any chain. Powered by:…” · 271,200 followers",
+      "post_url": "https://x.com/NoahAINetwork/status/2112245635915399187",
+      "date": "2026-10-19T18:12:57Z",
+      "date_et": "Oct 19, 2:12 PM ET",
+      "engagement": 299,
+      "likes": 206,
+      "reposts": 40,
+      "replies": 13,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Dogecoin",
+      "topic": "Community",
+      "claim": "GM Did you know you can claim a free starter Doginal Dog right now?",
+      "handle": "@FlameMetaX",
+      "display_name": "Flame",
+      "why_this_account": "Bio: “@Doginaldogs | @DDLTCG | 🧑‍🚒 God will steer but you must row” · 3,126 followers",
+      "post_url": "https://x.com/FlameMetaX/status/2112205787678515295",
+      "date": "2026-10-19T15:34:37Z",
+      "date_et": "Oct 19, 11:34 AM ET",
+      "engagement": 113,
+      "likes": 55,
+      "reposts": 9,
+      "replies": 40,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Dogecoin",
+      "topic": "Community",
+      "claim": "Interested in acquiring a Dog and supporting a great community?",
+      "handle": "@GavinValenti",
+      "display_name": "Gavin Valenti",
+      "why_this_account": "Bio: “Crypto OG • Life Settlements Uncorrelated Alpha Specialist Wildlife Keeper • Sports Fanatic” · 5,038 followers",
+      "post_url": "https://x.com/GavinValenti/status/2112010332009095212",
+      "date": "2026-10-19T02:37:57Z",
+      "date_et": "Oct 18, 10:37 PM ET",
+      "engagement": 72,
+      "likes": 43,
+      "reposts": 7,
+      "replies": 15,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Monero",
+      "topic": "Upgrade",
+      "claim": "The next @THORChain upgrade is being voted on right now.",
+      "handle": "@raynalytics",
+      "display_name": "Rayyyk",
+      "why_this_account": "Bio: “The @THORChain data guy” · 2,300 followers",
+      "post_url": "https://x.com/raynalytics/status/2112199941544439895",
+      "date": "2026-10-19T15:11:23Z",
+      "date_et": "Oct 19, 11:11 AM ET",
+      "engagement": 81,
+      "likes": 61,
+      "reposts": 9,
+      "replies": 0,
+      "other_chain_if_any": null,
+      "quiet": false
+    },
+    {
+      "coin": "Litecoin",
+      "topic": "MWEB",
+      "claim": "$LTC has something few projects can replicate: 15 years of proven operation Decentralised.",
+      "handle": "@markcrypto8",
+      "display_name": "Crypto Mark ⚡️",
+      "why_this_account": "Bio: “Crypto Researcher & Investor 🔎 Finding projects & narratives the market may be underestimating. Tokenomics…” · 7,690 followers",
+      "post_url": "https://x.com/markcrypto8/status/2112214493526688152",
+      "date": "2026-10-19T16:09:12Z",
+      "date_et": "Oct 19, 12:09 PM ET",
+      "engagement": 58,
+      "likes": 39,
+      "reposts": 7,
+      "replies": 3,
+      "other_chain_if_any": null,
+      "quiet": false
+    }
+  ],
+  "stats": {
+    "dropped": {
+      "Bitcoin": {
+        "low_follower_account": 2,
+        "under_5_likes": 18,
+        "price_call": 1
+      },
+      "Dogecoin": {
+        "under_5_likes": 14,
+        "low_follower_account": 3,
+        "cashtag_spam": 2,
+        "price_call": 1
+      },
+      "Monero": {
+        "under_5_likes": 4,
+        "other_token_shill": 1,
+        "outside_24h_window": 1
+      },
+      "Litecoin": {
+        "under_5_likes": 1,
+        "promo_account": 1
+      }
+    },
+    "kept": {
+      "Bitcoin": 4,
+      "Dogecoin": 5,
+      "Monero": 3,
+      "Litecoin": 1
+    },
+    "other_chains": {}
+  }
+}
