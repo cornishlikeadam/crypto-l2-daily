@@ -88,6 +88,26 @@ The AI 101 notes live in [`vault/project-02/`](vault/project-02/). **Obsidian** 
 > [!NOTE]
 > 🎨 The vault has its own **Black Platinum** theme for Obsidian: [`docs/obsidian/l2-daily.css`](docs/obsidian/l2-daily.css). Copy it to `.obsidian/snippets/`. Turn it on in **Settings → Appearance → CSS snippets**.
 
+## 🤖 Project 3: an agent, a vault helper, and a skill
+
+Project 3 turns the Project 2 post-checking step into a reusable AI workflow. The files are in [`vault/project-03/`](vault/project-03/).
+
+| Part | What it does | File |
+|---|---|---|
+| **Workflow agent** | Checks candidate posts against Project 2 rules and hands the final choice back to a person. | [`workflow-agent.md`](vault/project-03/workflow-agent.md) |
+| **Vault agent** | Gives the AI helper its job, safety rules, and writing style. | [`AGENTS.md`](vault/project-03/vault-agent/AGENTS.md) |
+| **Skill** | A repeatable recipe for checking posts, including tricky words like “Lightning.” | [`SKILL.md`](vault/project-03/vault-agent/skills/crypto-l2-post-review/SKILL.md) |
+
+The `vault/CLAUDE.md` and `vault/.claude/skills/` files help Claude Code find the helper and skill when you open the `vault/` folder. The Project 2 copy of the workflow agent is kept at [`post-verifier.md`](vault/project-02/agents/post-verifier.md), beside the original Project 2 steps.
+
+### Try the skill
+
+Open this repository’s `vault/` folder in Claude Code, then ask:
+
+> Use the `crypto-l2-post-review` skill to check these practice posts using the Project 2 rules. Do not invent missing details. Show me what needs checking, then let me decide what to use.
+
+The audit note has easy practice-test ideas. Test answers and personal decisions are left for the student to record in the Project 3 logs; they are not filled in for them.
+
 ---
 
 ## 🏗️ 4. How it was built: generic vs. unique
@@ -175,7 +195,10 @@ crypto-l2-daily/
 │   ├── set_x_cookies.sh    🍪 save the X login codes (hidden)
 │   └── set_voice.sh        🎙️ save the voice settings (hidden)
 ├── 🎞️ remotion/            the video card design
-├── 🧠 vault/project-02/    the AI 101 notes (Obsidian)
+├── 🧠 vault/
+│   ├── project-02/         the AI 101 workflow and notes
+│   └── project-03/         workflow agent, vault agent, and skill
+│       └── vault-agent/    rules, voice, and skill source
 ├── 🌐 site/                the built website
 ├── 🧾 data/                the checked posts for each day
 ├── ⚙️ config/              approval switch + archive notes
