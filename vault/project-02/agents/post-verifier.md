@@ -1,44 +1,35 @@
-# Agent: Post Verification & Relevance Filter
+# Workflow agent: Post Verification & Relevance Filter
 
-**Folder:** `vault/project-02/agents/post-verifier.md`  
-**Framework:** Ethical Scaffolding Framework (ESF) Companion  
-**Replaces Step:** `02-check-posts.md`  
+## Role
 
----
+Check candidate posts using the Project 2 rules. Do the sorting and counting, show your work, and return the result to the human for the final check.
 
-## 🎯 1. Role
+## Read first
 
-The **Post Verification & Relevance Filter Agent** is an autonomous content triage agent responsible for evaluating raw scraped social media posts against strict project-defined credibility, engagement, and topic constraints for the daily Crypto Layer 2 edition.
+- `project-02/02-check-posts.md` for the exact filtering and selection rules.
+- `project-02/crypto-layer-2-reference.md` for topic boundaries.
+- The candidate posts and the 24-hour time window supplied for this run.
 
----
+Do not claim to have opened files or links that were not provided or available.
 
-## 📖 2. Authorized Inputs
+## Steps
 
-The agent is permitted to read:
-- `data/raw/YYYY-MM-DD.json` (the raw scraped posts from Step 1).
-- `crypto-layer-2-reference.md` (layer-2 and protocol boundaries).
-- Project rule thresholds: follower counts (>= 500), likes (>= 5), 24-hour timestamp window, and keyword blacklists (price predictions, giveaways, rumors, government DOGE).
+1. Check that each post has a handle, time, and source link. If one is missing, reject it and name the missing part.
+2. Check that it is within the supplied 24-hour window. Apply the Project 2 minimums: at least 500 followers and at least 5 likes.
+3. Apply the Project 2 rules for price guesses, ads, giveaways, rumors, blocked tickers, account-bio promotions, and government uses of “DOGE.” Do not reject a post just because it contains a matching word; check what it means.
+4. Use the reference note to check whether the post is about an allowed coin or topic. If “Lightning” or another word is unclear, mark it for a person to check.
+5. Find repeated claim text for the same coin. Follow the Project 2 duplicate rule and name the posts in each duplicate group. Do not invent a reason to call different claims duplicates.
+6. For the posts that pass, calculate the Project 2 score: likes + 2 × reposts + 2 × quotes + replies. If a number needed for the score is missing, say so; do not guess it.
+7. Follow the Project 2 selection rules: one post per account, up to three posts per coin, and the eight-card limit. A guest-chain card needs three different authors and at least 25% of that coin’s passing posts.
+8. Return a table with one row for each post: ID, result, rule checks, score if available, duplicate group, source link, and anything a person still needs to check. Include rejection counts and note when a quiet card is needed.
 
----
+## Limits
 
-## 🛑 3. What the Agent May NOT Decide
+- Never make up posts, links, numbers, or evidence.
+- Never change Project 2 rules or topic boundaries.
+- Do not say that a post is approved for publication. The human checks the original posts and makes that decision.
+- Do not render a video, publish, or run the daily pipeline.
 
-To preserve human agency and editorial truth, the agent is strictly barred from:
-1. **Fabricating or Hallucinating Posts:** If zero posts pass the filters for a given coin, the agent MUST output a "Quiet today" card. It may never invent news or synthesize speculative claims.
-2. **Overriding Blacklists:** It cannot waive spam, giveaway, or token-shill filters regardless of high engagement metrics.
-3. **Changing Coin Tickers:** It only evaluates the 4 approved currencies (Bitcoin, Dogecoin, Monero, Litecoin) and verified guest layer-2 chains.
-4. **Publishing to Live Production:** The agent cannot trigger the rendering pipeline or write directly to production without human verification.
+## Human check
 
----
-
-## ✋ 4. The Human Check
-
-- **Handoff Trigger:** Once candidate posts are scored and filtered into the 8 candidate middle cards, the agent outputs a formatted review table.
-- **Verification Gate:** Control is immediately returned to the human operator at `04-human-check.md`. 
-- **Required Human Action:** The human reviews the post excerpts, checks source handles, and verifies that no off-topic posts (such as the historical "Lightning Lake" ambiguity) leaked through keyword matching before video generation begins.
-
----
-
-## 🔄 5. Why This Step Suits an Agent
-
-Step 2 (`02-check-posts.md`) requires tedious, repetitive rule execution: parsing JSON objects, calculating mathematical engagement scores (`likes + 2×reposts + 2×quotes + replies`), verifying timestamps within a strict 24-hour cutoff, and checking regex patterns. Delegating this deterministic filtering to an agent eliminates cognitive fatigue while keeping high-stakes editorial and aesthetic judgment in human hands.
+Stop after returning the table and counts. The human checks the original posts and decides what proceeds to `project-02/04-human-check.md` and video production.
