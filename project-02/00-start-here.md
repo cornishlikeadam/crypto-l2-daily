@@ -26,6 +26,20 @@ They show what people **really posted** on X. X is a social media app. The posts
 2. 📄 Read the workflow in order: [[01-collect-posts]], [[agents/post-verifier|Agent: Post Verifier (Replaces Step 2)]], [[03-make-video]], [[04-human-check]], [[05-publish]].
 3. ✋ Do **one step at a time**. After each step, stop. Say what happened. Then go on.
 
+## 🤖 Step 2 now calls the agent
+
+Step 2 is the step that **checks the posts**. The robot's own filters still run in the daily job. But when I want the checking done **with reasons I can read**, I call the agent instead of doing the list by hand.
+
+**The agent:** [[agents/post-verifier|Post Verifier]]. It uses the skill in `project-03/vault-agent/skills/crypto-l2-post-review/SKILL.md` and the rules in `project-03/vault-agent/`.
+
+**How to call it.** Open this repository in Claude Code and say:
+
+> Use the `crypto-l2-post-review` skill. Check the posts in `project-02/outputs/revised-selection-2026-10-05.json` using the saved 24-hour window. Do not invent anything. Return the table and stop.
+
+**What comes back:** one row per post with pass, flag, or reject, the reason, a score if it can be worked out, and the questions I still have to answer.
+
+**Where it stops:** at the human check ([[04-human-check]]). The agent **never** approves a post, makes the video, or publishes. See the first real run in [[outputs/agent-run]], and how it compares with the robot's own run in `project-03/run-comparison.md`.
+
 ## 📜 The rules
 
 > [!important] ⭐ Rule 1: Only real posts

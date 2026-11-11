@@ -77,7 +77,7 @@ flowchart LR
 
 ## 📚 3. The course hub (Obsidian ⇄ website)
 
-The AI 101 notes live in [`vault/project-02/`](vault/project-02/). **Obsidian** and the **website** read **the same files**.
+The AI 101 notes live in [`project-02/`](project-02/). **Obsidian** and the **website** read **the same files**.
 
 1. ✍️ **Write** a note in Obsidian.
 2. 🏗️ The daily build **turns it into a web page**.
@@ -90,23 +90,45 @@ The AI 101 notes live in [`vault/project-02/`](vault/project-02/). **Obsidian** 
 
 ## 🤖 Project 3: an agent, a vault helper, and a skill
 
-Project 3 turns the Project 2 post-checking step into a reusable AI workflow. The files are in [`vault/project-03/`](vault/project-03/).
+**In plain words:** the robot picks real posts from X every day. Some of its checking rules repeat, so I built an AI helper that does that checking and **shows why** it made each call. The helper never publishes. It hands a table back to me and I decide.
 
-| Part | What it does | File |
-|---|---|---|
-| **Workflow agent** | Checks candidate posts against Project 2 rules and hands the final choice back to a person. | [`workflow-agent.md`](vault/project-03/workflow-agent.md) |
-| **Vault agent** | Gives the AI helper its job, safety rules, and writing style. | [`AGENTS.md`](vault/project-03/vault-agent/AGENTS.md) |
-| **Skill** | A repeatable recipe for checking posts, including tricky words like “Lightning.” | [`SKILL.md`](vault/project-03/vault-agent/skills/crypto-l2-post-review/SKILL.md) |
+**Part A** is the workflow agent. It lives in [`project-02/`](project-02/). **Part B** is the vault agent, its rules, and its skill. It lives in [`project-03/`](project-03/).
 
-The `vault/CLAUDE.md` and `vault/.claude/skills/` files help Claude Code find the helper and skill when you open the `vault/` folder. The Project 2 copy of the workflow agent is kept at [`post-verifier.md`](vault/project-02/agents/post-verifier.md), beside the original Project 2 steps.
+```text
+project-02/                              Part A
+├── 00-start-here.md                     calls the agent
+├── agents/post-verifier.md              the workflow agent (replaces Step 2)
+└── outputs/                             the Project 2 run and the agent run
+    ├── revised-run.md                   Project 2 run (7 posts, Oct 5, 2026)
+    └── agent-run.md                     agent run on the same 7 posts
+
+project-03/                              Part B
+├── intent-statement.md                  what I built and why
+├── audit-note.md                        one stress test, one fix
+├── run-comparison.md                    Project 2 run next to the agent run
+├── testing-log.md                       caught-violation demo and fresh-input tests
+├── ai-use-log.md                        every prompt, output, and decision
+├── defense-notes.md                     my plan for the defense
+├── disclosure.md                        what AI did and what I decided
+└── vault-agent/
+    ├── AGENTS.md                        identity, permissions, limits
+    ├── CLAUDE.md                        one-line stub that loads AGENTS.md
+    ├── voice-profile.md                 five lines at most
+    ├── hard-rules.md                    five rules, one a teaching rule
+    └── skills/crypto-l2-post-review/SKILL.md
+```
+
+### What happened when I tested it (real results, November 11, 2026)
+
+On the same seven October 5 posts, the robot's own list kept all seven, including a post about a fishing trip at "Lightning Lake" (a lake, not Bitcoin). The agent **rejected** that post, **flagged** four others for me to check, and passed two clean. It could not score any post at first, because the saved data never kept the quote counts. I fixed the skill so it works out an *implied* count and labels it. I did **not** measure time, so I make no speed claim. Details: [`audit-note.md`](project-03/audit-note.md) and [`run-comparison.md`](project-03/run-comparison.md).
 
 ### Try the skill
 
-Open this repository’s `vault/` folder in Claude Code, then ask:
+Open this repository in Claude Code (the running copy of the skill is in `.claude/skills/`), then ask:
 
-> Use the `crypto-l2-post-review` skill to check these practice posts using the Project 2 rules. Do not invent missing details. Show me what needs checking, then let me decide what to use.
+> Use the `crypto-l2-post-review` skill to check the posts in `project-02/outputs/revised-selection-2026-10-05.json` using the Project 2 rules. Do not invent missing details. Show me what needs checking, then let me decide.
 
-The audit note has easy practice-test ideas. Test answers and personal decisions are left for the student to record in the Project 3 logs; they are not filled in for them.
+AI wrote parts of these notes. [`disclosure.md`](project-03/disclosure.md) and [`ai-use-log.md`](project-03/ai-use-log.md) say which parts, and which decisions are still mine to confirm.
 
 ---
 
@@ -122,7 +144,7 @@ Every **AI 101** workflow has the **same 5 parts**. This project uses that **gen
 | 04 | 📦 **Output** | A **video**, a **site**, **course pages**, a **feed** and a **phone-widget file**. |
 | 05 | 🧑‍⚖️ **Human check** | **I** approved the first video. I check every **archive day**. |
 
-📖 Full breakdown, feature by feature: [`vault/project-02/how-it-was-built.md`](vault/project-02/how-it-was-built.md)
+📖 Full breakdown, feature by feature: [`project-02/how-it-was-built.md`](project-02/how-it-was-built.md)
 
 ---
 
@@ -170,7 +192,7 @@ A small card for your iPhone Home Screen. It shows the **Bitcoin price**, the **
 
 > [!TIP]
 > 🎥 A **90-second** explainer: **3Blue1Brown-style 3D** math animation + **Japanese-American manga** style.
-> The full prompt and the **8-shot** plan are in [`vault/project-02/explainer-video.md`](vault/project-02/explainer-video.md).
+> The full prompt and the **8-shot** plan are in [`project-02/explainer-video.md`](project-02/explainer-video.md).
 
 1. 🎬 **It is built in code.** `scripts/make_explainer.py` makes the voice (Piper), the music and the timing.
 2. 🎞️ The animation is in `remotion/explainer/` (3D knot, the Guide, 8 shots).
@@ -195,10 +217,9 @@ crypto-l2-daily/
 │   ├── set_x_cookies.sh    🍪 save the X login codes (hidden)
 │   └── set_voice.sh        🎙️ save the voice settings (hidden)
 ├── 🎞️ remotion/            the video card design
-├── 🧠 vault/
-│   ├── project-02/         the AI 101 workflow and notes
-│   └── project-03/         workflow agent, vault agent, and skill
-│       └── vault-agent/    rules, voice, and skill source
+├── 🧠 project-02/          Part A: the AI 101 workflow, notes, agent, and runs (Obsidian vault)
+├── 🧠 project-03/          Part B: vault agent, rules, skill, tests, and logs
+│   └── vault-agent/        identity, voice, hard rules, and skill source
 ├── 🌐 site/                the built website
 ├── 🧾 data/                the checked posts for each day
 ├── ⚙️ config/              approval switch + archive notes
@@ -240,8 +261,8 @@ crypto-l2-daily/
 ## October 11 deliverable audit
 
 The numbered vault instructions now use purpose, input, procedure, check and failure-action sections.
-See `vault/project-02/documentation-standard.md` for the ASD-STE100-inspired writing status.
-See `vault/project-02/crypto-layer-2-reference.md` for the crypto classification boundaries.
+See `project-02/documentation-standard.md` for the ASD-STE100-inspired writing status.
+See `project-02/crypto-layer-2-reference.md` for the crypto classification boundaries.
 The named submission is generated in `submission/project-02/`; human intent and class feedback remain pending.
 The first launchd-triggered run has not yet occurred. Existing successful runs are recorded in `logs/daily.log`.
 The GitHub Pages archive is not enabled. Current videos use Vercel; the older-video fallback needs repair before retention exceeds 14 editions.

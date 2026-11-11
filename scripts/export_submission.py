@@ -11,7 +11,7 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[1]
-VAULT = ROOT / 'vault/project-02'
+VAULT = ROOT / 'project-02' if (ROOT / 'project-02').exists() else ROOT / 'vault/project-02'
 PREFIX = 'AI101_P2_Cornish_KJ_'
 
 

@@ -12,7 +12,7 @@ import html
 import re
 from pathlib import Path
 
-GITHUB = "https://github.com/cornishlikeadam/crypto-l2-daily/blob/main/vault/project-02/"
+GITHUB = "https://github.com/cornishlikeadam/crypto-l2-daily/blob/main/project-02/"
 GROUP_ORDER = ["Start", "The 5 steps", "Proof", "Extras"]
 
 

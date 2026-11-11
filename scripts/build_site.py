@@ -355,7 +355,8 @@ def write_widget(records: list[dict]) -> None:
     path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n")
 
 
-VAULT = ROOT / "vault" / "project-02"
+# Part A notes live in project-02/. Older checkouts keep them in vault/project-02/, so fall back to that.
+VAULT = ROOT / "project-02" if (ROOT / "project-02").exists() else ROOT / "vault" / "project-02"
 DROP_WORDS = {
     "price_call": "price guesses", "giveaway": "giveaways", "rumor": "rumors", "promo_account": "ad accounts",
     "promo_post": "ads", "other_token_shill": "posts pushing other coins", "cashtag_spam": "coin-ticker spam",
