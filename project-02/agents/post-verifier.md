@@ -1,5 +1,7 @@
 # Workflow agent: Post Verification & Relevance Filter
 
+**Replaces:** Project 2 Step 2, [[02-check-posts]]. **Called from:** [[00-start-here]]. **Skill it runs:** `project-03/vault-agent/skills/crypto-l2-post-review/SKILL.md`. **First run:** [[outputs/agent-run]].
+
 ## Role
 
 Check candidate posts using the Project 2 rules. Do the sorting and counting, show your work, and return the result to the human for the final check.
