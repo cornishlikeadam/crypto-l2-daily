@@ -17,7 +17,7 @@ This is the agent-run half of the comparison. The Project 2 half is [[revised-ru
 
 - **Run on:** November 11, 2026.
 - **Run by:** Claude Code (Sonnet 5.5) in this repository. It followed `project-03/vault-agent/skills/crypto-l2-post-review/SKILL.md` step by step, as the skill was written on that day.
-- **Input:** the same seven posts as [[revised-run]]. The full saved record is `submission/project-02/outputs/AI101_P2_Cornish_KJ_RevisedSelection_2026-10-05.json`. It is the file the October 5 revised run was rebuilt from.
+- **Input:** the same seven posts as [[revised-run]]. The full saved record is `project-02/outputs/revised-selection-2026-10-05.json`. It is the file the October 5 revised run was rebuilt from. The copy in `project-02/outputs/` is byte-for-byte the same as the one in `submission/` (checked with `cmp`).
 - **Window used:** October 4, 2026, 19:50 UTC to October 5, 2026, 19:50 UTC. That is the window saved in the file.
 - **No links were opened.** Follower counts, likes, and times are exactly as saved in the file. The agent did not check them against X.
 - **What the agent was not given:** the posts the Project 2 filters had already thrown away (66 of them, according to the file's `stats`). It can only check the final picks.

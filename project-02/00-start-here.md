@@ -34,7 +34,7 @@ Step 2 is the step that **checks the posts**. The robot's own filters still run 
 
 **How to call it.** Open this repository in Claude Code and say:
 
-> Use the `crypto-l2-post-review` skill. Check the posts in `submission/project-02/outputs/AI101_P2_Cornish_KJ_RevisedSelection_2026-10-05.json` using the saved 24-hour window. Do not invent anything. Return the table and stop.
+> Use the `crypto-l2-post-review` skill. Check the posts in `project-02/outputs/revised-selection-2026-10-05.json` using the saved 24-hour window. Do not invent anything. Return the table and stop.
 
 **What comes back:** one row per post with pass, flag, or reject, the reason, a score if it can be worked out, and the questions I still have to answer.
 

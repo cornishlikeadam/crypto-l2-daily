@@ -126,7 +126,7 @@ On the same seven October 5 posts, the robot's own list kept all seven, includin
 
 Open this repository in Claude Code (the running copy of the skill is in `.claude/skills/`), then ask:
 
-> Use the `crypto-l2-post-review` skill to check the posts in `submission/project-02/outputs/AI101_P2_Cornish_KJ_RevisedSelection_2026-10-05.json` using the Project 2 rules. Do not invent missing details. Show me what needs checking, then let me decide.
+> Use the `crypto-l2-post-review` skill to check the posts in `project-02/outputs/revised-selection-2026-10-05.json` using the Project 2 rules. Do not invent missing details. Show me what needs checking, then let me decide.
 
 AI wrote parts of these notes. [`disclosure.md`](project-03/disclosure.md) and [`ai-use-log.md`](project-03/ai-use-log.md) say which parts, and which decisions are still mine to confirm.
 

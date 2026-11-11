@@ -8,7 +8,7 @@ My robot picks real posts from X about four coins every day. I built a helper (a
 
 - **Date:** November 11, 2026.
 - **What I tested:** the skill `crypto-l2-post-review` (`project-03/vault-agent/skills/crypto-l2-post-review/SKILL.md`).
-- **Input:** the seven posts from the October 5 revised run, with the 24-hour window saved in the file. The posts are listed in `project-02/outputs/revised-run.md`. The full saved data is `submission/project-02/outputs/AI101_P2_Cornish_KJ_RevisedSelection_2026-10-05.json`.
+- **Input:** the seven posts from the October 5 revised run, with the 24-hour window saved in the file. The posts are listed in `project-02/outputs/revised-run.md`. The full saved data is `project-02/outputs/revised-selection-2026-10-05.json`.
 - **Why this is a hard test:** one of the seven posts is about a lake. “Lightning Lake” is not the Bitcoin Lightning network. My own Project 2 notes say the robot kept that card because it matches words, not meaning. A second hard part: I had never checked whether the saved data had every number the rules ask for.
 - **Full run:** `project-02/outputs/agent-run.md`.
 

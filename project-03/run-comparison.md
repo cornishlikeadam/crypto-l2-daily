@@ -8,7 +8,7 @@ Both runs use the **same seven posts** from October 5, 2026 and the same saved 2
 ## How I kept it fair
 
 - Same seven posts, same window, same rules (`project-02/02-check-posts.md` and `project-02/crypto-layer-2-reference.md`).
-- Same saved file as the source: `submission/project-02/outputs/AI101_P2_Cornish_KJ_RevisedSelection_2026-10-05.json`.
+- Same saved file as the source: `project-02/outputs/revised-selection-2026-10-05.json`.
 - The agent was **not** given the 66 posts the Project 2 filters threw out earlier. So this compares the *final picks* only, not the whole filtering job.
 - The Project 2 run is the robot's output. The agent run is Claude Code following the skill. Neither was checked against X, because no links were opened.
 
